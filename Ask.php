@@ -28,6 +28,8 @@
  * @ingroup Test
  */
 
+define( 'Ask_VERSION', '0.1 alpha' );
+
 // @codeCoverageIgnoreStart
 call_user_func( function() {
 	$extension = defined( 'MEDIAWIKI' ) ? 'mw' : 'standalone';
