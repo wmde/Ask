@@ -1,0 +1,22 @@
+{
+    "name": "ask/ask",
+    "type": "library",
+    "description": "Library containing a PHP implementation of the Ask query language",
+    "keywords": ["ask"],
+    "homepage": "https://www.mediawiki.org/wiki/Extension:Ask",
+    "license": "GNU GPL v2+",
+    "authors": [
+         {
+             "name": "Jeroen De Dauw",
+             "email": "jeroendedauw@gmail.com",
+             "homepage": "http://jeroendedauw.com",
+             "role": "Developer"
+         }
+    ],
+    "require": {
+        "php": ">=5.3.0"
+    },
+    "suggest": {
+        "mediawiki/core" : "dev-master"
+    }
+}
