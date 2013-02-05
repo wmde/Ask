@@ -3,9 +3,11 @@
 namespace Ask\Language\Description;
 
 /**
- * Interface for query condition descriptions.
+ * A description that matches any object.
  *
- * Based on SMWDescription
+ * Corresponds to owl:thing, the class of all abstract objects.
+ *
+ * Based on SMWThingDescription
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -30,24 +32,7 @@ namespace Ask\Language\Description;
  * @licence GNU GPL v2+
  * @author Jeroen De Dauw < jeroendedauw@gmail.com >
  */
-interface Description {
+class AnyValue implements Description {
 
-	/**
-	 * Returns the size of the description.
-	 *
-	 * @since 0.1
-	 *
-	 * @return integer
-	 */
-	public function getSize();
-
-	/**
-	 * Returns the depth of the description.
-	 *
-	 * @since 0.1
-	 *
-	 * @return integer
-	 */
-	public function getDepth();
 
 }

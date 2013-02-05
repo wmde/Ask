@@ -3,9 +3,12 @@
 namespace Ask\Language\Description;
 
 /**
- * Interface for query condition descriptions.
+ * Description of a collection of many descriptions, at least one of which
+ * must be satisfied (OR, disjunction).
  *
- * Based on SMWDescription
+ * Corresponds to disjunction in OWL and SPARQL. Not available in RDFS.
+ *
+ * Based on SMWDisjunction
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -30,24 +33,8 @@ namespace Ask\Language\Description;
  * @licence GNU GPL v2+
  * @author Jeroen De Dauw < jeroendedauw@gmail.com >
  */
-interface Description {
+class Union implements Description {
 
-	/**
-	 * Returns the size of the description.
-	 *
-	 * @since 0.1
-	 *
-	 * @return integer
-	 */
-	public function getSize();
 
-	/**
-	 * Returns the depth of the description.
-	 *
-	 * @since 0.1
-	 *
-	 * @return integer
-	 */
-	public function getDepth();
 
 }

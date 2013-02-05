@@ -3,9 +3,14 @@
 namespace Ask\Language\Description;
 
 /**
- * Interface for query condition descriptions.
+ * Description of a set of instances that have an attribute with some value
+ * that fits another (sub)description.
  *
- * Based on SMWDescription
+ * Corresponds to existential quantification ("SomeValuesFrom" restriction) on
+ * properties in OWL. In conjunctive queries (OWL) and SPARQL (RDF), it is
+ * represented by using variables in the object part of such properties.
+ *
+ * Based on SMWSomeProperty
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -30,24 +35,7 @@ namespace Ask\Language\Description;
  * @licence GNU GPL v2+
  * @author Jeroen De Dauw < jeroendedauw@gmail.com >
  */
-interface Description {
+class SomeProperty implements Description {
 
-	/**
-	 * Returns the size of the description.
-	 *
-	 * @since 0.1
-	 *
-	 * @return integer
-	 */
-	public function getSize();
-
-	/**
-	 * Returns the depth of the description.
-	 *
-	 * @since 0.1
-	 *
-	 * @return integer
-	 */
-	public function getDepth();
 
 }

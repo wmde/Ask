@@ -3,9 +3,16 @@
 namespace Ask\Language\Description;
 
 /**
- * Interface for query condition descriptions.
+ * Description of one data value, or of a range of data values.
  *
- * Based on SMWDescription
+ * Technically this usually corresponds to nominal predicates or to unary
+ * concrete domain predicates in OWL which are parametrised by one constant
+ * from the concrete domain.
+ *
+ * In RDF, concrete domain predicates that define ranges (like "greater or
+ * equal to") are not directly available.
+ *
+ * Based on SMWValueDescription
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -30,24 +37,7 @@ namespace Ask\Language\Description;
  * @licence GNU GPL v2+
  * @author Jeroen De Dauw < jeroendedauw@gmail.com >
  */
-interface Description {
+class ValueDescription implements Description {
 
-	/**
-	 * Returns the size of the description.
-	 *
-	 * @since 0.1
-	 *
-	 * @return integer
-	 */
-	public function getSize();
-
-	/**
-	 * Returns the depth of the description.
-	 *
-	 * @since 0.1
-	 *
-	 * @return integer
-	 */
-	public function getDepth();
 
 }
