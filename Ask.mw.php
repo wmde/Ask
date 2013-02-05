@@ -57,12 +57,22 @@ foreach ( include( __DIR__ . '/Ask.classes.php' ) as $class => $file ) {
  */
 $wgHooks['UnitTestsList'][]	= function( array &$files ) {
 	// @codeCoverageIgnoreStart
-	$testFiles = array(
+	global $wgAutoloadClasses;
 
+	$wgAutoloadClasses['Ask\Tests\AskTestCase'] = 'tests/phpunit/AskTestCase.php';
+
+	$wgAutoloadClasses['Ask\Tests\Language\Description\Description'] = 'tests/phpunit/language/description/DescriptionTest.php';
+
+	$testFiles = array(
+		'language/description/AnyValue',
+		'language/description/Intersection',
+		'language/description/SomeProperty',
+		'language/description/Union',
+		'language/description/ValueDescription',
 	);
 
 	foreach ( $testFiles as $file ) {
-		$files[] = __DIR__ . '/tests/' . $file . 'Test.php';
+		$files[] = __DIR__ . '/tests/phpunit/' . $file . 'Test.php';
 	}
 
 	return true;
