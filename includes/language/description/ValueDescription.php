@@ -1,6 +1,8 @@
 <?php
 
 namespace Ask\Language\Description;
+use DataValues\DataValue;
+use InvalidArgumentException;
 
 /**
  * Description of one data value, or of a range of data values.
@@ -39,5 +41,84 @@ namespace Ask\Language\Description;
  */
 class ValueDescription implements Description {
 
+	const COMP_EQUAL = 1;
+	const COMP_LEQ = 2; // Less than or equal
+	const COMP_GEQ = 3; // Greater than or equal
+	const COMP_NEQ = 4; // Not equal
+	const COMP_LIKE = 5;
+	const COMP_NLIKE = 6; // Not like
+	const COMP_LESS = 7; // Strictly less than
+	const COMP_GRTR = 8; // Strictly more than
+
+	/**
+	 * @since 0.1
+	 *
+	 * @var DataValue
+	 */
+	protected $value;
+
+	/**
+	 * @since 0.1
+	 *
+	 * @var int
+	 */
+	protected $comparator;
+
+	/**
+	 * Constructor.
+	 *
+	 * @since 0.1
+	 *
+	 * @param DataValue $value
+	 * @param int $comparator
+	 */
+	public function __construct( DataValue $value, $comparator = self::COMP_EQUAL ) {
+		if ( $comparator < self::COMP_EQUAL || $comparator > self::COMP_GRTR ) {
+			throw new InvalidArgumentException( 'Invalid comparator specified' );
+		}
+
+		$this->value = $value;
+		$this->comparator = $comparator;
+	}
+
+	/**
+	 * @since 0.1
+	 *
+	 * @return DataValue
+	 */
+	public function getValue() {
+		return $this->value;
+	}
+
+	/**
+	 * @since 0.1
+	 *
+	 * @return int
+	 */
+	public function getComparator() {
+		return $this->comparator;
+	}
+
+	/**
+	 * {@inheritdoc}
+	 *
+	 * @since 0.1
+	 *
+	 * @return integer
+	 */
+	public function getSize() {
+		return 1;
+	}
+
+	/**
+	 * {@inheritdoc}
+	 *
+	 * @since 0.1
+	 *
+	 * @return integer
+	 */
+	public function getDepth() {
+		return 0;
+	}
 
 }

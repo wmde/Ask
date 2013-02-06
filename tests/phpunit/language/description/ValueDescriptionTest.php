@@ -1,6 +1,7 @@
 <?php
 
 namespace Ask\Tests\Language\Description;
+use Ask\Language\Description\ValueDescription;
 
 /**
  * Unit tests for the Ask\Language\Description\ValueDescription class.
@@ -23,13 +24,45 @@ namespace Ask\Tests\Language\Description;
  * @since 0.1
  *
  * @file
- * @ingroup Ask
+ * @ingroup AskTests
+ *
+ * @group Ask
  *
  * @licence GNU GPL v2+
  * @author Jeroen De Dauw < jeroendedauw@gmail.com >
  */
 class ValueDescriptionTest extends DescriptionTest {
 
+	/**
+	 * {@inheritdoc}
+	 */
+	protected function getInstances() {
+		$instances = array();
 
+		$values = array(
+			new \DataValues\StringValue( 'ohi there' ),
+			new \DataValues\NumberValue( 4.2 ),
+			new \DataValues\MonolingualTextValue( 'en', 'ohi there' ),
+		);
+
+		$comparators = array(
+			ValueDescription::COMP_EQUAL,
+			ValueDescription::COMP_LEQ,
+			ValueDescription::COMP_GEQ,
+			ValueDescription::COMP_NEQ,
+			ValueDescription::COMP_LIKE,
+			ValueDescription::COMP_NLIKE,
+			ValueDescription::COMP_LESS,
+			ValueDescription::COMP_GRTR,
+		);
+
+		foreach ( $values as $value ) {
+			foreach ( $comparators as $comparator ) {
+				$instances[] = new ValueDescription( $value, $comparator );
+			}
+		}
+
+		return $instances;
+	}
 
 }

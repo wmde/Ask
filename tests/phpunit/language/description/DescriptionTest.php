@@ -1,6 +1,7 @@
 <?php
 
 namespace Ask\Tests\Language\Description;
+use Ask\Language\Description\Description;
 
 /**
  * Base class for unit tests for the Ask\Language\Description\Description implementing classes.
@@ -23,13 +24,57 @@ namespace Ask\Tests\Language\Description;
  * @since 0.1
  *
  * @file
- * @ingroup Ask
+ * @ingroup AskTests
  *
  * @licence GNU GPL v2+
  * @author Jeroen De Dauw < jeroendedauw@gmail.com >
  */
-class DescriptionTest extends \Ask\Tests\AskTestCase {
+abstract class DescriptionTest extends \Ask\Tests\AskTestCase {
 
+	/**
+	 * @since 0.1
+	 *
+	 * @return Description[]
+	 */
+	protected abstract function getInstances();
 
+	/**
+	 * @since 0.1
+	 *
+	 * @return Description[][]
+	 */
+	public function instanceProvider() {
+		return $this->arrayWrap( $this->getInstances() );
+	}
+
+	/**
+	 * @dataProvider instanceProvider
+	 *
+	 * @since 0.1
+	 *
+	 * @param Description $description
+	 */
+	public function testGetSize( Description $description ) {
+		$size = $description->getSize();
+
+		$this->assertInternalType( 'integer', $size );
+		$this->assertGreaterThanOrEqual( 0, $size );
+		$this->assertEquals( $size, $description->getSize() );
+	}
+
+	/**
+	 * @dataProvider instanceProvider
+	 *
+	 * @since 0.1
+	 *
+	 * @param Description $description
+	 */
+	public function testGetDepth( Description $description ) {
+		$depth = $description->getDepth();
+
+		$this->assertInternalType( 'integer', $depth );
+		$this->assertGreaterThanOrEqual( 0, $depth );
+		$this->assertEquals( $depth, $description->getDepth() );
+	}
 
 }

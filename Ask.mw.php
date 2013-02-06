@@ -59,15 +59,15 @@ $wgHooks['UnitTestsList'][]	= function( array &$files ) {
 	// @codeCoverageIgnoreStart
 	global $wgAutoloadClasses;
 
-	$wgAutoloadClasses['Ask\Tests\AskTestCase'] = 'tests/phpunit/AskTestCase.php';
+	$wgAutoloadClasses['Ask\Tests\AskTestCase'] = __DIR__ . '/tests/phpunit/AskTestCase.php';
 
-	$wgAutoloadClasses['Ask\Tests\Language\Description\Description'] = 'tests/phpunit/language/description/DescriptionTest.php';
+	$wgAutoloadClasses['Ask\Tests\Language\Description\DescriptionTest'] = __DIR__ . '/tests/phpunit/language/description/DescriptionTest.php';
 
 	$testFiles = array(
-		'language/description/AnyValue',
-		'language/description/Intersection',
-		'language/description/SomeProperty',
-		'language/description/Union',
+//		'language/description/AnyValue',
+//		'language/description/Intersection',
+//		'language/description/SomeProperty',
+//		'language/description/Union',
 		'language/description/ValueDescription',
 	);
 
