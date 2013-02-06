@@ -82,6 +82,8 @@ class ValueDescription implements Description {
 	}
 
 	/**
+	 * Returns the value to compare against.
+	 *
 	 * @since 0.1
 	 *
 	 * @return DataValue
@@ -91,6 +93,8 @@ class ValueDescription implements Description {
 	}
 
 	/**
+	 * Returns the comparator to use when comparing against the value.
+	 *
 	 * @since 0.1
 	 *
 	 * @return int

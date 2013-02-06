@@ -34,5 +34,26 @@ namespace Ask\Language\Description;
  */
 class AnyValue implements Description {
 
+	/**
+	 * {@inheritdoc}
+	 *
+	 * @since 0.1
+	 *
+	 * @return integer
+	 */
+	public function getSize() {
+		return 0;
+	}
+
+	/**
+	 * {@inheritdoc}
+	 *
+	 * @since 0.1
+	 *
+	 * @return integer
+	 */
+	public function getDepth() {
+		return 0;
+	}
 
 }

@@ -64,7 +64,7 @@ $wgHooks['UnitTestsList'][]	= function( array &$files ) {
 	$wgAutoloadClasses['Ask\Tests\Language\Description\DescriptionTest'] = __DIR__ . '/tests/phpunit/language/description/DescriptionTest.php';
 
 	$testFiles = array(
-//		'language/description/AnyValue',
+		'language/description/AnyValue',
 //		'language/description/Intersection',
 //		'language/description/SomeProperty',
 //		'language/description/Union',

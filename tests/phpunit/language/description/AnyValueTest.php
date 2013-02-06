@@ -30,6 +30,15 @@ namespace Ask\Tests\Language\Description;
  */
 class AnyValueTest extends DescriptionTest {
 
+	/**
+	 * {@inheritdoc}
+	 */
+	protected function getInstances() {
+		$instances = array();
 
+		$instances[] = new \Ask\Language\Description\AnyValue();
+
+		return $instances;
+	}
 
 }
