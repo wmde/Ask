@@ -1,6 +1,7 @@
 <?php
 
 namespace Ask\Tests\Language\Description;
+use Ask\Language\Description\SomeProperty;
 
 /**
  * Unit tests for the Ask\Language\Description\SomeProperty class.
@@ -32,6 +33,50 @@ namespace Ask\Tests\Language\Description;
  */
 class SomePropertyTest extends DescriptionTest {
 
+	/**
+	 * {@inheritdoc}
+	 */
+	protected function getInstances() {
+		$instances = array();
 
+		$instances[] = new SomeProperty( null, new \Ask\Language\Description\AnyValue() );
+		$instances[] = new SomeProperty( null, new \Ask\Language\Description\Conjunction( array() ) );
+
+		return $instances;
+	}
+
+	/**
+	 * @dataProvider instanceProvider
+	 *
+	 * @since 0.1
+	 *
+	 * @param SomeProperty $description
+	 */
+	public function testGetDescription( SomeProperty $description ) {
+		$subDescription = $description->getDescription();
+
+		$this->assertInstanceOf( 'Ask\Language\Description\Description', $subDescription );
+
+		$newInstance = new SomeProperty( $description->getProperty(), $subDescription );
+
+		$this->assertEquals( $subDescription, $newInstance->getDescription(), 'Description is returned as it was passed to the constructor' );
+	}
+
+	/**
+	 * @dataProvider instanceProvider
+	 *
+	 * @since 0.1
+	 *
+	 * @param SomeProperty $description
+	 */
+	public function testGetProperty( SomeProperty $description ) {
+		$property = $description->getProperty();
+
+		// TODO $this->assertInstanceOf( '', $property );
+
+		$newInstance = new SomeProperty( $property, $description->getDescription() );
+
+		$this->assertEquals( $property, $newInstance->getProperty(), 'Property is returned as it was passed to the constructor' );
+	}
 
 }

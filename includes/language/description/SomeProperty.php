@@ -37,5 +37,75 @@ namespace Ask\Language\Description;
  */
 class SomeProperty implements Description {
 
+	/**
+	 * @since 0.1
+	 *
+	 * @var TODO
+	 */
+	protected $property;
+
+	/**
+	 * @since 0.1
+	 *
+	 * @var Description
+	 */
+	protected $description;
+
+	/**
+	 * Constructor.
+	 *
+	 * @since 0.1
+	 *
+	 * @param TODO $property
+	 * @param Description $description
+	 */
+	public function __construct( $property, Description $description ) {
+		$this->property = $property;
+		$this->description = $description;
+	}
+
+	/**
+	 * Returns the description.
+	 *
+	 * @since 0.1
+	 *
+	 * @return Description
+	 */
+	public function getDescription() {
+		return $this->description;
+	}
+
+	/**
+	 * Returns the property.
+	 *
+	 * @since 0.1
+	 *
+	 * @return TODO
+	 */
+	public function getProperty() {
+		return $this->property;
+	}
+
+	/**
+	 * {@inheritdoc}
+	 *
+	 * @since 0.1
+	 *
+	 * @return integer
+	 */
+	public function getSize() {
+		return $this->description->getSize() + 1;
+	}
+
+	/**
+	 * {@inheritdoc}
+	 *
+	 * @since 0.1
+	 *
+	 * @return integer
+	 */
+	public function getDepth() {
+		return $this->description->getDepth() + 1;
+	}
 
 }

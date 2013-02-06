@@ -66,7 +66,7 @@ $wgHooks['UnitTestsList'][]	= function( array &$files ) {
 	$testFiles = array(
 		'language/description/AnyValue',
 		'language/description/Conjunction',
-//		'language/description/SomeProperty',
+		'language/description/SomeProperty',
 		'language/description/Disjunction',
 		'language/description/ValueDescription',
 	);
