@@ -65,4 +65,38 @@ class ValueDescriptionTest extends DescriptionTest {
 		return $instances;
 	}
 
+	/**
+	 * @dataProvider instanceProvider
+	 *
+	 * @since 0.1
+	 *
+	 * @param ValueDescription $description
+	 */
+	public function testGetValue( ValueDescription $description ) {
+		$value = $description->getValue();
+
+		$this->assertInstanceOf( 'DataValues\DataValue', $value );
+
+		$newInstance = new ValueDescription( $value );
+
+		$this->assertTrue( $value->equals( $newInstance->getValue() ), 'Value is returned as it was passed to the constructor' );
+	}
+
+	/**
+	 * @dataProvider instanceProvider
+	 *
+	 * @since 0.1
+	 *
+	 * @param ValueDescription $description
+	 */
+	public function testGetComparator( ValueDescription $description ) {
+		$comparator = $description->getComparator();
+
+		$this->assertInternalType( 'integer', $comparator );
+
+		$newInstance = new ValueDescription( $description->getValue(), $comparator );
+
+		$this->assertEquals( $comparator, $newInstance->getComparator(), 'Comparator is returned as it was passed to the constructor' );
+	}
+
 }
