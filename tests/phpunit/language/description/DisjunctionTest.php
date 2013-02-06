@@ -40,7 +40,7 @@ class DisjunctionTest extends DescriptionTest {
 		$instances = array();
 
 		$instances[] = new Disjunction( array() );
-		// $instances[] = new Disjunction( array( new \Ask\Language\Description\Conjunction( array() ) ) );
+		$instances[] = new Disjunction( array( new \Ask\Language\Description\Conjunction( array() ) ) );
 		$instances[] = new Disjunction( array( new Disjunction( array() ), new Disjunction( array() ) ) );
 		$instances[] = new Disjunction( array( new \Ask\Language\Description\AnyValue() ) );
 		$instances[] = new Disjunction( array( new \Ask\Language\Description\ValueDescription( new \DataValues\StringValue( 'ohi' ) ) ) );

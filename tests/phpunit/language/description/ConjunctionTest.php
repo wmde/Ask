@@ -1,6 +1,8 @@
 <?php
 
 namespace Ask\Tests\Language\Description;
+use Ask\Language\Description\Conjunction;
+use Ask\Language\Description\Disjunction;
 
 /**
  * Unit tests for the Ask\Language\Description\Intersection class.
@@ -32,6 +34,40 @@ namespace Ask\Tests\Language\Description;
  */
 class ConjunctionTest extends DescriptionTest {
 
+	/**
+	 * {@inheritdoc}
+	 */
+	protected function getInstances() {
+		$instances = array();
 
+		$instances[] = new Conjunction( array() );
+		$instances[] = new Conjunction( array( new Conjunction( array() ) ) );
+		$instances[] = new Conjunction( array( new Disjunction( array() ), new Disjunction( array() ) ) );
+		$instances[] = new Conjunction( array( new \Ask\Language\Description\AnyValue() ) );
+		$instances[] = new Conjunction( array( new \Ask\Language\Description\ValueDescription( new \DataValues\StringValue( 'ohi' ) ) ) );
+
+		return $instances;
+	}
+
+	/**
+	 * @dataProvider instanceProvider
+	 *
+	 * @since 0.1
+	 *
+	 * @param Conjunction $description
+	 */
+	public function testGetDescriptions( Conjunction $description ) {
+		$descriptions = $description->getDescriptions();
+
+		$this->assertInternalType( 'array', $descriptions );
+
+		foreach ( $descriptions as $subInstance ) {
+			$this->assertInstanceOf( 'Ask\Language\Description\Description', $subInstance );
+		}
+
+		$newInstance = new Disjunction( $descriptions );
+
+		$this->assertEquals( $descriptions, $newInstance->getDescriptions(), 'Descriptions are returned as it was passed to the constructor' );
+	}
 
 }

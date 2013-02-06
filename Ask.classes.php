@@ -16,6 +16,7 @@ return array(
 	'Ask\Language\Description\AnyValue' => 'includes/language/description/AnyValue.php',
 	'Ask\Language\Description\Conjunction' => 'includes/language/description/Conjunction.php',
 	'Ask\Language\Description\Description' => 'includes/language/description/Description.php',
+	'Ask\Language\Description\DescriptionCollection' => 'includes/language/description/DescriptionCollection.php',
 	'Ask\Language\Description\Disjunction' => 'includes/language/description/Disjunction.php',
 	'Ask\Language\Description\SomeProperty' => 'includes/language/description/SomeProperty.php',
 	'Ask\Language\Description\ValueDescription' => 'includes/language/description/ValueDescription.php',
