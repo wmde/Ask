@@ -32,9 +32,71 @@ namespace Ask\Language\Description;
  *
  * @licence GNU GPL v2+
  * @author Jeroen De Dauw < jeroendedauw@gmail.com >
+ * @author Markus Krötzsch
  */
 class Disjunction implements Description {
 
+	/**
+	 * @since 0.1
+	 *
+	 * @var Description[]
+	 */
+	protected $descriptions;
 
+	/**
+	 * Constructor.
+	 *
+	 * @since 0.1
+	 *
+	 * @param Description[] $descriptions
+	 */
+	public function __construct( array $descriptions ) {
+		$this->descriptions = $descriptions;
+	}
+
+	/**
+	 * {@inheritdoc}
+	 *
+	 * @since 0.1
+	 *
+	 * @return integer
+	 */
+	public function getSize() {
+		$size = 0;
+
+		foreach ( $this->descriptions as $description ) {
+			$size += $description->getSize();
+		}
+
+		return $size;
+	}
+
+	/**
+	 * {@inheritdoc}
+	 *
+	 * @since 0.1
+	 *
+	 * @return integer
+	 */
+	public function getDepth() {
+		$depth = 0;
+
+		foreach ( $this->descriptions as $description ) {
+			$depth = max( $depth, $description->getDepth() );
+		}
+
+		return $depth;
+	}
+
+	/**
+	 * Returns the descriptions that make up this disjunction.
+	 *
+	 * @since 0.1
+	 *
+	 * @return Description[]
+	 */
+	public function getDescriptions() {
+		return $this->descriptions;
+	}
 
 }

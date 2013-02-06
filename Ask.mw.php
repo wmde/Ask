@@ -67,7 +67,7 @@ $wgHooks['UnitTestsList'][]	= function( array &$files ) {
 		'language/description/AnyValue',
 //		'language/description/Conjunction',
 //		'language/description/SomeProperty',
-//		'language/description/Disjunction',
+		'language/description/Disjunction',
 		'language/description/ValueDescription',
 	);
 

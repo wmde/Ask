@@ -25,6 +25,8 @@ namespace Ask\Tests\Language\Description;
  * @file
  * @ingroup AskTests
  *
+ * @group Ask
+ *
  * @licence GNU GPL v2+
  * @author Jeroen De Dauw < jeroendedauw@gmail.com >
  */
