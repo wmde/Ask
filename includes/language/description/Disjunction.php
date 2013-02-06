@@ -3,12 +3,12 @@
 namespace Ask\Language\Description;
 
 /**
- * Description of a collection of many descriptions, all of which
- * must be satisfied (AND, conjunction).
+ * Description of a collection of many descriptions, at least one of which
+ * must be satisfied (OR, disjunction).
  *
- * Corresponds to conjunction in OWL and SPARQL. Not available in RDFS.
+ * Corresponds to disjunction in OWL and SPARQL. Not available in RDFS.
  *
- * Based on SMWConjunction
+ * Based on SMWDisjunction
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -33,7 +33,7 @@ namespace Ask\Language\Description;
  * @licence GNU GPL v2+
  * @author Jeroen De Dauw < jeroendedauw@gmail.com >
  */
-class Intersection implements Description {
+class Disjunction implements Description {
 
 
 

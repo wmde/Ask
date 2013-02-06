@@ -1,9 +1,14 @@
 <?php
 
-namespace Ask\Tests\Language\Description;
+namespace Ask\Language\Description;
 
 /**
- * Unit tests for the Ask\Language\Description\Union class.
+ * Description of a collection of many descriptions, all of which
+ * must be satisfied (AND, conjunction).
+ *
+ * Corresponds to conjunction in OWL and SPARQL. Not available in RDFS.
+ *
+ * Based on SMWConjunction
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -23,12 +28,12 @@ namespace Ask\Tests\Language\Description;
  * @since 0.1
  *
  * @file
- * @ingroup AskTests
+ * @ingroup Ask
  *
  * @licence GNU GPL v2+
  * @author Jeroen De Dauw < jeroendedauw@gmail.com >
  */
-class UnionTest extends DescriptionTest {
+class Conjunction implements Description {
 
 
 

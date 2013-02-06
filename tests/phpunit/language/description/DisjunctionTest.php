@@ -1,14 +1,9 @@
 <?php
 
-namespace Ask\Language\Description;
+namespace Ask\Tests\Language\Description;
 
 /**
- * Description of a collection of many descriptions, at least one of which
- * must be satisfied (OR, disjunction).
- *
- * Corresponds to disjunction in OWL and SPARQL. Not available in RDFS.
- *
- * Based on SMWDisjunction
+ * Unit tests for the Ask\Language\Description\Union class.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -28,12 +23,12 @@ namespace Ask\Language\Description;
  * @since 0.1
  *
  * @file
- * @ingroup Ask
+ * @ingroup AskTests
  *
  * @licence GNU GPL v2+
  * @author Jeroen De Dauw < jeroendedauw@gmail.com >
  */
-class Union implements Description {
+class DisjunctionTest extends DescriptionTest {
 
 
 

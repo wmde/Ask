@@ -28,7 +28,7 @@ namespace Ask\Tests\Language\Description;
  * @licence GNU GPL v2+
  * @author Jeroen De Dauw < jeroendedauw@gmail.com >
  */
-class IntersectionTest extends DescriptionTest {
+class ConjunctionTest extends DescriptionTest {
 
 
 
