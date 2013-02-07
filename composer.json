@@ -11,6 +11,11 @@
 			"email": "jeroendedauw@gmail.com",
 			"homepage": "http://jeroendedauw.com",
 			"role": "Developer"
+		},
+		{
+			"name": "Markus Krötzsch",
+			"homepage": "http://korrekt.org",
+			"role": "Author of the code this lib is based on"
 		}
 	],
 	"support": {
