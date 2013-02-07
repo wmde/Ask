@@ -6,12 +6,12 @@
 	"homepage": "https://www.mediawiki.org/wiki/Extension:Ask",
 	"license": "GPL-2.0+",
 	"authors": [
-		 {
-			 "name": "Jeroen De Dauw",
-			 "email": "jeroendedauw@gmail.com",
-			 "homepage": "http://jeroendedauw.com",
-			 "role": "Developer"
-		 }
+		{
+			"name": "Jeroen De Dauw",
+			"email": "jeroendedauw@gmail.com",
+			"homepage": "http://jeroendedauw.com",
+			"role": "Developer"
+		}
 	],
 	"support": {
 		"issues": "https://bugzilla.wikimedia.org/",
