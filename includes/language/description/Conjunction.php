@@ -35,6 +35,21 @@ namespace Ask\Language\Description;
  */
 class Conjunction extends DescriptionCollection {
 
+	/**
+	 * {@inheritdoc}
+	 *
+	 * @since 0.1
+	 *
+	 * @return boolean
+	 */
+	public function isSingleton() {
+		foreach ( $this->descriptions as $description ) {
+			if ( $description->isSingleton() ) {
+				return true;
+			}
+		}
 
+		return false;
+	}
 
 }

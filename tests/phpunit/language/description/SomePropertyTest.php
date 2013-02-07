@@ -80,4 +80,15 @@ class SomePropertyTest extends DescriptionTest {
 		$this->assertEquals( $property, $newInstance->getProperty(), 'Property is returned as it was passed to the constructor' );
 	}
 
+	/**
+	 * @dataProvider instanceProvider
+	 *
+	 * @since 0.1
+	 *
+	 * @param SomeProperty $description
+	 */
+	public function testIsSingleton( SomeProperty $description ) {
+		$this->assertEquals( false, $description->isSingleton() );
+	}
+
 }

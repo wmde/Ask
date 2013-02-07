@@ -54,7 +54,7 @@ abstract class DescriptionTest extends \Ask\Tests\AskTestCase {
 	 *
 	 * @param Description $description
 	 */
-	public function testGetSize( Description $description ) {
+	public function testReturnTypeOfGetSize( Description $description ) {
 		$size = $description->getSize();
 
 		$this->assertInternalType( 'integer', $size );
@@ -69,12 +69,23 @@ abstract class DescriptionTest extends \Ask\Tests\AskTestCase {
 	 *
 	 * @param Description $description
 	 */
-	public function testGetDepth( Description $description ) {
+	public function testReturnTypeOfGetDepth( Description $description ) {
 		$depth = $description->getDepth();
 
 		$this->assertInternalType( 'integer', $depth );
 		$this->assertGreaterThanOrEqual( 0, $depth );
 		$this->assertEquals( $depth, $description->getDepth() );
+	}
+
+	/**
+	 * @dataProvider instanceProvider
+	 *
+	 * @since 0.1
+	 *
+	 * @param Description $description
+	 */
+	public function testReturnTypeOfIsSingleton( Description $description ) {
+		$this->assertInternalType( 'boolean', $description->isSingleton() );
 	}
 
 }

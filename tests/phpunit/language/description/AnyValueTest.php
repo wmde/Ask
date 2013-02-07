@@ -1,6 +1,7 @@
 <?php
 
 namespace Ask\Tests\Language\Description;
+use Ask\Language\Description\AnyValue;
 
 /**
  * Unit tests for the Ask\Language\Description\AnyValue class.
@@ -38,9 +39,20 @@ class AnyValueTest extends DescriptionTest {
 	protected function getInstances() {
 		$instances = array();
 
-		$instances[] = new \Ask\Language\Description\AnyValue();
+		$instances[] = new AnyValue();
 
 		return $instances;
+	}
+
+	/**
+	 * @dataProvider instanceProvider
+	 *
+	 * @since 0.1
+	 *
+	 * @param AnyValue $description
+	 */
+	public function testIsSingleton( AnyValue $description ) {
+		$this->assertEquals( false, $description->isSingleton() );
 	}
 
 }

@@ -50,4 +50,23 @@ interface Description {
 	 */
 	public function getDepth();
 
+	/**
+	 * Returns if the condition consists out of a non-disjoint equality restriction on a value.
+	 *
+	 * Examples for true:
+	 * - value needs to be 42
+	 * - value a needs to be 42 and value b needs to be 'foobar'
+	 * - value a needs to be 42 and value b needs to be < 100 or > 200
+	 *
+	 * Examples for false:
+	 * - value needs to be > 100
+	 * - value needs to be 'foo' or 'bar'
+	 * - there needs to be a value
+	 *
+	 * @since 0.1
+	 *
+	 * @return boolean
+	 */
+	public function isSingleton();
+
 }

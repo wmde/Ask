@@ -109,4 +109,15 @@ class SomeProperty implements Description {
 		return $this->description->getDepth() + 1;
 	}
 
+	/**
+	 * {@inheritdoc}
+	 *
+	 * @since 0.1
+	 *
+	 * @return boolean
+	 */
+	public function isSingleton() {
+		return false;
+	}
+
 }

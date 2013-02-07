@@ -56,4 +56,15 @@ class AnyValue implements Description {
 		return 0;
 	}
 
+	/**
+	 * {@inheritdoc}
+	 *
+	 * @since 0.1
+	 *
+	 * @return boolean
+	 */
+	public function isSingleton() {
+		return false;
+	}
+
 }

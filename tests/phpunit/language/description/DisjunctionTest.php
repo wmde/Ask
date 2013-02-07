@@ -69,4 +69,42 @@ class DisjunctionTest extends DescriptionTest {
 		$this->assertEquals( $descriptions, $newInstance->getDescriptions(), 'Descriptions are returned as it was passed to the constructor' );
 	}
 
+	public function isSingletonProvider() {
+		$argLists = array();
+
+		$argLists[] = array(
+			new Disjunction( array() ),
+			false
+		);
+
+		$argLists[] = array(
+			new Disjunction( array( new \Ask\Language\Description\ValueDescription( new \DataValues\StringValue( 'ohi' ) ) ) ),
+			true
+		);
+
+		$argLists[] = array(
+			new Disjunction( array( new Disjunction( array() ) ) ),
+			false
+		);
+
+		$argLists[] = array(
+			new Disjunction( array(
+				new \Ask\Language\Description\ValueDescription( new \DataValues\StringValue( 'ohi' ) ),
+				new \Ask\Language\Description\ValueDescription( new \DataValues\StringValue( 'foobar' ) )
+			) ),
+			false
+		);
+
+		return $argLists;
+	}
+
+	/**
+	 * @dataProvider isSingletonProvider
+	 *
+	 * @since 0.1
+	 */
+	public function testIsSingleton( Disjunction $description, $isSingleton ) {
+		$this->assertEquals( $isSingleton, $description->isSingleton() );
+	}
+
 }
