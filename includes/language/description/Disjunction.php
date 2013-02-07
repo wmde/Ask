@@ -32,7 +32,6 @@ namespace Ask\Language\Description;
  *
  * @licence GNU GPL v2+
  * @author Jeroen De Dauw < jeroendedauw@gmail.com >
- * @author Markus Krötzsch
  */
 class Disjunction extends DescriptionCollection {
 
