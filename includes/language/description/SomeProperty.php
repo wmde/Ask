@@ -1,6 +1,7 @@
 <?php
 
 namespace Ask\Language\Description;
+use DataValues\PropertyValue;
 
 /**
  * Description of a set of instances that have an attribute with some value
@@ -40,7 +41,7 @@ class SomeProperty implements Description {
 	/**
 	 * @since 0.1
 	 *
-	 * @var TODO
+	 * @var PropertyValue
 	 */
 	protected $property;
 
@@ -56,10 +57,10 @@ class SomeProperty implements Description {
 	 *
 	 * @since 0.1
 	 *
-	 * @param TODO $property
+	 * @param PropertyValue $property
 	 * @param Description $description
 	 */
-	public function __construct( $property, Description $description ) {
+	public function __construct( PropertyValue $property, Description $description ) {
 		$this->property = $property;
 		$this->description = $description;
 	}
@@ -80,7 +81,7 @@ class SomeProperty implements Description {
 	 *
 	 * @since 0.1
 	 *
-	 * @return TODO
+	 * @return PropertyValue
 	 */
 	public function getProperty() {
 		return $this->property;

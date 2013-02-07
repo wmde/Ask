@@ -2,6 +2,7 @@
 
 namespace Ask\Tests\Language\Description;
 use Ask\Language\Description\SomeProperty;
+use DataValues\PropertyValue;
 
 /**
  * Unit tests for the Ask\Language\Description\SomeProperty class.
@@ -39,8 +40,8 @@ class SomePropertyTest extends DescriptionTest {
 	protected function getInstances() {
 		$instances = array();
 
-		$instances[] = new SomeProperty( null, new \Ask\Language\Description\AnyValue() );
-		$instances[] = new SomeProperty( null, new \Ask\Language\Description\Conjunction( array() ) );
+		$instances[] = new SomeProperty( new PropertyValue( '_geo' ), new \Ask\Language\Description\AnyValue() );
+		$instances[] = new SomeProperty( new PropertyValue( 'p42' ), new \Ask\Language\Description\Conjunction( array() ) );
 
 		return $instances;
 	}
@@ -72,7 +73,7 @@ class SomePropertyTest extends DescriptionTest {
 	public function testGetProperty( SomeProperty $description ) {
 		$property = $description->getProperty();
 
-		// TODO $this->assertInstanceOf( '', $property );
+		$this->assertInstanceOf( '\DataValues\PropertyValue', $property );
 
 		$newInstance = new SomeProperty( $property, $description->getDescription() );
 
