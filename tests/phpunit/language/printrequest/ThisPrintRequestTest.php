@@ -40,8 +40,8 @@ class ThisPrintRequestTest extends PrintRequestTest {
 	protected function getInstances() {
 		$instances = array();
 
-		$instances[] = new ThisPrintRequest( 'foo' );
-		$instances[] = new ThisPrintRequest( 'foo bar', array( 'o' => 'noez' ) );
+		$instances[] = new ThisPrintRequest( array( 'en' => 'foo' ) );
+		$instances[] = new ThisPrintRequest( array( 'en' => 'foo bar', 'de' => 'baz bah' ), array( 'o' => 'noez' ) );
 
 		return $instances;
 	}

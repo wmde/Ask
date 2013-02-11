@@ -43,12 +43,12 @@ class PropertyPrintRequest extends PrintRequest implements \Ask\Immutable {
 	 *
 	 * @since 0.1
 	 *
-	 * @param string $label
+	 * @param string[] $labels
 	 * @param PropertyValue $property
 	 * @param string[] $options
 	 */
-	public function __construct( $label, PropertyValue $property, array $options = array() ) {
-		$this->label = $label;
+	public function __construct( $labels, PropertyValue $property, array $options = array() ) {
+		$this->labels = $labels;
 		$this->property = $property;
 		$this->options = $options;
 	}

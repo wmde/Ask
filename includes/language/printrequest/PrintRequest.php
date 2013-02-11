@@ -39,9 +39,9 @@ abstract class PrintRequest {
 	/**
 	 * @since 0.1
 	 *
-	 * @var string
+	 * @var string[]
 	 */
-	protected $label;
+	protected $labels;
 
 	/**
 	 * @since 0.1
@@ -51,14 +51,17 @@ abstract class PrintRequest {
 	protected $options = array();
 
 	/**
-	 * Returns the label that describes the printout.
+	 * Returns the labels that describes the printout.
+	 * The format is an associative array in which the keys
+	 * are language codes and the values are the labels for
+	 * the language represented by their corresponding key
 	 *
 	 * @since 0.1
 	 *
-	 * @return string
+	 * @return string[]
 	 */
-	public function getLabel() {
-		return $this->label;
+	public function getLabels() {
+		return $this->labels;
 	}
 
 	/**

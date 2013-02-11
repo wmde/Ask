@@ -55,7 +55,10 @@ abstract class PrintRequestTest extends \Ask\Tests\AskTestCase {
 	 * @param PrintRequest $request
 	 */
 	public function testReturnTypeOfGetLabel( PrintRequest $request ) {
-		$this->assertInternalType( 'string', $request->getLabel() );
+		$labels = $request->getLabels();
+
+		$this->assertInternalType( 'array', $labels );
+		$this->assertContainsOnly( 'string', $labels );
 	}
 
 	/**

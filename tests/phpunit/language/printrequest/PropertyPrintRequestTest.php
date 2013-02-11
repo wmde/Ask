@@ -40,8 +40,16 @@ class PropertyPrintRequestTest extends PrintRequestTest {
 	protected function getInstances() {
 		$instances = array();
 
-		$instances[] = new PropertyPrintRequest( 'foo', new \DataValues\PropertyValue( 'p42' ) );
-		$instances[] = new PropertyPrintRequest( 'foo bar', new \DataValues\PropertyValue( '_geo' ), array( 'o' => 'noez' ) );
+		$instances[] = new PropertyPrintRequest(
+			array( 'en' => 'foo' ),
+			new \DataValues\PropertyValue( 'p42' )
+		);
+
+		$instances[] = new PropertyPrintRequest(
+			array( 'en' => 'foo bar', 'de' => 'baz bah' ),
+			new \DataValues\PropertyValue( '_geo' ),
+			array( 'o' => 'noez' )
+		);
 
 		return $instances;
 	}

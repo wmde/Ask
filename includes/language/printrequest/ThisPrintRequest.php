@@ -35,11 +35,11 @@ class ThisPrintRequest extends PrintRequest implements \Ask\Immutable {
 	 *
 	 * @since 0.1
 	 *
-	 * @param string $label
+	 * @param string[] $labels
 	 * @param string[] $options
 	 */
-	public function __construct( $label, array $options = array() ) {
-		$this->label = $label;
+	public function __construct( $labels, array $options = array() ) {
+		$this->labels = $labels;
 		$this->options = $options;
 	}
 
