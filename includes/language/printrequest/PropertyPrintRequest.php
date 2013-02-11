@@ -1,17 +1,10 @@
 <?php
 
-namespace Ask\Language\Description;
+namespace Ask\Language\PrintRequest;
 use DataValues\PropertyValue;
 
 /**
- * Description of a set of instances that have an attribute with some value
- * that fits another (sub)description.
- *
- * Corresponds to existential quantification ("SomeValuesFrom" restriction) on
- * properties in OWL. In conjunctive queries (OWL) and SPARQL (RDF), it is
- * represented by using variables in the object part of such properties.
- *
- * Based on SMWSomeProperty
+ * Print request that specifies values for a property should be displayed.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -36,7 +29,7 @@ use DataValues\PropertyValue;
  * @licence GNU GPL v2+
  * @author Jeroen De Dauw < jeroendedauw@gmail.com >
  */
-class SomeProperty implements Description, \Ask\Immutable {
+class PropertyPrintRequest extends PrintRequest implements \Ask\Immutable {
 
 	/**
 	 * @since 0.1
@@ -46,38 +39,33 @@ class SomeProperty implements Description, \Ask\Immutable {
 	protected $property;
 
 	/**
-	 * @since 0.1
-	 *
-	 * @var Description
-	 */
-	protected $description;
-
-	/**
 	 * Constructor.
 	 *
 	 * @since 0.1
 	 *
+	 * @param string $label
 	 * @param PropertyValue $property
-	 * @param Description $description
+	 * @param string[] $options
 	 */
-	public function __construct( PropertyValue $property, Description $description ) {
+	public function __construct( $label, PropertyValue $property, array $options = array() ) {
+		$this->label = $label;
 		$this->property = $property;
-		$this->description = $description;
+		$this->options = $options;
 	}
 
 	/**
-	 * Returns the description.
+	 * @see PrintRequest::getType
 	 *
 	 * @since 0.1
 	 *
-	 * @return Description
+	 * @return string
 	 */
-	public function getDescription() {
-		return $this->description;
+	public function getType() {
+		return self::TYPE_PROP;
 	}
 
 	/**
-	 * Returns the property.
+	 * Returns the print request's property.
 	 *
 	 * @since 0.1
 	 *
@@ -85,39 +73,6 @@ class SomeProperty implements Description, \Ask\Immutable {
 	 */
 	public function getProperty() {
 		return $this->property;
-	}
-
-	/**
-	 * {@inheritdoc}
-	 *
-	 * @since 0.1
-	 *
-	 * @return integer
-	 */
-	public function getSize() {
-		return $this->description->getSize() + 1;
-	}
-
-	/**
-	 * {@inheritdoc}
-	 *
-	 * @since 0.1
-	 *
-	 * @return integer
-	 */
-	public function getDepth() {
-		return $this->description->getDepth() + 1;
-	}
-
-	/**
-	 * {@inheritdoc}
-	 *
-	 * @since 0.1
-	 *
-	 * @return boolean
-	 */
-	public function isSingleton() {
-		return false;
 	}
 
 }

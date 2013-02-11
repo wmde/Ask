@@ -39,7 +39,7 @@ use InvalidArgumentException;
  * @licence GNU GPL v2+
  * @author Jeroen De Dauw < jeroendedauw@gmail.com >
  */
-class ValueDescription implements Description {
+class ValueDescription implements Description, \Ask\Immutable {
 
 	const COMP_EQUAL = 1;
 	const COMP_LEQ = 2; // Less than or equal

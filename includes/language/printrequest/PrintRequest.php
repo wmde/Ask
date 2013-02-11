@@ -1,13 +1,12 @@
 <?php
 
-namespace Ask\Language\Description;
+namespace Ask\Language\PrintRequest;
 
 /**
- * A description that matches any object.
+ * Base class for print requests.
  *
- * Corresponds to owl:thing, the class of all abstract objects.
- *
- * Based on SMWThingDescription
+ * A print request specifies that a certain value should be displayed
+ * and in what manner this display should happen.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -32,39 +31,54 @@ namespace Ask\Language\Description;
  * @licence GNU GPL v2+
  * @author Jeroen De Dauw < jeroendedauw@gmail.com >
  */
-class AnyValue implements Description, \Ask\Immutable {
+abstract class PrintRequest {
+
+	const TYPE_PROP = 1;
+	const TYPE_THIS = 2;
 
 	/**
-	 * {@inheritdoc}
+	 * @since 0.1
+	 *
+	 * @var string
+	 */
+	protected $label;
+
+	/**
+	 * @since 0.1
+	 *
+	 * @var string[]
+	 */
+	protected $options = array();
+
+	/**
+	 * Returns the label that describes the printout.
 	 *
 	 * @since 0.1
 	 *
-	 * @return integer
+	 * @return string
 	 */
-	public function getSize() {
-		return 0;
+	public function getLabel() {
+		return $this->label;
 	}
 
 	/**
-	 * {@inheritdoc}
+	 * Returns the options for the print request.
 	 *
 	 * @since 0.1
 	 *
-	 * @return integer
+	 * @return string[]
 	 */
-	public function getDepth() {
-		return 0;
+	public function getOptions() {
+		return $this->options;
 	}
 
 	/**
-	 * {@inheritdoc}
+	 * Returns the type of the print request.
 	 *
 	 * @since 0.1
 	 *
-	 * @return boolean
+	 * @return string
 	 */
-	public function isSingleton() {
-		return false;
-	}
+	public abstract function getType();
 
 }

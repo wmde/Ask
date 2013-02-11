@@ -1,13 +1,10 @@
 <?php
 
-namespace Ask\Language\Description;
+namespace Ask;
 
 /**
- * A description that matches any object.
- *
- * Corresponds to owl:thing, the class of all abstract objects.
- *
- * Based on SMWThingDescription
+ * Interface for immutable objects.
+ * The interface does not specify any methods and merely acts as a flag.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -32,39 +29,4 @@ namespace Ask\Language\Description;
  * @licence GNU GPL v2+
  * @author Jeroen De Dauw < jeroendedauw@gmail.com >
  */
-class AnyValue implements Description, \Ask\Immutable {
-
-	/**
-	 * {@inheritdoc}
-	 *
-	 * @since 0.1
-	 *
-	 * @return integer
-	 */
-	public function getSize() {
-		return 0;
-	}
-
-	/**
-	 * {@inheritdoc}
-	 *
-	 * @since 0.1
-	 *
-	 * @return integer
-	 */
-	public function getDepth() {
-		return 0;
-	}
-
-	/**
-	 * {@inheritdoc}
-	 *
-	 * @since 0.1
-	 *
-	 * @return boolean
-	 */
-	public function isSingleton() {
-		return false;
-	}
-
-}
+interface Immutable extends \Immutable {};

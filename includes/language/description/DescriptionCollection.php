@@ -28,7 +28,7 @@ namespace Ask\Language\Description;
  * @licence GNU GPL v2+
  * @author Jeroen De Dauw < jeroendedauw@gmail.com >
  */
-abstract class DescriptionCollection implements Description {
+abstract class DescriptionCollection implements Description, \Ask\Immutable {
 
 	/**
 	 * @since 0.1

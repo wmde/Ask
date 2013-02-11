@@ -1,13 +1,9 @@
 <?php
 
-namespace Ask\Language\Description;
+namespace Ask\Language\PrintRequest;
 
 /**
- * A description that matches any object.
- *
- * Corresponds to owl:thing, the class of all abstract objects.
- *
- * Based on SMWThingDescription
+ * Print request that specifies the subject (as in SPO) should be displayed.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -32,39 +28,30 @@ namespace Ask\Language\Description;
  * @licence GNU GPL v2+
  * @author Jeroen De Dauw < jeroendedauw@gmail.com >
  */
-class AnyValue implements Description, \Ask\Immutable {
+class ThisPrintRequest extends PrintRequest implements \Ask\Immutable {
 
 	/**
-	 * {@inheritdoc}
+	 * Constructor.
 	 *
 	 * @since 0.1
 	 *
-	 * @return integer
+	 * @param string $label
+	 * @param string[] $options
 	 */
-	public function getSize() {
-		return 0;
+	public function __construct( $label, array $options = array() ) {
+		$this->label = $label;
+		$this->options = $options;
 	}
 
 	/**
-	 * {@inheritdoc}
+	 * @see PrintRequest::getType
 	 *
 	 * @since 0.1
 	 *
-	 * @return integer
+	 * @return string
 	 */
-	public function getDepth() {
-		return 0;
-	}
-
-	/**
-	 * {@inheritdoc}
-	 *
-	 * @since 0.1
-	 *
-	 * @return boolean
-	 */
-	public function isSingleton() {
-		return false;
+	public function getType() {
+		return self::TYPE_THIS;
 	}
 
 }
