@@ -15,23 +15,18 @@
  * @author Jeroen De Dauw < jeroendedauw@gmail.com >
  */
 
-namespace Diff {
-
-	if ( defined( 'MEDIAWIKI' ) ) {
-		die( 'Not an entry point for MediaWiki. Use Ask.php' );
-	}
-
-	spl_autoload_register( function ( $className ) {
-		static $classes = false;
-
-		if ( $classes === false ) {
-			$classes = include( __DIR__ . '/' . 'Ask.classes.php' );
-		}
-
-		if ( array_key_exists( $className, $classes ) ) {
-			include_once __DIR__ . '/' . $classes[$className];
-		}
-	} );
-
+if ( defined( 'MEDIAWIKI' ) ) {
+	die( 'Not an entry point for MediaWiki. Use Ask.php' );
 }
 
+spl_autoload_register( function ( $className ) {
+	static $classes = false;
+
+	if ( $classes === false ) {
+		$classes = include( __DIR__ . '/' . 'Ask.classes.php' );
+	}
+
+	if ( array_key_exists( $className, $classes ) ) {
+		include_once __DIR__ . '/' . $classes[$className];
+	}
+} );
