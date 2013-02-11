@@ -59,9 +59,14 @@ $wgHooks['UnitTestsList'][]	= function( array &$files ) {
 	// @codeCoverageIgnoreStart
 	global $wgAutoloadClasses;
 
-	$wgAutoloadClasses['Ask\Tests\AskTestCase'] = __DIR__ . '/tests/phpunit/AskTestCase.php';
+	$wgAutoloadClasses['Ask\Tests\AskTestCase']
+		= __DIR__ . '/tests/phpunit/AskTestCase.php';
 
-	$wgAutoloadClasses['Ask\Tests\Language\Description\DescriptionTest'] = __DIR__ . '/tests/phpunit/language/description/DescriptionTest.php';
+	$wgAutoloadClasses['Ask\Tests\Language\Description\DescriptionTest']
+		= __DIR__ . '/tests/phpunit/language/description/DescriptionTest.php';
+
+	$wgAutoloadClasses['Ask\Tests\Language\PrintRequest\PrintRequestTest']
+		= __DIR__ . '/tests/phpunit/language/printrequest/PrintRequestTest.php';
 
 	$testFiles = array(
 		'language/description/AnyValue',
@@ -69,6 +74,9 @@ $wgHooks['UnitTestsList'][]	= function( array &$files ) {
 		'language/description/SomeProperty',
 		'language/description/Disjunction',
 		'language/description/ValueDescription',
+
+		'language/printrequest/PropertyPrintRequest',
+		'language/printrequest/ThisPrintRequest',
 	);
 
 	foreach ( $testFiles as $file ) {

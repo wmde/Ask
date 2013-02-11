@@ -1,9 +1,10 @@
 <?php
 
-namespace Ask\Language\PrintRequest;
+namespace Ask\Tests\Language\PrintRequest;
+use Ask\Language\PrintRequest\PropertyPrintRequest;
 
 /**
- * Print request that specifies the subject (as in SPO) should be displayed.
+ * Unit tests for the Ask\Language\PrintRequest\PropertyPrintRequest class.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -23,35 +24,26 @@ namespace Ask\Language\PrintRequest;
  * @since 0.1
  *
  * @file
- * @ingroup Ask
+ * @ingroup AskTests
+ *
+ * @group Ask
+ * @group AskPrintRequest
  *
  * @licence GNU GPL v2+
  * @author Jeroen De Dauw < jeroendedauw@gmail.com >
  */
-class ThisPrintRequest extends PrintRequest implements \Ask\Immutable {
+class PropertyPrintRequestTest extends PrintRequestTest {
 
 	/**
-	 * Constructor.
-	 *
-	 * @since 0.1
-	 *
-	 * @param string $label
-	 * @param string[] $options
+	 * {@inheritdoc}
 	 */
-	public function __construct( $label, array $options = array() ) {
-		$this->label = $label;
-		$this->options = $options;
-	}
+	protected function getInstances() {
+		$instances = array();
 
-	/**
-	 * @see PrintRequest::getType
-	 *
-	 * @since 0.1
-	 *
-	 * @return string
-	 */
-	public function getType() {
-		return PrintRequest::TYPE_THIS;
+		$instances[] = new PropertyPrintRequest( 'foo', new \DataValues\PropertyValue( 'p42' ) );
+		$instances[] = new PropertyPrintRequest( 'foo bar', new \DataValues\PropertyValue( '_geo' ), array( 'o' => 'noez' ) );
+
+		return $instances;
 	}
 
 }

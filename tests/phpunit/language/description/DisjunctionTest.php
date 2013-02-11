@@ -27,6 +27,7 @@ use Ask\Language\Description\Disjunction;
  * @ingroup AskTests
  *
  * @group Ask
+ * @group AskDescription
  *
  * @licence GNU GPL v2+
  * @author Jeroen De Dauw < jeroendedauw@gmail.com >

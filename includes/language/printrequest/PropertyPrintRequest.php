@@ -61,7 +61,7 @@ class PropertyPrintRequest extends PrintRequest implements \Ask\Immutable {
 	 * @return string
 	 */
 	public function getType() {
-		return self::TYPE_PROP;
+		return PrintRequest::TYPE_PROP;
 	}
 
 	/**
