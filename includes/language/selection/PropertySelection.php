@@ -1,9 +1,10 @@
 <?php
 
-namespace Ask\Language\SelectionRequest;
+namespace Ask\Language\Selection;
+use DataValues\PropertyValue;
 
 /**
- * Selection request that specifies the subject (as in SPO) should be obtained.
+ * Selection request specifying that the values for a property should be obtained.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -28,17 +29,46 @@ namespace Ask\Language\SelectionRequest;
  * @licence GNU GPL v2+
  * @author Jeroen De Dauw < jeroendedauw@gmail.com >
  */
-class ThisSelectionRequest extends SelectionRequest implements \Ask\Immutable {
+class PropertySelection extends Selection implements \Ask\Immutable {
 
 	/**
-	 * @see SelectionRequest::getType
+	 * @since 0.1
+	 *
+	 * @var PropertyValue
+	 */
+	protected $property;
+
+	/**
+	 * Constructor.
+	 *
+	 * @since 0.1
+	 *
+	 * @param PropertyValue $property
+	 */
+	public function __construct( PropertyValue $property ) {
+		$this->property = $property;
+	}
+
+	/**
+	 * @see Selection::getType
 	 *
 	 * @since 0.1
 	 *
 	 * @return string
 	 */
 	public function getType() {
-		return SelectionRequest::TYPE_THIS;
+		return Selection::TYPE_PROP;
+	}
+
+	/**
+	 * Returns the print request's property.
+	 *
+	 * @since 0.1
+	 *
+	 * @return PropertyValue
+	 */
+	public function getProperty() {
+		return $this->property;
 	}
 
 }

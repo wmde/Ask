@@ -63,8 +63,8 @@ class QueryTest extends \Ask\Tests\AskTestCase {
 		$requestsLists = array();
 
 		$requestsLists[] = array(
-			new \Ask\Language\SelectionRequest\PropertySelectionRequest( new \DataValues\PropertyValue( 'q42' ) ),
-			new \Ask\Language\SelectionRequest\PropertySelectionRequest( new \DataValues\PropertyValue( '_geo' ) ),
+			new \Ask\Language\Selection\PropertySelection( new \DataValues\PropertyValue( 'q42' ) ),
+			new \Ask\Language\Selection\PropertySelection( new \DataValues\PropertyValue( '_geo' ) ),
 		);
 
 		return $this->arrayWrap( $requestsLists );
@@ -81,7 +81,7 @@ class QueryTest extends \Ask\Tests\AskTestCase {
 		$obtainedRequests = $query->getSelectionRequests();
 
 		$this->assertInternalType( 'array', $obtainedRequests );
-		$this->assertContainsOnlyInstancesOf( '\Ask\Language\SelectionRequest\SelectionRequest', $obtainedRequests );
+		$this->assertContainsOnlyInstancesOf( '\Ask\Language\Selection\Selection', $obtainedRequests );
 
 		$this->assertEquals( $selectionRequests, $obtainedRequests );
 	}

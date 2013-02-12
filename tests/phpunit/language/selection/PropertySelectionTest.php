@@ -1,12 +1,10 @@
 <?php
 
-namespace Ask\Language\SelectionRequest;
+namespace Ask\Tests\Language\Selection;
+use Ask\Language\Selection\PropertySelection;
 
 /**
- * Base class for selection requests.
- *
- * A print request specifies that a certain value should be displayed
- * and in what manner this display should happen.
+ * Unit tests for the Ask\Language\Selection\PropertySelection class.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -26,23 +24,31 @@ namespace Ask\Language\SelectionRequest;
  * @since 0.1
  *
  * @file
- * @ingroup Ask
+ * @ingroup AskTests
+ *
+ * @group Ask
+ * @group AskSelection
  *
  * @licence GNU GPL v2+
  * @author Jeroen De Dauw < jeroendedauw@gmail.com >
  */
-abstract class SelectionRequest {
-
-	const TYPE_PROP = 1;
-	const TYPE_THIS = 2;
+class PropertySelectionTest extends SelectionTest {
 
 	/**
-	 * Returns the type of the selection request.
-	 *
-	 * @since 0.1
-	 *
-	 * @return string
+	 * {@inheritdoc}
 	 */
-	public abstract function getType();
+	protected function getInstances() {
+		$instances = array();
+
+		$instances[] = new PropertySelection(
+			new \DataValues\PropertyValue( 'p42' )
+		);
+
+		$instances[] = new PropertySelection(
+			new \DataValues\PropertyValue( '_geo' )
+		);
+
+		return $instances;
+	}
 
 }

@@ -1,10 +1,10 @@
 <?php
 
-namespace Ask\Language\SelectionRequest;
-use DataValues\PropertyValue;
+namespace Ask\Tests\Language\Selection;
+use Ask\Language\Selection\SubjectSelection;
 
 /**
- * Selection request specifying that the values for a property should be obtained.
+ * Unit tests for the Ask\Language\Selection\ThisSelection class.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -24,51 +24,25 @@ use DataValues\PropertyValue;
  * @since 0.1
  *
  * @file
- * @ingroup Ask
+ * @ingroup AskTests
+ *
+ * @group Ask
+ * @group AskSelection
  *
  * @licence GNU GPL v2+
  * @author Jeroen De Dauw < jeroendedauw@gmail.com >
  */
-class PropertySelectionRequest extends SelectionRequest implements \Ask\Immutable {
+class SubjectSelectionTest extends SelectionTest {
 
 	/**
-	 * @since 0.1
-	 *
-	 * @var PropertyValue
+	 * {@inheritdoc}
 	 */
-	protected $property;
+	protected function getInstances() {
+		$instances = array();
 
-	/**
-	 * Constructor.
-	 *
-	 * @since 0.1
-	 *
-	 * @param PropertyValue $property
-	 */
-	public function __construct( PropertyValue $property ) {
-		$this->property = $property;
-	}
+		$instances[] = new SubjectSelection();
 
-	/**
-	 * @see SelectionRequest::getType
-	 *
-	 * @since 0.1
-	 *
-	 * @return string
-	 */
-	public function getType() {
-		return SelectionRequest::TYPE_PROP;
-	}
-
-	/**
-	 * Returns the print request's property.
-	 *
-	 * @since 0.1
-	 *
-	 * @return PropertyValue
-	 */
-	public function getProperty() {
-		return $this->property;
+		return $instances;
 	}
 
 }

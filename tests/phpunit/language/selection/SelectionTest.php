@@ -1,10 +1,10 @@
 <?php
 
-namespace Ask\Tests\Language\SelectionRequest;
-use Ask\Language\SelectionRequest\ThisSelectionRequest;
+namespace Ask\Tests\Language\Selection;
+use Ask\Language\Selection\Selection;
 
 /**
- * Unit tests for the Ask\Language\SelectionRequest\ThisSelectionRequest class.
+ * Base class for unit tests for the Ask\Language\Selection\Selection implementing classes.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -26,23 +26,36 @@ use Ask\Language\SelectionRequest\ThisSelectionRequest;
  * @file
  * @ingroup AskTests
  *
- * @group Ask
- * @group AskSelectionRequest
- *
  * @licence GNU GPL v2+
  * @author Jeroen De Dauw < jeroendedauw@gmail.com >
  */
-class ThisSelectionRequestTest extends SelectionRequestTest {
+abstract class SelectionTest extends \Ask\Tests\AskTestCase {
 
 	/**
-	 * {@inheritdoc}
+	 * @since 0.1
+	 *
+	 * @return Selection[]
 	 */
-	protected function getInstances() {
-		$instances = array();
+	protected abstract function getInstances();
 
-		$instances[] = new ThisSelectionRequest();
+	/**
+	 * @since 0.1
+	 *
+	 * @return Selection[][]
+	 */
+	public function instanceProvider() {
+		return $this->arrayWrap( $this->getInstances() );
+	}
 
-		return $instances;
+	/**
+	 * @dataProvider instanceProvider
+	 *
+	 * @since 0.1
+	 *
+	 * @param Selection $request
+	 */
+	public function testReturnTypeOfGetType( Selection $request ) {
+		$this->assertInternalType( 'integer', $request->getType() );
 	}
 
 }

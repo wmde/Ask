@@ -71,6 +71,8 @@ class ValueDescription implements Description, \Ask\Immutable {
 	 *
 	 * @param DataValue $value
 	 * @param int $comparator
+	 *
+	 * @throws InvalidArgumentException
 	 */
 	public function __construct( DataValue $value, $comparator = self::COMP_EQUAL ) {
 		if ( $comparator < self::COMP_EQUAL || $comparator > self::COMP_GRTR ) {

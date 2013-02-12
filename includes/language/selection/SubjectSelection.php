@@ -1,10 +1,9 @@
 <?php
 
-namespace Ask\Tests\Language\SelectionRequest;
-use Ask\Language\SelectionRequest\PropertySelectionRequest;
+namespace Ask\Language\Selection;
 
 /**
- * Unit tests for the Ask\Language\SelectionRequest\PropertySelectionRequest class.
+ * Selection request that specifies the subject (as in SPO) should be obtained.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -24,31 +23,22 @@ use Ask\Language\SelectionRequest\PropertySelectionRequest;
  * @since 0.1
  *
  * @file
- * @ingroup AskTests
- *
- * @group Ask
- * @group AskSelectionRequest
+ * @ingroup Ask
  *
  * @licence GNU GPL v2+
  * @author Jeroen De Dauw < jeroendedauw@gmail.com >
  */
-class PropertySelectionRequestTest extends SelectionRequestTest {
+class SubjectSelection extends Selection implements \Ask\Immutable {
 
 	/**
-	 * {@inheritdoc}
+	 * @see Selection::getType
+	 *
+	 * @since 0.1
+	 *
+	 * @return string
 	 */
-	protected function getInstances() {
-		$instances = array();
-
-		$instances[] = new PropertySelectionRequest(
-			new \DataValues\PropertyValue( 'p42' )
-		);
-
-		$instances[] = new PropertySelectionRequest(
-			new \DataValues\PropertyValue( '_geo' )
-		);
-
-		return $instances;
+	public function getType() {
+		return Selection::TYPE_SUBJECT;
 	}
 
 }

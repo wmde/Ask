@@ -28,9 +28,9 @@ return array(
 	'Ask\Language\Option\SortExpression' => 'includes/language/option/SortExpression.php',
 	'Ask\Language\Option\SortOptions' => 'includes/language/option/SortOptions.php',
 
-	'Ask\Language\SelectionRequest\SelectionRequest' => 'includes/language/selectionrequest/SelectionRequest.php',
-	'Ask\Language\SelectionRequest\PropertySelectionRequest' => 'includes/language/selectionrequest/PropertySelectionRequest.php',
-	'Ask\Language\SelectionRequest\ThisSelectionRequest' => 'includes/language/selectionrequest/ThisSelectionRequest.php',
+	'Ask\Language\Selection\Selection' => 'includes/language/selection/Selection.php',
+	'Ask\Language\Selection\PropertySelection' => 'includes/language/selection/PropertySelection.php',
+	'Ask\Language\Selection\SubjectSelection' => 'includes/language/selection/SubjectSelection.php',
 
 	'Ask\Language\Query' => 'includes/language/Query.php',
 
