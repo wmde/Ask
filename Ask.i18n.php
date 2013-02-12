@@ -37,7 +37,29 @@ $messages['en'] = array(
 );
 
 /** Message documentation (Message documentation)
+ * @author Shirayuki
  */
 $messages['qqq'] = array(
-	'ask-desc' => 'Extension description',
+	'ask-desc' => '{{desc|name=Ask|url=http://www.mediawiki.org/wiki/Extension:Ask}}',
+);
+
+/** German (Deutsch)
+ * @author Metalhead64
+ */
+$messages['de'] = array(
+	'ask-desc' => 'Ergänzt eine Bibliothek, die eine PHP-Implementierung der Ask-Abfragesprache enthält',
+);
+
+/** Japanese (日本語)
+ * @author Shirayuki
+ */
+$messages['ja'] = array(
+	'ask-desc' => 'クエリ言語 Ask の、PHP での実装を含むライブラリ',
+);
+
+/** tarandíne (tarandíne)
+ * @author Joetaras
+ */
+$messages['roa-tara'] = array(
+	'ask-desc' => "Libbrerie ca tène 'n'imblemendazione PHP d'a lènghe pe le 'nderrogaziune Ask",
 );
