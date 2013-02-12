@@ -1,12 +1,10 @@
 <?php
 
-namespace Ask\Language\PrintRequest;
+namespace Ask\Tests\Language\SelectionRequest;
+use Ask\Language\SelectionRequest\SelectionRequest;
 
 /**
- * Base class for print requests.
- *
- * A print request specifies that a certain value should be displayed
- * and in what manner this display should happen.
+ * Base class for unit tests for the Ask\Language\SelectionRequest\SelectionRequest implementing classes.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -26,62 +24,38 @@ namespace Ask\Language\PrintRequest;
  * @since 0.1
  *
  * @file
- * @ingroup Ask
+ * @ingroup AskTests
  *
  * @licence GNU GPL v2+
  * @author Jeroen De Dauw < jeroendedauw@gmail.com >
  */
-abstract class PrintRequest {
-
-	const TYPE_PROP = 1;
-	const TYPE_THIS = 2;
+abstract class SelectionRequestTest extends \Ask\Tests\AskTestCase {
 
 	/**
 	 * @since 0.1
 	 *
-	 * @var string[]
+	 * @return SelectionRequest[]
 	 */
-	protected $labels;
+	protected abstract function getInstances();
 
 	/**
 	 * @since 0.1
 	 *
-	 * @var string[]
+	 * @return SelectionRequest[][]
 	 */
-	protected $options = array();
-
-	/**
-	 * Returns the labels that describes the printout.
-	 * The format is an associative array in which the keys
-	 * are language codes and the values are the labels for
-	 * the language represented by their corresponding key
-	 *
-	 * @since 0.1
-	 *
-	 * @return string[]
-	 */
-	public function getLabels() {
-		return $this->labels;
+	public function instanceProvider() {
+		return $this->arrayWrap( $this->getInstances() );
 	}
 
 	/**
-	 * Returns the options for the print request.
+	 * @dataProvider instanceProvider
 	 *
 	 * @since 0.1
 	 *
-	 * @return string[]
+	 * @param SelectionRequest $request
 	 */
-	public function getOptions() {
-		return $this->options;
+	public function testReturnTypeOfGetType( SelectionRequest $request ) {
+		$this->assertInternalType( 'integer', $request->getType() );
 	}
-
-	/**
-	 * Returns the type of the print request.
-	 *
-	 * @since 0.1
-	 *
-	 * @return string
-	 */
-	public abstract function getType();
 
 }

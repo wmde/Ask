@@ -1,10 +1,10 @@
 <?php
 
-namespace Ask\Language\PrintRequest;
+namespace Ask\Language\SelectionRequest;
 use DataValues\PropertyValue;
 
 /**
- * Print request that specifies values for a property should be displayed.
+ * Selection request specifying that the values for a property should be obtained.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -29,7 +29,7 @@ use DataValues\PropertyValue;
  * @licence GNU GPL v2+
  * @author Jeroen De Dauw < jeroendedauw@gmail.com >
  */
-class PropertyPrintRequest extends PrintRequest implements \Ask\Immutable {
+class PropertySelectionRequest extends SelectionRequest implements \Ask\Immutable {
 
 	/**
 	 * @since 0.1
@@ -43,25 +43,21 @@ class PropertyPrintRequest extends PrintRequest implements \Ask\Immutable {
 	 *
 	 * @since 0.1
 	 *
-	 * @param string[] $labels
 	 * @param PropertyValue $property
-	 * @param string[] $options
 	 */
-	public function __construct( $labels, PropertyValue $property, array $options = array() ) {
-		$this->labels = $labels;
+	public function __construct( PropertyValue $property ) {
 		$this->property = $property;
-		$this->options = $options;
 	}
 
 	/**
-	 * @see PrintRequest::getType
+	 * @see SelectionRequest::getType
 	 *
 	 * @since 0.1
 	 *
 	 * @return string
 	 */
 	public function getType() {
-		return PrintRequest::TYPE_PROP;
+		return SelectionRequest::TYPE_PROP;
 	}
 
 	/**

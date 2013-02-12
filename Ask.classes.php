@@ -23,8 +23,8 @@ return array(
 	'Ask\Language\Description\SomeProperty' => 'includes/language/description/SomeProperty.php',
 	'Ask\Language\Description\ValueDescription' => 'includes/language/description/ValueDescription.php',
 
-	'Ask\Language\PrintRequest\PrintRequest' => 'includes/language/printrequest/PrintRequest.php',
-	'Ask\Language\PrintRequest\PropertyPrintRequest' => 'includes/language/printrequest/PropertyPrintRequest.php',
-	'Ask\Language\PrintRequest\ThisPrintRequest' => 'includes/language/printrequest/ThisPrintRequest.php',
+	'Ask\Language\SelectionRequest\SelectionRequest' => 'includes/language/selectionrequest/SelectionRequest.php',
+	'Ask\Language\SelectionRequest\PropertySelectionRequest' => 'includes/language/selectionrequest/PropertySelectionRequest.php',
+	'Ask\Language\SelectionRequest\ThisSelectionRequest' => 'includes/language/selectionrequest/ThisSelectionRequest.php',
 
 );

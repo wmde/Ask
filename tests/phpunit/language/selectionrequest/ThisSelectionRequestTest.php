@@ -1,10 +1,10 @@
 <?php
 
-namespace Ask\Tests\Language\PrintRequest;
-use Ask\Language\PrintRequest\ThisPrintRequest;
+namespace Ask\Tests\Language\SelectionRequest;
+use Ask\Language\SelectionRequest\ThisSelectionRequest;
 
 /**
- * Unit tests for the Ask\Language\PrintRequest\ThisPrintRequest class.
+ * Unit tests for the Ask\Language\SelectionRequest\ThisSelectionRequest class.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -27,12 +27,12 @@ use Ask\Language\PrintRequest\ThisPrintRequest;
  * @ingroup AskTests
  *
  * @group Ask
- * @group AskPrintRequest
+ * @group AskSelectionRequest
  *
  * @licence GNU GPL v2+
  * @author Jeroen De Dauw < jeroendedauw@gmail.com >
  */
-class ThisPrintRequestTest extends PrintRequestTest {
+class ThisSelectionRequestTest extends SelectionRequestTest {
 
 	/**
 	 * {@inheritdoc}
@@ -40,8 +40,7 @@ class ThisPrintRequestTest extends PrintRequestTest {
 	protected function getInstances() {
 		$instances = array();
 
-		$instances[] = new ThisPrintRequest( array( 'en' => 'foo' ) );
-		$instances[] = new ThisPrintRequest( array( 'en' => 'foo bar', 'de' => 'baz bah' ), array( 'o' => 'noez' ) );
+		$instances[] = new ThisSelectionRequest();
 
 		return $instances;
 	}

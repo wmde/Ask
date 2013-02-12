@@ -1,10 +1,12 @@
 <?php
 
-namespace Ask\Tests\Language\PrintRequest;
-use Ask\Language\PrintRequest\PropertyPrintRequest;
+namespace Ask\Language\SelectionRequest;
 
 /**
- * Unit tests for the Ask\Language\PrintRequest\PropertyPrintRequest class.
+ * Base class for selection requests.
+ *
+ * A print request specifies that a certain value should be displayed
+ * and in what manner this display should happen.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -24,34 +26,23 @@ use Ask\Language\PrintRequest\PropertyPrintRequest;
  * @since 0.1
  *
  * @file
- * @ingroup AskTests
- *
- * @group Ask
- * @group AskPrintRequest
+ * @ingroup Ask
  *
  * @licence GNU GPL v2+
  * @author Jeroen De Dauw < jeroendedauw@gmail.com >
  */
-class PropertyPrintRequestTest extends PrintRequestTest {
+abstract class SelectionRequest {
+
+	const TYPE_PROP = 1;
+	const TYPE_THIS = 2;
 
 	/**
-	 * {@inheritdoc}
+	 * Returns the type of the selection request.
+	 *
+	 * @since 0.1
+	 *
+	 * @return string
 	 */
-	protected function getInstances() {
-		$instances = array();
-
-		$instances[] = new PropertyPrintRequest(
-			array( 'en' => 'foo' ),
-			new \DataValues\PropertyValue( 'p42' )
-		);
-
-		$instances[] = new PropertyPrintRequest(
-			array( 'en' => 'foo bar', 'de' => 'baz bah' ),
-			new \DataValues\PropertyValue( '_geo' ),
-			array( 'o' => 'noez' )
-		);
-
-		return $instances;
-	}
+	public abstract function getType();
 
 }

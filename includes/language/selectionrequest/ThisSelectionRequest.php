@@ -1,9 +1,9 @@
 <?php
 
-namespace Ask\Language\PrintRequest;
+namespace Ask\Language\SelectionRequest;
 
 /**
- * Print request that specifies the subject (as in SPO) should be displayed.
+ * Selection request that specifies the subject (as in SPO) should be obtained.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -28,30 +28,28 @@ namespace Ask\Language\PrintRequest;
  * @licence GNU GPL v2+
  * @author Jeroen De Dauw < jeroendedauw@gmail.com >
  */
-class ThisPrintRequest extends PrintRequest implements \Ask\Immutable {
+class ThisSelectionRequest extends SelectionRequest implements \Ask\Immutable {
 
 	/**
 	 * Constructor.
 	 *
 	 * @since 0.1
 	 *
-	 * @param string[] $labels
 	 * @param string[] $options
 	 */
-	public function __construct( $labels, array $options = array() ) {
-		$this->labels = $labels;
+	public function __construct( array $options = array() ) {
 		$this->options = $options;
 	}
 
 	/**
-	 * @see PrintRequest::getType
+	 * @see SelectionRequest::getType
 	 *
 	 * @since 0.1
 	 *
 	 * @return string
 	 */
 	public function getType() {
-		return PrintRequest::TYPE_THIS;
+		return SelectionRequest::TYPE_THIS;
 	}
 
 }
