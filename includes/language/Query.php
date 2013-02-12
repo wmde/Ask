@@ -35,32 +35,10 @@ class Query implements \Ask\Immutable {
 	 *
 	 *
 	 * @param Description $description
-	 * @param array $printRequests
 	 */
-	public function __construct( Description $description, array $printRequests = array() ) {
+	public function __construct( Description $description ) {
 
 	}
 
-	/**
-	 * {@inheritdoc}
-	 *
-	 * @since 0.1
-	 *
-	 * @return integer
-	 */
-	public function getDepth() {
-		return 0;
-	}
-
-	/**
-	 * {@inheritdoc}
-	 *
-	 * @since 0.1
-	 *
-	 * @return boolean
-	 */
-	public function isSingleton() {
-		return false;
-	}
 
 }
