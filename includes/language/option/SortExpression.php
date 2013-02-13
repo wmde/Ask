@@ -30,7 +30,11 @@ namespace Ask\Language\Option;
  */
 abstract class SortExpression {
 
+	const PROPERTY_VALUE = 'PropertyValue';
+
 	/**
+	 * Returns the type of the sort expression.
+	 *
 	 * @since 0.1
 	 *
 	 * @return string

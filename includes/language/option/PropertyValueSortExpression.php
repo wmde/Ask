@@ -31,18 +31,31 @@ use DataValues\PropertyValue;
  */
 class PropertyValueSortExpression extends SortExpression {
 
-	const TYPE = 'PropertyValue';
-
 	/**
+	 * The property value to sort by.
+	 *
+	 * @since 0.1
+	 *
 	 * @var PropertyValue
 	 */
 	protected $property;
 
+	/**
+	 * Constructor.
+	 *
+	 * @since 0.1
+	 *
+	 * @param PropertyValue $property
+	 */
 	public function __construct( PropertyValue $property ) {
 		$this->property = $property;
 	}
 
 	/**
+	 * Returns the property value to sort by.
+	 *
+	 * @since 0.1
+	 *
 	 * @return PropertyValue
 	 */
 	public function getProperty() {
@@ -57,7 +70,7 @@ class PropertyValueSortExpression extends SortExpression {
 	 * @return string
 	 */
 	public function getType() {
-		return self::TYPE;
+		return SortExpression::PROPERTY_VALUE;
 	}
 
 }

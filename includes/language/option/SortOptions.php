@@ -31,11 +31,19 @@ namespace Ask\Language\Option;
 class SortOptions {
 
 	/**
+	 * The sort expressions that make up these sort options.
+	 *
+	 * @since 0.1
+	 *
 	 * @var SortExpression[]
 	 */
 	protected $expressions;
 
 	/**
+	 * Constructor.
+	 *
+	 * @since 0.1
+	 *
 	 * @param SortExpression[] $expressions
 	 */
 	public function __construct( array $expressions ) {
@@ -43,6 +51,10 @@ class SortOptions {
 	}
 
 	/**
+	 * Returns the sort expressions that make up these sort options.
+	 *
+	 * @since 0.1
+	 *
 	 * @return SortExpression[]
 	 */
 	public function getExpressions() {

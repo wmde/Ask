@@ -31,6 +31,8 @@ namespace Ask\Language\Option;
 class QueryOptions implements \Ask\Immutable {
 
 	/**
+	 * The query limit. At most this many results will be selected.
+	 *
 	 * @since 0.1
 	 *
 	 * @var int
@@ -38,6 +40,8 @@ class QueryOptions implements \Ask\Immutable {
 	protected $limit;
 
 	/**
+	 * The query offset. The first this many matching results will be skipped.
+	 *
 	 * @since 0.1
 	 *
 	 * @var int
@@ -45,6 +49,8 @@ class QueryOptions implements \Ask\Immutable {
 	protected $offset;
 
 	/**
+	 * The query sort.
+	 *
 	 * @since 0.1
 	 *
 	 * @var SortOptions
@@ -67,6 +73,10 @@ class QueryOptions implements \Ask\Immutable {
 	}
 
 	/**
+	 * Returns the query limit.
+	 *
+	 * @since 0.1
+	 *
 	 * @return int
 	 */
 	public function getLimit() {
@@ -74,6 +84,10 @@ class QueryOptions implements \Ask\Immutable {
 	}
 
 	/**
+	 * Returns the query offset.
+	 *
+	 * @since 0.1
+	 *
 	 * @return int
 	 */
 	public function getOffset() {
@@ -81,6 +95,10 @@ class QueryOptions implements \Ask\Immutable {
 	}
 
 	/**
+	 * Returns the query sort options.
+	 *
+	 * @since 0.1
+	 *
 	 * @return SortOptions
 	 */
 	public function getSort() {

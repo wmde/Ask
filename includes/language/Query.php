@@ -1,6 +1,7 @@
 <?php
 
 namespace Ask\Language;
+
 use Ask\Language\Description\Description;
 use Ask\Language\Selection\Selection;
 use Ask\Language\Option\QueryOptions;
@@ -74,6 +75,8 @@ class Query implements \Ask\Immutable {
 	}
 
 	/**
+	 * Returns the query description.
+	 *
 	 * @since 0.1
 	 *
 	 * @return Description
@@ -83,6 +86,8 @@ class Query implements \Ask\Immutable {
 	}
 
 	/**
+	 * Returns the query's selection requests.
+	 *
 	 * @since 0.1
 	 *
 	 * @return Selection[]
@@ -92,6 +97,8 @@ class Query implements \Ask\Immutable {
 	}
 
 	/**
+	 * Returns the query's options.
+	 *
 	 * @since 0.1
 	 *
 	 * @return QueryOptions
