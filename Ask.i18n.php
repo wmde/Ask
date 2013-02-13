@@ -50,11 +50,46 @@ $messages['de'] = array(
 	'ask-desc' => 'Ergänzt eine Bibliothek, die eine PHP-Implementierung der Ask-Abfragesprache enthält',
 );
 
+/** Spanish (español)
+ * @author Fitoschido
+ */
+$messages['es'] = array(
+	'ask-desc' => 'Biblioteca que contiene una implementación en PHP del lenguaje de consulta de Ask',
+);
+
+/** French (français)
+ * @author Gomoko
+ */
+$messages['fr'] = array(
+	'ask-desc' => 'Bibliothèque contenant une implémentation PHP du langage de requêtage Ask',
+);
+
+/** Italian (italiano)
+ * @author Beta16
+ */
+$messages['it'] = array(
+	'ask-desc' => "Libreria contenente un'implementazione PHP del linguaggio di query Ask",
+);
+
 /** Japanese (日本語)
  * @author Shirayuki
  */
 $messages['ja'] = array(
 	'ask-desc' => 'クエリ言語 Ask の、PHP での実装を含むライブラリ',
+);
+
+/** Korean (한국어)
+ * @author 아라
+ */
+$messages['ko'] = array(
+	'ask-desc' => 'Ask 쿼리 언어의 PHP 구현을 포함하는 라이브러리',
+);
+
+/** Macedonian (македонски)
+ * @author Bjankuloski06
+ */
+$messages['mk'] = array(
+	'ask-desc' => 'Библиотека што содржи PHP-примена на јазикот за барање Ask',
 );
 
 /** tarandíne (tarandíne)
