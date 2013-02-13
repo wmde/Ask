@@ -32,6 +32,17 @@ abstract class SortExpression {
 
 	const PROPERTY_VALUE = 'PropertyValue';
 
+	const ASCENDING = 'asc';
+	const DESCENDING = 'desc';
+
+	/**
+	 * The sort direction.
+	 * Either SortExpression::ASCENDING or SortExpression::DESCENDING
+	 *
+	 * @var string|null
+	 */
+	protected $direction = null;
+
 	/**
 	 * Returns the type of the sort expression.
 	 *
@@ -40,5 +51,18 @@ abstract class SortExpression {
 	 * @return string
 	 */
 	public abstract function getType();
+
+	/**
+	 * Returns the sort direction.
+	 * Either SortExpression::ASCENDING or SortExpression::DESCENDING
+	 *
+	 * @since 0.1
+	 *
+	 * @return string
+	 */
+	public function getDirection() {
+		assert( $this->direction !== null );
+		return $this->direction;
+	}
 
 }

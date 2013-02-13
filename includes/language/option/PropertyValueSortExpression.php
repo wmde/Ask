@@ -1,7 +1,9 @@
 <?php
 
 namespace Ask\Language\Option;
+
 use DataValues\PropertyValue;
+use InvalidArgumentException;
 
 /**
  * A sort expression consisting out of a single PropertyValue.
@@ -46,9 +48,18 @@ class PropertyValueSortExpression extends SortExpression {
 	 * @since 0.1
 	 *
 	 * @param PropertyValue $property
+	 * @param string $direction
+	 *
+	 * @throws InvalidArgumentException
 	 */
-	public function __construct( PropertyValue $property ) {
+	public function __construct( PropertyValue $property, $direction ) {
 		$this->property = $property;
+
+		if ( !is_string( $this->direction ) ) {
+			throw new InvalidArgumentException( '$direction needs to be one of the direction constants' );
+		}
+
+		$this->direction = $direction;
 	}
 
 	/**
