@@ -35,20 +35,5 @@ namespace Ask\Language\Description;
  */
 class Disjunction extends DescriptionCollection {
 
-	/**
-	 * {@inheritdoc}
-	 *
-	 * @since 0.1
-	 *
-	 * @return boolean
-	 */
-	public function isSingleton() {
-		// NOTE: this neglects the unimportant case where several parts of the disjunction describe the same object.
-		if ( count( $this->descriptions ) == 1 ) {
-			return $this->descriptions[0]->isSingleton();
-		}
-
-		return false;
-	}
 
 }

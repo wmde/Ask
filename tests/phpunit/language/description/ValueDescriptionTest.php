@@ -100,18 +100,4 @@ class ValueDescriptionTest extends DescriptionTest {
 		$this->assertEquals( $comparator, $newInstance->getComparator(), 'Comparator is returned as it was passed to the constructor' );
 	}
 
-	/**
-	 * @dataProvider instanceProvider
-	 *
-	 * @since 0.1
-	 *
-	 * @param ValueDescription $description
-	 */
-	public function testIsSingleton( ValueDescription $description ) {
-		$this->assertEquals(
-			$description->getComparator() === ValueDescription::COMP_EQUAL,
-			$description->isSingleton()
-		);
-	}
-
 }

@@ -56,15 +56,4 @@ class AnyValue implements Description, \Ask\Immutable {
 		return 0;
 	}
 
-	/**
-	 * {@inheritdoc}
-	 *
-	 * @since 0.1
-	 *
-	 * @return boolean
-	 */
-	public function isSingleton() {
-		return false;
-	}
-
 }

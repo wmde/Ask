@@ -77,15 +77,4 @@ abstract class DescriptionTest extends \Ask\Tests\AskTestCase {
 		$this->assertEquals( $depth, $description->getDepth() );
 	}
 
-	/**
-	 * @dataProvider instanceProvider
-	 *
-	 * @since 0.1
-	 *
-	 * @param Description $description
-	 */
-	public function testReturnTypeOfIsSingleton( Description $description ) {
-		$this->assertInternalType( 'boolean', $description->isSingleton() );
-	}
-
 }

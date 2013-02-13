@@ -45,15 +45,4 @@ class AnyValueTest extends DescriptionTest {
 		return $instances;
 	}
 
-	/**
-	 * @dataProvider instanceProvider
-	 *
-	 * @since 0.1
-	 *
-	 * @param AnyValue $description
-	 */
-	public function testIsSingleton( AnyValue $description ) {
-		$this->assertEquals( false, $description->isSingleton() );
-	}
-
 }
