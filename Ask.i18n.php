@@ -50,6 +50,13 @@ $messages['de'] = array(
 	'ask-desc' => 'Ergänzt eine Bibliothek, die eine PHP-Implementierung der Ask-Abfragesprache enthält',
 );
 
+/** Lower Sorbian (dolnoserbski)
+ * @author Michawiki
+ */
+$messages['dsb'] = array(
+	'ask-desc' => 'Biblioteka, kótaraž wopśimujo PHP-implementaciju napšašowańskeje rěcy Ask',
+);
+
 /** Spanish (español)
  * @author Fitoschido
  */
@@ -62,6 +69,20 @@ $messages['es'] = array(
  */
 $messages['fr'] = array(
 	'ask-desc' => 'Bibliothèque contenant une implémentation PHP du langage de requêtage Ask',
+);
+
+/** Galician (galego)
+ * @author Toliño
+ */
+$messages['gl'] = array(
+	'ask-desc' => 'Biblioteca que contén unha integración PHP da linguaxe de consulta Ask',
+);
+
+/** Upper Sorbian (hornjoserbsce)
+ * @author Michawiki
+ */
+$messages['hsb'] = array(
+	'ask-desc' => 'Biblioteka, kotraž PHP-implementaciju naprašowanskeje rěče Ask wobsahuje',
 );
 
 /** Italian (italiano)
@@ -97,4 +118,11 @@ $messages['mk'] = array(
  */
 $messages['roa-tara'] = array(
 	'ask-desc' => "Libbrerie ca tène 'n'imblemendazione PHP d'a lènghe pe le 'nderrogaziune Ask",
+);
+
+/** Ukrainian (українська)
+ * @author Ата
+ */
+$messages['uk'] = array(
+	'ask-desc' => 'Бібліотека, що містить PHP-реалізацію мови запитів Ask',
 );
