@@ -2,6 +2,7 @@
 
 namespace Ask\Tests\Language;
 use Ask\Language\Query;
+use Ask\Language\Option\QueryOptions;
 
 /**
  * Unit tests for the Ask\Language\Query class.
@@ -49,7 +50,7 @@ class QueryTest extends \Ask\Tests\AskTestCase {
 	 * @param \Ask\Language\Description\Description $description
 	 */
 	public function testGetDescriptions( \Ask\Language\Description\Description $description ) {
-		$query = new Query( $description, array() );
+		$query = new Query( $description, array(), new QueryOptions( 100, 0 ) );
 
 		$obtainedDescription = $query->getDescription();
 
@@ -75,7 +76,7 @@ class QueryTest extends \Ask\Tests\AskTestCase {
 	 * @param array $selectionRequests
 	 */
 	public function testGetSelectionRequests( array $selectionRequests ) {
-		$query = new Query( new \Ask\Language\Description\AnyValue(), $selectionRequests );
+		$query = new Query( new \Ask\Language\Description\AnyValue(), $selectionRequests, new QueryOptions( 100, 0 ) );
 
 		$obtainedRequests = $query->getSelectionRequests();
 

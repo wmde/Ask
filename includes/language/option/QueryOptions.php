@@ -1,9 +1,9 @@
 <?php
 
-namespace Ask\Language\SelectionRequest;
+namespace Ask\Language\Option;
 
 /**
- * Selection request that specifies the subject (as in SPO) should be obtained.
+ * Represents the options for a query.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -28,17 +28,63 @@ namespace Ask\Language\SelectionRequest;
  * @licence GNU GPL v2+
  * @author Jeroen De Dauw < jeroendedauw@gmail.com >
  */
-class ThisSelectionRequest extends SelectionRequest implements \Ask\Immutable {
+class QueryOptions implements \Ask\Immutable {
 
 	/**
-	 * @see SelectionRequest::getType
+	 * @since 0.1
+	 *
+	 * @var int
+	 */
+	protected $limit;
+
+	/**
+	 * @since 0.1
+	 *
+	 * @var int
+	 */
+	protected $offset;
+
+	/**
+	 * @since 0.1
+	 *
+	 * @var SortOptions
+	 */
+	protected $sort;
+
+	/**
+	 * Constructor.
 	 *
 	 * @since 0.1
 	 *
-	 * @return string
+	 * @param int $limit
+	 * @param int $offset
+	 * @param SortOptions|null $sort
 	 */
-	public function getType() {
-		return SelectionRequest::TYPE_THIS;
+	public function __construct( $limit, $offset, SortOptions $sort = null ) {
+		$this->limit = $limit;
+		$this->offset = $offset;
+		$this->sort = $sort === null ? new SortOptions( array() ) : $sort;
+	}
+
+	/**
+	 * @return int
+	 */
+	public function getLimit() {
+		return $this->limit;
+	}
+
+	/**
+	 * @return int
+	 */
+	public function getOffset() {
+		return $this->offset;
+	}
+
+	/**
+	 * @return SortOptions
+	 */
+	public function getSort() {
+		return $this->sort;
 	}
 
 }

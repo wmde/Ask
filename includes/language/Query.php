@@ -3,6 +3,7 @@
 namespace Ask\Language;
 use Ask\Language\Description\Description;
 use Ask\Language\SelectionRequest\SelectionRequest;
+use Ask\Language\Option\QueryOptions;
 
 /**
  * Object representing a query definition.
@@ -32,6 +33,10 @@ use Ask\Language\SelectionRequest\SelectionRequest;
  */
 class Query implements \Ask\Immutable {
 
+	const OPT_LIMIT = 'limit';
+	const OPT_OFFSET = 'offset';
+	const OPT_SORT = 'sort';
+
 	/**
 	 * @since 0.1
 	 *
@@ -47,16 +52,25 @@ class Query implements \Ask\Immutable {
 	protected $selectionRequests;
 
 	/**
+	 * @since 0.1
+	 *
+	 * @var QueryOptions
+	 */
+	protected $options;
+
+	/**
 	 * Constructor.
 	 *
 	 * @since 0.1
 	 *
 	 * @param Description $description
 	 * @param SelectionRequest[] $selectionRequests
+	 * @param QueryOptions $options
 	 */
-	public function __construct( Description $description, array $selectionRequests ) {
+	public function __construct( Description $description, array $selectionRequests, QueryOptions $options ) {
 		$this->description = $description;
 		$this->selectionRequests = $selectionRequests;
+		$this->options = $options;
 	}
 
 	/**
@@ -77,6 +91,13 @@ class Query implements \Ask\Immutable {
 		return $this->selectionRequests;
 	}
 
-	// TODO: limit, etc
+	/**
+	 * @since 0.1
+	 *
+	 * @return QueryOptions
+	 */
+	public function getOptions() {
+		return $this->options;
+	}
 
 }

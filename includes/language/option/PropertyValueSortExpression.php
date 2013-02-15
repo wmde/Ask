@@ -1,9 +1,10 @@
 <?php
 
-namespace Ask\Language\SelectionRequest;
+namespace Ask\Language\Option;
+use DataValues\PropertyValue;
 
 /**
- * Selection request that specifies the subject (as in SPO) should be obtained.
+ * A sort expression consisting out of a single PropertyValue.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -28,17 +29,35 @@ namespace Ask\Language\SelectionRequest;
  * @licence GNU GPL v2+
  * @author Jeroen De Dauw < jeroendedauw@gmail.com >
  */
-class ThisSelectionRequest extends SelectionRequest implements \Ask\Immutable {
+class PropertyValueSortExpression extends SortExpression {
+
+	const TYPE = 'PropertyValue';
 
 	/**
-	 * @see SelectionRequest::getType
+	 * @var PropertyValue
+	 */
+	protected $property;
+
+	public function __construct( PropertyValue $property ) {
+		$this->property = $property;
+	}
+
+	/**
+	 * @return PropertyValue
+	 */
+	public function getProperty() {
+		return $this->property;
+	}
+
+	/**
+	 * {@inheritdoc}
 	 *
 	 * @since 0.1
 	 *
 	 * @return string
 	 */
 	public function getType() {
-		return SelectionRequest::TYPE_THIS;
+		return self::TYPE;
 	}
 
 }

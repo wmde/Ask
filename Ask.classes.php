@@ -23,6 +23,11 @@ return array(
 	'Ask\Language\Description\SomeProperty' => 'includes/language/description/SomeProperty.php',
 	'Ask\Language\Description\ValueDescription' => 'includes/language/description/ValueDescription.php',
 
+	'Ask\Language\Option\PropertyValueSortExpression' => 'includes/language/option/PropertyValueSortExpression.php',
+	'Ask\Language\Option\QueryOptions' => 'includes/language/option/QueryOptions.php',
+	'Ask\Language\Option\SortExpression' => 'includes/language/option/SortExpression.php',
+	'Ask\Language\Option\SortOptions' => 'includes/language/option/SortOptions.php',
+
 	'Ask\Language\SelectionRequest\SelectionRequest' => 'includes/language/selectionrequest/SelectionRequest.php',
 	'Ask\Language\SelectionRequest\PropertySelectionRequest' => 'includes/language/selectionrequest/PropertySelectionRequest.php',
 	'Ask\Language\SelectionRequest\ThisSelectionRequest' => 'includes/language/selectionrequest/ThisSelectionRequest.php',

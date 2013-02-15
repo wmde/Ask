@@ -1,9 +1,9 @@
 <?php
 
-namespace Ask\Language\SelectionRequest;
+namespace Ask\Language\Option;
 
 /**
- * Selection request that specifies the subject (as in SPO) should be obtained.
+ * A sort expression.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -28,17 +28,13 @@ namespace Ask\Language\SelectionRequest;
  * @licence GNU GPL v2+
  * @author Jeroen De Dauw < jeroendedauw@gmail.com >
  */
-class ThisSelectionRequest extends SelectionRequest implements \Ask\Immutable {
+abstract class SortExpression {
 
 	/**
-	 * @see SelectionRequest::getType
-	 *
 	 * @since 0.1
 	 *
 	 * @return string
 	 */
-	public function getType() {
-		return SelectionRequest::TYPE_THIS;
-	}
+	public abstract function getType();
 
 }
