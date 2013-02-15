@@ -45,6 +45,17 @@ foreach ( include( __DIR__ . '/Ask.classes.php' ) as $class => $file ) {
 	}
 }
 
+if ( defined( 'MW_PHPUNIT_TEST' ) ) {
+	$wgAutoloadClasses['Ask\Tests\AskTestCase']
+		= __DIR__ . '/tests/phpunit/AskTestCase.php';
+
+	$wgAutoloadClasses['Ask\Tests\Language\Description\DescriptionTest']
+		= __DIR__ . '/tests/phpunit/language/description/DescriptionTest.php';
+
+	$wgAutoloadClasses['Ask\Tests\Language\Selection\SelectionTest']
+		= __DIR__ . '/tests/phpunit/language/selection/SelectionTest.php';
+}
+
 /**
  * Hook to add PHPUnit test cases.
  * @see https://www.mediawiki.org/wiki/Manual:Hooks/UnitTestsList
@@ -57,17 +68,6 @@ foreach ( include( __DIR__ . '/Ask.classes.php' ) as $class => $file ) {
  */
 $wgHooks['UnitTestsList'][]	= function( array &$files ) {
 	// @codeCoverageIgnoreStart
-	global $wgAutoloadClasses;
-
-	$wgAutoloadClasses['Ask\Tests\AskTestCase']
-		= __DIR__ . '/tests/phpunit/AskTestCase.php';
-
-	$wgAutoloadClasses['Ask\Tests\Language\Description\DescriptionTest']
-		= __DIR__ . '/tests/phpunit/language/description/DescriptionTest.php';
-
-	$wgAutoloadClasses['Ask\Tests\Language\Selection\SelectionTest']
-		= __DIR__ . '/tests/phpunit/language/selection/SelectionTest.php';
-
 	$testFiles = array(
 		'language/description/AnyValue',
 		'language/description/Conjunction',
