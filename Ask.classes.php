@@ -28,8 +28,8 @@ return array(
 	'Ask\Language\Option\SortExpression' => 'includes/language/option/SortExpression.php',
 	'Ask\Language\Option\SortOptions' => 'includes/language/option/SortOptions.php',
 
-	'Ask\Language\Selection\Selection' => 'includes/language/selection/Selection.php',
 	'Ask\Language\Selection\PropertySelection' => 'includes/language/selection/PropertySelection.php',
+	'Ask\Language\Selection\SelectionRequest' => 'includes/language/selection/SelectionRequest.php',
 	'Ask\Language\Selection\SubjectSelection' => 'includes/language/selection/SubjectSelection.php',
 
 	'Ask\Language\Query' => 'includes/language/Query.php',

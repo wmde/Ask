@@ -28,7 +28,7 @@ namespace Ask\Language\Selection;
  * @licence GNU GPL v2+
  * @author Jeroen De Dauw < jeroendedauw@gmail.com >
  */
-class SubjectSelection extends Selection implements \Ask\Immutable {
+class SubjectSelection extends SelectionRequest implements \Ask\Immutable {
 
 	/**
 	 * @see Selection::getType
@@ -38,7 +38,7 @@ class SubjectSelection extends Selection implements \Ask\Immutable {
 	 * @return string
 	 */
 	public function getType() {
-		return Selection::TYPE_SUBJECT;
+		return SelectionRequest::TYPE_SUBJECT;
 	}
 
 }

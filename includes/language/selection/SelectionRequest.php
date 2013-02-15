@@ -1,10 +1,12 @@
 <?php
 
-namespace Ask\Tests\Language\Selection;
-use Ask\Language\Selection\Selection;
+namespace Ask\Language\Selection;
 
 /**
- * Base class for unit tests for the Ask\Language\Selection\Selection implementing classes.
+ * Base class for selection requests.
+ *
+ * A print request specifies that a certain value should be displayed
+ * and in what manner this display should happen.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -24,38 +26,23 @@ use Ask\Language\Selection\Selection;
  * @since 0.1
  *
  * @file
- * @ingroup AskTests
+ * @ingroup Ask
  *
  * @licence GNU GPL v2+
  * @author Jeroen De Dauw < jeroendedauw@gmail.com >
  */
-abstract class SelectionTest extends \Ask\Tests\AskTestCase {
+abstract class SelectionRequest {
+
+	const TYPE_PROP = 1;
+	const TYPE_SUBJECT = 2;
 
 	/**
-	 * @since 0.1
-	 *
-	 * @return Selection[]
-	 */
-	protected abstract function getInstances();
-
-	/**
-	 * @since 0.1
-	 *
-	 * @return Selection[][]
-	 */
-	public function instanceProvider() {
-		return $this->arrayWrap( $this->getInstances() );
-	}
-
-	/**
-	 * @dataProvider instanceProvider
+	 * Returns the type of the selection request.
 	 *
 	 * @since 0.1
 	 *
-	 * @param Selection $request
+	 * @return string
 	 */
-	public function testReturnTypeOfGetType( Selection $request ) {
-		$this->assertInternalType( 'integer', $request->getType() );
-	}
+	public abstract function getType();
 
 }

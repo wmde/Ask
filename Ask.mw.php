@@ -50,8 +50,8 @@ if ( defined( 'MW_PHPUNIT_TEST' ) ) {
 	$wgAutoloadClasses['Ask\Tests\Language\Description\DescriptionTest']
 		= __DIR__ . '/tests/phpunit/language/description/DescriptionTest.php';
 
-	$wgAutoloadClasses['Ask\Tests\Language\Selection\SelectionTest']
-		= __DIR__ . '/tests/phpunit/language/selection/SelectionTest.php';
+	$wgAutoloadClasses['Ask\Tests\Language\Selection\SelectionRequestTest']
+		= __DIR__ . '/tests/phpunit/language/selection/SelectionRequestTest.php';
 }
 
 /**

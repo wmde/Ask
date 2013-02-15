@@ -81,7 +81,7 @@ class QueryTest extends \Ask\Tests\AskTestCase {
 		$obtainedRequests = $query->getSelectionRequests();
 
 		$this->assertInternalType( 'array', $obtainedRequests );
-		$this->assertContainsOnlyInstancesOf( '\Ask\Language\Selection\Selection', $obtainedRequests );
+		$this->assertContainsOnlyInstancesOf( '\Ask\Language\Selection\SelectionRequest', $obtainedRequests );
 
 		$this->assertEquals( $selectionRequests, $obtainedRequests );
 	}

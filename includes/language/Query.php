@@ -3,7 +3,7 @@
 namespace Ask\Language;
 
 use Ask\Language\Description\Description;
-use Ask\Language\Selection\Selection;
+use Ask\Language\Selection\SelectionRequest;
 use Ask\Language\Option\QueryOptions;
 
 /**
@@ -48,7 +48,7 @@ class Query implements \Ask\Immutable {
 	/**
 	 * @since 0.1
 	 *
-	 * @var Selection[]
+	 * @var SelectionRequest[]
 	 */
 	protected $selectionRequests;
 
@@ -65,7 +65,7 @@ class Query implements \Ask\Immutable {
 	 * @since 0.1
 	 *
 	 * @param Description $description
-	 * @param Selection[] $selectionRequests
+	 * @param SelectionRequest[] $selectionRequests
 	 * @param QueryOptions $options
 	 */
 	public function __construct( Description $description, array $selectionRequests, QueryOptions $options ) {
@@ -90,7 +90,7 @@ class Query implements \Ask\Immutable {
 	 *
 	 * @since 0.1
 	 *
-	 * @return Selection[]
+	 * @return SelectionRequest[]
 	 */
 	public function getSelectionRequests() {
 		return $this->selectionRequests;

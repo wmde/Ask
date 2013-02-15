@@ -32,7 +32,7 @@ use Ask\Language\Selection\PropertySelection;
  * @licence GNU GPL v2+
  * @author Jeroen De Dauw < jeroendedauw@gmail.com >
  */
-class PropertySelectionTest extends SelectionTest {
+class PropertySelectionTest extends SelectionRequestTest {
 
 	/**
 	 * {@inheritdoc}

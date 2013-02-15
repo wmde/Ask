@@ -32,7 +32,7 @@ use Ask\Language\Selection\SubjectSelection;
  * @licence GNU GPL v2+
  * @author Jeroen De Dauw < jeroendedauw@gmail.com >
  */
-class SubjectSelectionTest extends SelectionTest {
+class SubjectSelectionTest extends SelectionRequestTest {
 
 	/**
 	 * {@inheritdoc}

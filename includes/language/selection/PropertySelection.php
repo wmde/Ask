@@ -29,7 +29,7 @@ use DataValues\PropertyValue;
  * @licence GNU GPL v2+
  * @author Jeroen De Dauw < jeroendedauw@gmail.com >
  */
-class PropertySelection extends Selection implements \Ask\Immutable {
+class PropertySelection extends SelectionRequest implements \Ask\Immutable {
 
 	/**
 	 * @since 0.1
@@ -57,7 +57,7 @@ class PropertySelection extends Selection implements \Ask\Immutable {
 	 * @return string
 	 */
 	public function getType() {
-		return Selection::TYPE_PROP;
+		return SelectionRequest::TYPE_PROP;
 	}
 
 	/**
