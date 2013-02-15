@@ -40,9 +40,7 @@ $wgExtensionMessagesFiles['AskExtension'] = __DIR__ . '/Ask.i18n.php';
 
 // Autoloading
 foreach ( include( __DIR__ . '/Ask.classes.php' ) as $class => $file ) {
-	if ( !array_key_exists( $class, $GLOBALS['wgAutoloadLocalClasses'] ) ) {
-		$wgAutoloadClasses[$class] = __DIR__ . '/' . $file;
-	}
+	$wgAutoloadClasses[$class] = __DIR__ . '/' . $file;
 }
 
 if ( defined( 'MW_PHPUNIT_TEST' ) ) {
