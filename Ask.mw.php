@@ -77,6 +77,8 @@ $wgHooks['UnitTestsList'][]	= function( array &$files ) {
 
 		'language/selectionrequest/PropertySelectionRequest',
 		'language/selectionrequest/ThisSelectionRequest',
+
+		'language/Query',
 	);
 
 	foreach ( $testFiles as $file ) {

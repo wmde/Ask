@@ -27,4 +27,6 @@ return array(
 	'Ask\Language\SelectionRequest\PropertySelectionRequest' => 'includes/language/selectionrequest/PropertySelectionRequest.php',
 	'Ask\Language\SelectionRequest\ThisSelectionRequest' => 'includes/language/selectionrequest/ThisSelectionRequest.php',
 
+	'Ask\Language\Query' => 'includes/language/Query.php',
+
 );

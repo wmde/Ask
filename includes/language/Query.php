@@ -2,6 +2,7 @@
 
 namespace Ask\Language;
 use Ask\Language\Description\Description;
+use Ask\Language\SelectionRequest\SelectionRequest;
 
 /**
  * Object representing a query definition.
@@ -32,13 +33,50 @@ use Ask\Language\Description\Description;
 class Query implements \Ask\Immutable {
 
 	/**
+	 * @since 0.1
 	 *
+	 * @var Description
+	 */
+	protected $description;
+
+	/**
+	 * @since 0.1
+	 *
+	 * @var SelectionRequest[]
+	 */
+	protected $selectionRequests;
+
+	/**
+	 * Constructor.
+	 *
+	 * @since 0.1
 	 *
 	 * @param Description $description
+	 * @param SelectionRequest[] $selectionRequests
 	 */
-	public function __construct( Description $description ) {
-
+	public function __construct( Description $description, array $selectionRequests ) {
+		$this->description = $description;
+		$this->selectionRequests = $selectionRequests;
 	}
 
+	/**
+	 * @since 0.1
+	 *
+	 * @return Description
+	 */
+	public function getDescription() {
+		return $this->description;
+	}
+
+	/**
+	 * @since 0.1
+	 *
+	 * @return SelectionRequest[]
+	 */
+	public function getSelectionRequests() {
+		return $this->selectionRequests;
+	}
+
+	// TODO: limit, etc
 
 }
