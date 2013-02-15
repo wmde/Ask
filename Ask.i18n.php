@@ -113,6 +113,13 @@ $messages['mk'] = array(
 	'ask-desc' => 'Библиотека што содржи PHP-примена на јазикот за барање Ask',
 );
 
+/** Malay (Bahasa Melayu)
+ * @author Anakmalaysia
+ */
+$messages['ms'] = array(
+	'ask-desc' => 'Perpustakaan yang mengandungi pelaksanaan PHP bahasa pertanyaan Ask',
+);
+
 /** tarandíne (tarandíne)
  * @author Joetaras
  */
