@@ -28,6 +28,16 @@
  * @ingroup Test
  */
 
+// Attempt to include the DataValues lib if that hasn't been done yet.
+if ( !defined( 'DataValues_VERSION' ) ) {
+	@include_once( __DIR__ . '/../DataValues/DataValues.php' );
+}
+
+// Only initialize the extension when all dependencies are present.
+if ( !defined( 'DataValues_VERSION' ) ) {
+	die( '<b>Error:</b> You need to have <a href="https://www.mediawiki.org/wiki/Extension:DataValues">DataValues</a> installed in order to use <a href="http://www.mediawiki.org/wiki/Extension:Ask">Ask</a>.<br />' );
+}
+
 define( 'Ask_VERSION', '0.1 alpha' );
 
 // @codeCoverageIgnoreStart
