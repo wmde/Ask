@@ -48,10 +48,10 @@ if ( defined( 'MW_PHPUNIT_TEST' ) ) {
 		= __DIR__ . '/tests/phpunit/AskTestCase.php';
 
 	$wgAutoloadClasses['Ask\Tests\Language\Description\DescriptionTest']
-		= __DIR__ . '/tests/phpunit/language/description/DescriptionTest.php';
+		= __DIR__ . '/tests/phpunit/Language/Description/DescriptionTest.php';
 
 	$wgAutoloadClasses['Ask\Tests\Language\Selection\SelectionRequestTest']
-		= __DIR__ . '/tests/phpunit/language/selection/SelectionRequestTest.php';
+		= __DIR__ . '/tests/phpunit/Language/Selection/SelectionRequestTest.php';
 }
 
 /**
@@ -67,16 +67,16 @@ if ( defined( 'MW_PHPUNIT_TEST' ) ) {
 $wgHooks['UnitTestsList'][]	= function( array &$files ) {
 	// @codeCoverageIgnoreStart
 	$testFiles = array(
-		'language/description/AnyValue',
-		'language/description/Conjunction',
-		'language/description/SomeProperty',
-		'language/description/Disjunction',
-		'language/description/ValueDescription',
+		'Language/Description/AnyValue',
+		'Language/Description/Conjunction',
+		'Language/Description/SomeProperty',
+		'Language/Description/Disjunction',
+		'Language/Description/ValueDescription',
 
-		'language/selection/PropertySelection',
-		'language/selection/SubjectSelection',
+		'Language/Selection/PropertySelection',
+		'Language/Selection/SubjectSelection',
 
-		'language/Query',
+		'Language/Query',
 	);
 
 	foreach ( $testFiles as $file ) {
