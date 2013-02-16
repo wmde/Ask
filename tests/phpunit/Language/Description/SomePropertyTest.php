@@ -43,6 +43,8 @@ class SomePropertyTest extends DescriptionTest {
 
 		$instances[] = new SomeProperty( new PropertyValue( '_geo' ), new \Ask\Language\Description\AnyValue() );
 		$instances[] = new SomeProperty( new PropertyValue( 'p42' ), new \Ask\Language\Description\Conjunction( array() ) );
+		$instances[] = new SomeProperty( new PropertyValue( 'foo' ), new \Ask\Language\Description\AnyValue(), true );
+		$instances[] = new SomeProperty( new PropertyValue( '~=[,,_,,]:3' ), new \Ask\Language\Description\AnyValue(), false );
 
 		return $instances;
 	}
@@ -61,7 +63,11 @@ class SomePropertyTest extends DescriptionTest {
 
 		$newInstance = new SomeProperty( $description->getProperty(), $subDescription );
 
-		$this->assertEquals( $subDescription, $newInstance->getDescription(), 'Description is returned as it was passed to the constructor' );
+		$this->assertEquals(
+			$subDescription,
+			$newInstance->getDescription(),
+			'Description is returned as it was passed to the constructor'
+		);
 	}
 
 	/**
@@ -78,7 +84,32 @@ class SomePropertyTest extends DescriptionTest {
 
 		$newInstance = new SomeProperty( $property, $description->getDescription() );
 
-		$this->assertEquals( $property, $newInstance->getProperty(), 'Property is returned as it was passed to the constructor' );
+		$this->assertEquals(
+			$property,
+			$newInstance->getProperty(),
+			'Property is returned as it was passed to the constructor'
+		);
+	}
+
+	/**
+	 * @dataProvider instanceProvider
+	 *
+	 * @since 0.1
+	 *
+	 * @param SomeProperty $description
+	 */
+	public function testIsSubProperty( SomeProperty $description ) {
+		$isSubProperty = $description->isSubProperty();
+
+		$this->assertInternalType( 'boolean', $isSubProperty );
+
+		$newInstance = new SomeProperty( $description->getProperty(), $description->getDescription(), $isSubProperty );
+
+		$this->assertEquals(
+			$isSubProperty,
+			$newInstance->isSubProperty(),
+			'Is sub property is returned as it was passed to the constructor'
+		);
 	}
 
 }
