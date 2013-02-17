@@ -120,6 +120,20 @@ $messages['ms'] = array(
 	'ask-desc' => 'Perpustakaan yang mengandungi pelaksanaan PHP bahasa pertanyaan Ask',
 );
 
+/** Norwegian Bokmål (norsk bokmål)
+ * @author Jeblad
+ */
+$messages['nb'] = array(
+	'ask-desc' => 'Bibliotek med PHP-implementasjon av Ask-spørrespråket',
+);
+
+/** Dutch (Nederlands)
+ * @author Siebrand
+ */
+$messages['nl'] = array(
+	'ask-desc' => 'Bibliotheek die een PHP-implementatie bevat van de querytaal Ask',
+);
+
 /** tarandíne (tarandíne)
  * @author Joetaras
  */
