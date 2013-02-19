@@ -114,23 +114,6 @@ abstract class DescriptionTest extends \Ask\Tests\AskTestCase {
 		$this->assertPrimitiveStructure( $array );
 	}
 
-	protected function assertPrimitiveStructure( $value ) {
-		if ( is_array( $value ) ) {
-			if ( empty( $value ) ) {
-				$this->assertTrue( true );
-			}
-
-			foreach ( $value as $subValue ) {
-				$this->assertPrimitiveStructure( $subValue );
-			}
-		}
-		else {
-			$this->assertFalse( is_object( $value ), 'Value should not be an object' );
-			$this->assertFalse( is_resource( $value ), 'Value should not be a resource' );
-			$this->assertFalse( is_callable( $value ), 'Value should not be a callable' );
-		}
-	}
-
 	/**
 	 * @dataProvider instanceProvider
 	 *

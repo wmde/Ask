@@ -31,7 +31,7 @@ namespace Ask\Language\Selection;
 class SubjectSelection extends SelectionRequest implements \Ask\Immutable {
 
 	/**
-	 * @see Selection::getType
+	 * @see SelectionRequest::getType
 	 *
 	 * @since 0.1
 	 *
@@ -39,6 +39,17 @@ class SubjectSelection extends SelectionRequest implements \Ask\Immutable {
 	 */
 	public function getType() {
 		return SelectionRequest::TYPE_SUBJECT;
+	}
+
+	/**
+	 * @see SelectionRequest::getArrayValue
+	 *
+	 * @since 0.1
+	 *
+	 * @return mixed
+	 */
+	public function getArrayValue() {
+		return null;
 	}
 
 }

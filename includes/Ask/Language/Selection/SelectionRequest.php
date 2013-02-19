@@ -31,7 +31,7 @@ namespace Ask\Language\Selection;
  * @licence GNU GPL v2+
  * @author Jeroen De Dauw < jeroendedauw@gmail.com >
  */
-abstract class SelectionRequest {
+abstract class SelectionRequest implements \Ask\Arrayable {
 
 	const TYPE_PROP = 1;
 	const TYPE_SUBJECT = 2;
@@ -44,5 +44,35 @@ abstract class SelectionRequest {
 	 * @return string
 	 */
 	public abstract function getType();
+
+	/**
+	 * Returns the value in a format that contains only primitive values
+	 * and arrays. This format is typically stable and easy to understand,
+	 * and thus ideal for serialization such as json_encode.
+	 *
+	 * @since 0.1
+	 *
+	 * @return string
+	 */
+	public abstract function getArrayValue();
+
+	/**
+	 * @see \Ask\Arrayable::toArray
+	 *
+	 * This method has a more specific return format then Arrayable::toArray.
+	 * The return value is always an array that holds a type key pointing
+	 * to string type identifier (the same one as obtained via ->getType())
+	 * and a value key pointing to a mixed (though simple) value.
+	 *
+	 * @since 0.1
+	 *
+	 * @return array
+	 */
+	public final function toArray() {
+		return array(
+			'type' => $this->getType(),
+			'value' => $this->getArrayValue(),
+		);
+	}
 
 }

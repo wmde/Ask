@@ -50,7 +50,7 @@ class PropertySelection extends SelectionRequest implements \Ask\Immutable {
 	}
 
 	/**
-	 * @see Selection::getType
+	 * @see SelectionRequest::getType
 	 *
 	 * @since 0.1
 	 *
@@ -69,6 +69,19 @@ class PropertySelection extends SelectionRequest implements \Ask\Immutable {
 	 */
 	public function getProperty() {
 		return $this->property;
+	}
+
+	/**
+	 * @see SelectionRequest::getArrayValue
+	 *
+	 * @since 0.1
+	 *
+	 * @return mixed
+	 */
+	public function getArrayValue() {
+		return array(
+			'property' => $this->property->toArray()
+		);
 	}
 
 }

@@ -58,4 +58,41 @@ abstract class SelectionRequestTest extends \Ask\Tests\AskTestCase {
 		$this->assertInternalType( 'integer', $request->getType() );
 	}
 
+	/**
+	 * @dataProvider instanceProvider
+	 *
+	 * @since 0.1
+	 *
+	 * @param SelectionRequest $description
+	 */
+	public function testReturnValueOfToArray( SelectionRequest $description ) {
+		$array = $description->toArray();
+
+		$this->assertInternalType( 'array', $array );
+		$this->assertArrayHasKey( 'type', $array );
+		$this->assertArrayHasKey( 'value', $array );
+		$this->assertCount( 2, $array );
+
+		$this->assertEquals(
+			array(
+				'type' => $description->getType(),
+				'value' => $description->getArrayValue(),
+			),
+			$array
+		);
+	}
+
+	/**
+	 * @dataProvider instanceProvider
+	 *
+	 * @since 0.1
+	 *
+	 * @param SelectionRequest $description
+	 */
+	public function testReturnTypeOfGetArrayValue( SelectionRequest $description ) {
+		$array = $description->getArrayValue();
+
+		$this->assertPrimitiveStructure( $array );
+	}
+
 }
