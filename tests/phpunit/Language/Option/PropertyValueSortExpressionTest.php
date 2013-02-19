@@ -35,6 +35,27 @@ use Ask\Language\Option\SortExpression;
  */
 class PropertyValueSortExpressionTest extends SortExpressionTest {
 
+	/**
+	 * @see SortExpressionTest::getInstances
+	 *
+	 * @since 0.1
+	 *
+	 * @return SortExpression[]
+	 */
+	protected function getInstances() {
+		$instances = array();
 
+		$instances[] = new \Ask\Language\Option\PropertyValueSortExpression(
+			new \DataValues\PropertyValue( 'foo' ),
+			SortExpression::ASCENDING
+		);
+
+		$instances[] = new \Ask\Language\Option\PropertyValueSortExpression(
+			new \DataValues\PropertyValue( 'foo' ),
+			SortExpression::DESCENDING
+		);
+
+		return $instances;
+	}
 
 }

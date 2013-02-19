@@ -47,8 +47,8 @@ if ( defined( 'MW_PHPUNIT_TEST' ) ) {
 	$wgAutoloadClasses['Ask\Tests\AskTestCase']
 		= __DIR__ . '/tests/phpunit/AskTestCase.php';
 
-	$wgAutoloadClasses['Ask\Tests\Option\SortExpressionTest']
-		= __DIR__ . '/tests/phpunit/Language/Option/SortExpression.php';
+	$wgAutoloadClasses['Ask\Tests\Language\Option\SortExpressionTest']
+		= __DIR__ . '/tests/phpunit/Language/Option/SortExpressionTest.php';
 
 	$wgAutoloadClasses['Ask\Tests\Language\Description\DescriptionCollectionTest']
 		= __DIR__ . '/tests/phpunit/Language/Description/DescriptionCollectionTest.php';
@@ -78,6 +78,8 @@ $wgHooks['UnitTestsList'][]	= function( array &$files ) {
 		'Language/Description/SomeProperty',
 		'Language/Description/Disjunction',
 		'Language/Description/ValueDescription',
+
+		'Language/Option/PropertyValueSortExpression',
 
 		'Language/Selection/PropertySelection',
 		'Language/Selection/SubjectSelection',

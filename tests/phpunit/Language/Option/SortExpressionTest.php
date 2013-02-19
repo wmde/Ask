@@ -33,6 +33,22 @@ use Ask\Language\Option\SortExpression;
 abstract class SortExpressionTest extends \Ask\Tests\AskTestCase {
 
 	/**
+	 * @since 0.1
+	 *
+	 * @return SortExpression[]
+	 */
+	protected abstract function getInstances();
+
+	/**
+	 * @since 0.1
+	 *
+	 * @return SortExpression[][]
+	 */
+	public function instanceProvider() {
+		return $this->arrayWrap( $this->getInstances() );
+	}
+
+	/**
 	 * @dataProvider instanceProvider
 	 *
 	 * @since 0.1
