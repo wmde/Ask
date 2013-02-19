@@ -131,4 +131,66 @@ abstract class DescriptionTest extends \Ask\Tests\AskTestCase {
 		}
 	}
 
+	/**
+	 * @dataProvider instanceProvider
+	 *
+	 * @since 0.1
+	 *
+	 * @param Description $description
+	 */
+	public function testComparableSelfIsEqual( Description $description ) {
+		$this->assertTrue( $description->equals( $description ), 'Description is equal to itself' );
+	}
+
+	/**
+	 * @dataProvider instanceProvider
+	 *
+	 * @since 0.1
+	 *
+	 * @param Description $description
+	 */
+	public function testComparableNotEqual( Description $description ) {
+		$this->assertFalse( $description->equals( '~[,,_,,]:3' ), 'Description not equal to string' );
+		$this->assertFalse( $description->equals( new \stdClass() ), 'Description not equal to empty object' );
+		$this->assertFalse( $description->equals( new FooDescription() ), 'Description not equal to empty object' );
+	}
+
+	/**
+	 * @dataProvider instanceProvider
+	 *
+	 * @since 0.1
+	 *
+	 * @param Description $description
+	 */
+	public function testGetHashReturnType( Description $description ) {
+		$this->assertInternalType( 'string', $description->getHash() );
+	}
+
+	/**
+	 * @dataProvider instanceProvider
+	 *
+	 * @since 0.1
+	 *
+	 * @param Description $description
+	 */
+	public function testGetHashStability( Description $description ) {
+		$this->assertEquals( $description->getHash(), $description->getHash() );
+	}
+
+}
+
+class FooDescription extends \Ask\Language\Description\DescriptionCollection {
+
+	public function __construct() {
+		parent::__construct( array() );
+	}
+
+	public function getType() {
+		return 'foo';
+	}
+
+	public function equals( $t ) {
+		return false;
+	}
+
 }

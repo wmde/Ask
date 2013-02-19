@@ -17,6 +17,8 @@ return call_user_func( function() {
 
 	$classes = array(
 		'Ask\Arrayable',
+		'Ask\Comparable',
+		'Ask\Hashable',
 		'Ask\Immutable',
 
 		'Ask\Language\Description\AnyValue',

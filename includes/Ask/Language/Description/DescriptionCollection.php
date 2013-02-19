@@ -2,6 +2,8 @@
 
 namespace Ask\Language\Description;
 
+use Ask\Hashable;
+
 /**
  * Description of a collection of many descriptions.
  *
@@ -28,7 +30,7 @@ namespace Ask\Language\Description;
  * @licence GNU GPL v2+
  * @author Jeroen De Dauw < jeroendedauw@gmail.com >
  */
-abstract class DescriptionCollection extends  Description implements \Ask\Immutable {
+abstract class DescriptionCollection extends Description implements \Ask\Immutable {
 
 	/**
 	 * @since 0.1
@@ -112,6 +114,80 @@ abstract class DescriptionCollection extends  Description implements \Ask\Immuta
 				},
 				$this->descriptions
 			)
+		);
+	}
+
+	/**
+	 * @see Comparable::equals
+	 *
+	 * @since 0.1
+	 *
+	 * @param mixed $mixed
+	 *
+	 * @return boolean
+	 */
+	public function equals( $mixed ) {
+		if ( !is_object( $mixed )
+			|| ( get_class( $mixed ) !== get_called_class() ) ) {
+			return false;
+		}
+
+		$descriptions = $this->descriptions;
+		$moreDescriptions = $mixed->getDescriptions();
+
+		if ( count( $descriptions ) !== count( $moreDescriptions ) ) {
+			return false;
+		}
+
+		$this->sortCollection( $this->descriptions );
+		$this->sortCollection( $this->descriptions );
+		reset( $moreDescriptions );
+
+		foreach ( $descriptions as $description ) {
+			if ( !$description->equals( current( $moreDescriptions ) ) ) {
+				return false;
+			}
+
+			next( $moreDescriptions );
+		}
+
+		return true;
+	}
+
+	/**
+	 * @see Hashable::getHash
+	 *
+	 * @since 0.1
+	 *
+	 * @return string
+	 */
+	public function getHash() {
+		$this->sortCollection( $this->descriptions );
+
+		return sha1( implode(
+			'|',
+			array_map(
+				function( Hashable $hashable ) {
+					return $hashable->getHash();
+				},
+				$this->descriptions
+			)
+		) );
+	}
+
+	/**
+	 * Does an associative sort that works for Hashable objects.
+	 *
+	 * @since 0.1
+	 *
+	 * @param Hashable[] $array
+	 */
+	protected function sortCollection( array &$array ) {
+		usort(
+			$array,
+			function ( Hashable $a, Hashable $b ) {
+				return $a->getHash() > $b->getHash() ? 1 : -1;
+			}
 		);
 	}
 

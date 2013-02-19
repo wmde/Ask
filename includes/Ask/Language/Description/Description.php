@@ -30,7 +30,7 @@ namespace Ask\Language\Description;
  * @licence GNU GPL v2+
  * @author Jeroen De Dauw < jeroendedauw@gmail.com >
  */
-abstract class Description implements \Ask\Arrayable {
+abstract class Description implements \Ask\Arrayable, \Ask\Comparable, \Ask\Hashable {
 
 	/**
 	 * Returns the size of the description.

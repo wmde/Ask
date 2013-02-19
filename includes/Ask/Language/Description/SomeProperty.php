@@ -1,6 +1,7 @@
 <?php
 
 namespace Ask\Language\Description;
+
 use DataValues\PropertyValue;
 
 /**
@@ -36,7 +37,7 @@ use DataValues\PropertyValue;
  * @licence GNU GPL v2+
  * @author Jeroen De Dauw < jeroendedauw@gmail.com >
  */
-class SomeProperty extends Description implements \Ask\Immutable {
+final class SomeProperty extends Description implements \Ask\Immutable {
 
 	/**
 	 * @since 0.1
@@ -132,6 +133,32 @@ class SomeProperty extends Description implements \Ask\Immutable {
 			'property' => $this->property->toArray(),
 			'description' => $this->description->toArray(),
 		);
+	}
+
+	/**
+	 * @see Comparable::equals
+	 *
+	 * @since 0.1
+	 *
+	 * @param mixed $mixed
+	 *
+	 * @return boolean
+	 */
+	public function equals( $mixed ) {
+		return $mixed instanceof SomeProperty
+			&& $this->property->equals( $mixed->getProperty() )
+			&& $this->description->equals( $mixed->getDescription() );
+	}
+
+	/**
+	 * @see Hashable::getHash
+	 *
+	 * @since 0.1
+	 *
+	 * @return string
+	 */
+	public function getHash() {
+		return sha1( $this->property->getHash() . $this->description->getHash() );
 	}
 
 }

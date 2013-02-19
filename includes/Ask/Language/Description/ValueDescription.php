@@ -1,6 +1,7 @@
 <?php
 
 namespace Ask\Language\Description;
+
 use DataValues\DataValue;
 use InvalidArgumentException;
 
@@ -39,7 +40,7 @@ use InvalidArgumentException;
  * @licence GNU GPL v2+
  * @author Jeroen De Dauw < jeroendedauw@gmail.com >
  */
-class ValueDescription extends  Description implements \Ask\Immutable {
+final class ValueDescription extends  Description implements \Ask\Immutable {
 
 	const COMP_EQUAL = 1;
 	const COMP_LEQ = 2; // Less than or equal
@@ -150,6 +151,32 @@ class ValueDescription extends  Description implements \Ask\Immutable {
 	 */
 	public function getType() {
 		return 'valuedescription';
+	}
+
+	/**
+	 * @see Comparable::equals
+	 *
+	 * @since 0.1
+	 *
+	 * @param mixed $mixed
+	 *
+	 * @return boolean
+	 */
+	public function equals( $mixed ) {
+		return $mixed instanceof ValueDescription
+			&& $this->comparator === $mixed->getComparator()
+			&& $this->value->equals( $mixed->getValue() );
+	}
+
+	/**
+	 * @see Hashable::getHash
+	 *
+	 * @since 0.1
+	 *
+	 * @return string
+	 */
+	public function getHash() {
+		return sha1( $this->value->getHash() . $this->comparator );
 	}
 
 }

@@ -33,7 +33,7 @@ namespace Ask\Language\Description;
  * @licence GNU GPL v2+
  * @author Jeroen De Dauw < jeroendedauw@gmail.com >
  */
-class Disjunction extends DescriptionCollection {
+final class Disjunction extends DescriptionCollection {
 
 	/**
 	 * {@inheritdoc}

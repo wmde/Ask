@@ -32,7 +32,7 @@ namespace Ask\Language\Description;
  * @licence GNU GPL v2+
  * @author Jeroen De Dauw < jeroendedauw@gmail.com >
  */
-class AnyValue extends  Description implements \Ask\Immutable {
+final class AnyValue extends Description implements \Ask\Immutable {
 
 	/**
 	 * {@inheritdoc}
@@ -76,6 +76,30 @@ class AnyValue extends  Description implements \Ask\Immutable {
 	 */
 	public function getArrayValue() {
 		return null;
+	}
+
+	/**
+	 * @see Comparable::equals
+	 *
+	 * @since 0.1
+	 *
+	 * @param mixed $mixed
+	 *
+	 * @return boolean
+	 */
+	public function equals( $mixed ) {
+		return $mixed instanceof AnyValue;
+	}
+
+	/**
+	 * @see Hashable::getHash
+	 *
+	 * @since 0.1
+	 *
+	 * @return string
+	 */
+	public function getHash() {
+		return sha1( $this->getType() );
 	}
 
 }

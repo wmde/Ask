@@ -1,14 +1,9 @@
 <?php
 
-namespace Ask\Language\Description;
+namespace Ask;
 
 /**
- * Description of a collection of many descriptions, all of which
- * must be satisfied (AND, conjunction).
- *
- * Corresponds to conjunction in OWL and SPARQL. Not available in RDFS.
- *
- * Based on SMWConjunction
+ * Interface for hashable objects.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -33,17 +28,4 @@ namespace Ask\Language\Description;
  * @licence GNU GPL v2+
  * @author Jeroen De Dauw < jeroendedauw@gmail.com >
  */
-final class Conjunction extends DescriptionCollection {
-
-	/**
-	 * {@inheritdoc}
-	 *
-	 * @since 0.1
-	 *
-	 * @return string
-	 */
-	public function getType() {
-		return 'conjunction';
-	}
-
-}
+interface Hashable extends \Hashable {};
