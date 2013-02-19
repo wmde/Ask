@@ -37,7 +37,16 @@ abstract class DescriptionCollection extends Description implements \Ask\Immutab
 	 *
 	 * @var Description[]
 	 */
-	protected $descriptions;
+	private $descriptions;
+
+	/**
+	 * Cache for the hash.
+	 *
+	 * @since 0.1
+	 *
+	 * @var string|null
+	 */
+	private $hash;
 
 	/**
 	 * Constructor.
@@ -166,20 +175,24 @@ abstract class DescriptionCollection extends Description implements \Ask\Immutab
 	 * @return string
 	 */
 	public function getHash() {
-		$this->sortCollection( $this->descriptions );
+		if ( $this->hash === null ) {
+			$this->sortCollection( $this->descriptions );
 
-		return sha1(
-			$this->getType() .
-			implode(
-				'|',
-				array_map(
-					function( Hashable $hashable ) {
-						return $hashable->getHash();
-					},
-					$this->descriptions
+			$this->hash = sha1(
+				$this->getType() .
+				implode(
+					'|',
+					array_map(
+						function( Hashable $hashable ) {
+							return $hashable->getHash();
+						},
+						$this->descriptions
+					)
 				)
-			)
-		);
+			);
+		}
+
+		return $this->hash;
 	}
 
 	/**
@@ -189,7 +202,7 @@ abstract class DescriptionCollection extends Description implements \Ask\Immutab
 	 *
 	 * @param Hashable[] $array
 	 */
-	protected function sortCollection( array &$array ) {
+	final protected function sortCollection( array &$array ) {
 		usort(
 			$array,
 			function ( Hashable $a, Hashable $b ) {

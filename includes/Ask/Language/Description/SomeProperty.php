@@ -44,14 +44,23 @@ final class SomeProperty extends Description implements \Ask\Immutable {
 	 *
 	 * @var PropertyValue
 	 */
-	protected $property;
+	private $property;
 
 	/**
 	 * @since 0.1
 	 *
 	 * @var Description
 	 */
-	protected $description;
+	private $description;
+
+	/**
+	 * Cache for the hash.
+	 *
+	 * @since 0.1
+	 *
+	 * @var string|null
+	 */
+	private $hash;
 
 	/**
 	 * Constructor.
@@ -158,7 +167,11 @@ final class SomeProperty extends Description implements \Ask\Immutable {
 	 * @return string
 	 */
 	public function getHash() {
-		return sha1( $this->getType() . $this->property->getHash() . $this->description->getHash() );
+		if ( $this->hash === null ) {
+			$this->hash = sha1( $this->getType() . $this->property->getHash() . $this->description->getHash() );
+		}
+
+		return $this->hash;
 	}
 
 }
