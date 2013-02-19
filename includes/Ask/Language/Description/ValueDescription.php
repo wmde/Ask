@@ -39,7 +39,7 @@ use InvalidArgumentException;
  * @licence GNU GPL v2+
  * @author Jeroen De Dauw < jeroendedauw@gmail.com >
  */
-class ValueDescription implements Description, \Ask\Immutable {
+class ValueDescription extends  Description implements \Ask\Immutable {
 
 	const COMP_EQUAL = 1;
 	const COMP_LEQ = 2; // Less than or equal
@@ -125,6 +125,31 @@ class ValueDescription implements Description, \Ask\Immutable {
 	 */
 	public function getDepth() {
 		return 0;
+	}
+
+	/**
+	 * {@inheritdoc}
+	 *
+	 * @since 0.1
+	 *
+	 * @return array|null|bool|int|float|string
+	 */
+	public function getArrayValue() {
+		return array(
+			'value' => $this->value->toArray(),
+			'comparator' => $this->comparator,
+		);
+	}
+
+	/**
+	 * {@inheritdoc}
+	 *
+	 * @since 0.1
+	 *
+	 * @return string
+	 */
+	public function getType() {
+		return 'valuedescription';
 	}
 
 }

@@ -35,4 +35,15 @@ namespace Ask\Language\Description;
  */
 class Conjunction extends DescriptionCollection {
 
+	/**
+	 * {@inheritdoc}
+	 *
+	 * @since 0.1
+	 *
+	 * @return string
+	 */
+	public function getType() {
+		return 'conjunction';
+	}
+
 }

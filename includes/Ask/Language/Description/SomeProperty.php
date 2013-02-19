@@ -36,7 +36,7 @@ use DataValues\PropertyValue;
  * @licence GNU GPL v2+
  * @author Jeroen De Dauw < jeroendedauw@gmail.com >
  */
-class SomeProperty implements Description, \Ask\Immutable {
+class SomeProperty extends Description implements \Ask\Immutable {
 
 	/**
 	 * @since 0.1
@@ -107,6 +107,31 @@ class SomeProperty implements Description, \Ask\Immutable {
 	 */
 	public function getDepth() {
 		return $this->description->getDepth() + 1;
+	}
+
+	/**
+	 * {@inheritdoc}
+	 *
+	 * @since 0.1
+	 *
+	 * @return string
+	 */
+	public function getType() {
+		return 'someproperty';
+	}
+
+	/**
+	 * {@inheritdoc}
+	 *
+	 * @since 0.1
+	 *
+	 * @return array|null|bool|int|float|string
+	 */
+	public function getArrayValue() {
+		return array(
+			'property' => $this->property->toArray(),
+			'description' => $this->description->toArray(),
+		);
 	}
 
 }

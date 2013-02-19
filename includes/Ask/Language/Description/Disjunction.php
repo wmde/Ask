@@ -35,5 +35,15 @@ namespace Ask\Language\Description;
  */
 class Disjunction extends DescriptionCollection {
 
+	/**
+	 * {@inheritdoc}
+	 *
+	 * @since 0.1
+	 *
+	 * @return string
+	 */
+	public function getType() {
+		return 'disjunction';
+	}
 
 }

@@ -77,4 +77,58 @@ abstract class DescriptionTest extends \Ask\Tests\AskTestCase {
 		$this->assertEquals( $depth, $description->getDepth() );
 	}
 
+	/**
+	 * @dataProvider instanceProvider
+	 *
+	 * @since 0.1
+	 *
+	 * @param Description $description
+	 */
+	public function testReturnValueOfToArray( Description $description ) {
+		$array = $description->toArray();
+
+		$this->assertInternalType( 'array', $array );
+		$this->assertArrayHasKey( 'type', $array );
+		$this->assertArrayHasKey( 'value', $array );
+		$this->assertCount( 2, $array );
+
+		$this->assertEquals(
+			array(
+				'type' => $description->getType(),
+				'value' => $description->getArrayValue(),
+			),
+			$array
+		);
+	}
+
+	/**
+	 * @dataProvider instanceProvider
+	 *
+	 * @since 0.1
+	 *
+	 * @param Description $description
+	 */
+	public function testReturnTypeOfGetArrayValue( Description $description ) {
+		$array = $description->getArrayValue();
+
+		$this->assertPrimitiveStructure( $array );
+	}
+
+	protected function assertPrimitiveStructure( $value ) {
+		if ( is_array( $value ) ) {
+			if ( empty( $value ) ) {
+				$this->assertTrue( true );
+			}
+
+			foreach ( $value as $subValue ) {
+				$this->assertPrimitiveStructure( $subValue );
+			}
+		}
+		else {
+			$this->assertFalse( is_object( $value ), 'Value should not be an object' );
+			$this->assertFalse( is_resource( $value ), 'Value should not be a resource' );
+			$this->assertFalse( is_callable( $value ), 'Value should not be a callable' );
+		}
+	}
+
 }

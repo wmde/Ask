@@ -28,7 +28,7 @@ namespace Ask\Language\Description;
  * @licence GNU GPL v2+
  * @author Jeroen De Dauw < jeroendedauw@gmail.com >
  */
-abstract class DescriptionCollection implements Description, \Ask\Immutable {
+abstract class DescriptionCollection extends  Description implements \Ask\Immutable {
 
 	/**
 	 * @since 0.1
@@ -95,6 +95,24 @@ abstract class DescriptionCollection implements Description, \Ask\Immutable {
 	 */
 	public function getDescriptions() {
 		return $this->descriptions;
+	}
+
+	/**
+	 * {@inheritdoc}
+	 *
+	 * @since 0.1
+	 *
+	 * @return array|null|bool|int|float|string
+	 */
+	public function getArrayValue() {
+		return array(
+			'descriptions' => array_map(
+				function( Description $description ) {
+					return $description->toArray();
+				},
+				$this->descriptions
+			)
+		);
 	}
 
 }

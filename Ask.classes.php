@@ -16,6 +16,7 @@ return call_user_func( function() {
 	// PSR-0 compliant :)
 
 	$classes = array(
+		'Ask\Arrayable',
 		'Ask\Immutable',
 
 		'Ask\Language\Description\AnyValue',

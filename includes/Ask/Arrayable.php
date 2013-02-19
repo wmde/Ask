@@ -1,13 +1,9 @@
 <?php
 
-namespace Ask\Language\Description;
+namespace Ask;
 
 /**
- * A description that matches any object.
- *
- * Corresponds to owl:thing, the class of all abstract objects.
- *
- * Based on SMWThingDescription
+ * Interface for objects that have a toArray method.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -32,50 +28,23 @@ namespace Ask\Language\Description;
  * @licence GNU GPL v2+
  * @author Jeroen De Dauw < jeroendedauw@gmail.com >
  */
-class AnyValue extends  Description implements \Ask\Immutable {
+interface Arrayable {
 
 	/**
-	 * {@inheritdoc}
+	 * Returns a representation of the object in primitive form,
+	 * using only primitive values and arrays. The return value
+	 * is thus does not contain any objects and can be fed to
+	 * json_encode and similar. The result should typically have
+	 * an understandable and stable format.
 	 *
-	 * @since 0.1
-	 *
-	 * @return integer
-	 */
-	public function getSize() {
-		return 0;
-	}
-
-	/**
-	 * {@inheritdoc}
-	 *
-	 * @since 0.1
-	 *
-	 * @return integer
-	 */
-	public function getDepth() {
-		return 0;
-	}
-
-	/**
-	 * {@inheritdoc}
-	 *
-	 * @since 0.1
-	 *
-	 * @return string
-	 */
-	public function getType() {
-		return 'anyvalue';
-	}
-
-	/**
-	 * {@inheritdoc}
+	 * The returned value might contain an absolute or relative type
+	 * identifier that can be used to construct an object from the
+	 * return value.
 	 *
 	 * @since 0.1
 	 *
 	 * @return array|null|bool|int|float|string
 	 */
-	public function getArrayValue() {
-		return null;
-	}
+	public function toArray();
 
-}
+};
