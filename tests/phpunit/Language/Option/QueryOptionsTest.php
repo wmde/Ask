@@ -1,9 +1,11 @@
 <?php
 
-namespace Ask\Language\Option;
+namespace Ask\Tests\Language\Option;
+
+use Ask\Language\Option\QueryOptions;
 
 /**
- * Sorting options.
+ * Tests for the Ask\Language\Option\QueryOptions class.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -23,61 +25,62 @@ namespace Ask\Language\Option;
  * @since 0.1
  *
  * @file
- * @ingroup Ask
+ * @ingroup AskTests
+ *
+ * @group Ask
+ * @group AskOption
  *
  * @licence GNU GPL v2+
  * @author Jeroen De Dauw < jeroendedauw@gmail.com >
  */
-class SortOptions implements \Ask\Immutable, \Ask\ArrayValueProvider {
+class QueryOptionsTest extends \Ask\Tests\AskTestCase {
 
 	/**
-	 * The sort expressions that make up these sort options.
-	 *
 	 * @since 0.1
 	 *
-	 * @var SortExpression[]
+	 * @return QueryOptions[]
 	 */
-	protected $expressions;
+	protected function getInstances() {
+		$instances = array();
 
-	/**
-	 * Constructor.
-	 *
-	 * @since 0.1
-	 *
-	 * @param SortExpression[] $expressions
-	 */
-	public function __construct( array $expressions ) {
-		$this->expressions = $expressions;
-	}
-
-	/**
-	 * Returns the sort expressions that make up these sort options.
-	 *
-	 * @since 0.1
-	 *
-	 * @return SortExpression[]
-	 */
-	public function getExpressions() {
-		return $this->expressions;
-	}
-
-	/**
-	 * @see ArrayValueProvider::getArrayValue
-	 *
-	 * @since 0.1
-	 *
-	 * @return array|null|bool|int|float|string
-	 */
-	public function getArrayValue() {
-		return array(
-			// TODO: order of expressions is relevant
-			'expressions' => array_map(
-				function( SortExpression $expression ) {
-					return $expression->toArray();
-				},
-				$this->expressions
-			)
+		$instances[] = new QueryOptions(
+			100,
+			0
 		);
+
+		$instances[] = new QueryOptions(
+			5,
+			100
+		);
+
+		$instances[] = new QueryOptions(
+			9000,
+			42,
+			new \Ask\Language\Option\SortOptions( array() )
+		);
+
+		return $instances;
+	}
+
+	/**
+	 * @since 0.1
+	 *
+	 * @return QueryOptions[][]
+	 */
+	public function instanceProvider() {
+		return $this->arrayWrap( $this->getInstances() );
+	}
+
+	/**
+	 * @dataProvider instanceProvider
+	 *
+	 * @since 0.1
+	 *
+	 * @param QueryOptions $object
+	 */
+	public function testReturnTypeOfGetArrayValue( QueryOptions $object ) {
+		$array = $object->getArrayValue();
+		$this->assertPrimitiveStructure( $array );
 	}
 
 }

@@ -120,6 +120,10 @@ abstract class DescriptionCollection extends Description implements \Ask\Immutab
 	/**
 	 * @see Comparable::equals
 	 *
+	 * Note: it is possible this method provides false negatives due to
+	 * equivalent expressions being expressed in different structures.
+	 * This is however likely not important.
+	 *
 	 * @since 0.1
 	 *
 	 * @param mixed $mixed

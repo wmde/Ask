@@ -80,6 +80,8 @@ $wgHooks['UnitTestsList'][]	= function( array &$files ) {
 		'Language/Description/ValueDescription',
 
 		'Language/Option/PropertyValueSortExpression',
+		'Language/Option/QueryOptions',
+		'Language/Option/SortOptions',
 
 		'Language/Selection/PropertySelection',
 		'Language/Selection/SubjectSelection',

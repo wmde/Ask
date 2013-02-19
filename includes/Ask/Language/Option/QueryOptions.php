@@ -28,7 +28,7 @@ namespace Ask\Language\Option;
  * @licence GNU GPL v2+
  * @author Jeroen De Dauw < jeroendedauw@gmail.com >
  */
-class QueryOptions implements \Ask\Immutable {
+class QueryOptions implements \Ask\Immutable, \Ask\ArrayValueProvider {
 
 	/**
 	 * The query limit. At most this many results will be selected.
@@ -103,6 +103,21 @@ class QueryOptions implements \Ask\Immutable {
 	 */
 	public function getSort() {
 		return $this->sort;
+	}
+
+	/**
+	 * @see ArrayValueProvider::getArrayValue
+	 *
+	 * @since 0.1
+	 *
+	 * @return array|null|bool|int|float|string
+	 */
+	public function getArrayValue() {
+		return array(
+			'limit' => $this->limit,
+			'offset' => $this->offset,
+			'sort' => $this->sort->getArrayValue(),
+		);
 	}
 
 }
