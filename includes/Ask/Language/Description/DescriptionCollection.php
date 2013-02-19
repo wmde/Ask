@@ -164,15 +164,18 @@ abstract class DescriptionCollection extends Description implements \Ask\Immutab
 	public function getHash() {
 		$this->sortCollection( $this->descriptions );
 
-		return sha1( implode(
-			'|',
-			array_map(
-				function( Hashable $hashable ) {
-					return $hashable->getHash();
-				},
-				$this->descriptions
+		return sha1(
+			$this->getType() .
+			implode(
+				'|',
+				array_map(
+					function( Hashable $hashable ) {
+						return $hashable->getHash();
+					},
+					$this->descriptions
+				)
 			)
-		) );
+		);
 	}
 
 	/**

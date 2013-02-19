@@ -158,7 +158,7 @@ final class SomeProperty extends Description implements \Ask\Immutable {
 	 * @return string
 	 */
 	public function getHash() {
-		return sha1( $this->property->getHash() . $this->description->getHash() );
+		return sha1( $this->getType() . $this->property->getHash() . $this->description->getHash() );
 	}
 
 }

@@ -176,7 +176,7 @@ final class ValueDescription extends  Description implements \Ask\Immutable {
 	 * @return string
 	 */
 	public function getHash() {
-		return sha1( $this->value->getHash() . $this->comparator );
+		return sha1( $this->getType() . $this->value->getHash() . $this->comparator );
 	}
 
 }
