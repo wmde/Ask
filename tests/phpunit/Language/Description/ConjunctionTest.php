@@ -1,8 +1,11 @@
 <?php
 
 namespace Ask\Tests\Language\Description;
+
 use Ask\Language\Description\Conjunction;
 use Ask\Language\Description\Disjunction;
+use Ask\Language\Description\Description;
+use Ask\Language\Description\DescriptionCollection;
 
 /**
  * Unit tests for the Ask\Language\Description\Intersection class.
@@ -33,7 +36,7 @@ use Ask\Language\Description\Disjunction;
  * @licence GNU GPL v2+
  * @author Jeroen De Dauw < jeroendedauw@gmail.com >
  */
-class ConjunctionTest extends DescriptionTest {
+class ConjunctionTest extends DescriptionCollectionTest {
 
 	/**
 	 * {@inheritdoc}
@@ -46,6 +49,10 @@ class ConjunctionTest extends DescriptionTest {
 		$instances[] = new Conjunction( array( new Disjunction( array() ), new Disjunction( array() ) ) );
 		$instances[] = new Conjunction( array( new \Ask\Language\Description\AnyValue() ) );
 		$instances[] = new Conjunction( array( new \Ask\Language\Description\ValueDescription( new \DataValues\StringValue( 'ohi' ) ) ) );
+
+		foreach ( $this->descriptionsProvider() as $argList ) {
+			$instances[] = new Conjunction( $argList[0] );
+		}
 
 		return $instances;
 	}
@@ -69,6 +76,17 @@ class ConjunctionTest extends DescriptionTest {
 		$newInstance = new Disjunction( $descriptions );
 
 		$this->assertEquals( $descriptions, $newInstance->getDescriptions(), 'Descriptions are returned as it was passed to the constructor' );
+	}
+
+	/**
+	 * @see DescriptionCollectionTest::newFromDescriptions
+	 *
+	 * @param Description[] $descriptions
+	 *
+	 * @return DescriptionCollection
+	 */
+	protected function newFromDescriptions( array $descriptions ) {
+		return new Conjunction( $descriptions );
 	}
 
 }

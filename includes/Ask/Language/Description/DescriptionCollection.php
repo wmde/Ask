@@ -139,8 +139,8 @@ abstract class DescriptionCollection extends Description implements \Ask\Immutab
 			return false;
 		}
 
-		$this->sortCollection( $this->descriptions );
-		$this->sortCollection( $this->descriptions );
+		$this->sortCollection( $descriptions );
+		$this->sortCollection( $moreDescriptions );
 		reset( $moreDescriptions );
 
 		foreach ( $descriptions as $description ) {

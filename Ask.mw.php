@@ -47,6 +47,9 @@ if ( defined( 'MW_PHPUNIT_TEST' ) ) {
 	$wgAutoloadClasses['Ask\Tests\AskTestCase']
 		= __DIR__ . '/tests/phpunit/AskTestCase.php';
 
+	$wgAutoloadClasses['Ask\Tests\Language\Description\DescriptionCollectionTest']
+		= __DIR__ . '/tests/phpunit/Language/Description/DescriptionCollectionTest.php';
+
 	$wgAutoloadClasses['Ask\Tests\Language\Description\DescriptionTest']
 		= __DIR__ . '/tests/phpunit/Language/Description/DescriptionTest.php';
 
