@@ -31,20 +31,19 @@ namespace Ask;
 interface Arrayable {
 
 	/**
-	 * Returns a representation of the object in primitive form,
-	 * using only primitive values and arrays. The return value
-	 * is thus does not contain any objects and can be fed to
-	 * json_encode and similar. The result should typically have
-	 * an understandable and stable format.
+	 * Returns a representation of the objects value and type in
+	 * primitive form. The returned array contains two elements:
 	 *
-	 * The returned value might contain an absolute or relative type
-	 * identifier that can be used to construct an object from the
-	 * return value.
+	 * - type: A string that is an identifier for the type of object
+	 *
+	 * - value: array|null|bool|int|float|string
+	 *          Contains no non-array, non-primitive values and
+	 *          can thus be fed to functions such as json_encode.
 	 *
 	 * @since 0.1
 	 *
-	 * @return array|null|bool|int|float|string
+	 * @return array
 	 */
 	public function toArray();
 
-};
+}

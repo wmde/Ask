@@ -84,4 +84,17 @@ class PropertyValueSortExpression extends SortExpression {
 		return SortExpression::PROPERTY_VALUE;
 	}
 
+	/**
+	 * @see SortExpression::getArrayValue
+	 *
+	 * @since 0.1
+	 *
+	 * @return string
+	 */
+	public function getArrayValue() {
+		return array(
+			'property' => $this->property->toArray(),
+		);
+	}
+
 }

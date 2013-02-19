@@ -31,30 +31,10 @@ namespace Ask\Language\Selection;
  * @licence GNU GPL v2+
  * @author Jeroen De Dauw < jeroendedauw@gmail.com >
  */
-abstract class SelectionRequest implements \Ask\Arrayable, \Ask\Comparable, \Ask\Hashable {
+abstract class SelectionRequest implements \Ask\Arrayable, \Ask\Comparable, \Ask\Hashable, \Ask\Typeable, \Ask\ArrayValueProvider {
 
 	const TYPE_PROP = 1;
 	const TYPE_SUBJECT = 2;
-
-	/**
-	 * Returns the type of the selection request.
-	 *
-	 * @since 0.1
-	 *
-	 * @return string
-	 */
-	public abstract function getType();
-
-	/**
-	 * Returns the value in a format that contains only primitive values
-	 * and arrays. This format is typically stable and easy to understand,
-	 * and thus ideal for serialization such as json_encode.
-	 *
-	 * @since 0.1
-	 *
-	 * @return string
-	 */
-	public abstract function getArrayValue();
 
 	/**
 	 * @see \Ask\Arrayable::toArray

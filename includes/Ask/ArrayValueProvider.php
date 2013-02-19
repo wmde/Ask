@@ -3,7 +3,7 @@
 namespace Ask;
 
 /**
- * Interface for comparable objects.
+ * Interface for objects that have a getArrayValue method.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -28,4 +28,19 @@ namespace Ask;
  * @licence GNU GPL v2+
  * @author Jeroen De Dauw < jeroendedauw@gmail.com >
  */
-interface Comparable extends \Comparable {}
+interface ArrayValueProvider {
+
+	/**
+	 * Returns a representation of the objects value in primitive form,
+	 * using only primitive values and arrays. The return value
+	 * is thus does not contain any objects and can be fed to
+	 * json_encode and similar. The result should typically have
+	 * an understandable and stable format.
+	 *
+	 * @since 0.1
+	 *
+	 * @return array|null|bool|int|float|string
+	 */
+	public function getArrayValue();
+
+}

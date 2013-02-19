@@ -17,9 +17,11 @@ return call_user_func( function() {
 
 	$classes = array(
 		'Ask\Arrayable',
+		'Ask\ArrayValueProvider',
 		'Ask\Comparable',
 		'Ask\Hashable',
 		'Ask\Immutable',
+		'Ask\Typeable',
 
 		'Ask\Language\Description\AnyValue',
 		'Ask\Language\Description\Conjunction',

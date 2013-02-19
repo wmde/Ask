@@ -63,8 +63,26 @@ abstract class AskTestCase extends \PHPUnit_Framework_TestCase {
 		else {
 			$this->assertFalse( is_object( $value ), 'Value should not be an object' );
 			$this->assertFalse( is_resource( $value ), 'Value should not be a resource' );
-			$this->assertFalse( is_callable( $value ), 'Value should not be a callable' );
 		}
+	}
+
+	/**
+	 * @param array $array
+	 * @param object $object Needs to implement both Typeable and ArrayValueProvider
+	 */
+	protected function assertToArrayStructure( array $array, $object ) {
+		$this->assertInternalType( 'array', $array );
+		$this->assertArrayHasKey( 'type', $array );
+		$this->assertArrayHasKey( 'value', $array );
+		$this->assertCount( 2, $array );
+
+		$this->assertEquals(
+			array(
+				'type' => $object->getType(),
+				'value' => $object->getArrayValue(),
+			),
+			$array
+		);
 	}
 
 }

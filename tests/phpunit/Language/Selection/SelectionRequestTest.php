@@ -63,23 +63,11 @@ abstract class SelectionRequestTest extends \Ask\Tests\AskTestCase {
 	 *
 	 * @since 0.1
 	 *
-	 * @param SelectionRequest $description
+	 * @param SelectionRequest $object
 	 */
-	public function testReturnValueOfToArray( SelectionRequest $description ) {
-		$array = $description->toArray();
-
-		$this->assertInternalType( 'array', $array );
-		$this->assertArrayHasKey( 'type', $array );
-		$this->assertArrayHasKey( 'value', $array );
-		$this->assertCount( 2, $array );
-
-		$this->assertEquals(
-			array(
-				'type' => $description->getType(),
-				'value' => $description->getArrayValue(),
-			),
-			$array
-		);
+	public function testReturnValueOfToArray( SelectionRequest $object ) {
+		$array = $object->toArray();
+		$this->assertToArrayStructure( $array, $object );
 	}
 
 	/**
@@ -87,11 +75,10 @@ abstract class SelectionRequestTest extends \Ask\Tests\AskTestCase {
 	 *
 	 * @since 0.1
 	 *
-	 * @param SelectionRequest $description
+	 * @param SelectionRequest $object
 	 */
-	public function testReturnTypeOfGetArrayValue( SelectionRequest $description ) {
-		$array = $description->getArrayValue();
-
+	public function testReturnTypeOfGetArrayValue( SelectionRequest $object ) {
+		$array = $object->getArrayValue();
 		$this->assertPrimitiveStructure( $array );
 	}
 

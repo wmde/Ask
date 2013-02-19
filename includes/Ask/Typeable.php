@@ -3,7 +3,7 @@
 namespace Ask;
 
 /**
- * Interface for comparable objects.
+ * Interface for objects that have a getType method.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -28,4 +28,17 @@ namespace Ask;
  * @licence GNU GPL v2+
  * @author Jeroen De Dauw < jeroendedauw@gmail.com >
  */
-interface Comparable extends \Comparable {}
+interface Typeable {
+
+	/**
+	 * Returns a type identifier for the object.
+	 * This identifier does not have to be globally unique,
+	 * though is expected to be unique for objects of the same type.
+	 *
+	 * @since 0.1
+	 *
+	 * @return string
+	 */
+	public function getType();
+
+}

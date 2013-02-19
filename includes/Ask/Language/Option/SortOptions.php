@@ -28,7 +28,7 @@ namespace Ask\Language\Option;
  * @licence GNU GPL v2+
  * @author Jeroen De Dauw < jeroendedauw@gmail.com >
  */
-class SortOptions {
+class SortOptions implements \Ask\Immutable {
 
 	/**
 	 * The sort expressions that make up these sort options.

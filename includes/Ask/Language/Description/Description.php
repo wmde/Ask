@@ -30,7 +30,7 @@ namespace Ask\Language\Description;
  * @licence GNU GPL v2+
  * @author Jeroen De Dauw < jeroendedauw@gmail.com >
  */
-abstract class Description implements \Ask\Arrayable, \Ask\Comparable, \Ask\Hashable {
+abstract class Description implements \Ask\Arrayable, \Ask\Comparable, \Ask\Hashable, \Ask\Typeable, \Ask\ArrayValueProvider {
 
 	/**
 	 * Returns the size of the description.
@@ -49,26 +49,6 @@ abstract class Description implements \Ask\Arrayable, \Ask\Comparable, \Ask\Hash
 	 * @return integer
 	 */
 	public abstract function getDepth();
-
-	/**
-	 * Returns a string identifier for the description's type.
-	 *
-	 * @since 0.1
-	 *
-	 * @return string
-	 */
-	public abstract function getType();
-
-	/**
-	 * Returns the value in a format that contains only primitive values
-	 * and arrays. This format is typically stable and easy to understand,
-	 * and thus ideal for serialization such as json_encode.
-	 *
-	 * @since 0.1
-	 *
-	 * @return string
-	 */
-	public abstract function getArrayValue();
 
 	/**
 	 * @see \Ask\Arrayable::toArray

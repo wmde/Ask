@@ -1,9 +1,11 @@
 <?php
 
-namespace Ask;
+namespace Ask\Tests\Language\Option;
+
+use Ask\Language\Option\SortExpression;
 
 /**
- * Interface for comparable objects.
+ * Base class for unit tests for the Ask\Language\Option\SortExpression deriving classes.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -23,9 +25,35 @@ namespace Ask;
  * @since 0.1
  *
  * @file
- * @ingroup Ask
+ * @ingroup AskTests
  *
  * @licence GNU GPL v2+
  * @author Jeroen De Dauw < jeroendedauw@gmail.com >
  */
-interface Comparable extends \Comparable {}
+abstract class SortExpressionTest extends \Ask\Tests\AskTestCase {
+
+	/**
+	 * @dataProvider instanceProvider
+	 *
+	 * @since 0.1
+	 *
+	 * @param SortExpression $object
+	 */
+	public function testReturnValueOfToArray( SortExpression $object ) {
+		$array = $object->toArray();
+		$this->assertToArrayStructure( $array, $object );
+	}
+
+	/**
+	 * @dataProvider instanceProvider
+	 *
+	 * @since 0.1
+	 *
+	 * @param SortExpression $object
+	 */
+	public function testReturnTypeOfGetArrayValue( SortExpression $object ) {
+		$array = $object->getArrayValue();
+		$this->assertPrimitiveStructure( $array );
+	}
+
+}

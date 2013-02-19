@@ -86,19 +86,7 @@ abstract class DescriptionTest extends \Ask\Tests\AskTestCase {
 	 */
 	public function testReturnValueOfToArray( Description $description ) {
 		$array = $description->toArray();
-
-		$this->assertInternalType( 'array', $array );
-		$this->assertArrayHasKey( 'type', $array );
-		$this->assertArrayHasKey( 'value', $array );
-		$this->assertCount( 2, $array );
-
-		$this->assertEquals(
-			array(
-				'type' => $description->getType(),
-				'value' => $description->getArrayValue(),
-			),
-			$array
-		);
+		$this->assertToArrayStructure( $array, $description );
 	}
 
 	/**
