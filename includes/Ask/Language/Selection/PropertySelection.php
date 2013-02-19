@@ -29,7 +29,7 @@ use DataValues\PropertyValue;
  * @licence GNU GPL v2+
  * @author Jeroen De Dauw < jeroendedauw@gmail.com >
  */
-class PropertySelection extends SelectionRequest implements \Ask\Immutable {
+final class PropertySelection extends SelectionRequest implements \Ask\Immutable {
 
 	/**
 	 * @since 0.1
@@ -82,6 +82,31 @@ class PropertySelection extends SelectionRequest implements \Ask\Immutable {
 		return array(
 			'property' => $this->property->toArray()
 		);
+	}
+
+	/**
+	 * @see Comparable::equals
+	 *
+	 * @since 0.1
+	 *
+	 * @param mixed $mixed
+	 *
+	 * @return boolean
+	 */
+	public function equals( $mixed ) {
+		return $mixed instanceof PropertySelection
+			&& $this->property->equals( $mixed->getProperty() );
+	}
+
+	/**
+	 * @see Hashable::getHash
+	 *
+	 * @since 0.1
+	 *
+	 * @return string
+	 */
+	public function getHash() {
+		return sha1( $this->getType() . $this->property->getHash() );
 	}
 
 }

@@ -31,7 +31,7 @@ namespace Ask\Language\Selection;
  * @licence GNU GPL v2+
  * @author Jeroen De Dauw < jeroendedauw@gmail.com >
  */
-abstract class SelectionRequest implements \Ask\Arrayable {
+abstract class SelectionRequest implements \Ask\Arrayable, \Ask\Comparable, \Ask\Hashable {
 
 	const TYPE_PROP = 1;
 	const TYPE_SUBJECT = 2;

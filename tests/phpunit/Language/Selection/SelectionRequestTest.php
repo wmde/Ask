@@ -95,4 +95,49 @@ abstract class SelectionRequestTest extends \Ask\Tests\AskTestCase {
 		$this->assertPrimitiveStructure( $array );
 	}
 
+	/**
+	 * @dataProvider instanceProvider
+	 *
+	 * @since 0.1
+	 *
+	 * @param SelectionRequest $object
+	 */
+	public function testComparableSelfIsEqual( SelectionRequest $object ) {
+		$this->assertTrue( $object->equals( $object ), 'Description is equal to itself' );
+	}
+
+	/**
+	 * @dataProvider instanceProvider
+	 *
+	 * @since 0.1
+	 *
+	 * @param SelectionRequest $object
+	 */
+	public function testComparableNotEqual( SelectionRequest $object ) {
+		$this->assertFalse( $object->equals( '~[,,_,,]:3' ), 'Description not equal to string' );
+		$this->assertFalse( $object->equals( new \stdClass() ), 'Description not equal to empty object' );
+	}
+
+	/**
+	 * @dataProvider instanceProvider
+	 *
+	 * @since 0.1
+	 *
+	 * @param SelectionRequest $object
+	 */
+	public function testGetHashReturnType( SelectionRequest $object ) {
+		$this->assertInternalType( 'string', $object->getHash() );
+	}
+
+	/**
+	 * @dataProvider instanceProvider
+	 *
+	 * @since 0.1
+	 *
+	 * @param SelectionRequest $object
+	 */
+	public function testGetHashStability( SelectionRequest $object ) {
+		$this->assertEquals( $object->getHash(), $object->getHash() );
+	}
+
 }
