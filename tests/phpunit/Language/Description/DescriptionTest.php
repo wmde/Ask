@@ -135,7 +135,7 @@ abstract class DescriptionTest extends \Ask\Tests\AskTestCase {
 	public function testComparableNotEqual( Description $description ) {
 		$this->assertFalse( $description->equals( '~[,,_,,]:3' ), 'Description not equal to string' );
 		$this->assertFalse( $description->equals( new \stdClass() ), 'Description not equal to empty object' );
-		$this->assertFalse( $description->equals( new FooDescription() ), 'Description not equal to empty object' );
+		$this->assertFalse( $description->equals( new FooDescription() ), 'Description not equal to a FooDescription' );
 	}
 
 	/**
