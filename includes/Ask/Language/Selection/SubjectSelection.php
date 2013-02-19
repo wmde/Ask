@@ -31,7 +31,7 @@ namespace Ask\Language\Selection;
 final class SubjectSelection extends SelectionRequest implements \Ask\Immutable {
 
 	/**
-	 * @see SelectionRequest::getType
+	 * @see Typeable::getType
 	 *
 	 * @since 0.1
 	 *
@@ -42,7 +42,7 @@ final class SubjectSelection extends SelectionRequest implements \Ask\Immutable 
 	}
 
 	/**
-	 * @see SelectionRequest::getArrayValue
+	 * @see ArrayValueProvider::getArrayValue
 	 *
 	 * @since 0.1
 	 *

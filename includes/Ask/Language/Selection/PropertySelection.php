@@ -50,7 +50,7 @@ final class PropertySelection extends SelectionRequest implements \Ask\Immutable
 	}
 
 	/**
-	 * @see SelectionRequest::getType
+	 * @see Typeable::getType
 	 *
 	 * @since 0.1
 	 *
@@ -72,7 +72,7 @@ final class PropertySelection extends SelectionRequest implements \Ask\Immutable
 	}
 
 	/**
-	 * @see SelectionRequest::getArrayValue
+	 * @see ArrayValueProvider::getArrayValue
 	 *
 	 * @since 0.1
 	 *

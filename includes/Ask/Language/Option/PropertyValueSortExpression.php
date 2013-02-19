@@ -85,7 +85,7 @@ class PropertyValueSortExpression extends SortExpression {
 	}
 
 	/**
-	 * @see SortExpression::getArrayValue
+	 * @see ArrayValueProvider::getArrayValue
 	 *
 	 * @since 0.1
 	 *
