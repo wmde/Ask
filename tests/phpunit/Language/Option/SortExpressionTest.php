@@ -72,4 +72,21 @@ abstract class SortExpressionTest extends \Ask\Tests\AskTestCase {
 		$this->assertPrimitiveStructure( $array );
 	}
 
+	/**
+	 * @dataProvider instanceProvider
+	 *
+	 * @since 0.1
+	 *
+	 * @param SortExpression $object
+	 */
+	public function testReturnValueOfGetDirection( SortExpression $expression ) {
+		$direction = $expression->getDirection();
+
+		$this->assertInternalType( 'string', $direction );
+		$this->assertTrue(
+			in_array( $direction, array( SortExpression::ASCENDING, SortExpression::DESCENDING ) ),
+			'Sort direction is one of the known values'
+		);
+	}
+
 }
