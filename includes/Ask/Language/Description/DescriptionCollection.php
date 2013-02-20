@@ -33,6 +33,8 @@ use Ask\Hashable;
 abstract class DescriptionCollection extends Description implements \Ask\Immutable {
 
 	/**
+	 * The descriptions that make up this collection of descriptions.
+	 *
 	 * @since 0.1
 	 *
 	 * @var Description[]

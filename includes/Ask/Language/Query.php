@@ -39,6 +39,10 @@ class Query implements \Ask\Immutable {
 	const OPT_SORT = 'sort';
 
 	/**
+	 * The query's description.
+	 * This is the selection criterion of the query that determines which entities match.
+	 * It is conceptually similar to the WHERE clause in an SQL query.
+	 *
 	 * @since 0.1
 	 *
 	 * @var Description
@@ -46,6 +50,10 @@ class Query implements \Ask\Immutable {
 	protected $description;
 
 	/**
+	 * The query's selection requests.
+	 * These determine which information should be selected from the matching entities.
+	 * It is conceptually similar to the SELECT clause in an SQL query.
+	 *
 	 * @since 0.1
 	 *
 	 * @var SelectionRequest[]
@@ -53,6 +61,8 @@ class Query implements \Ask\Immutable {
 	protected $selectionRequests;
 
 	/**
+	 * The query's options.
+	 *
 	 * @since 0.1
 	 *
 	 * @var QueryOptions

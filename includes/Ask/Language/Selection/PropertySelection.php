@@ -32,6 +32,8 @@ use DataValues\PropertyValue;
 final class PropertySelection extends SelectionRequest implements \Ask\Immutable {
 
 	/**
+	 * The property for which to select values.
+	 *
 	 * @since 0.1
 	 *
 	 * @var PropertyValue

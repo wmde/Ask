@@ -52,6 +52,8 @@ final class ValueDescription extends  Description implements \Ask\Immutable {
 	const COMP_GRTR = 8; // Strictly more than
 
 	/**
+	 * The value to compare to.
+	 *
 	 * @since 0.1
 	 *
 	 * @var DataValue
@@ -59,6 +61,8 @@ final class ValueDescription extends  Description implements \Ask\Immutable {
 	protected $value;
 
 	/**
+	 * The comparator to use to determine if the value matches.
+	 *
 	 * @since 0.1
 	 *
 	 * @var int
