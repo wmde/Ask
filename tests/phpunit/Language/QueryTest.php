@@ -86,4 +86,31 @@ class QueryTest extends \Ask\Tests\AskTestCase {
 		$this->assertEquals( $selectionRequests, $obtainedRequests );
 	}
 
+	public function instanceProvider() {
+		$instances = array();
+
+		$instances[] = new Query(
+			new \Ask\Language\Description\AnyValue(),
+			array(
+				new \Ask\Language\Selection\PropertySelection( new \DataValues\PropertyValue( 'q42' ) ),
+				new \Ask\Language\Selection\PropertySelection( new \DataValues\PropertyValue( '_geo' ) ),
+			),
+			new QueryOptions( 100, 0 )
+		);
+
+		return $this->arrayWrap( $instances );
+	}
+
+	/**
+	 * @dataProvider instanceProvider
+	 *
+	 * @since 0.1
+	 *
+	 * @param Query $object
+	 */
+	public function testReturnTypeOfGetArrayValue( Query $object ) {
+		$array = $object->getArrayValue();
+		$this->assertPrimitiveStructure( $array );
+	}
+
 }

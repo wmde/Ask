@@ -51,7 +51,10 @@ abstract class AskTestCase extends \PHPUnit_Framework_TestCase {
 	}
 
 	protected function assertPrimitiveStructure( $value ) {
-		if ( is_array( $value ) ) {
+		if ( is_array( $value ) || is_object( $value ) ) {
+			// TODO: would be good if we could reject objects that are not simple maps
+			$value = (array)$value;
+
 			if ( empty( $value ) ) {
 				$this->assertTrue( true );
 			}
@@ -61,7 +64,6 @@ abstract class AskTestCase extends \PHPUnit_Framework_TestCase {
 			}
 		}
 		else {
-			$this->assertFalse( is_object( $value ), 'Value should not be an object' );
 			$this->assertFalse( is_resource( $value ), 'Value should not be a resource' );
 		}
 	}

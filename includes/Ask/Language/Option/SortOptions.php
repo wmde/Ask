@@ -70,8 +70,7 @@ class SortOptions implements \Ask\Immutable, \Ask\ArrayValueProvider {
 	 */
 	public function getArrayValue() {
 		return array(
-			// TODO: order of expressions is relevant
-			'expressions' => array_map(
+			'expressions' => (object)array_map(
 				function( SortExpression $expression ) {
 					return $expression->toArray();
 				},
