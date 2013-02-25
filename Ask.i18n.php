@@ -43,6 +43,13 @@ $messages['qqq'] = array(
 	'ask-desc' => '{{desc|name=Ask|url=http://www.mediawiki.org/wiki/Extension:Ask}}',
 );
 
+/** Asturian (asturianu)
+ * @author Xuacu
+ */
+$messages['ast'] = array(
+	'ask-desc' => 'Biblioteca que contien un encadarmáu en PHP del llinguaxe de consulta Ask',
+);
+
 /** German (Deutsch)
  * @author Metalhead64
  */
