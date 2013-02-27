@@ -51,10 +51,11 @@ $messages['ast'] = array(
 );
 
 /** German (Deutsch)
+ * @author Kghbln
  * @author Metalhead64
  */
 $messages['de'] = array(
-	'ask-desc' => 'Ergänzt eine Bibliothek, die eine PHP-Implementierung der Ask-Abfragesprache enthält',
+	'ask-desc' => 'Ergänzt eine Bibliothek, die eine PHP-Implementierung der Abfragesprache „Ask“ enthält',
 );
 
 /** Lower Sorbian (dolnoserbski)
@@ -73,9 +74,10 @@ $messages['es'] = array(
 
 /** French (français)
  * @author Gomoko
+ * @author Tpt
  */
 $messages['fr'] = array(
-	'ask-desc' => 'Bibliothèque contenant une implémentation PHP du langage de requêtage Ask',
+	'ask-desc' => 'Bibliothèque contenant une implémentation PHP du langage de requête Ask',
 );
 
 /** Galician (galego)
