@@ -72,6 +72,13 @@ $messages['es'] = array(
 	'ask-desc' => 'Biblioteca que contiene una implementación en PHP del lenguaje de consulta de Ask',
 );
 
+/** Persian (فارسی)
+ * @author Reza1615
+ */
+$messages['fa'] = array(
+	'ask-desc' => 'کتابخانه شامل پیاده‌سازی پی‌اچ‌پی از زبان کوئری پرس و جو است',
+);
+
 /** French (français)
  * @author Gomoko
  * @author Tpt
@@ -92,6 +99,13 @@ $messages['gl'] = array(
  */
 $messages['hsb'] = array(
 	'ask-desc' => 'Biblioteka, kotraž PHP-implementaciju naprašowanskeje rěče Ask wobsahuje',
+);
+
+/** Iloko (Ilokano)
+ * @author Lam-ang
+ */
+$messages['ilo'] = array(
+	'ask-desc' => 'Biblioteka nga aglaon ti maysa a PHP a panangigaretget iti panagsukisok a pagsasao ti Ask',
 );
 
 /** Italian (italiano)
