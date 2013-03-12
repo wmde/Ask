@@ -170,3 +170,10 @@ $messages['roa-tara'] = array(
 $messages['uk'] = array(
 	'ask-desc' => 'Бібліотека, що містить PHP-реалізацію мови запитів Ask',
 );
+
+/** Vietnamese (Tiếng Việt)
+ * @author Minh Nguyen
+ */
+$messages['vi'] = array(
+	'ask-desc' => 'Thư viện PHP cho ngôn ngữ truy vấn Ask',
+);
