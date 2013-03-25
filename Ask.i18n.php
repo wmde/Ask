@@ -164,6 +164,13 @@ $messages['roa-tara'] = array(
 	'ask-desc' => "Libbrerie ca tène 'n'imblemendazione PHP d'a lènghe pe le 'nderrogaziune Ask",
 );
 
+/** Tagalog (Tagalog)
+ * @author AnakngAraw
+ */
+$messages['tl'] = array(
+	'ask-desc' => 'Aklatan na naglalaman ng isang pagsasakatuparan ng PHP ng wika ng pag-uungkat ng Ask',
+);
+
 /** Ukrainian (українська)
  * @author Ата
  */
