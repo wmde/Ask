@@ -129,6 +129,13 @@ $messages['ko'] = array(
 	'ask-desc' => 'Ask 쿼리 언어의 PHP 구현을 포함하는 라이브러리',
 );
 
+/** Colognian (Ripoarisch)
+ * @author Purodha
+ */
+$messages['ksh'] = array(
+	'ask-desc' => 'En Biblijoteek met en PHP jeschrevve Projramme, di di Schprooch <i lang="en">Ask</i> för et Befroore ömsäze.',
+);
+
 /** Macedonian (македонски)
  * @author Bjankuloski06
  */
