@@ -1,10 +1,10 @@
 <?php
 
-namespace Ask\Tests\Language\Description;
-use Ask\Language\Description\AnyValue;
+namespace Ask\Tests\Phpunit\Language\Selection;
+use Ask\Language\Selection\SubjectSelection;
 
 /**
- * Unit tests for the Ask\Language\Description\AnyValue class.
+ * Unit tests for the Ask\Language\Selection\ThisSelection class.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -27,12 +27,12 @@ use Ask\Language\Description\AnyValue;
  * @ingroup AskTests
  *
  * @group Ask
- * @group AskDescription
+ * @group AskSelection
  *
  * @licence GNU GPL v2+
  * @author Jeroen De Dauw < jeroendedauw@gmail.com >
  */
-class AnyValueTest extends DescriptionTest {
+class SubjectSelectionTest extends SelectionRequestTest {
 
 	/**
 	 * {@inheritdoc}
@@ -40,7 +40,7 @@ class AnyValueTest extends DescriptionTest {
 	protected function getInstances() {
 		$instances = array();
 
-		$instances[] = new AnyValue();
+		$instances[] = new SubjectSelection();
 
 		return $instances;
 	}

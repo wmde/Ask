@@ -1,6 +1,6 @@
 <?php
 
-namespace Ask\Tests\Language;
+namespace Ask\Tests\Phpunit\Language;
 use Ask\Language\Query;
 use Ask\Language\Option\QueryOptions;
 
@@ -32,7 +32,7 @@ use Ask\Language\Option\QueryOptions;
  * @licence GNU GPL v2+
  * @author Jeroen De Dauw < jeroendedauw@gmail.com >
  */
-class QueryTest extends \Ask\Tests\AskTestCase {
+class QueryTest extends \Ask\Tests\Phpunit\AskTestCase {
 
 	public function descriptionProvider() {
 		$descriptions = array();

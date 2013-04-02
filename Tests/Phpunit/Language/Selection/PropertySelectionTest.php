@@ -1,11 +1,10 @@
 <?php
 
-namespace Ask\Tests\Language\Option;
-
-use Ask\Language\Option\QueryOptions;
+namespace Ask\Tests\Phpunit\Language\Selection;
+use Ask\Language\Selection\PropertySelection;
 
 /**
- * Tests for the Ask\Language\Option\QueryOptions class.
+ * Unit tests for the Ask\Language\Selection\PropertySelection class.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -28,59 +27,28 @@ use Ask\Language\Option\QueryOptions;
  * @ingroup AskTests
  *
  * @group Ask
- * @group AskOption
+ * @group AskSelection
  *
  * @licence GNU GPL v2+
  * @author Jeroen De Dauw < jeroendedauw@gmail.com >
  */
-class QueryOptionsTest extends \Ask\Tests\AskTestCase {
+class PropertySelectionTest extends SelectionRequestTest {
 
 	/**
-	 * @since 0.1
-	 *
-	 * @return QueryOptions[]
+	 * {@inheritdoc}
 	 */
 	protected function getInstances() {
 		$instances = array();
 
-		$instances[] = new QueryOptions(
-			100,
-			0
+		$instances[] = new PropertySelection(
+			new \DataValues\PropertyValue( 'p42' )
 		);
 
-		$instances[] = new QueryOptions(
-			5,
-			100
-		);
-
-		$instances[] = new QueryOptions(
-			9000,
-			42,
-			new \Ask\Language\Option\SortOptions( array() )
+		$instances[] = new PropertySelection(
+			new \DataValues\PropertyValue( '_geo' )
 		);
 
 		return $instances;
-	}
-
-	/**
-	 * @since 0.1
-	 *
-	 * @return QueryOptions[][]
-	 */
-	public function instanceProvider() {
-		return $this->arrayWrap( $this->getInstances() );
-	}
-
-	/**
-	 * @dataProvider instanceProvider
-	 *
-	 * @since 0.1
-	 *
-	 * @param QueryOptions $object
-	 */
-	public function testReturnTypeOfGetArrayValue( QueryOptions $object ) {
-		$array = $object->getArrayValue();
-		$this->assertPrimitiveStructure( $array );
 	}
 
 }

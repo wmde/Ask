@@ -44,25 +44,16 @@ foreach ( include( __DIR__ . '/Ask.classes.php' ) as $class => $file ) {
 }
 
 if ( defined( 'MW_PHPUNIT_TEST' ) ) {
-	$wgAutoloadClasses['Ask\Tests\AskTestCase']
-		= __DIR__ . '/tests/phpunit/AskTestCase.php';
-
-	$wgAutoloadClasses['Ask\Tests\Language\Option\SortExpressionTest']
-		= __DIR__ . '/tests/phpunit/Language/Option/SortExpressionTest.php';
-
-	$wgAutoloadClasses['Ask\Tests\Language\Description\DescriptionCollectionTest']
-		= __DIR__ . '/tests/phpunit/Language/Description/DescriptionCollectionTest.php';
-
-	$wgAutoloadClasses['Ask\Tests\Language\Description\DescriptionTest']
-		= __DIR__ . '/tests/phpunit/Language/Description/DescriptionTest.php';
-
-	$wgAutoloadClasses['Ask\Tests\Language\Selection\SelectionRequestTest']
-		= __DIR__ . '/tests/phpunit/Language/Selection/SelectionRequestTest.php';
+	foreach ( include( __DIR__ . '/Tests/AskTestClasses.php' ) as $class => $file ) {
+		$wgAutoloadClasses[$class] = __DIR__ . '/../' . $file;
+	}
 }
 
 /**
  * Hook to add PHPUnit test cases.
  * @see https://www.mediawiki.org/wiki/Manual:Hooks/UnitTestsList
+ *
+ * TODO: register the Tests directory itself so this list does not need to be maintained
  *
  * @since 0.1
  *
@@ -90,7 +81,7 @@ $wgHooks['UnitTestsList'][]	= function( array &$files ) {
 	);
 
 	foreach ( $testFiles as $file ) {
-		$files[] = __DIR__ . '/tests/phpunit/' . $file . 'Test.php';
+		$files[] = __DIR__ . '/Tests/Phpunit/' . $file . 'Test.php';
 	}
 
 	return true;

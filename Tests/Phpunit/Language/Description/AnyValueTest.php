@@ -1,11 +1,10 @@
 <?php
 
-namespace Ask\Tests\Language\Option;
-
-use Ask\Language\Option\SortExpression;
+namespace Ask\Tests\Phpunit\Language\Description;
+use Ask\Language\Description\AnyValue;
 
 /**
- * Tests for the Ask\Language\Option\PropertyValueSortExpression class.
+ * Unit tests for the Ask\Language\Description\AnyValue class.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -28,32 +27,20 @@ use Ask\Language\Option\SortExpression;
  * @ingroup AskTests
  *
  * @group Ask
- * @group AskOption
+ * @group AskDescription
  *
  * @licence GNU GPL v2+
  * @author Jeroen De Dauw < jeroendedauw@gmail.com >
  */
-class PropertyValueSortExpressionTest extends SortExpressionTest {
+class AnyValueTest extends DescriptionTest {
 
 	/**
-	 * @see SortExpressionTest::getInstances
-	 *
-	 * @since 0.1
-	 *
-	 * @return SortExpression[]
+	 * {@inheritdoc}
 	 */
 	protected function getInstances() {
 		$instances = array();
 
-		$instances[] = new \Ask\Language\Option\PropertyValueSortExpression(
-			new \DataValues\PropertyValue( 'foo' ),
-			SortExpression::ASCENDING
-		);
-
-		$instances[] = new \Ask\Language\Option\PropertyValueSortExpression(
-			new \DataValues\PropertyValue( 'foo' ),
-			SortExpression::DESCENDING
-		);
+		$instances[] = new AnyValue();
 
 		return $instances;
 	}

@@ -1,6 +1,6 @@
 <?php
 
-namespace Ask\Tests;
+namespace Ask\Tests\Phpunit;
 
 /**
  * Base class for unit tests in the Ask library.

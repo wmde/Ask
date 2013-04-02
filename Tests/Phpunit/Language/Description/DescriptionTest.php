@@ -1,6 +1,6 @@
 <?php
 
-namespace Ask\Tests\Language\Description;
+namespace Ask\Tests\Phpunit\Language\Description;
 use Ask\Language\Description\Description;
 
 /**
@@ -29,7 +29,7 @@ use Ask\Language\Description\Description;
  * @licence GNU GPL v2+
  * @author Jeroen De Dauw < jeroendedauw@gmail.com >
  */
-abstract class DescriptionTest extends \Ask\Tests\AskTestCase {
+abstract class DescriptionTest extends \Ask\Tests\Phpunit\AskTestCase {
 
 	/**
 	 * @since 0.1

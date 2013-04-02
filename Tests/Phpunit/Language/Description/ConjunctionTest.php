@@ -1,6 +1,6 @@
 <?php
 
-namespace Ask\Tests\Language\Description;
+namespace Ask\Tests\Phpunit\Language\Description;
 
 use Ask\Language\Description\Conjunction;
 use Ask\Language\Description\Disjunction;

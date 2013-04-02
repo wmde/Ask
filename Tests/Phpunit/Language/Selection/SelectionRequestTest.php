@@ -1,6 +1,6 @@
 <?php
 
-namespace Ask\Tests\Language\Selection;
+namespace Ask\Tests\Phpunit\Language\Selection;
 use Ask\Language\Selection\SelectionRequest;
 
 /**
@@ -29,7 +29,7 @@ use Ask\Language\Selection\SelectionRequest;
  * @licence GNU GPL v2+
  * @author Jeroen De Dauw < jeroendedauw@gmail.com >
  */
-abstract class SelectionRequestTest extends \Ask\Tests\AskTestCase {
+abstract class SelectionRequestTest extends \Ask\Tests\Phpunit\AskTestCase {
 
 	/**
 	 * @since 0.1

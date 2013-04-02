@@ -1,8 +1,8 @@
 <?php
 
-namespace Ask\Tests\Language\Option;
+namespace Ask\Tests\Phpunit\Language\Option;
 
-use Ask\Language\Option\SortOptions;
+use Ask\Language\Option\QueryOptions;
 
 /**
  * Tests for the Ask\Language\Option\QueryOptions class.
@@ -33,32 +33,39 @@ use Ask\Language\Option\SortOptions;
  * @licence GNU GPL v2+
  * @author Jeroen De Dauw < jeroendedauw@gmail.com >
  */
-class SortOptionsTest extends \Ask\Tests\AskTestCase {
+class QueryOptionsTest extends \Ask\Tests\Phpunit\AskTestCase {
 
 	/**
 	 * @since 0.1
 	 *
-	 * @return SortOptions[]
+	 * @return QueryOptions[]
 	 */
 	protected function getInstances() {
 		$instances = array();
 
-		$instances[] = new SortOptions( array() );
+		$instances[] = new QueryOptions(
+			100,
+			0
+		);
 
-		$instances[] = new SortOptions( array(
-			new \Ask\Language\Option\PropertyValueSortExpression(
-				new \DataValues\PropertyValue( 'foo' ),
-				\Ask\Language\Option\SortExpression::ASCENDING
-			)
-		) );
-		
+		$instances[] = new QueryOptions(
+			5,
+			100
+		);
+
+		$instances[] = new QueryOptions(
+			9000,
+			42,
+			new \Ask\Language\Option\SortOptions( array() )
+		);
+
 		return $instances;
 	}
 
 	/**
 	 * @since 0.1
 	 *
-	 * @return SortOptions[][]
+	 * @return QueryOptions[][]
 	 */
 	public function instanceProvider() {
 		return $this->arrayWrap( $this->getInstances() );
@@ -69,9 +76,9 @@ class SortOptionsTest extends \Ask\Tests\AskTestCase {
 	 *
 	 * @since 0.1
 	 *
-	 * @param SortOptions $object
+	 * @param QueryOptions $object
 	 */
-	public function testReturnTypeOfGetArrayValue( SortOptions $object ) {
+	public function testReturnTypeOfGetArrayValue( QueryOptions $object ) {
 		$array = $object->getArrayValue();
 		$this->assertPrimitiveStructure( $array );
 	}

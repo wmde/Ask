@@ -1,10 +1,11 @@
 <?php
 
-namespace Ask\Tests\Language\Selection;
-use Ask\Language\Selection\PropertySelection;
+namespace Ask\Tests\Phpunit\Language\Option;
+
+use Ask\Language\Option\SortExpression;
 
 /**
- * Unit tests for the Ask\Language\Selection\PropertySelection class.
+ * Tests for the Ask\Language\Option\PropertyValueSortExpression class.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -27,25 +28,31 @@ use Ask\Language\Selection\PropertySelection;
  * @ingroup AskTests
  *
  * @group Ask
- * @group AskSelection
+ * @group AskOption
  *
  * @licence GNU GPL v2+
  * @author Jeroen De Dauw < jeroendedauw@gmail.com >
  */
-class PropertySelectionTest extends SelectionRequestTest {
+class PropertyValueSortExpressionTest extends SortExpressionTest {
 
 	/**
-	 * {@inheritdoc}
+	 * @see SortExpressionTest::getInstances
+	 *
+	 * @since 0.1
+	 *
+	 * @return SortExpression[]
 	 */
 	protected function getInstances() {
 		$instances = array();
 
-		$instances[] = new PropertySelection(
-			new \DataValues\PropertyValue( 'p42' )
+		$instances[] = new \Ask\Language\Option\PropertyValueSortExpression(
+			new \DataValues\PropertyValue( 'foo' ),
+			SortExpression::ASCENDING
 		);
 
-		$instances[] = new PropertySelection(
-			new \DataValues\PropertyValue( '_geo' )
+		$instances[] = new \Ask\Language\Option\PropertyValueSortExpression(
+			new \DataValues\PropertyValue( 'foo' ),
+			SortExpression::DESCENDING
 		);
 
 		return $instances;

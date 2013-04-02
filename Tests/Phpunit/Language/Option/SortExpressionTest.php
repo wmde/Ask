@@ -1,6 +1,6 @@
 <?php
 
-namespace Ask\Tests\Language\Option;
+namespace Ask\Tests\Phpunit\Language\Option;
 
 use Ask\Language\Option\SortExpression;
 
@@ -30,7 +30,7 @@ use Ask\Language\Option\SortExpression;
  * @licence GNU GPL v2+
  * @author Jeroen De Dauw < jeroendedauw@gmail.com >
  */
-abstract class SortExpressionTest extends \Ask\Tests\AskTestCase {
+abstract class SortExpressionTest extends \Ask\Tests\Phpunit\AskTestCase {
 
 	/**
 	 * @since 0.1

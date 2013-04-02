@@ -1,10 +1,11 @@
 <?php
 
-namespace Ask\Tests\Language\Selection;
-use Ask\Language\Selection\SubjectSelection;
+namespace Ask\Tests\Phpunit\Language\Option;
+
+use Ask\Language\Option\SortOptions;
 
 /**
- * Unit tests for the Ask\Language\Selection\ThisSelection class.
+ * Tests for the Ask\Language\Option\QueryOptions class.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -27,22 +28,52 @@ use Ask\Language\Selection\SubjectSelection;
  * @ingroup AskTests
  *
  * @group Ask
- * @group AskSelection
+ * @group AskOption
  *
  * @licence GNU GPL v2+
  * @author Jeroen De Dauw < jeroendedauw@gmail.com >
  */
-class SubjectSelectionTest extends SelectionRequestTest {
+class SortOptionsTest extends \Ask\Tests\Phpunit\AskTestCase {
 
 	/**
-	 * {@inheritdoc}
+	 * @since 0.1
+	 *
+	 * @return SortOptions[]
 	 */
 	protected function getInstances() {
 		$instances = array();
 
-		$instances[] = new SubjectSelection();
+		$instances[] = new SortOptions( array() );
 
+		$instances[] = new SortOptions( array(
+			new \Ask\Language\Option\PropertyValueSortExpression(
+				new \DataValues\PropertyValue( 'foo' ),
+				\Ask\Language\Option\SortExpression::ASCENDING
+			)
+		) );
+		
 		return $instances;
+	}
+
+	/**
+	 * @since 0.1
+	 *
+	 * @return SortOptions[][]
+	 */
+	public function instanceProvider() {
+		return $this->arrayWrap( $this->getInstances() );
+	}
+
+	/**
+	 * @dataProvider instanceProvider
+	 *
+	 * @since 0.1
+	 *
+	 * @param SortOptions $object
+	 */
+	public function testReturnTypeOfGetArrayValue( SortOptions $object ) {
+		$array = $object->getArrayValue();
+		$this->assertPrimitiveStructure( $array );
 	}
 
 }
