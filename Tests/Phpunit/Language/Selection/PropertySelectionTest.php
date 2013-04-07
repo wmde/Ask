@@ -1,6 +1,7 @@
 <?php
 
 namespace Ask\Tests\Phpunit\Language\Selection;
+
 use Ask\Language\Selection\PropertySelection;
 
 /**

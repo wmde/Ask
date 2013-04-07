@@ -3,8 +3,8 @@
 namespace Ask\Language;
 
 use Ask\Language\Description\Description;
-use Ask\Language\Selection\SelectionRequest;
 use Ask\Language\Option\QueryOptions;
+use Ask\Language\Selection\SelectionRequest;
 
 /**
  * Object representing a query definition.

@@ -1,6 +1,7 @@
 <?php
 
 namespace Ask\Tests\Phpunit\Language\Description;
+
 use Ask\Language\Description\AnyValue;
 
 /**

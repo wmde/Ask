@@ -3,9 +3,9 @@
 namespace Ask\Tests\Phpunit\Language\Description;
 
 use Ask\Language\Description\Conjunction;
-use Ask\Language\Description\Disjunction;
 use Ask\Language\Description\Description;
 use Ask\Language\Description\DescriptionCollection;
+use Ask\Language\Description\Disjunction;
 
 /**
  * Unit tests for the Ask\Language\Description\Intersection class.

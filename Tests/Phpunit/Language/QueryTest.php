@@ -1,8 +1,9 @@
 <?php
 
 namespace Ask\Tests\Phpunit\Language;
-use Ask\Language\Query;
+
 use Ask\Language\Option\QueryOptions;
+use Ask\Language\Query;
 
 /**
  * Unit tests for the Ask\Language\Query class.
