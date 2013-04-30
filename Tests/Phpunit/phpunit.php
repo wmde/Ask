@@ -1,9 +1,6 @@
 #!/usr/bin/env php
 <?php
 
-// Start up MediaWiki in command-line mode
-//require_once( dirname( dirname( __DIR__ ) ) . "/maintenance/Maintenance.php" );
-
 require_once( 'PHPUnit/Runner/Version.php' );
 
 if ( PHPUnit_Runner_Version::id() !== '@package_version@'
