@@ -27,9 +27,15 @@ spl_autoload_register( function ( $className ) {
 
 echo 'Running tests for Ask version ' . Ask_VERSION . ".\n";
 
+$arguments = $_SERVER['argv'];
+array_shift( $arguments );
+
+if ( array_search( '--group', $arguments ) === false ) {
+	$arguments[] = '--group';
+	$arguments[] = 'Ask';
+}
+
+$arguments[] = __DIR__;
+
 $runner = new PHPUnit_TextUI_Command();
-$runner->run( array(
-	'--group',
-	'Ask',
-	__DIR__
-) );
+$runner->run( $arguments );
