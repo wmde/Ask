@@ -2,7 +2,7 @@
          backupStaticAttributes="false"
          bootstrap="Tests/bootstrap.php"
          cacheTokens="false"
-         colors="false"
+         colors="true"
          convertErrorsToExceptions="true"
          convertNoticesToExceptions="true"
          convertWarningsToExceptions="true"
@@ -12,4 +12,9 @@
          stopOnSkipped="false"
          strict="true"
          verbose="true">
+    <testsuites>
+        <testsuite name="Ask">
+            <directory>Tests</directory>
+        </testsuite>
+    </testsuites>
 </phpunit>
