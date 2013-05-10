@@ -5,7 +5,7 @@ namespace Ask\Tests\Phpunit\Language\Option;
 use Ask\Language\Option\SortExpression;
 
 /**
- * Tests for the Ask\Language\Option\PropertyValueSortExpression class.
+ * @covers Ask\Language\Option\PropertyValueSortExpression
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by

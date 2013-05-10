@@ -8,7 +8,7 @@ use Ask\Language\Description\DescriptionCollection;
 use Ask\Language\Description\Disjunction;
 
 /**
- * Unit tests for the Ask\Language\Description\Intersection class.
+ * @covers Ask\Language\Description\Intersection
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by

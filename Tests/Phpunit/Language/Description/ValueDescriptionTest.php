@@ -5,7 +5,7 @@ namespace Ask\Tests\Phpunit\Language\Description;
 use Ask\Language\Description\ValueDescription;
 
 /**
- * Unit tests for the Ask\Language\Description\ValueDescription class.
+ * @covers Ask\Language\Description\ValueDescription
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
