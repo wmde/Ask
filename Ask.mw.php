@@ -28,6 +28,8 @@
  * @author Jeroen De Dauw < jeroendedauw@gmail.com >
  */
 
+// @codeCoverageIgnoreStart
+
 if ( !defined( 'MEDIAWIKI' ) ) {
 	die( 'Not an entry point.' );
 }
@@ -38,15 +40,8 @@ $wgExtensionCredits['other'][] = include( __DIR__ . '/Ask.credits.php' );
 
 $wgExtensionMessagesFiles['AskExtension'] = __DIR__ . '/Ask.i18n.php';
 
-// Autoloading
-foreach ( include( __DIR__ . '/Ask.classes.php' ) as $class => $file ) {
-	$wgAutoloadClasses[$class] = __DIR__ . '/' . $file;
-}
-
 if ( defined( 'MW_PHPUNIT_TEST' ) ) {
-	foreach ( include( __DIR__ . '/Tests/AskTestClasses.php' ) as $class => $file ) {
-		$wgAutoloadClasses[$class] = __DIR__ . '/../' . $file;
-	}
+	require_once __DIR__ . '/Tests/testLoader.php';
 }
 
 /**
@@ -62,7 +57,7 @@ if ( defined( 'MW_PHPUNIT_TEST' ) ) {
  * @return boolean
  */
 $wgHooks['UnitTestsList'][]	= function( array &$files ) {
-	// @codeCoverageIgnoreStart
+
 	$testFiles = array(
 		'Language/Description/AnyValue',
 		'Language/Description/Conjunction',
@@ -85,5 +80,6 @@ $wgHooks['UnitTestsList'][]	= function( array &$files ) {
 	}
 
 	return true;
-	// @codeCoverageIgnoreEnd
 };
+
+// @codeCoverageIgnoreEnd

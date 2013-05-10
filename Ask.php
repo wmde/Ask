@@ -41,8 +41,32 @@ if ( !defined( 'DataValues_VERSION' ) ) {
 define( 'Ask_VERSION', '0.1 alpha' );
 
 // @codeCoverageIgnoreStart
-call_user_func( function() {
-	$extension = defined( 'MEDIAWIKI' ) ? 'mw' : 'standalone';
-	require_once __DIR__ . '/Ask.' . $extension . '.php';
+spl_autoload_register( function ( $className ) {
+	$className = ltrim( $className, '\\' );
+	$fileName = '';
+	$namespace = '';
+
+	if ( $lastNsPos = strripos( $className, '\\') ) {
+		$namespace = substr( $className, 0, $lastNsPos );
+		$className = substr( $className, $lastNsPos + 1 );
+		$fileName  = str_replace( '\\', '/', $namespace ) . '/';
+	}
+
+	$fileName .= str_replace( '_', '/', $className ) . '.php';
+
+	$namespaceSegments = explode( '\\', $namespace );
+
+	if ( $namespaceSegments[0] === 'Ask' ) {
+		if ( count( $namespaceSegments ) === 1 || $namespaceSegments[1] !== 'Tests' ) {
+			require_once __DIR__ . '/includes/' . $fileName;
+		}
+	}
 } );
+
+if ( defined( 'MEDIAWIKI' ) ) {
+	call_user_func( function() {
+		require_once __DIR__ . '/Ask.mw.php';
+	} );
+}
+
 // @codeCoverageIgnoreEnd
