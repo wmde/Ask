@@ -6,7 +6,7 @@ use Ask\Language\Option\QueryOptions;
 use Ask\Language\Query;
 
 /**
- * Unit tests for the Ask\Language\Query class.
+ * @covers Ask\Language\Query
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by

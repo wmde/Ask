@@ -5,7 +5,7 @@ namespace Ask\Tests\Phpunit\Language\Selection;
 use Ask\Language\Selection\PropertySelection;
 
 /**
- * Unit tests for the Ask\Language\Selection\PropertySelection class.
+ * @covers Ask\Language\Selection\PropertySelection
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by

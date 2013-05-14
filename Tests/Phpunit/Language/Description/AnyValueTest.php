@@ -5,7 +5,7 @@ namespace Ask\Tests\Phpunit\Language\Description;
 use Ask\Language\Description\AnyValue;
 
 /**
- * Unit tests for the Ask\Language\Description\AnyValue class.
+ * @covers Ask\Language\Description\AnyValue
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by

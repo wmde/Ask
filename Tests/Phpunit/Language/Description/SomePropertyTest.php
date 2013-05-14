@@ -6,7 +6,7 @@ use Ask\Language\Description\SomeProperty;
 use DataValues\PropertyValue;
 
 /**
- * Unit tests for the Ask\Language\Description\SomeProperty class.
+ * @covers Ask\Language\Description\SomeProperty
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by

@@ -5,7 +5,7 @@ namespace Ask\Tests\Phpunit\Language\Selection;
 use Ask\Language\Selection\SubjectSelection;
 
 /**
- * Unit tests for the Ask\Language\Selection\ThisSelection class.
+ * @covers Ask\Language\Selection\ThisSelection
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by

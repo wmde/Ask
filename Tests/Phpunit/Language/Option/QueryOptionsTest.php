@@ -5,7 +5,7 @@ namespace Ask\Tests\Phpunit\Language\Option;
 use Ask\Language\Option\QueryOptions;
 
 /**
- * Tests for the Ask\Language\Option\QueryOptions class.
+ * @covers Ask\Language\Option\QueryOptions
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
