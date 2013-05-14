@@ -10,7 +10,7 @@ if ( PHPUnit_Runner_Version::id() !== '@package_version@'
 }
 require_once( 'PHPUnit/Autoload.php' );
 
-require_once( __DIR__ . '/../bootstrap.php' );
+require_once( __DIR__ . '/bootstrap.php' );
 
 echo 'Running tests for Ask version ' . Ask_VERSION . ".\n";
 
