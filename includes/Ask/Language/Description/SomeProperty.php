@@ -2,6 +2,7 @@
 
 namespace Ask\Language\Description;
 
+use DataValues\DataValue;
 use DataValues\PropertyValue;
 use InvalidArgumentException;
 
@@ -47,7 +48,7 @@ final class SomeProperty extends Description implements \Ask\Immutable {
 	 *
 	 * @var PropertyValue
 	 */
-	private $property;
+	private $propertyId;
 
 	/**
 	 * The description the properties value should match.
@@ -86,14 +87,14 @@ final class SomeProperty extends Description implements \Ask\Immutable {
 	 *
 	 * @since 0.1
 	 *
-	 * @param PropertyValue $property
+	 * @param DataValue $propertyId
 	 * @param Description $subDescription
 	 * @param boolean $isSubProperty
 	 *
 	 * @throws InvalidArgumentException
 	 */
-	public function __construct( PropertyValue $property, Description $subDescription, $isSubProperty = false ) {
-		$this->property = $property;
+	public function __construct( DataValue $propertyId, Description $subDescription, $isSubProperty = false ) {
+		$this->propertyId = $propertyId;
 		$this->subDescription = $subDescription;
 
 		if ( !is_bool( $isSubProperty ) ) {
@@ -119,10 +120,10 @@ final class SomeProperty extends Description implements \Ask\Immutable {
 	 *
 	 * @since 0.1
 	 *
-	 * @return PropertyValue
+	 * @return DataValue
 	 */
-	public function getProperty() {
-		return $this->property;
+	public function getPropertyId() {
+		return $this->propertyId;
 	}
 
 	/**
@@ -178,7 +179,7 @@ final class SomeProperty extends Description implements \Ask\Immutable {
 	 */
 	public function getArrayValue() {
 		return array(
-			'property' => $this->property->toArray(),
+			'property' => $this->propertyId->toArray(),
 			'description' => $this->subDescription->toArray(),
 			'issubproperty' => $this->isSubProperty
 		);
@@ -196,7 +197,7 @@ final class SomeProperty extends Description implements \Ask\Immutable {
 	public function equals( $mixed ) {
 		return $mixed instanceof SomeProperty
 			&& $this->isSubProperty === $mixed->isSubProperty()
-			&& $this->property->equals( $mixed->getProperty() )
+			&& $this->propertyId->equals( $mixed->getPropertyId() )
 			&& $this->subDescription->equals( $mixed->getSubDescription() );
 	}
 
@@ -211,7 +212,7 @@ final class SomeProperty extends Description implements \Ask\Immutable {
 		if ( $this->hash === null ) {
 			$this->hash = sha1(
 				$this->getType() .
-				$this->property->getHash() .
+				$this->propertyId->getHash() .
 				$this->subDescription->getHash() .
 				$this->isSubProperty
 			);

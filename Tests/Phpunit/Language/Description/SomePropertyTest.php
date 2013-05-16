@@ -2,8 +2,10 @@
 
 namespace Ask\Tests\Phpunit\Language\Description;
 
+use Ask\Language\Description\AnyValue;
+use Ask\Language\Description\Conjunction;
 use Ask\Language\Description\SomeProperty;
-use DataValues\PropertyValue;
+use DataValues\StringValue;
 
 /**
  * @covers Ask\Language\Description\SomeProperty
@@ -42,10 +44,10 @@ class SomePropertyTest extends DescriptionTest {
 	protected function getInstances() {
 		$instances = array();
 
-		$instances[] = new SomeProperty( new PropertyValue( '_geo' ), new \Ask\Language\Description\AnyValue() );
-		$instances[] = new SomeProperty( new PropertyValue( 'p42' ), new \Ask\Language\Description\Conjunction( array() ) );
-		$instances[] = new SomeProperty( new PropertyValue( 'foo' ), new \Ask\Language\Description\AnyValue(), true );
-		$instances[] = new SomeProperty( new PropertyValue( '~=[,,_,,]:3' ), new \Ask\Language\Description\AnyValue(), false );
+		$instances[] = new SomeProperty( new StringValue( '_geo' ), new AnyValue() );
+		$instances[] = new SomeProperty( new StringValue( 'p42' ), new Conjunction( array() ) );
+		$instances[] = new SomeProperty( new StringValue( 'foo' ), new AnyValue(), true );
+		$instances[] = new SomeProperty( new StringValue( '~=[,,_,,]:3' ), new AnyValue(), false );
 
 		return $instances;
 	}
@@ -62,7 +64,7 @@ class SomePropertyTest extends DescriptionTest {
 
 		$this->assertInstanceOf( 'Ask\Language\Description\Description', $subDescription );
 
-		$newInstance = new SomeProperty( $description->getProperty(), $subDescription );
+		$newInstance = new SomeProperty( $description->getPropertyId(), $subDescription );
 
 		$this->assertEquals(
 			$subDescription,
@@ -79,15 +81,15 @@ class SomePropertyTest extends DescriptionTest {
 	 * @param SomeProperty $description
 	 */
 	public function testGetProperty( SomeProperty $description ) {
-		$property = $description->getProperty();
+		$property = $description->getPropertyId();
 
-		$this->assertInstanceOf( '\DataValues\PropertyValue', $property );
+		$this->assertInstanceOf( '\DataValues\DataValue', $property );
 
 		$newInstance = new SomeProperty( $property, $description->getSubDescription() );
 
 		$this->assertEquals(
 			$property,
-			$newInstance->getProperty(),
+			$newInstance->getPropertyId(),
 			'Property is returned as it was passed to the constructor'
 		);
 	}
@@ -104,7 +106,7 @@ class SomePropertyTest extends DescriptionTest {
 
 		$this->assertInternalType( 'boolean', $isSubProperty );
 
-		$newInstance = new SomeProperty( $description->getProperty(), $description->getSubDescription(), $isSubProperty );
+		$newInstance = new SomeProperty( $description->getPropertyId(), $description->getSubDescription(), $isSubProperty );
 
 		$this->assertEquals(
 			$isSubProperty,
