@@ -2,7 +2,9 @@
 
 namespace Ask\Tests\Phpunit\Language\Option;
 
+use Ask\Language\Option\PropertyValueSortExpression;
 use Ask\Language\Option\SortExpression;
+use DataValues\StringValue;
 
 /**
  * @covers Ask\Language\Option\PropertyValueSortExpression
@@ -45,13 +47,13 @@ class PropertyValueSortExpressionTest extends SortExpressionTest {
 	protected function getInstances() {
 		$instances = array();
 
-		$instances[] = new \Ask\Language\Option\PropertyValueSortExpression(
-			new \DataValues\PropertyValue( 'foo' ),
+		$instances[] = new PropertyValueSortExpression(
+			new StringValue( 'foo' ),
 			SortExpression::ASCENDING
 		);
 
-		$instances[] = new \Ask\Language\Option\PropertyValueSortExpression(
-			new \DataValues\PropertyValue( 'foo' ),
+		$instances[] = new PropertyValueSortExpression(
+			new StringValue( 'foo' ),
 			SortExpression::DESCENDING
 		);
 

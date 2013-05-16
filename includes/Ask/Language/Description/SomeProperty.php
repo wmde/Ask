@@ -3,7 +3,6 @@
 namespace Ask\Language\Description;
 
 use DataValues\DataValue;
-use DataValues\PropertyValue;
 use InvalidArgumentException;
 
 /**
@@ -46,7 +45,7 @@ final class SomeProperty extends Description implements \Ask\Immutable {
 	 *
 	 * @since 0.1
 	 *
-	 * @var PropertyValue
+	 * @var DataValue
 	 */
 	private $propertyId;
 

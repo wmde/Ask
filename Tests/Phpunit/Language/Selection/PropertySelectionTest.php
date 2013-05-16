@@ -3,6 +3,7 @@
 namespace Ask\Tests\Phpunit\Language\Selection;
 
 use Ask\Language\Selection\PropertySelection;
+use DataValues\StringValue;
 
 /**
  * @covers Ask\Language\Selection\PropertySelection
@@ -42,11 +43,11 @@ class PropertySelectionTest extends SelectionRequestTest {
 		$instances = array();
 
 		$instances[] = new PropertySelection(
-			new \DataValues\PropertyValue( 'p42' )
+			new StringValue( 'p42' )
 		);
 
 		$instances[] = new PropertySelection(
-			new \DataValues\PropertyValue( '_geo' )
+			new StringValue( '_geo' )
 		);
 
 		return $instances;

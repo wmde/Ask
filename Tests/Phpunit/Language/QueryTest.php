@@ -2,8 +2,14 @@
 
 namespace Ask\Tests\Phpunit\Language;
 
+use Ask\Language\Description\AnyValue;
+use Ask\Language\Description\Conjunction;
+use Ask\Language\Description\Description;
+use Ask\Language\Description\Disjunction;
 use Ask\Language\Option\QueryOptions;
 use Ask\Language\Query;
+use Ask\Language\Selection\PropertySelection;
+use DataValues\StringValue;
 
 /**
  * @covers Ask\Language\Query
@@ -38,9 +44,9 @@ class QueryTest extends \Ask\Tests\Phpunit\AskTestCase {
 	public function descriptionProvider() {
 		$descriptions = array();
 
-		$descriptions[] = new \Ask\Language\Description\AnyValue();
-		$descriptions[] = new \Ask\Language\Description\Conjunction( array() );
-		$descriptions[] = new \Ask\Language\Description\Disjunction( array() );
+		$descriptions[] = new AnyValue();
+		$descriptions[] = new Conjunction( array() );
+		$descriptions[] = new Disjunction( array() );
 
 		return $this->arrayWrap( $descriptions );
 	}
@@ -48,9 +54,9 @@ class QueryTest extends \Ask\Tests\Phpunit\AskTestCase {
 	/**
 	 * @dataProvider descriptionProvider
 	 *
-	 * @param \Ask\Language\Description\Description $description
+	 * @param Description $description
 	 */
-	public function testGetDescriptions( \Ask\Language\Description\Description $description ) {
+	public function testGetDescriptions( Description $description ) {
 		$query = new Query( $description, array(), new QueryOptions( 100, 0 ) );
 
 		$obtainedDescription = $query->getDescription();
@@ -64,8 +70,8 @@ class QueryTest extends \Ask\Tests\Phpunit\AskTestCase {
 		$requestsLists = array();
 
 		$requestsLists[] = array(
-			new \Ask\Language\Selection\PropertySelection( new \DataValues\PropertyValue( 'q42' ) ),
-			new \Ask\Language\Selection\PropertySelection( new \DataValues\PropertyValue( '_geo' ) ),
+			new PropertySelection( new StringValue( 'q42' ) ),
+			new PropertySelection( new StringValue( '_geo' ) ),
 		);
 
 		return $this->arrayWrap( $requestsLists );
@@ -77,7 +83,7 @@ class QueryTest extends \Ask\Tests\Phpunit\AskTestCase {
 	 * @param array $selectionRequests
 	 */
 	public function testGetSelectionRequests( array $selectionRequests ) {
-		$query = new Query( new \Ask\Language\Description\AnyValue(), $selectionRequests, new QueryOptions( 100, 0 ) );
+		$query = new Query( new AnyValue(), $selectionRequests, new QueryOptions( 100, 0 ) );
 
 		$obtainedRequests = $query->getSelectionRequests();
 
@@ -91,10 +97,10 @@ class QueryTest extends \Ask\Tests\Phpunit\AskTestCase {
 		$instances = array();
 
 		$instances[] = new Query(
-			new \Ask\Language\Description\AnyValue(),
+			new AnyValue(),
 			array(
-				new \Ask\Language\Selection\PropertySelection( new \DataValues\PropertyValue( 'q42' ) ),
-				new \Ask\Language\Selection\PropertySelection( new \DataValues\PropertyValue( '_geo' ) ),
+				new PropertySelection( new StringValue( 'q42' ) ),
+				new PropertySelection( new StringValue( '_geo' ) ),
 			),
 			new QueryOptions( 100, 0 )
 		);

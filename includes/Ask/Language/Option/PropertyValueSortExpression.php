@@ -2,7 +2,7 @@
 
 namespace Ask\Language\Option;
 
-use DataValues\PropertyValue;
+use DataValues\DataValue;
 use InvalidArgumentException;
 
 /**
@@ -38,7 +38,7 @@ class PropertyValueSortExpression extends SortExpression {
 	 *
 	 * @since 0.1
 	 *
-	 * @var PropertyValue
+	 * @var DataValue
 	 */
 	protected $property;
 
@@ -47,13 +47,13 @@ class PropertyValueSortExpression extends SortExpression {
 	 *
 	 * @since 0.1
 	 *
-	 * @param PropertyValue $property
+	 * @param DataValue $propertyId
 	 * @param string $direction
 	 *
 	 * @throws InvalidArgumentException
 	 */
-	public function __construct( PropertyValue $property, $direction ) {
-		$this->property = $property;
+	public function __construct( DataValue $propertyId, $direction ) {
+		$this->property = $propertyId;
 
 		if ( !is_string( $direction ) ) {
 			throw new InvalidArgumentException( '$direction needs to be one of the direction constants' );
@@ -67,9 +67,9 @@ class PropertyValueSortExpression extends SortExpression {
 	 *
 	 * @since 0.1
 	 *
-	 * @return PropertyValue
+	 * @return DataValue
 	 */
-	public function getProperty() {
+	public function getPropertyId() {
 		return $this->property;
 	}
 

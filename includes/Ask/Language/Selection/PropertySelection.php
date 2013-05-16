@@ -2,7 +2,7 @@
 
 namespace Ask\Language\Selection;
 
-use DataValues\PropertyValue;
+use DataValues\DataValue;
 
 /**
  * Selection request specifying that the values for a property should be obtained.
@@ -37,19 +37,19 @@ final class PropertySelection extends SelectionRequest implements \Ask\Immutable
 	 *
 	 * @since 0.1
 	 *
-	 * @var PropertyValue
+	 * @var DataValue
 	 */
-	protected $property;
+	protected $propertyId;
 
 	/**
 	 * Constructor.
 	 *
 	 * @since 0.1
 	 *
-	 * @param PropertyValue $property
+	 * @param DataValue $propertyId
 	 */
-	public function __construct( PropertyValue $property ) {
-		$this->property = $property;
+	public function __construct( DataValue $propertyId ) {
+		$this->propertyId = $propertyId;
 	}
 
 	/**
@@ -68,10 +68,10 @@ final class PropertySelection extends SelectionRequest implements \Ask\Immutable
 	 *
 	 * @since 0.1
 	 *
-	 * @return PropertyValue
+	 * @return DataValue
 	 */
-	public function getProperty() {
-		return $this->property;
+	public function getPropertyId() {
+		return $this->propertyId;
 	}
 
 	/**
@@ -83,7 +83,7 @@ final class PropertySelection extends SelectionRequest implements \Ask\Immutable
 	 */
 	public function getArrayValue() {
 		return array(
-			'property' => $this->property->toArray()
+			'property' => $this->propertyId->toArray()
 		);
 	}
 
@@ -98,7 +98,7 @@ final class PropertySelection extends SelectionRequest implements \Ask\Immutable
 	 */
 	public function equals( $mixed ) {
 		return $mixed instanceof PropertySelection
-			&& $this->property->equals( $mixed->getProperty() );
+			&& $this->propertyId->equals( $mixed->getPropertyId() );
 	}
 
 	/**
@@ -109,7 +109,7 @@ final class PropertySelection extends SelectionRequest implements \Ask\Immutable
 	 * @return string
 	 */
 	public function getHash() {
-		return sha1( $this->getType() . $this->property->getHash() );
+		return sha1( $this->getType() . $this->propertyId->getHash() );
 	}
 
 }
