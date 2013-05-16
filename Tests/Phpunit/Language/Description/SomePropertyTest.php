@@ -58,7 +58,7 @@ class SomePropertyTest extends DescriptionTest {
 	 * @param SomeProperty $description
 	 */
 	public function testGetDescription( SomeProperty $description ) {
-		$subDescription = $description->getDescription();
+		$subDescription = $description->getSubDescription();
 
 		$this->assertInstanceOf( 'Ask\Language\Description\Description', $subDescription );
 
@@ -66,7 +66,7 @@ class SomePropertyTest extends DescriptionTest {
 
 		$this->assertEquals(
 			$subDescription,
-			$newInstance->getDescription(),
+			$newInstance->getSubDescription(),
 			'Description is returned as it was passed to the constructor'
 		);
 	}
@@ -83,7 +83,7 @@ class SomePropertyTest extends DescriptionTest {
 
 		$this->assertInstanceOf( '\DataValues\PropertyValue', $property );
 
-		$newInstance = new SomeProperty( $property, $description->getDescription() );
+		$newInstance = new SomeProperty( $property, $description->getSubDescription() );
 
 		$this->assertEquals(
 			$property,
@@ -104,7 +104,7 @@ class SomePropertyTest extends DescriptionTest {
 
 		$this->assertInternalType( 'boolean', $isSubProperty );
 
-		$newInstance = new SomeProperty( $description->getProperty(), $description->getDescription(), $isSubProperty );
+		$newInstance = new SomeProperty( $description->getProperty(), $description->getSubDescription(), $isSubProperty );
 
 		$this->assertEquals(
 			$isSubProperty,

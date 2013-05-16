@@ -56,7 +56,7 @@ final class SomeProperty extends Description implements \Ask\Immutable {
 	 *
 	 * @var Description
 	 */
-	private $description;
+	private $subDescription;
 
 	/**
 	 * If the property is a sub property or not.
@@ -87,14 +87,14 @@ final class SomeProperty extends Description implements \Ask\Immutable {
 	 * @since 0.1
 	 *
 	 * @param PropertyValue $property
-	 * @param Description $description
+	 * @param Description $subDescription
 	 * @param boolean $isSubProperty
 	 *
 	 * @throws InvalidArgumentException
 	 */
-	public function __construct( PropertyValue $property, Description $description, $isSubProperty = false ) {
+	public function __construct( PropertyValue $property, Description $subDescription, $isSubProperty = false ) {
 		$this->property = $property;
-		$this->description = $description;
+		$this->subDescription = $subDescription;
 
 		if ( !is_bool( $isSubProperty ) ) {
 			throw new InvalidArgumentException( '$isSubProperty must be of type boolean' );
@@ -110,8 +110,8 @@ final class SomeProperty extends Description implements \Ask\Immutable {
 	 *
 	 * @return Description
 	 */
-	public function getDescription() {
-		return $this->description;
+	public function getSubDescription() {
+		return $this->subDescription;
 	}
 
 	/**
@@ -144,7 +144,7 @@ final class SomeProperty extends Description implements \Ask\Immutable {
 	 * @return integer
 	 */
 	public function getSize() {
-		return $this->description->getSize() + 1;
+		return $this->subDescription->getSize() + 1;
 	}
 
 	/**
@@ -155,7 +155,7 @@ final class SomeProperty extends Description implements \Ask\Immutable {
 	 * @return integer
 	 */
 	public function getDepth() {
-		return $this->description->getDepth() + 1;
+		return $this->subDescription->getDepth() + 1;
 	}
 
 	/**
@@ -179,7 +179,7 @@ final class SomeProperty extends Description implements \Ask\Immutable {
 	public function getArrayValue() {
 		return array(
 			'property' => $this->property->toArray(),
-			'description' => $this->description->toArray(),
+			'description' => $this->subDescription->toArray(),
 			'issubproperty' => $this->isSubProperty
 		);
 	}
@@ -197,7 +197,7 @@ final class SomeProperty extends Description implements \Ask\Immutable {
 		return $mixed instanceof SomeProperty
 			&& $this->isSubProperty === $mixed->isSubProperty()
 			&& $this->property->equals( $mixed->getProperty() )
-			&& $this->description->equals( $mixed->getDescription() );
+			&& $this->subDescription->equals( $mixed->getSubDescription() );
 	}
 
 	/**
@@ -212,7 +212,7 @@ final class SomeProperty extends Description implements \Ask\Immutable {
 			$this->hash = sha1(
 				$this->getType() .
 				$this->property->getHash() .
-				$this->description->getHash() .
+				$this->subDescription->getHash() .
 				$this->isSubProperty
 			);
 		}
