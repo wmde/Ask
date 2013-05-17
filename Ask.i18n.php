@@ -94,6 +94,13 @@ $messages['gl'] = array(
 	'ask-desc' => 'Biblioteca que contén unha integración PHP da linguaxe de consulta Ask',
 );
 
+/** Hebrew (עברית)
+ * @author Amire80
+ */
+$messages['he'] = array(
+	'ask-desc' => 'ספרייה שמממשת את שפת השאילתות Ask ב־PHP',
+);
+
 /** Upper Sorbian (hornjoserbsce)
  * @author Michawiki
  */
