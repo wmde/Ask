@@ -35,7 +35,7 @@ if ( !defined( 'DataValues_VERSION' ) ) {
 
 // Only initialize the extension when all dependencies are present.
 if ( !defined( 'DataValues_VERSION' ) ) {
-	die( '<b>Error:</b> You need to have <a href="https://www.mediawiki.org/wiki/Extension:DataValues">DataValues</a> installed in order to use <a href="http://www.mediawiki.org/wiki/Extension:Ask">Ask</a>.<br />' );
+	throw new Exception( 'You need to have the DataValues library loaded in order to use Ask' );
 }
 
 define( 'Ask_VERSION', '0.1 alpha' );
