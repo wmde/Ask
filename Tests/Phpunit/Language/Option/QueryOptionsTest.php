@@ -3,6 +3,8 @@
 namespace Ask\Tests\Phpunit\Language\Option;
 
 use Ask\Language\Option\QueryOptions;
+use Ask\Language\Option\SortOptions;
+use Ask\Tests\Phpunit\AskTestCase;
 
 /**
  * @covers Ask\Language\Option\QueryOptions
@@ -33,7 +35,7 @@ use Ask\Language\Option\QueryOptions;
  * @licence GNU GPL v2+
  * @author Jeroen De Dauw < jeroendedauw@gmail.com >
  */
-class QueryOptionsTest extends \Ask\Tests\Phpunit\AskTestCase {
+class QueryOptionsTest extends AskTestCase {
 
 	/**
 	 * @since 0.1
@@ -56,7 +58,7 @@ class QueryOptionsTest extends \Ask\Tests\Phpunit\AskTestCase {
 		$instances[] = new QueryOptions(
 			9000,
 			42,
-			new \Ask\Language\Option\SortOptions( array() )
+			new SortOptions( array() )
 		);
 
 		return $instances;
@@ -81,6 +83,27 @@ class QueryOptionsTest extends \Ask\Tests\Phpunit\AskTestCase {
 	public function testReturnTypeOfGetArrayValue( QueryOptions $object ) {
 		$array = $object->getArrayValue();
 		$this->assertPrimitiveStructure( $array );
+	}
+
+	/**
+	 * @dataProvider constructorArgumentProvider
+	 */
+	public function testConstructSetsFields( $limit, $offset, SortOptions $sort ) {
+		$queryOptions = new QueryOptions( $limit, $offset, $sort );
+
+		$this->assertEquals( $limit, $queryOptions->getLimit() );
+		$this->assertEquals( $offset, $queryOptions->getOffset() );
+		$this->assertEquals( $sort, $queryOptions->getSort() );
+	}
+
+	public function constructorArgumentProvider() {
+		$argLists = array();
+
+		$argLists[] = array( 1, 2, new SortOptions( array() ) );
+
+		$argLists[] = array( 100, 0, new SortOptions( array() ) );
+
+		return $argLists;
 	}
 
 }
