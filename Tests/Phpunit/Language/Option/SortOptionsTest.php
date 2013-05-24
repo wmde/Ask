@@ -5,10 +5,11 @@ namespace Ask\Tests\Phpunit\Language\Option;
 use Ask\Language\Option\PropertyValueSortExpression;
 use Ask\Language\Option\SortExpression;
 use Ask\Language\Option\SortOptions;
+use Ask\Tests\Phpunit\AskTestCase;
 use DataValues\StringValue;
 
 /**
- * @covers Ask\Language\Option\QueryOptions
+ * @covers Ask\Language\Option\SortOptions
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -36,7 +37,7 @@ use DataValues\StringValue;
  * @licence GNU GPL v2+
  * @author Jeroen De Dauw < jeroendedauw@gmail.com >
  */
-class SortOptionsTest extends \Ask\Tests\Phpunit\AskTestCase {
+class SortOptionsTest extends AskTestCase {
 
 	/**
 	 * @since 0.1
