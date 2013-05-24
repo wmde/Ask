@@ -37,6 +37,26 @@ use DataValues\StringValue;
  */
 class PropertyValueSortExpressionTest extends SortExpressionTest {
 
+	public function testCanConstruct() {
+		new PropertyValueSortExpression(
+			new StringValue( 'foo' ),
+			SortExpression::ASCENDING
+		);
+
+		$this->assertTrue( true );
+	}
+
+	public function testGetPropertyId() {
+		$propertyId = new StringValue( 'foo' );
+
+		$sortExpression = new PropertyValueSortExpression(
+			$propertyId,
+			SortExpression::ASCENDING
+		);
+
+		$this->assertEquals( $propertyId, $sortExpression->getPropertyId() );
+	}
+
 	/**
 	 * @see SortExpressionTest::getInstances
 	 *
