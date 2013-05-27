@@ -2,8 +2,11 @@
 
 namespace Ask\Tests\Phpunit\Language\Description;
 
+use Ask\Language\Description\AnyValue;
+use Ask\Language\Description\Conjunction;
 use Ask\Language\Description\Description;
 use Ask\Language\Description\DescriptionCollection;
+use Ask\Language\Description\SomeProperty;
 
 /**
  * Base class for unit tests for the Ask\Language\Description\DescriptionCollection deriving classes.
@@ -94,6 +97,28 @@ abstract class DescriptionCollectionTest extends DescriptionTest {
 		$sameDescription = $this->newFromDescriptions( $sameDescriptions );
 
 		$this->assertEquals( $description->getHash(), $sameDescription->getHash() );
+	}
+
+	/**
+	 * @dataProvider descriptionsProvider
+	 *
+	 * @param Description[] $descriptions
+	 */
+	public function testDifferentSizeNotEquals( array $descriptions ) {
+		$firstDescription = $this->newFromDescriptions( $descriptions );
+
+		$descriptions[] = new AnyValue();
+
+		$secondDescription = $this->newFromDescriptions( $descriptions );
+
+		$this->assertFalse( $firstDescription->equals( $secondDescription ) );
+	}
+
+	public function testDifferentContainedDescriptionCausesInequality() {
+		$firstDescription = $this->newFromDescriptions( array( new AnyValue() ) );
+		$secondDescription = $this->newFromDescriptions( array( new Conjunction( array() ) ) );
+
+		$this->assertFalse( $secondDescription->equals( $firstDescription ) );
 	}
 
 }
