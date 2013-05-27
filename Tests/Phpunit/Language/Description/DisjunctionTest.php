@@ -2,9 +2,13 @@
 
 namespace Ask\Tests\Phpunit\Language\Description;
 
+use Ask\Language\Description\AnyValue;
+use Ask\Language\Description\Conjunction;
 use Ask\Language\Description\Description;
 use Ask\Language\Description\DescriptionCollection;
 use Ask\Language\Description\Disjunction;
+use Ask\Language\Description\ValueDescription;
+use DataValues\StringValue;
 
 /**
  * @covers Ask\Language\Description\Disjunction
@@ -45,10 +49,10 @@ class DisjunctionTest extends DescriptionCollectionTest {
 		$instances = array();
 
 		$instances[] = new Disjunction( array() );
-		$instances[] = new Disjunction( array( new \Ask\Language\Description\Conjunction( array() ) ) );
+		$instances[] = new Disjunction( array( new Conjunction( array() ) ) );
 		$instances[] = new Disjunction( array( new Disjunction( array() ), new Disjunction( array() ) ) );
-		$instances[] = new Disjunction( array( new \Ask\Language\Description\AnyValue() ) );
-		$instances[] = new Disjunction( array( new \Ask\Language\Description\ValueDescription( new \DataValues\StringValue( 'ohi' ) ) ) );
+		$instances[] = new Disjunction( array( new AnyValue() ) );
+		$instances[] = new Disjunction( array( new ValueDescription( new StringValue( 'ohi' ) ) ) );
 
 		foreach ( $this->descriptionsProvider() as $argList ) {
 			$instances[] = new Disjunction( $argList[0] );
