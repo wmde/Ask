@@ -1,4 +1,4 @@
-[![Build Status](https://secure.travis-ci.org/JeroenDeDauw/Ask.png?branch=master)](http://travis-ci.org/JeroenDeDauw/Ask)
+[![Build Status](https://secure.travis-ci.org/wikimedia/mediawiki-extensions-Ask.png?branch=master)](http://travis-ci.org/wikimedia/mediawiki-extensions-Ask)
 
 These is the readme file for the Ask library.
 
