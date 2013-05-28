@@ -28,8 +28,6 @@
  * @author Jeroen De Dauw < jeroendedauw@gmail.com >
  */
 
-// @codeCoverageIgnoreStart
-
 if ( !defined( 'MEDIAWIKI' ) ) {
 	die( 'Not an entry point.' );
 }
@@ -43,43 +41,3 @@ $wgExtensionMessagesFiles['AskExtension'] = __DIR__ . '/Ask.i18n.php';
 if ( defined( 'MW_PHPUNIT_TEST' ) ) {
 	require_once __DIR__ . '/Tests/testLoader.php';
 }
-
-/**
- * Hook to add PHPUnit test cases.
- * @see https://www.mediawiki.org/wiki/Manual:Hooks/UnitTestsList
- *
- * TODO: register the Tests directory itself so this list does not need to be maintained
- *
- * @since 0.1
- *
- * @param array $files
- *
- * @return boolean
- */
-$wgHooks['UnitTestsList'][]	= function( array &$files ) {
-
-	$testFiles = array(
-		'Language/Description/AnyValue',
-		'Language/Description/Conjunction',
-		'Language/Description/SomeProperty',
-		'Language/Description/Disjunction',
-		'Language/Description/ValueDescription',
-
-		'Language/Option/PropertyValueSortExpression',
-		'Language/Option/QueryOptions',
-		'Language/Option/SortOptions',
-
-		'Language/Selection/PropertySelection',
-		'Language/Selection/SubjectSelection',
-
-		'Language/Query',
-	);
-
-	foreach ( $testFiles as $file ) {
-		$files[] = __DIR__ . '/Tests/Phpunit/' . $file . 'Test.php';
-	}
-
-	return true;
-};
-
-// @codeCoverageIgnoreEnd
