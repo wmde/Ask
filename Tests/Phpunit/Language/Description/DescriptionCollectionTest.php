@@ -7,6 +7,9 @@ use Ask\Language\Description\Conjunction;
 use Ask\Language\Description\Description;
 use Ask\Language\Description\DescriptionCollection;
 use Ask\Language\Description\SomeProperty;
+use Ask\Language\Description\ValueDescription;
+use DataValues\NumberValue;
+use DataValues\StringValue;
 
 /**
  * Base class for unit tests for the Ask\Language\Description\DescriptionCollection deriving classes.
@@ -42,8 +45,8 @@ abstract class DescriptionCollectionTest extends DescriptionTest {
 		$descriptionLists[] = array();
 
 		$descriptionLists[] = array(
-			new \Ask\Language\Description\AnyValue(),
-			new \Ask\Language\Description\ValueDescription( new \DataValues\StringValue( 'nyan nyan' ) )
+			new AnyValue(),
+			new ValueDescription( new StringValue( 'nyan nyan' ) )
 		);
 
 		$descriptionList = array();
@@ -51,7 +54,7 @@ abstract class DescriptionCollectionTest extends DescriptionTest {
 		shuffle( $numbers );
 
 		foreach ( $numbers as $number ) {
-			$descriptionList[] = new \Ask\Language\Description\ValueDescription( new \DataValues\NumberValue( $number ) );
+			$descriptionList[] = new ValueDescription( new NumberValue( $number ) );
 		}
 
 		$descriptionLists[] = $descriptionList;
