@@ -28,8 +28,6 @@
  * @author Jeroen De Dauw < jeroendedauw@gmail.com >
  */
 
-// @codeCoverageIgnoreStart
-
 if ( !defined( 'MEDIAWIKI' ) ) {
 	die( 'Not an entry point.' );
 }
@@ -57,29 +55,18 @@ if ( defined( 'MW_PHPUNIT_TEST' ) ) {
  * @return boolean
  */
 $wgHooks['UnitTestsList'][]	= function( array &$files ) {
+	// @codeCoverageIgnoreStart
+	$directoryIterator = new RecursiveDirectoryIterator( __DIR__ . '/Tests/Phpunit/' );
 
-	$testFiles = array(
-		'Language/Description/AnyValue',
-		'Language/Description/Conjunction',
-		'Language/Description/SomeProperty',
-		'Language/Description/Disjunction',
-		'Language/Description/ValueDescription',
-
-		'Language/Option/PropertyValueSortExpression',
-		'Language/Option/QueryOptions',
-		'Language/Option/SortOptions',
-
-		'Language/Selection/PropertySelection',
-		'Language/Selection/SubjectSelection',
-
-		'Language/Query',
-	);
-
-	foreach ( $testFiles as $file ) {
-		$files[] = __DIR__ . '/Tests/Phpunit/' . $file . 'Test.php';
+	/**
+	 * @var SplFileInfo $fileInfo
+	 */
+	foreach ( new RecursiveIteratorIterator( $directoryIterator ) as $fileInfo ) {
+		if ( substr( $fileInfo->getFilename(), -8 ) === 'Test.php' ) {
+			$files[] = $fileInfo->getPathname();
+		}
 	}
 
 	return true;
+	// @codeCoverageIgnoreEnd
 };
-
-// @codeCoverageIgnoreEnd
