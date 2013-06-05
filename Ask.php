@@ -33,6 +33,13 @@ if ( !defined( 'DataValues_VERSION' ) ) {
 	@include_once( __DIR__ . '/../DataValues/DataValues.php' );
 }
 
+// Attempt to include the DataValues lib if that hasn't been done yet.
+if ( !defined( 'DataValues_VERSION' ) ) {
+	// This is for loading DataValues when installed via composer
+	// TODO: figure out a nicer way to place and load DataValues using composer
+	@include_once( __DIR__ . '/extensions/DataValues/DataValues.php' );
+}
+
 // Only initialize the extension when all dependencies are present.
 if ( !defined( 'DataValues_VERSION' ) ) {
 	throw new Exception( 'You need to have the DataValues library loaded in order to use Ask' );
