@@ -7,3 +7,17 @@ php:
 
 before_script:
   - composer install
+
+notifications:
+  email:
+    recipients:
+      - jeroendedauw@gmail.com
+    on_success: change
+    on_failure: always
+
+notifications:
+  irc:
+    channels:
+      - "chat.freenode.net#wikimedia-wikidata"
+    on_success: change
+    on_failure: always
