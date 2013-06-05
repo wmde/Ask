@@ -28,6 +28,7 @@ spl_autoload_register( function ( $className ) {
 	$namespaceSegments = explode( '\\', $namespace );
 
 	if ( count( $namespaceSegments ) > 1 && $namespaceSegments[0] === 'Ask' && $namespaceSegments[1] === 'Tests' ) {
-		require_once __DIR__ . '/../../' . $fileName;
+		$fileName = substr( $fileName, 4 );
+		require_once __DIR__ . '/../' . $fileName;
 	}
 } );
