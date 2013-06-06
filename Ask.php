@@ -42,8 +42,7 @@ if ( !defined( 'DataValues_VERSION' ) && file_exists( __DIR__ . '/vendor/autoloa
 
 // Only initialize the extension when all dependencies are present.
 if ( !defined( 'DataValues_VERSION' ) ) {
-	// TODO: reenable once the DataValues composer setup has been fixed
-	//throw new Exception( 'You need to have the DataValues library loaded in order to use Ask' );
+	throw new Exception( 'You need to have the DataValues library loaded in order to use Ask' );
 }
 
 define( 'Ask_VERSION', '0.1 alpha' );
