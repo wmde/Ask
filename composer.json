@@ -1,8 +1,8 @@
 {
 	"name": "ask/ask",
-	"type": "mediawiki-extension",
+	"type": "library",
 	"description": "Library containing a PHP implementation of the Ask query language",
-	"keywords": ["ask"],
+	"keywords": ["ask", "wikidata", "SMW", "Semantic MediaWiki"],
 	"homepage": "https://www.mediawiki.org/wiki/Extension:Ask",
 	"license": "GPL-2.0+",
 	"authors": [
@@ -28,7 +28,9 @@
 		"php": ">=5.3.0",
 		"mediawiki/data-values": "dev-master"
 	},
-	"suggest": {
-		"mediawiki/core" : "dev-master"
+	"autoload": {
+		"files" : [
+			"Ask.php"
+		]
 	}
 }
