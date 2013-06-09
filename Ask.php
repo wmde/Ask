@@ -28,6 +28,13 @@
  * @ingroup Test
  */
 
+if ( defined( 'Ask_VERSION' ) ) {
+	// Do not initialize more then once.
+	return;
+}
+
+define( 'Ask_VERSION', '0.1 alpha' );
+
 // Attempt to include the DataValues lib if that hasn't been done yet.
 // This is the path the DataValues entry point will be at when loaded as MediaWiki extension.
 if ( !defined( 'DataValues_VERSION' ) && file_exists( __DIR__ . '/../DataValues/DataValues.php' ) ) {
@@ -44,8 +51,6 @@ if ( !defined( 'DataValues_VERSION' ) && file_exists( __DIR__ . '/vendor/autoloa
 if ( !defined( 'DataValues_VERSION' ) ) {
 	throw new Exception( 'You need to have the DataValues library loaded in order to use Ask' );
 }
-
-define( 'Ask_VERSION', '0.1 alpha' );
 
 // @codeCoverageIgnoreStart
 spl_autoload_register( function ( $className ) {

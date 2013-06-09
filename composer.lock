@@ -3,7 +3,7 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "977b38a5f65a2a828f2a6043dc562f23",
+    "hash": "5a8b04bbdaa06aea066546dd9c92b40a",
     "packages": [
         {
             "name": "mediawiki/data-values",
@@ -11,12 +11,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/wikimedia/mediawiki-extensions-DataValues.git",
-                "reference": "20c8d63added92ee830981ed90a42cb1361dc0ea"
+                "reference": "40214eb0f64b346cf0b8c3dd03e017caf135cbf2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wikimedia/mediawiki-extensions-DataValues/zipball/20c8d63added92ee830981ed90a42cb1361dc0ea",
-                "reference": "20c8d63added92ee830981ed90a42cb1361dc0ea",
+                "url": "https://api.github.com/repos/wikimedia/mediawiki-extensions-DataValues/zipball/40214eb0f64b346cf0b8c3dd03e017caf135cbf2",
+                "reference": "40214eb0f64b346cf0b8c3dd03e017caf135cbf2",
                 "shasum": ""
             },
             "require": {
@@ -49,7 +49,7 @@
                 "valueparsers",
                 "valuevalidators"
             ],
-            "time": "2013-06-06 21:21:50"
+            "time": "2013-06-07 19:00:06"
         }
     ],
     "packages-dev": [
