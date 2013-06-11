@@ -72,6 +72,13 @@ $messages['es'] = array(
 	'ask-desc' => 'Biblioteca que contiene una implementación en PHP del lenguaje de consulta de Ask',
 );
 
+/** Basque (euskara)
+ * @author Theklan
+ */
+$messages['eu'] = array(
+	'ask-desc' => 'Ask query hizkuntzaren PHP inplementazioa duen liburutegia',
+);
+
 /** Persian (فارسی)
  * @author Reza1615
  */
