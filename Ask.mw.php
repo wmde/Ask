@@ -46,7 +46,7 @@ if ( defined( 'MW_PHPUNIT_TEST' ) ) {
  * Hook to add PHPUnit test cases.
  * @see https://www.mediawiki.org/wiki/Manual:Hooks/UnitTestsList
  *
- * TODO: register the Tests directory itself so this list does not need to be maintained
+ * @codeCoverageIgnore
  *
  * @since 0.1
  *
@@ -55,7 +55,6 @@ if ( defined( 'MW_PHPUNIT_TEST' ) ) {
  * @return boolean
  */
 $wgHooks['UnitTestsList'][]	= function( array &$files ) {
-	// @codeCoverageIgnoreStart
 	$directoryIterator = new RecursiveDirectoryIterator( __DIR__ . '/Tests/Phpunit/' );
 
 	/**
@@ -68,5 +67,4 @@ $wgHooks['UnitTestsList'][]	= function( array &$files ) {
 	}
 
 	return true;
-	// @codeCoverageIgnoreEnd
 };

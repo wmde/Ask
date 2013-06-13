@@ -80,5 +80,4 @@ if ( defined( 'MEDIAWIKI' ) ) {
 		require_once __DIR__ . '/Ask.mw.php';
 	} );
 }
-
 // @codeCoverageIgnoreEnd
