@@ -205,3 +205,10 @@ $messages['uk'] = array(
 $messages['vi'] = array(
 	'ask-desc' => 'Thư viện PHP cho ngôn ngữ truy vấn Ask',
 );
+
+/** Traditional Chinese (中文（繁體）‎)
+ * @author Justincheng12345
+ */
+$messages['zh-hant'] = array(
+	'ask-desc' => '包含以PHP實現的ASK查詢語言的庫',
+);
