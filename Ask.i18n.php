@@ -115,6 +115,13 @@ $messages['hsb'] = array(
 	'ask-desc' => 'Biblioteka, kotraž PHP-implementaciju naprašowanskeje rěče Ask wobsahuje',
 );
 
+/** Interlingua (interlingua)
+ * @author McDutchie
+ */
+$messages['ia'] = array(
+	'ask-desc' => 'Bibliotheca que contine un implementation in PHP del linguage de consulta ASK',
+);
+
 /** Iloko (Ilokano)
  * @author Lam-ang
  */
