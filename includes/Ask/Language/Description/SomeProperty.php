@@ -170,21 +170,6 @@ final class SomeProperty extends Description implements \Ask\Immutable {
 	}
 
 	/**
-	 * {@inheritdoc}
-	 *
-	 * @since 0.1
-	 *
-	 * @return array|null|bool|int|float|string
-	 */
-	public function getArrayValue() {
-		return array(
-			'property' => $this->propertyId->toArray(),
-			'description' => $this->subDescription->toArray(),
-			'issubproperty' => $this->isSubProperty
-		);
-	}
-
-	/**
 	 * @see Comparable::equals
 	 *
 	 * @since 0.1

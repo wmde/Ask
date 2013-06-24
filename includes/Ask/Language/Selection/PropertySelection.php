@@ -75,19 +75,6 @@ final class PropertySelection extends SelectionRequest implements \Ask\Immutable
 	}
 
 	/**
-	 * @see ArrayValueProvider::getArrayValue
-	 *
-	 * @since 0.1
-	 *
-	 * @return mixed
-	 */
-	public function getArrayValue() {
-		return array(
-			'property' => $this->propertyId->toArray()
-		);
-	}
-
-	/**
 	 * @see Comparable::equals
 	 *
 	 * @since 0.1

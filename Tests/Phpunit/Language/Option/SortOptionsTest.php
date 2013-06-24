@@ -40,44 +40,38 @@ use DataValues\StringValue;
 class SortOptionsTest extends AskTestCase {
 
 	/**
-	 * @since 0.1
-	 *
-	 * @return SortOptions[]
+	 * @dataProvider sortExpressionListProvider
 	 */
-	protected function getInstances() {
-		$instances = array();
+	public function testGetExpressions( array $expressions ) {
+		$options = new SortOptions( $expressions );
 
-		$instances[] = new SortOptions( array() );
+		$this->assertEquals( $expressions, $options->getExpressions() );
+	}
 
-		$instances[] = new SortOptions( array(
+	public function sortExpressionListProvider() {
+		$argLists = array();
+
+		$argLists[] = array( array() );
+
+		$argLists[] = array( array(
 			new PropertyValueSortExpression(
 				new StringValue( 'foo' ),
 				SortExpression::ASCENDING
 			)
 		) );
-		
-		return $instances;
-	}
 
-	/**
-	 * @since 0.1
-	 *
-	 * @return SortOptions[][]
-	 */
-	public function instanceProvider() {
-		return $this->arrayWrap( $this->getInstances() );
-	}
+		$argLists[] = array( array(
+			new PropertyValueSortExpression(
+				new StringValue( 'foo' ),
+				SortExpression::ASCENDING
+			),
+			new PropertyValueSortExpression(
+				new StringValue( 'bar' ),
+				SortExpression::DESCENDING
+			),
+		) );
 
-	/**
-	 * @dataProvider instanceProvider
-	 *
-	 * @since 0.1
-	 *
-	 * @param SortOptions $object
-	 */
-	public function testReturnTypeOfGetArrayValue( SortOptions $object ) {
-		$array = $object->getArrayValue();
-		$this->assertPrimitiveStructure( $array );
+		return $argLists;
 	}
 
 }

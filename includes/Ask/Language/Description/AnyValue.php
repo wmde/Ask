@@ -68,17 +68,6 @@ final class AnyValue extends Description implements \Ask\Immutable {
 	}
 
 	/**
-	 * {@inheritdoc}
-	 *
-	 * @since 0.1
-	 *
-	 * @return array|null|bool|int|float|string
-	 */
-	public function getArrayValue() {
-		return null;
-	}
-
-	/**
 	 * @see Comparable::equals
 	 *
 	 * @since 0.1

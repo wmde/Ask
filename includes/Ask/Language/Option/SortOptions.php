@@ -28,7 +28,7 @@ namespace Ask\Language\Option;
  * @licence GNU GPL v2+
  * @author Jeroen De Dauw < jeroendedauw@gmail.com >
  */
-class SortOptions implements \Ask\Immutable, \Ask\ArrayValueProvider {
+class SortOptions implements \Ask\Immutable {
 
 	/**
 	 * The sort expressions that make up these sort options.
@@ -59,24 +59,6 @@ class SortOptions implements \Ask\Immutable, \Ask\ArrayValueProvider {
 	 */
 	public function getExpressions() {
 		return $this->expressions;
-	}
-
-	/**
-	 * @see ArrayValueProvider::getArrayValue
-	 *
-	 * @since 0.1
-	 *
-	 * @return array|null|bool|int|float|string
-	 */
-	public function getArrayValue() {
-		return array(
-			'expressions' => (object)array_map(
-				function( SortExpression $expression ) {
-					return $expression->toArray();
-				},
-				$this->expressions
-			)
-		);
 	}
 
 }

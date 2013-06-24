@@ -137,20 +137,6 @@ final class ValueDescription extends  Description implements \Ask\Immutable {
 	 *
 	 * @since 0.1
 	 *
-	 * @return array|null|bool|int|float|string
-	 */
-	public function getArrayValue() {
-		return array(
-			'value' => $this->value->toArray(),
-			'comparator' => $this->comparator,
-		);
-	}
-
-	/**
-	 * {@inheritdoc}
-	 *
-	 * @since 0.1
-	 *
 	 * @return string
 	 */
 	public function getType() {

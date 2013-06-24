@@ -55,30 +55,6 @@ abstract class SortExpressionTest extends \Ask\Tests\Phpunit\AskTestCase {
 	 *
 	 * @param SortExpression $object
 	 */
-	public function testReturnValueOfToArray( SortExpression $object ) {
-		$array = $object->toArray();
-		$this->assertToArrayStructure( $array, $object );
-	}
-
-	/**
-	 * @dataProvider instanceProvider
-	 *
-	 * @since 0.1
-	 *
-	 * @param SortExpression $object
-	 */
-	public function testReturnTypeOfGetArrayValue( SortExpression $object ) {
-		$array = $object->getArrayValue();
-		$this->assertPrimitiveStructure( $array );
-	}
-
-	/**
-	 * @dataProvider instanceProvider
-	 *
-	 * @since 0.1
-	 *
-	 * @param SortExpression $object
-	 */
 	public function testReturnValueOfGetDirection( SortExpression $expression ) {
 		$direction = $expression->getDirection();
 

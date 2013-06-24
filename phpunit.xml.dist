@@ -13,8 +13,11 @@
          strict="true"
          verbose="true">
     <testsuites>
-        <testsuite name="Ask">
-            <directory>Tests</directory>
+        <testsuite name="AskUnitTests">
+            <directory>Tests/Phpunit</directory>
+        </testsuite>
+        <testsuite name="AskIntegrationTests">
+            <directory>Tests/Integration</directory>
         </testsuite>
     </testsuites>
 </phpunit>

@@ -42,17 +42,6 @@ final class SubjectSelection extends SelectionRequest implements \Ask\Immutable 
 	}
 
 	/**
-	 * @see ArrayValueProvider::getArrayValue
-	 *
-	 * @since 0.1
-	 *
-	 * @return mixed
-	 */
-	public function getArrayValue() {
-		return null;
-	}
-
-	/**
 	 * @see Comparable::equals
 	 *
 	 * @since 0.1

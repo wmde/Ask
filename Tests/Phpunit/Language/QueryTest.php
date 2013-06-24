@@ -108,16 +108,4 @@ class QueryTest extends \Ask\Tests\Phpunit\AskTestCase {
 		return $this->arrayWrap( $instances );
 	}
 
-	/**
-	 * @dataProvider instanceProvider
-	 *
-	 * @since 0.1
-	 *
-	 * @param Query $object
-	 */
-	public function testReturnTypeOfGetArrayValue( Query $object ) {
-		$array = $object->getArrayValue();
-		$this->assertPrimitiveStructure( $array );
-	}
-
 }

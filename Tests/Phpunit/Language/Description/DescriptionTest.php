@@ -85,31 +85,6 @@ abstract class DescriptionTest extends \Ask\Tests\Phpunit\AskTestCase {
 	 *
 	 * @param Description $description
 	 */
-	public function testReturnValueOfToArray( Description $description ) {
-		$array = $description->toArray();
-		$this->assertToArrayStructure( $array, $description );
-	}
-
-	/**
-	 * @dataProvider instanceProvider
-	 *
-	 * @since 0.1
-	 *
-	 * @param Description $description
-	 */
-	public function testReturnTypeOfGetArrayValue( Description $description ) {
-		$array = $description->getArrayValue();
-
-		$this->assertPrimitiveStructure( $array );
-	}
-
-	/**
-	 * @dataProvider instanceProvider
-	 *
-	 * @since 0.1
-	 *
-	 * @param Description $description
-	 */
 	public function testComparableSelfIsEqual( Description $description ) {
 		$this->assertTrue( $description->equals( $description ), 'Description is equal to itself' );
 	}

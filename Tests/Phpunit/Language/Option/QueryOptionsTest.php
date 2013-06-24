@@ -74,18 +74,6 @@ class QueryOptionsTest extends AskTestCase {
 	}
 
 	/**
-	 * @dataProvider instanceProvider
-	 *
-	 * @since 0.1
-	 *
-	 * @param QueryOptions $object
-	 */
-	public function testReturnTypeOfGetArrayValue( QueryOptions $object ) {
-		$array = $object->getArrayValue();
-		$this->assertPrimitiveStructure( $array );
-	}
-
-	/**
 	 * @dataProvider constructorArgumentProvider
 	 */
 	public function testConstructSetsFields( $limit, $offset, SortOptions $sort ) {

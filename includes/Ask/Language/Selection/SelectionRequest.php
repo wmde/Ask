@@ -31,28 +31,9 @@ namespace Ask\Language\Selection;
  * @licence GNU GPL v2+
  * @author Jeroen De Dauw < jeroendedauw@gmail.com >
  */
-abstract class SelectionRequest implements \Ask\Arrayable, \Ask\Comparable, \Ask\Hashable, \Ask\Typeable, \Ask\ArrayValueProvider {
+abstract class SelectionRequest implements \Ask\Comparable, \Ask\Hashable, \Ask\Typeable {
 
-	const TYPE_PROP = 1;
-	const TYPE_SUBJECT = 2;
-
-	/**
-	 * @see \Ask\Arrayable::toArray
-	 *
-	 * This method has a more specific return format then Arrayable::toArray.
-	 * The return value is always an array that holds a type key pointing
-	 * to string type identifier (the same one as obtained via ->getType())
-	 * and a value key pointing to a mixed (though simple) value.
-	 *
-	 * @since 0.1
-	 *
-	 * @return array
-	 */
-	public final function toArray() {
-		return array(
-			'type' => $this->getType(),
-			'value' => $this->getArrayValue(),
-		);
-	}
+	const TYPE_PROP = 'property';
+	const TYPE_SUBJECT = 'subject';
 
 }

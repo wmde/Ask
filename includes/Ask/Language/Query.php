@@ -32,7 +32,7 @@ use Ask\Language\Selection\SelectionRequest;
  * @licence GNU GPL v2+
  * @author Jeroen De Dauw < jeroendedauw@gmail.com >
  */
-class Query implements \Ask\Immutable, \Ask\ArrayValueProvider {
+class Query implements \Ask\Immutable {
 
 	const OPT_LIMIT = 'limit';
 	const OPT_OFFSET = 'offset';
@@ -115,26 +115,6 @@ class Query implements \Ask\Immutable, \Ask\ArrayValueProvider {
 	 */
 	public function getOptions() {
 		return $this->options;
-	}
-
-	/**
-	 * @see ArrayValueProvider::getArrayValue
-	 *
-	 * @since 0.1
-	 *
-	 * @return array|null|bool|int|float|string
-	 */
-	public function getArrayValue() {
-		return array(
-			'description' => $this->description->toArray(),
-			'options' => $this->options->getArrayValue(),
-			'selectionrequests' => (object)array_map(
-				function( SelectionRequest $selectionRequest ) {
-					return $selectionRequest->toArray();
-				},
-				$this->selectionRequests
-			),
-		);
 	}
 
 }

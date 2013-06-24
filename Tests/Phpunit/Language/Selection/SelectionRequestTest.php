@@ -56,31 +56,7 @@ abstract class SelectionRequestTest extends \Ask\Tests\Phpunit\AskTestCase {
 	 * @param SelectionRequest $request
 	 */
 	public function testReturnTypeOfGetType( SelectionRequest $request ) {
-		$this->assertInternalType( 'integer', $request->getType() );
-	}
-
-	/**
-	 * @dataProvider instanceProvider
-	 *
-	 * @since 0.1
-	 *
-	 * @param SelectionRequest $object
-	 */
-	public function testReturnValueOfToArray( SelectionRequest $object ) {
-		$array = $object->toArray();
-		$this->assertToArrayStructure( $array, $object );
-	}
-
-	/**
-	 * @dataProvider instanceProvider
-	 *
-	 * @since 0.1
-	 *
-	 * @param SelectionRequest $object
-	 */
-	public function testReturnTypeOfGetArrayValue( SelectionRequest $object ) {
-		$array = $object->getArrayValue();
-		$this->assertPrimitiveStructure( $array );
+		$this->assertInternalType( 'string', $request->getType() );
 	}
 
 	/**
