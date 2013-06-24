@@ -50,6 +50,13 @@ $messages['ast'] = array(
 	'ask-desc' => 'Biblioteca que contien un encadarmáu en PHP del llinguaxe de consulta Ask',
 );
 
+/** Belarusian (Taraškievica orthography) (беларуская (тарашкевіца)‎)
+ * @author Wizardist
+ */
+$messages['be-tarask'] = array(
+	'ask-desc' => 'Бібліятэка, якая рэалізуе на PHP мову запытаў Ask',
+);
+
 /** German (Deutsch)
  * @author Kghbln
  * @author Metalhead64
