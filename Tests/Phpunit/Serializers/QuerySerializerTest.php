@@ -47,9 +47,10 @@ class QuerySerializerTest extends \PHPUnit_Framework_TestCase {
 		$actualSerialization = $serializer->serialize( $query );
 
 		$expectedSerialization = array(
+			'objectType' => 'query',
 			'description' => 'foo bar baz',
 			'options' => 'foo bar baz',
-			'selectionrequests' => (object)array(),
+			'selectionRequests' => (object)array(),
 		);
 
 		$this->assertEquals( $expectedSerialization, $actualSerialization );

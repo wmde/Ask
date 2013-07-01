@@ -140,7 +140,7 @@ final class ValueDescription extends  Description implements \Ask\Immutable {
 	 * @return string
 	 */
 	public function getType() {
-		return 'valuedescription';
+		return 'valueDescription';
 	}
 
 	/**

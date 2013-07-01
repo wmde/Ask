@@ -166,7 +166,7 @@ final class SomeProperty extends Description implements \Ask\Immutable {
 	 * @return string
 	 */
 	public function getType() {
-		return 'someproperty';
+		return 'someProperty';
 	}
 
 	/**

@@ -27,7 +27,8 @@ class DescriptionSerializer implements Serializer {
 
 	protected function getSerializedDescription( Description $description ) {
 		return array(
-			'type' => $description->getType(),
+			'objectType' => 'description',
+			'descriptionType' => $description->getType(),
 			'value' => $this->getDescriptionValueSerialization( $description ),
 		);
 	}
@@ -41,7 +42,7 @@ class DescriptionSerializer implements Serializer {
 			return array(
 				'property' => $description->getPropertyId()->toArray(),
 				'description' => $this->serialize( $description->getSubDescription() ),
-				'issubproperty' => $description->isSubProperty(),
+				'isSubProperty' => $description->isSubProperty(),
 			);
 		}
 

@@ -17,8 +17,8 @@ abstract class SerializationException extends \RuntimeException {
 
 	protected $serializer;
 
-	public function __construct( Serializer $serializer, $message = '', \Exception $previous = null ) {
-		$this->serializer = $serializer;
+	public function __construct( Serializer $deserializer, $message = '', \Exception $previous = null ) {
+		$this->serializer = $deserializer;
 
 		parent::__construct( $message, 0, $previous );
 	}

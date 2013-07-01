@@ -64,7 +64,7 @@ final class AnyValue extends Description implements \Ask\Immutable {
 	 * @return string
 	 */
 	public function getType() {
-		return 'anyvalue';
+		return 'anyValue';
 	}
 
 	/**

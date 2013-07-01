@@ -42,6 +42,7 @@ class QueryOptionsSerializer implements Serializer {
 		$expressionSerializer = $this->componentSerializer;
 
 		return array(
+			'objectType' => 'queryOptions',
 			'limit' => $options->getLimit(),
 			'offset' => $options->getOffset(),
 

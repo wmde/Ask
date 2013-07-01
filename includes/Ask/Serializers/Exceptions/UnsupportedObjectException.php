@@ -19,14 +19,14 @@ class UnsupportedObjectException extends SerializationException {
 
 	/**
 	 * @param mixed $unsupportedObject
-	 * @param Serializer $serializer
+	 * @param Serializer $deserializer
 	 * @param string $message
 	 * @param \Exception $previous
 	 */
-	public function __construct( $unsupportedObject, Serializer $serializer, $message = '', \Exception $previous = null ) {
+	public function __construct( $unsupportedObject, Serializer $deserializer, $message = '', \Exception $previous = null ) {
 		$this->unsupportedObject = $unsupportedObject;
 
-		parent::__construct( $serializer, $message, $previous );
+		parent::__construct( $deserializer, $message, $previous );
 	}
 
 	/**

@@ -32,7 +32,8 @@ class SelectionRequestSerializer implements Serializer {
 
 	protected function getSerializedSelectionRequest( SelectionRequest $request ) {
 		return array(
-			'type' => $request->getType(),
+			'objectType' => 'selectionRequest',
+			'selectionType' => $request->getType(),
 			'value' => $this->getValueSerialization( $request ),
 		);
 	}

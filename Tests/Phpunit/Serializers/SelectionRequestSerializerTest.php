@@ -49,7 +49,8 @@ class SelectionRequestSerializerTest extends \PHPUnit_Framework_TestCase {
 		$argLists[] = array(
 			new SubjectSelection(),
 			array(
-				'type' => 'subject',
+				'objectType' => 'selectionRequest',
+				'selectionType' => 'subject',
 				'value' => null,
 			)
 		);
@@ -59,7 +60,8 @@ class SelectionRequestSerializerTest extends \PHPUnit_Framework_TestCase {
 		$argLists[] = array(
 			new PropertySelection( $stringValue ),
 			array(
-				'type' => 'property',
+				'objectType' => 'selectionRequest',
+				'selectionType' => 'property',
 				'value' => array(
 					'property' => $stringValue->toArray(),
 				),

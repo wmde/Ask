@@ -74,66 +74,77 @@ class QuerySerializationTest extends \PHPUnit_Framework_TestCase {
 
 	protected function getExpectedSerialization( StringValue $p42, StringValue $p9001, StringValue $foo ) {
 		return array(
+			'objectType' => 'query',
 			'description' => array(
-				'type' => 'conjunction',
+				'objectType' => 'description',
+				'descriptionType' => 'conjunction',
 				'value' => array(
 					'descriptions' => array(
 						array(
-							'type' => 'someproperty',
+							'objectType' => 'description',
+							'descriptionType' => 'someProperty',
 							'value' => array(
 								'property' => $p42->toArray(),
 								'description' => array(
-									'type' => 'anyvalue',
+									'objectType' => 'description',
+									'descriptionType' => 'anyValue',
 									'value' => null
 								),
-								'issubproperty' => false
+								'isSubProperty' => false
 							),
 						),
 						array(
-							'type' => 'someproperty',
+							'objectType' => 'description',
+							'descriptionType' => 'someProperty',
 							'value' => array(
 								'property' => $p9001->toArray(),
 								'description' => array(
-									'type' => 'valuedescription',
+									'objectType' => 'description',
+									'descriptionType' => 'valueDescription',
 									'value' => array(
 										'value' => $foo->toArray(),
-										'comparator' => 1
+										'comparator' => 1 // TODO: this should be a string
 									)
 								),
-								'issubproperty' => false
+								'isSubProperty' => false
 							),
 						)
 					)
 				)
 			),
 			'options' => array(
+				'objectType' => 'queryOptions',
 				'limit' => 100,
 				'offset' => 42,
 				'sort' => array(
 					'expressions' => (object)array(
 						array(
-							'type' => 'PropertyValue',
+							'objectType' => 'sortExpression',
+							'sortExpressionType' => 'PropertyValue',
 							'value' => array(
-								'property' => $p42->toArray(),
 								'direction' => SortExpression::ASCENDING, // TODO: this should be a string
+								'property' => $p42->toArray(),
 							)
 						)
 					),
 				),
 			),
-			'selectionrequests' => (object)array(
+			'selectionRequests' => (object)array(
 				array(
-					'type' => 'subject',
+					'objectType' => 'selectionRequest',
+					'selectionType' => 'subject',
 					'value' => null,
 				),
 				array(
-					'type' => 'property',
+					'objectType' => 'selectionRequest',
+					'selectionType' => 'property',
 					'value' => array(
 						'property' => $p42->toArray(),
 					),
 				),
 				array(
-					'type' => 'property',
+					'objectType' => 'selectionRequest',
+					'selectionType' => 'property',
 					'value' => array(
 						'property' => $p9001->toArray(),
 					),

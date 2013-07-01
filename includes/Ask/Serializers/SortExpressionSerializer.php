@@ -39,7 +39,8 @@ class SortExpressionSerializer implements Serializer {
 		);
 
 		return array(
-			'type' => $expression->getType(),
+			'objectType' => 'sortExpression',
+			'sortExpressionType' => $expression->getType(),
 			'value' => $valueArray,
 		);
 	}

@@ -30,6 +30,7 @@ class QueryOptionsSerializerTest extends \PHPUnit_Framework_TestCase {
 		$actualSerialization = $serializer->serialize( $options );
 
 		$expectedSerialization = array(
+			'objectType' => 'queryOptions',
 			'limit' => $options->getLimit(),
 			'offset' => $options->getOffset(),
 			'sort' => array(
