@@ -67,7 +67,7 @@ class DescriptionSerializerTest extends \PHPUnit_Framework_TestCase {
 			array(
 				'objectType' => 'description',
 				'descriptionType' => 'anyValue',
-				'value' => null
+				'value' => array()
 			)
 		);
 
@@ -84,7 +84,7 @@ class DescriptionSerializerTest extends \PHPUnit_Framework_TestCase {
 					'description' => array(
 						'objectType' => 'description',
 						'descriptionType' => 'anyValue',
-						'value' => null
+						'value' => array()
 					),
 					'isSubProperty' => false
 				),

@@ -35,7 +35,7 @@ class DescriptionSerializer implements Serializer {
 
 	protected function getDescriptionValueSerialization( Description $description ) {
 		if ( $description instanceof AnyValue ) {
-			return null;
+			return array();
 		}
 
 		if ( $description instanceof SomeProperty ) {

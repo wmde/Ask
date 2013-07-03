@@ -5,6 +5,8 @@ namespace Ask\Deserializers\Exceptions;
 use Ask\Deserializers\Deserializer;
 
 /**
+ * Indicates the objectType specified in the serialization is not supported by a deserializer.
+ *
  * @since 0.1
  *
  * @file

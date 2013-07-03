@@ -88,7 +88,7 @@ class QuerySerializationTest extends \PHPUnit_Framework_TestCase {
 								'description' => array(
 									'objectType' => 'description',
 									'descriptionType' => 'anyValue',
-									'value' => null
+									'value' => array()
 								),
 								'isSubProperty' => false
 							),

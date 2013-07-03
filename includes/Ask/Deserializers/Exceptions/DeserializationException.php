@@ -13,7 +13,7 @@ use Ask\Deserializers\Deserializer;
  * @licence GNU GPL v2+
  * @author Jeroen De Dauw < jeroendedauw@gmail.com >
  */
-abstract class DeserializationException extends \RuntimeException {
+class DeserializationException extends \RuntimeException {
 
 	protected $deserializer;
 
