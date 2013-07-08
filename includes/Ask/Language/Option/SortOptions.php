@@ -40,8 +40,6 @@ class SortOptions implements \Ask\Immutable {
 	protected $expressions;
 
 	/**
-	 * Constructor.
-	 *
 	 * @since 0.1
 	 *
 	 * @param SortExpression[] $expressions

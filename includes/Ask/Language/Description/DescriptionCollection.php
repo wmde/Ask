@@ -51,8 +51,6 @@ abstract class DescriptionCollection extends Description implements \Ask\Immutab
 	private $hash;
 
 	/**
-	 * Constructor.
-	 *
 	 * @since 0.1
 	 *
 	 * @param Description[] $descriptions

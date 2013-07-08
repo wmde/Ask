@@ -82,8 +82,6 @@ final class SomeProperty extends Description implements \Ask\Immutable {
 	private $hash;
 
 	/**
-	 * Constructor.
-	 *
 	 * @since 0.1
 	 *
 	 * @param DataValue $propertyId

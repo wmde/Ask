@@ -70,8 +70,6 @@ class Query implements \Ask\Immutable {
 	protected $options;
 
 	/**
-	 * Constructor.
-	 *
 	 * @since 0.1
 	 *
 	 * @param Description $description

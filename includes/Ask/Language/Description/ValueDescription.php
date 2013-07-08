@@ -70,8 +70,6 @@ final class ValueDescription extends  Description implements \Ask\Immutable {
 	protected $comparator;
 
 	/**
-	 * Constructor.
-	 *
 	 * @since 0.1
 	 *
 	 * @param DataValue $value

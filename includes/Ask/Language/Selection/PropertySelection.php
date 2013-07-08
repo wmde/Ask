@@ -42,8 +42,6 @@ final class PropertySelection extends SelectionRequest implements \Ask\Immutable
 	protected $propertyId;
 
 	/**
-	 * Constructor.
-	 *
 	 * @since 0.1
 	 *
 	 * @param DataValue $propertyId

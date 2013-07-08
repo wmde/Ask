@@ -58,8 +58,6 @@ class QueryOptions implements \Ask\Immutable {
 	protected $sort;
 
 	/**
-	 * Constructor.
-	 *
 	 * @since 0.1
 	 *
 	 * @param int $limit
