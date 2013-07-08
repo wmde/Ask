@@ -34,12 +34,12 @@ abstract class SortExpression implements \Ask\Immutable, \Ask\Typeable {
 
 	const PROPERTY_VALUE = 'propertyValue';
 
-	const ASCENDING = 'asc';
-	const DESCENDING = 'desc';
+	const DIRECTION_ASCENDING = 'asc';
+	const DIRECTION_DESCENDING = 'desc';
 
 	/**
 	 * The sort direction.
-	 * Either SortExpression::ASCENDING or SortExpression::DESCENDING
+	 * This is one of the SortExpression::DIRECTION_ constants.
 	 *
 	 * @var string|null
 	 */
@@ -47,7 +47,7 @@ abstract class SortExpression implements \Ask\Immutable, \Ask\Typeable {
 
 	/**
 	 * Returns the sort direction.
-	 * Either SortExpression::ASCENDING or SortExpression::DESCENDING
+	 * This is one of the SortExpression::DIRECTION_ constants.
 	 *
 	 * @since 0.1
 	 *
@@ -59,7 +59,7 @@ abstract class SortExpression implements \Ask\Immutable, \Ask\Typeable {
 	}
 
 	protected function assertIsDirection( $direction ) {
-		if ( !is_string( $direction ) || !in_array( $direction, array( self::ASCENDING, self::DESCENDING ) ) ) {
+		if ( !is_string( $direction ) || !in_array( $direction, array( self::DIRECTION_ASCENDING, self::DIRECTION_DESCENDING ) ) ) {
 			throw new InvalidArgumentException( '$direction needs to be one of the direction constants' );
 		}
 	}

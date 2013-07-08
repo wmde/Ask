@@ -65,7 +65,7 @@ class QuerySerializationTest extends \PHPUnit_Framework_TestCase {
 			100,
 			42,
 			new SortOptions( array(
-				new PropertyValueSortExpression( $p42, SortExpression::ASCENDING )
+				new PropertyValueSortExpression( $p42, SortExpression::DIRECTION_ASCENDING )
 			) )
 		);
 
@@ -122,7 +122,7 @@ class QuerySerializationTest extends \PHPUnit_Framework_TestCase {
 							'objectType' => 'sortExpression',
 							'sortExpressionType' => 'propertyValue',
 							'value' => array(
-								'direction' => SortExpression::ASCENDING, // TODO: this should be a string
+								'direction' => SortExpression::DIRECTION_ASCENDING, // TODO: this should be a string
 								'property' => $p42->toArray(),
 							)
 						)

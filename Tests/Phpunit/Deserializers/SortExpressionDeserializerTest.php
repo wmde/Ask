@@ -168,7 +168,7 @@ class SortExpressionDeserializerTest extends \PHPUnit_Framework_TestCase {
 		) );
 
 		$argLists[] = array( array(
-			'direction' => SortExpression::ASCENDING,
+			'direction' => SortExpression::DIRECTION_ASCENDING,
 		) );
 
 		return $argLists;
@@ -200,7 +200,7 @@ class SortExpressionDeserializerTest extends \PHPUnit_Framework_TestCase {
 
 		$argLists[] = array( array(
 			'property' => null,
-			'direction' => SortExpression::DESCENDING,
+			'direction' => SortExpression::DIRECTION_DESCENDING,
 		) );
 
 		return $argLists;

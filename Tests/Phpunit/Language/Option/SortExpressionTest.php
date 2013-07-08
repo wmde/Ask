@@ -60,7 +60,7 @@ abstract class SortExpressionTest extends \Ask\Tests\Phpunit\AskTestCase {
 
 		$this->assertInternalType( 'string', $direction );
 		$this->assertTrue(
-			in_array( $direction, array( SortExpression::ASCENDING, SortExpression::DESCENDING ) ),
+			in_array( $direction, array( SortExpression::DIRECTION_ASCENDING, SortExpression::DIRECTION_DESCENDING ) ),
 			'Sort direction is one of the known values'
 		);
 	}

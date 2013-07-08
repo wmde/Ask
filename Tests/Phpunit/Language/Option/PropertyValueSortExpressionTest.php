@@ -40,7 +40,7 @@ class PropertyValueSortExpressionTest extends SortExpressionTest {
 	public function testCanConstruct() {
 		new PropertyValueSortExpression(
 			new StringValue( 'foo' ),
-			SortExpression::ASCENDING
+			SortExpression::DIRECTION_ASCENDING
 		);
 
 		$this->assertTrue( true );
@@ -51,7 +51,7 @@ class PropertyValueSortExpressionTest extends SortExpressionTest {
 
 		$sortExpression = new PropertyValueSortExpression(
 			$propertyId,
-			SortExpression::ASCENDING
+			SortExpression::DIRECTION_ASCENDING
 		);
 
 		$this->assertEquals( $propertyId, $sortExpression->getPropertyId() );
@@ -69,12 +69,12 @@ class PropertyValueSortExpressionTest extends SortExpressionTest {
 
 		$instances[] = new PropertyValueSortExpression(
 			new StringValue( 'foo' ),
-			SortExpression::ASCENDING
+			SortExpression::DIRECTION_ASCENDING
 		);
 
 		$instances[] = new PropertyValueSortExpression(
 			new StringValue( 'foo' ),
-			SortExpression::DESCENDING
+			SortExpression::DIRECTION_DESCENDING
 		);
 
 		return $instances;

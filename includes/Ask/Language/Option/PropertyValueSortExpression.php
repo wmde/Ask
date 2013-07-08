@@ -46,7 +46,9 @@ class PropertyValueSortExpression extends SortExpression {
 	 * @since 0.1
 	 *
 	 * @param DataValue $propertyId
-	 * @param string $direction
+	 * @param string $direction One of the SortExpression::DIRECTION_ constants
+	 *
+	 * @throws InvalidArgumentException
 	 */
 	public function __construct( DataValue $propertyId, $direction ) {
 		$this->property = $propertyId;

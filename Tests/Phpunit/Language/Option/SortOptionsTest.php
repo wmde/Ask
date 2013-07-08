@@ -56,18 +56,18 @@ class SortOptionsTest extends AskTestCase {
 		$argLists[] = array( array(
 			new PropertyValueSortExpression(
 				new StringValue( 'foo' ),
-				SortExpression::ASCENDING
+				SortExpression::DIRECTION_ASCENDING
 			)
 		) );
 
 		$argLists[] = array( array(
 			new PropertyValueSortExpression(
 				new StringValue( 'foo' ),
-				SortExpression::ASCENDING
+				SortExpression::DIRECTION_ASCENDING
 			),
 			new PropertyValueSortExpression(
 				new StringValue( 'bar' ),
-				SortExpression::DESCENDING
+				SortExpression::DIRECTION_DESCENDING
 			),
 		) );
 

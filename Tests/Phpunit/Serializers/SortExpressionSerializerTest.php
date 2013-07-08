@@ -54,14 +54,14 @@ class SortExpressionSerializerTest extends \PHPUnit_Framework_TestCase {
 		$argLists[] = array(
 			new PropertyValueSortExpression(
 				$p1337,
-				SortExpression::ASCENDING
+				SortExpression::DIRECTION_ASCENDING
 			),
 			array(
 				'objectType' => 'sortExpression',
 				'sortExpressionType' => 'propertyValue',
 				'value' => array(
 					'property' => $p1337->toArray(),
-					'direction' => SortExpression::ASCENDING,
+					'direction' => SortExpression::DIRECTION_ASCENDING,
 				),
 			)
 		);
@@ -69,14 +69,14 @@ class SortExpressionSerializerTest extends \PHPUnit_Framework_TestCase {
 		$argLists[] = array(
 			new PropertyValueSortExpression(
 				$p1337,
-				SortExpression::DESCENDING
+				SortExpression::DIRECTION_DESCENDING
 			),
 			array(
 				'objectType' => 'sortExpression',
 				'sortExpressionType' => 'propertyValue',
 				'value' => array(
 					'property' => $p1337->toArray(),
-					'direction' => SortExpression::DESCENDING,
+					'direction' => SortExpression::DIRECTION_DESCENDING,
 				),
 			)
 		);
