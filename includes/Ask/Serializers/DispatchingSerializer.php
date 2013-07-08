@@ -21,6 +21,9 @@ class DispatchingSerializer implements Serializer {
 	 */
 	protected $serializers;
 
+	/**
+	 * @param Serializer[] $serializers
+	 */
 	public function __construct( array $serializers = array() ) {
 		$this->assertAreSerializers( $serializers );
 		$this->serializers = $serializers;
