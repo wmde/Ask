@@ -27,7 +27,7 @@ use DataValues\DataValueFactory;
  * @licence GNU GPL v2+
  * @author Jeroen De Dauw < jeroendedauw@gmail.com >
  */
-class DescriptionDeserializer implements Deserializer {
+class DescriptionDeserializer extends TypedObjectDeserializer {
 
 	protected $dataValueFactory;
 
@@ -35,62 +35,40 @@ class DescriptionDeserializer implements Deserializer {
 		$this->dataValueFactory = $dataValueFactory;
 	}
 
-	public function deserialize( $serialization ) {
-		$this->assertCanDeserialize( $serialization );
-		return $this->getDeserializedDescription( $serialization );
+	/**
+	 * @see TypedObjectDeserializer::getObjectType
+	 *
+	 * @since 0.1
+	 *
+	 * @return string
+	 */
+	protected function getObjectType() {
+		return 'description';
 	}
 
-	protected function assertCanDeserialize( $serialization ) {
-		if ( !$this->hasObjectType( $serialization ) ) {
-			throw new MissingTypeException( $this );
-		}
-
-		if ( !$this->hasCorrectObjectType( $serialization ) ) {
-			throw new UnsupportedTypeException( $serialization['objectType'], $this );
-		}
+	/**
+	 * @see TypedObjectDeserializer::getSubTypeKey
+	 *
+	 * @since 0.1
+	 *
+	 * @return string
+	 */
+	protected function getSubTypeKey() {
+		return 'descriptionType';
 	}
 
-	public function canDeserialize( $serialization ) {
-		return $this->hasObjectType( $serialization ) && $this->hasCorrectObjectType( $serialization );
-	}
-
-	protected function hasCorrectObjectType( $serialization ) {
-		return $serialization['objectType'] === 'description';
-	}
-
-	protected function hasObjectType( $serialization ) {
-		return is_array( $serialization )
-			&& array_key_exists( 'objectType', $serialization );
-	}
-
-	protected function getDeserializedDescription( array $serialization ) {
-		if ( !array_key_exists( 'descriptionType', $serialization ) ) {
-			throw new MissingAttributeException(
-				'descriptionType',
-				$this
-			);
-		}
-
-		$this->requireAttribute( $serialization, 'descriptionType' );
-		$this->requireAttribute( $serialization, 'value' );
-		$this->assertAttributeIsArray( $serialization, 'value' );
-
-		$descriptionType = $serialization['descriptionType'];
-		$descriptionValue = $serialization['value'];
-
-		return $this->getDeserializedValue( $descriptionType, $descriptionValue );
-	}
-
-	protected function requireAttributes( array $array ) {
-		$requiredAttributes = func_get_args();
-		array_shift( $requiredAttributes );
-
-		foreach ( $requiredAttributes as $attribute ) {
-			$this->requireAttribute( $array, $attribute );
-		}
-	}
-
-	protected function getDeserializedValue( $descriptionType, $descriptionValue ) {
+	/**
+	 * @see TypedObjectDeserializer::getDeserializedValue
+	 *
+	 * @since 0.1
+	 *
+	 * @param string $descriptionType
+	 * @param array $descriptionValue
+	 *
+	 * @return object
+	 * @throws DeserializationException
+	 */
+	protected function getDeserializedValue( $descriptionType, array $descriptionValue ) {
 		if ( $descriptionType === 'anyValue' ) {
 			return new AnyValue();
 		}
@@ -184,24 +162,6 @@ class DescriptionDeserializer implements Deserializer {
 		}
 
 		return $descriptions;
-	}
-
-	protected function requireAttribute( array $array, $attributeName ) {
-		if ( !array_key_exists( $attributeName, $array ) ) {
-			throw new MissingAttributeException(
-				$attributeName,
-				$this
-			);
-		}
-	}
-
-	protected function assertAttributeIsArray( array $array, $attributeName ) {
-		if ( !is_array( $array[$attributeName] ) ) {
-			throw new InvalidAttributeException(
-				$attributeName,
-				$this
-			);
-		}
 	}
 
 }

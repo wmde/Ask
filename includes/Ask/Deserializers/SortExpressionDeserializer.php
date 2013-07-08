@@ -20,7 +20,7 @@ use InvalidArgumentException;
  * @licence GNU GPL v2+
  * @author Jeroen De Dauw < jeroendedauw@gmail.com >
  */
-class SortExpressionDeserializer implements Deserializer {
+class SortExpressionDeserializer extends TypedObjectDeserializer {
 
 	protected $dataValueFactory;
 
@@ -28,53 +28,52 @@ class SortExpressionDeserializer implements Deserializer {
 		$this->dataValueFactory = $dataValueFactory;
 	}
 
-	public function deserialize( $serialization ) {
-		$this->assertCanDeserialize( $serialization );
-		return $this->getDeserializedSortExpression( $serialization );
+	/**
+	 * @see TypedObjectDeserializer::getObjectType
+	 *
+	 * @since 0.1
+	 *
+	 * @return string
+	 */
+	protected function getObjectType() {
+		return 'sortExpression';
 	}
 
-	protected function assertCanDeserialize( $serialization ) {
-		if ( !$this->hasObjectType( $serialization ) ) {
-			throw new MissingTypeException( $this );
-		}
-
-		if ( !$this->hasCorrectObjectType( $serialization ) ) {
-			throw new UnsupportedTypeException( $serialization['objectType'], $this );
-		}
+	/**
+	 * @see TypedObjectDeserializer::getSubTypeKey
+	 *
+	 * @since 0.1
+	 *
+	 * @return string
+	 */
+	protected function getSubTypeKey() {
+		return 'sortExpressionType';
 	}
 
-	public function canDeserialize( $serialization ) {
-		return $this->hasObjectType( $serialization ) && $this->hasCorrectObjectType( $serialization );
-	}
-
-	protected function hasObjectType( $serialization ) {
-		return is_array( $serialization )
-		&& array_key_exists( 'objectType', $serialization );
-	}
-
-	protected function hasCorrectObjectType( $serialization ) {
-		return $serialization['objectType'] === 'sortExpression';
-	}
-
-	protected function getDeserializedSortExpression( array $serialization ) {
-		$this->requireAttribute( $serialization, 'sortExpressionType' );
-		$this->requireAttribute( $serialization, 'value' );
-		$this->assertAttributeIsArray( $serialization, 'value' );
-
-		if ( $serialization['sortExpressionType'] !== 'propertyValue' ) {
+	/**
+	 * @see TypedObjectDeserializer::getDeserializedValue
+	 *
+	 * @since 0.1
+	 *
+	 * @param string $sortExpressionType
+	 * @param array $valueSerialization
+	 *
+	 * @return object
+	 * @throws DeserializationException
+	 */
+	protected function getDeserializedValue( $sortExpressionType, array $valueSerialization ) {
+		if ( $sortExpressionType !== 'propertyValue' ) {
 			throw new InvalidAttributeException( 'sortExpressionType', $this );
 		}
 
-		$value = $serialization['value'];
-
-		$this->requireAttribute( $value, 'direction' );
-		$this->requireAttribute( $value, 'property' );
-		$this->assertAttributeIsArray( $value, 'property' );
+		$this->requireAttribute( $valueSerialization, 'direction' );
+		$this->requireAttribute( $valueSerialization, 'property' );
+		$this->assertAttributeIsArray( $valueSerialization, 'property' );
 
 		try {
 			$expression = new PropertyValueSortExpression(
-				$this->dataValueFactory->newFromArray( $value['property'] ),
-				$value['direction']
+				$this->dataValueFactory->newFromArray( $valueSerialization['property'] ),
+				$valueSerialization['direction']
 			);
 		}
 		catch ( InvalidArgumentException $ex ) {
