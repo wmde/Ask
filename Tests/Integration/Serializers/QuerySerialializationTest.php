@@ -120,7 +120,7 @@ class QuerySerializationTest extends \PHPUnit_Framework_TestCase {
 					'expressions' => (object)array(
 						array(
 							'objectType' => 'sortExpression',
-							'sortExpressionType' => 'PropertyValue',
+							'sortExpressionType' => 'propertyValue',
 							'value' => array(
 								'direction' => SortExpression::ASCENDING, // TODO: this should be a string
 								'property' => $p42->toArray(),

@@ -2,6 +2,8 @@
 
 namespace Ask\Language\Option;
 
+use InvalidArgumentException;
+
 /**
  * A sort expression.
  *
@@ -30,7 +32,7 @@ namespace Ask\Language\Option;
  */
 abstract class SortExpression implements \Ask\Immutable, \Ask\Typeable {
 
-	const PROPERTY_VALUE = 'PropertyValue';
+	const PROPERTY_VALUE = 'propertyValue';
 
 	const ASCENDING = 'asc';
 	const DESCENDING = 'desc';
@@ -54,6 +56,12 @@ abstract class SortExpression implements \Ask\Immutable, \Ask\Typeable {
 	public function getDirection() {
 		assert( $this->direction !== null );
 		return $this->direction;
+	}
+
+	protected function assertIsDirection( $direction ) {
+		if ( !is_string( $direction ) || !in_array( $direction, array( self::ASCENDING, self::DESCENDING ) ) ) {
+			throw new InvalidArgumentException( '$direction needs to be one of the direction constants' );
+		}
 	}
 
 }

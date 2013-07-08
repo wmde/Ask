@@ -58,7 +58,7 @@ class SortExpressionSerializerTest extends \PHPUnit_Framework_TestCase {
 			),
 			array(
 				'objectType' => 'sortExpression',
-				'sortExpressionType' => 'PropertyValue',
+				'sortExpressionType' => 'propertyValue',
 				'value' => array(
 					'property' => $p1337->toArray(),
 					'direction' => SortExpression::ASCENDING,
@@ -73,7 +73,7 @@ class SortExpressionSerializerTest extends \PHPUnit_Framework_TestCase {
 			),
 			array(
 				'objectType' => 'sortExpression',
-				'sortExpressionType' => 'PropertyValue',
+				'sortExpressionType' => 'propertyValue',
 				'value' => array(
 					'property' => $p1337->toArray(),
 					'direction' => SortExpression::DESCENDING,

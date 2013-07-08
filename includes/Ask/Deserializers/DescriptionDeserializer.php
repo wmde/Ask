@@ -81,15 +81,6 @@ class DescriptionDeserializer implements Deserializer {
 		return $this->getDeserializedValue( $descriptionType, $descriptionValue );
 	}
 
-	protected function requireAttribute( array $array, $attributeName ) {
-		if ( !array_key_exists( $attributeName, $array ) ) {
-			throw new MissingAttributeException(
-				$attributeName,
-				$this
-			);
-		}
-	}
-
 	protected function requireAttributes( array $array ) {
 		$requiredAttributes = func_get_args();
 		array_shift( $requiredAttributes );
@@ -125,15 +116,6 @@ class DescriptionDeserializer implements Deserializer {
 			$this,
 			'The provided descriptionType is not supported by this deserializer'
 		);
-	}
-
-	protected function assertAttributeIsArray( array $array, $attributeName ) {
-		if ( !is_array( $array[$attributeName] ) ) {
-			throw new InvalidAttributeException(
-				$attributeName,
-				$this
-			);
-		}
 	}
 
 	protected function newSomeProperty( array $descriptionValue ) {
@@ -202,6 +184,24 @@ class DescriptionDeserializer implements Deserializer {
 		}
 
 		return $descriptions;
+	}
+
+	protected function requireAttribute( array $array, $attributeName ) {
+		if ( !array_key_exists( $attributeName, $array ) ) {
+			throw new MissingAttributeException(
+				$attributeName,
+				$this
+			);
+		}
+	}
+
+	protected function assertAttributeIsArray( array $array, $attributeName ) {
+		if ( !is_array( $array[$attributeName] ) ) {
+			throw new InvalidAttributeException(
+				$attributeName,
+				$this
+			);
+		}
 	}
 
 }

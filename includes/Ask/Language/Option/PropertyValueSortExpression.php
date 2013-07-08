@@ -43,21 +43,15 @@ class PropertyValueSortExpression extends SortExpression {
 	protected $property;
 
 	/**
-	 * Constructor.
-	 *
 	 * @since 0.1
 	 *
 	 * @param DataValue $propertyId
 	 * @param string $direction
-	 *
-	 * @throws InvalidArgumentException
 	 */
 	public function __construct( DataValue $propertyId, $direction ) {
 		$this->property = $propertyId;
 
-		if ( !is_string( $direction ) ) {
-			throw new InvalidArgumentException( '$direction needs to be one of the direction constants' );
-		}
+		$this->assertIsDirection( $direction );
 
 		$this->direction = $direction;
 	}
