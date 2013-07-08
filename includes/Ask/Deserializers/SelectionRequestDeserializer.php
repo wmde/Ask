@@ -4,10 +4,8 @@ namespace Ask\Deserializers;
 
 use Ask\Deserializers\Exceptions\DeserializationException;
 use Ask\Deserializers\Exceptions\InvalidAttributeException;
-use Ask\Deserializers\Exceptions\MissingAttributeException;
-use Ask\Deserializers\Exceptions\MissingTypeException;
-use Ask\Deserializers\Exceptions\UnsupportedTypeException;
-use Ask\Language\Option\PropertyValueSortExpression;
+use Ask\Language\Selection\PropertySelection;
+use Ask\Language\Selection\SubjectSelection;
 use DataValues\DataValueFactory;
 use InvalidArgumentException;
 
@@ -20,7 +18,7 @@ use InvalidArgumentException;
  * @licence GNU GPL v2+
  * @author Jeroen De Dauw < jeroendedauw@gmail.com >
  */
-class SortExpressionDeserializer extends TypedObjectDeserializer {
+class SelectionRequestDeserializer extends TypedObjectDeserializer {
 
 	protected $dataValueFactory;
 
@@ -36,7 +34,7 @@ class SortExpressionDeserializer extends TypedObjectDeserializer {
 	 * @return string
 	 */
 	protected function getObjectType() {
-		return 'sortExpression';
+		return 'selectionRequest';
 	}
 
 	/**
@@ -47,7 +45,7 @@ class SortExpressionDeserializer extends TypedObjectDeserializer {
 	 * @return string
 	 */
 	protected function getSubTypeKey() {
-		return 'sortExpressionType';
+		return 'selectionRequestType';
 	}
 
 	/**
@@ -62,25 +60,30 @@ class SortExpressionDeserializer extends TypedObjectDeserializer {
 	 * @throws DeserializationException
 	 */
 	protected function getDeserializedValue( $sortExpressionType, array $valueSerialization ) {
-		if ( $sortExpressionType !== 'propertyValue' ) {
-			throw new InvalidAttributeException( 'sortExpressionType', $this );
+		switch ( $sortExpressionType ) {
+			case 'property':
+				return $this->newPropertySelectionRequest( $valueSerialization );
+				break;
+			case 'subject':
+				return new SubjectSelection();
+				break;
 		}
 
-		$this->requireAttribute( $valueSerialization, 'direction' );
-		$this->requireAttribute( $valueSerialization, 'property' );
-		$this->assertAttributeIsArray( $valueSerialization, 'property' );
+		throw new InvalidAttributeException( 'selectionRequestType', $this );
+	}
+
+	protected function newPropertySelectionRequest( array $value ) {
+		$this->requireAttribute( $value, 'property' );
+		$this->assertAttributeIsArray( $value, 'property' );
 
 		try {
-			$expression = new PropertyValueSortExpression(
-				$this->dataValueFactory->newFromArray( $valueSerialization['property'] ),
-				$valueSerialization['direction']
-			);
+			$propertyId = $this->dataValueFactory->newFromArray( $value['property'] );
 		}
 		catch ( InvalidArgumentException $ex ) {
 			throw new DeserializationException( $this, '', $ex );
 		}
 
-		return $expression;
+		return new PropertySelection( $propertyId );
 	}
 
 }

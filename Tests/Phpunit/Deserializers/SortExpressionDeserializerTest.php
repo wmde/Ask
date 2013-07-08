@@ -84,13 +84,13 @@ class SortExpressionDeserializerTest extends \PHPUnit_Framework_TestCase {
 	/**
 	 * @dataProvider missingObjectTypeProvider
 	 */
-	public function testCannotDeserilaizeWithoutObjectType( $notADescription ) {
+	public function testCannotDeserilaizeWithoutObjectType( $notASortExpression ) {
 		$serializer = $this->newSortExpressionDeserializer();
 
-		$this->assertFalse( $serializer->canDeserialize( $notADescription ) );
+		$this->assertFalse( $serializer->canDeserialize( $notASortExpression ) );
 
 		$this->setExpectedException( 'Ask\Deserializers\Exceptions\MissingTypeException' );
-		$serializer->deserialize( $notADescription );
+		$serializer->deserialize( $notASortExpression );
 	}
 
 	public function missingObjectTypeProvider() {
