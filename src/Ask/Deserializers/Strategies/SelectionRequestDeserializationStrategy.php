@@ -48,7 +48,7 @@ class SelectionRequestDeserializationStrategy extends TypedDeserializationStrate
 				break;
 		}
 
-		throw new InvalidAttributeException( 'selectionRequestType' );
+		throw new InvalidAttributeException( 'selectionRequestType', $sortExpressionType );
 	}
 
 	protected function newPropertySelectionRequest( array $value ) {

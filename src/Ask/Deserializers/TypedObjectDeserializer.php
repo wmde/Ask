@@ -93,7 +93,8 @@ class TypedObjectDeserializer implements Deserializer {
 	protected function assertAttributeIsArray( array $array, $attributeName ) {
 		if ( !is_array( $array[$attributeName] ) ) {
 			throw new InvalidAttributeException(
-				$attributeName
+				$attributeName,
+				$array[$attributeName]
 			);
 		}
 	}
