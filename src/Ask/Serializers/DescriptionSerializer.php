@@ -66,12 +66,12 @@ class DescriptionSerializer implements Serializer {
 			);
 		}
 
-		throw new UnsupportedObjectException( $description, $this );
+		throw new UnsupportedObjectException( $description );
 	}
 
 	protected function assertCanSerialize( $askObject ) {
 		if ( !$this->canSerialize( $askObject ) ) {
-			throw new UnsupportedObjectException( $askObject, $this );
+			throw new UnsupportedObjectException( $askObject );
 		}
 	}
 

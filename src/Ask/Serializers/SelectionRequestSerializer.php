@@ -25,7 +25,7 @@ class SelectionRequestSerializer implements Serializer {
 
 	protected function assertCanSerialize( $askObject ) {
 		if ( !$this->canSerialize( $askObject ) ) {
-			throw new UnsupportedObjectException( $askObject, $this );
+			throw new UnsupportedObjectException( $askObject );
 		}
 	}
 
@@ -48,7 +48,7 @@ class SelectionRequestSerializer implements Serializer {
 			return null;
 		}
 
-		throw new UnsupportedObjectException( $request, $this );
+		throw new UnsupportedObjectException( $request );
 	}
 
 	public function canSerialize( $askObject ) {

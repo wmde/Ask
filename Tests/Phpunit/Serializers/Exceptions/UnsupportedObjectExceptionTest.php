@@ -20,29 +20,26 @@ class UnsupportedObjectExceptionTest extends \PHPUnit_Framework_TestCase {
 
 	public function testConstructorWithOnlyRequiredArguments() {
 		$object = (object)array( 'the' => 'game' );
-		$serializer = $this->getMock( 'Ask\Serializers\Serializer' );
 
-		$exception = new UnsupportedObjectException( $object, $serializer );
+		$exception = new UnsupportedObjectException( $object );
 
-		$this->assertRequiredFieldsAreSet( $exception, $object, $serializer );
+		$this->assertRequiredFieldsAreSet( $exception, $object );
 	}
 
 	public function testConstructorWithAllArguments() {
 		$object = (object)array( 'the' => 'game' );
-		$serializer = $this->getMock( 'Ask\Serializers\Serializer' );
 		$message = 'NyanData all the way across the sky!';
 		$previous = new \Exception( 'Onoez!' );
 
-		$exception = new UnsupportedObjectException( $object, $serializer, $message, $previous );
+		$exception = new UnsupportedObjectException( $object, $message, $previous );
 
-		$this->assertRequiredFieldsAreSet( $exception, $object, $serializer );
+		$this->assertRequiredFieldsAreSet( $exception, $object );
 		$this->assertEquals( $message, $exception->getMessage() );
 		$this->assertEquals( $previous, $exception->getPrevious() );
 	}
 
-	protected function assertRequiredFieldsAreSet( UnsupportedObjectException $exception, $object, $serializer ) {
+	protected function assertRequiredFieldsAreSet( UnsupportedObjectException $exception, $object ) {
 		$this->assertEquals( $object, $exception->getUnsupportedObject() );
-		$this->assertEquals( $serializer, $exception->getSerializer() );
 	}
 
 }

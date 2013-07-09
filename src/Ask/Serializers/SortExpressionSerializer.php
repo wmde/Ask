@@ -24,7 +24,7 @@ class SortExpressionSerializer implements Serializer {
 
 	protected function assertCanSerialize( $askObject ) {
 		if ( !$this->canSerialize( $askObject ) ) {
-			throw new UnsupportedObjectException( $askObject, $this );
+			throw new UnsupportedObjectException( $askObject );
 		}
 	}
 
@@ -52,7 +52,7 @@ class SortExpressionSerializer implements Serializer {
 			);
 		}
 
-		throw new UnsupportedObjectException( $expression, $this );
+		throw new UnsupportedObjectException( $expression );
 	}
 
 	public function canSerialize( $askObject ) {

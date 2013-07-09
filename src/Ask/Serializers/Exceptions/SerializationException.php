@@ -2,8 +2,6 @@
 
 namespace Ask\Serializers\Exceptions;
 
-use Ask\Serializers\Serializer;
-
 /**
  * @since 0.1
  *
@@ -15,19 +13,8 @@ use Ask\Serializers\Serializer;
  */
 abstract class SerializationException extends \RuntimeException {
 
-	protected $serializer;
-
-	public function __construct( Serializer $deserializer, $message = '', \Exception $previous = null ) {
-		$this->serializer = $deserializer;
-
+	public function __construct( $message = '', \Exception $previous = null ) {
 		parent::__construct( $message, 0, $previous );
-	}
-
-	/**
-	 * @return Serializer
-	 */
-	public function getSerializer() {
-		return $this->serializer;
 	}
 
 }
