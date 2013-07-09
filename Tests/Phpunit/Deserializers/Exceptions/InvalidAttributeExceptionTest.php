@@ -20,29 +20,26 @@ class InvalidAttributeExceptionTest extends \PHPUnit_Framework_TestCase {
 
 	public function testConstructorWithOnlyRequiredArguments() {
 		$attributeName = 'theGame';
-		$deserializer = $this->getMock( 'Ask\Deserializers\Deserializer' );
 
-		$exception = new InvalidAttributeException( $attributeName, $deserializer );
+		$exception = new InvalidAttributeException( $attributeName );
 
-		$this->assertRequiredFieldsAreSet( $exception, $attributeName, $deserializer );
+		$this->assertRequiredFieldsAreSet( $exception, $attributeName );
 	}
 
 	public function testConstructorWithAllArguments() {
 		$attributeName = 'theGame';
-		$deserializer = $this->getMock( 'Ask\Deserializers\Deserializer' );
 		$message = 'NyanData all the way across the sky!';
 		$previous = new \Exception( 'Onoez!' );
 
-		$exception = new InvalidAttributeException( $attributeName, $deserializer, $message, $previous );
+		$exception = new InvalidAttributeException( $attributeName, $message, $previous );
 
-		$this->assertRequiredFieldsAreSet( $exception, $attributeName, $deserializer );
+		$this->assertRequiredFieldsAreSet( $exception, $attributeName );
 		$this->assertEquals( $message, $exception->getMessage() );
 		$this->assertEquals( $previous, $exception->getPrevious() );
 	}
 
-	protected function assertRequiredFieldsAreSet( InvalidAttributeException $exception, $attributeName, $deserializer ) {
+	protected function assertRequiredFieldsAreSet( InvalidAttributeException $exception, $attributeName ) {
 		$this->assertEquals( $attributeName, $exception->getAttributeName() );
-		$this->assertEquals( $deserializer, $exception->getDeserializer() );
 	}
 
 }

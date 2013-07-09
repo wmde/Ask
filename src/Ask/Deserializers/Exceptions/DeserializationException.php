@@ -2,8 +2,6 @@
 
 namespace Ask\Deserializers\Exceptions;
 
-use Ask\Deserializers\Deserializer;
-
 /**
  * @since 0.1
  *
@@ -15,19 +13,8 @@ use Ask\Deserializers\Deserializer;
  */
 class DeserializationException extends \RuntimeException {
 
-	protected $deserializer;
-
-	public function __construct( Deserializer $deserializer, $message = '', \Exception $previous = null ) {
-		$this->deserializer = $deserializer;
-
+	public function __construct( $message = '', \Exception $previous = null ) {
 		parent::__construct( $message, 0, $previous );
-	}
-
-	/**
-	 * @return Deserializer
-	 */
-	public function getDeserializer() {
-		return $this->deserializer;
 	}
 
 }

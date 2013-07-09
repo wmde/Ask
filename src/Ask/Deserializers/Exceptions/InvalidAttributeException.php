@@ -2,8 +2,6 @@
 
 namespace Ask\Deserializers\Exceptions;
 
-use Ask\Deserializers\Deserializer;
-
 /**
  * @since 0.1
  *
@@ -19,14 +17,13 @@ class InvalidAttributeException extends DeserializationException {
 
 	/**
 	 * @param string $attributeName
-	 * @param Deserializer $deserializer
 	 * @param string $message
 	 * @param \Exception $previous
 	 */
-	public function __construct( $attributeName, Deserializer $deserializer, $message = '', \Exception $previous = null ) {
+	public function __construct( $attributeName, $message = '', \Exception $previous = null ) {
 		$this->attributeName = $attributeName;
 
-		parent::__construct( $deserializer, $message, $previous );
+		parent::__construct( $message, $previous );
 	}
 
 	/**

@@ -45,7 +45,6 @@ class DispatchingDeserializer implements Deserializer {
 		}
 
 		throw new DeserializationException(
-			$this,
 			'None of the deserializers can deserialize the provided serialization'
 		);
 	}

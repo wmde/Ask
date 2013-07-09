@@ -3,12 +3,7 @@
 namespace Ask\Deserializers;
 
 use Ask\Deserializers\Exceptions\DeserializationException;
-use Ask\Deserializers\Exceptions\InvalidAttributeException;
-use Ask\Language\Description\AnyValue;
-use Ask\Language\Description\Conjunction;
-use Ask\Language\Description\Description;
-use Ask\Language\Description\Disjunction;
-use Ask\Language\Description\SomeProperty;
+use Ask\Deserializers\Strategies\DescriptionDeserializationStrategy;
 use Ask\Language\Description\ValueDescription;
 use DataValues\DataValueFactory;
 
@@ -24,141 +19,56 @@ use DataValues\DataValueFactory;
  * @licence GNU GPL v2+
  * @author Jeroen De Dauw < jeroendedauw@gmail.com >
  */
-class DescriptionDeserializer extends TypedObjectDeserializer {
+class DescriptionDeserializer implements Deserializer {
 
 	protected $dataValueFactory;
 
+	/**
+	 * @var Deserializer
+	 */
+	protected $deserializer;
+
 	public function __construct( DataValueFactory $dataValueFactory ) {
 		$this->dataValueFactory = $dataValueFactory;
+		$this->deserializer = $this->newDeserializer();
+	}
+
+	protected function newDeserializer() {
+		return new TypedObjectDeserializer(
+			new DescriptionDeserializationStrategy(
+				$this->dataValueFactory,
+				$this
+			),
+			'description',
+			'descriptionType'
+		);
 	}
 
 	/**
-	 * @see TypedObjectDeserializer::getObjectType
+	 * @see Deserializer::deserialize
 	 *
 	 * @since 0.1
 	 *
-	 * @return string
-	 */
-	protected function getObjectType() {
-		return 'description';
-	}
-
-	/**
-	 * @see TypedObjectDeserializer::getSubTypeKey
-	 *
-	 * @since 0.1
-	 *
-	 * @return string
-	 */
-	protected function getSubTypeKey() {
-		return 'descriptionType';
-	}
-
-	/**
-	 * @see TypedObjectDeserializer::getDeserializedValue
-	 *
-	 * @since 0.1
-	 *
-	 * @param string $descriptionType
-	 * @param array $descriptionValue
+	 * @param mixed $serialization
 	 *
 	 * @return object
 	 * @throws DeserializationException
 	 */
-	protected function getDeserializedValue( $descriptionType, array $descriptionValue ) {
-		if ( $descriptionType === 'anyValue' ) {
-			return new AnyValue();
-		}
-
-		if ( $descriptionType === 'someProperty' ) {
-			return $this->newSomeProperty( $descriptionValue );
-		}
-
-		if ( $descriptionType === 'valueDescription' ) {
-			return $this->newValueDescription( $descriptionValue );
-		}
-
-		if ( $descriptionType === 'conjunction' ) {
-			return $this->newConjunction( $descriptionValue );
-		}
-
-		if ( $descriptionType === 'disjunction' ) {
-			return $this->newDisjunction( $descriptionValue );
-		}
-
-		throw new InvalidAttributeException(
-			'descriptionType',
-			$this,
-			'The provided descriptionType is not supported by this deserializer'
-		);
-	}
-
-	protected function newSomeProperty( array $descriptionValue ) {
-		$this->requireAttributes( $descriptionValue, 'property', 'description', 'isSubProperty' );
-		$this->assertAttributeIsArray( $descriptionValue, 'property' );
-
-		try {
-			$someProperty = new SomeProperty(
-				$this->dataValueFactory->newFromArray( $descriptionValue['property'] ),
-				$this->deserialize( $descriptionValue['description'] ),
-				$descriptionValue['isSubProperty']
-			);
-		}
-		catch ( \InvalidArgumentException $ex ) {
-			throw new DeserializationException( $this, '', $ex );
-		}
-
-		return $someProperty;
-	}
-
-	protected function newValueDescription( array $descriptionValue ) {
-		$this->requireAttributes( $descriptionValue, 'value', 'comparator' );
-		$this->assertAttributeIsArray( $descriptionValue, 'value' );
-
-		try {
-			$valueDescription = new ValueDescription(
-				$this->dataValueFactory->newFromArray( $descriptionValue['value'] ),
-				$descriptionValue['comparator']
-			);
-		}
-		catch ( \InvalidArgumentException $ex ) {
-			throw new DeserializationException( $this, '', $ex );
-		}
-
-		return $valueDescription;
-	}
-
-	protected function newConjunction( array $descriptionValue ) {
-		$this->requireAttribute( $descriptionValue, 'descriptions' );
-		$this->assertAttributeIsArray( $descriptionValue, 'descriptions' );
-
-		return new Conjunction(
-			$this->deserializeDescriptions( $descriptionValue['descriptions'] )
-		);
-	}
-
-	protected function newDisjunction( array $descriptionValue ) {
-		$this->requireAttribute( $descriptionValue, 'descriptions' );
-		$this->assertAttributeIsArray( $descriptionValue, 'descriptions' );
-
-		return new Disjunction(
-			$this->deserializeDescriptions( $descriptionValue['descriptions'] )
-		);
+	public function deserialize( $serialization ) {
+		return $this->deserializer->deserialize( $serialization );
 	}
 
 	/**
-	 * @param array $descriptionSerializations
+	 * @see Deserializer::canDeserialize
 	 *
-	 * @return Description[]
+	 * @since 0.1
+	 *
+	 * @param mixed $serialization
+	 *
+	 * @return boolean
 	 */
-	protected function deserializeDescriptions( array $descriptionSerializations ) {
-		$descriptions = array();
-
-		foreach ( $descriptionSerializations as $serialization ) {
-			$descriptions[] = $this->deserialize( $serialization );
-		}
-
-		return $descriptions;
+	public function canDeserialize( $serialization ) {
+		return $this->deserializer->canDeserialize( $serialization );
 	}
 
 }

@@ -20,29 +20,26 @@ class MissingAttributeExceptionTest extends \PHPUnit_Framework_TestCase {
 
 	public function testConstructorWithOnlyRequiredArguments() {
 		$attributeName = 'theGame';
-		$deserializer = $this->getMock( 'Ask\Deserializers\Deserializer' );
 
-		$exception = new MissingAttributeException( $attributeName, $deserializer );
+		$exception = new MissingAttributeException( $attributeName );
 
-		$this->assertRequiredFieldsAreSet( $exception, $attributeName, $deserializer );
+		$this->assertRequiredFieldsAreSet( $exception, $attributeName );
 	}
 
 	public function testConstructorWithAllArguments() {
 		$attributeName = 'theGame';
-		$deserializer = $this->getMock( 'Ask\Deserializers\Deserializer' );
 		$message = 'NyanData all the way across the sky!';
 		$previous = new \Exception( 'Onoez!' );
 
-		$exception = new MissingAttributeException( $attributeName, $deserializer, $message, $previous );
+		$exception = new MissingAttributeException( $attributeName, $message, $previous );
 
-		$this->assertRequiredFieldsAreSet( $exception, $attributeName, $deserializer );
+		$this->assertRequiredFieldsAreSet( $exception, $attributeName );
 		$this->assertEquals( $message, $exception->getMessage() );
 		$this->assertEquals( $previous, $exception->getPrevious() );
 	}
 
-	protected function assertRequiredFieldsAreSet( MissingAttributeException $exception, $attributeName, $deserializer ) {
+	protected function assertRequiredFieldsAreSet( MissingAttributeException $exception, $attributeName ) {
 		$this->assertEquals( $attributeName, $exception->getAttributeName() );
-		$this->assertEquals( $deserializer, $exception->getDeserializer() );
 	}
 
 }

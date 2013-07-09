@@ -3,10 +3,8 @@
 namespace Ask\Deserializers;
 
 use Ask\Deserializers\Exceptions\DeserializationException;
-use Ask\Deserializers\Exceptions\InvalidAttributeException;
-use Ask\Language\Option\PropertyValueSortExpression;
+use Ask\Deserializers\Strategies\SortExpressionDeserializationStrategy;
 use DataValues\DataValueFactory;
-use InvalidArgumentException;
 
 /**
  * @since 0.1
@@ -17,67 +15,49 @@ use InvalidArgumentException;
  * @licence GNU GPL v2+
  * @author Jeroen De Dauw < jeroendedauw@gmail.com >
  */
-class SortExpressionDeserializer extends TypedObjectDeserializer {
+class SortExpressionDeserializer implements Deserializer {
 
 	protected $dataValueFactory;
+	protected $deserializer;
 
 	public function __construct( DataValueFactory $dataValueFactory ) {
 		$this->dataValueFactory = $dataValueFactory;
+		$this->deserializer = $this->newDeserializer();
+	}
+
+	protected function newDeserializer() {
+		return new TypedObjectDeserializer(
+			new SortExpressionDeserializationStrategy( $this->dataValueFactory ),
+			'sortExpression',
+			'sortExpressionType'
+		);
 	}
 
 	/**
-	 * @see TypedObjectDeserializer::getObjectType
+	 * @see Deserializer::deserialize
 	 *
 	 * @since 0.1
 	 *
-	 * @return string
-	 */
-	protected function getObjectType() {
-		return 'sortExpression';
-	}
-
-	/**
-	 * @see TypedObjectDeserializer::getSubTypeKey
-	 *
-	 * @since 0.1
-	 *
-	 * @return string
-	 */
-	protected function getSubTypeKey() {
-		return 'sortExpressionType';
-	}
-
-	/**
-	 * @see TypedObjectDeserializer::getDeserializedValue
-	 *
-	 * @since 0.1
-	 *
-	 * @param string $sortExpressionType
-	 * @param array $valueSerialization
+	 * @param mixed $serialization
 	 *
 	 * @return object
 	 * @throws DeserializationException
 	 */
-	protected function getDeserializedValue( $sortExpressionType, array $valueSerialization ) {
-		if ( $sortExpressionType !== 'propertyValue' ) {
-			throw new InvalidAttributeException( 'sortExpressionType', $this );
-		}
+	public function deserialize( $serialization ) {
+		return $this->deserializer->deserialize( $serialization );
+	}
 
-		$this->requireAttribute( $valueSerialization, 'direction' );
-		$this->requireAttribute( $valueSerialization, 'property' );
-		$this->assertAttributeIsArray( $valueSerialization, 'property' );
-
-		try {
-			$expression = new PropertyValueSortExpression(
-				$this->dataValueFactory->newFromArray( $valueSerialization['property'] ),
-				$valueSerialization['direction']
-			);
-		}
-		catch ( InvalidArgumentException $ex ) {
-			throw new DeserializationException( $this, '', $ex );
-		}
-
-		return $expression;
+	/**
+	 * @see Deserializer::canDeserialize
+	 *
+	 * @since 0.1
+	 *
+	 * @param mixed $serialization
+	 *
+	 * @return boolean
+	 */
+	public function canDeserialize( $serialization ) {
+		return $this->deserializer->canDeserialize( $serialization );
 	}
 
 }
