@@ -31,15 +31,15 @@ class SortExpressionDeserializationStrategy extends TypedDeserializationStrategy
 	 *
 	 * @since 0.1
 	 *
-	 * @param string $sortExpressionType
+	 * @param string $selectionRequestType
 	 * @param array $valueSerialization
 	 *
 	 * @return object
 	 * @throws DeserializationException
 	 */
-	public function getDeserializedValue( $sortExpressionType, array $valueSerialization ) {
-		if ( $sortExpressionType !== 'propertyValue' ) {
-			throw new InvalidAttributeException( 'sortExpressionType', $sortExpressionType );
+	public function getDeserializedValue( $selectionRequestType, array $valueSerialization ) {
+		if ( $selectionRequestType !== 'propertyValue' ) {
+			throw new InvalidAttributeException( 'sortExpressionType', $selectionRequestType );
 		}
 
 		$this->requireAttribute( $valueSerialization, 'direction' );

@@ -53,7 +53,7 @@ class QuerySerializer implements Serializer {
 			'objectType' => 'query',
 			'description' => $this->componentSerializer->serialize( $query->getDescription() ),
 			'options' => $this->componentSerializer->serialize( $query->getOptions() ),
-			'selectionRequests' => (object)$selectionRequests,
+			'selectionRequests' => $selectionRequests,
 		);
 	}
 

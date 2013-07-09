@@ -48,7 +48,7 @@ class QueryOptionsSerializer implements Serializer {
 
 			// TODO: create a dedicated serializer for sort options
 			'sort' => array(
-				'expressions' => (object)array_map(
+				'expressions' => array_map(
 					function( SortExpression $expression ) use ( $expressionSerializer ) {
 						return $expressionSerializer->serialize( $expression );
 					},

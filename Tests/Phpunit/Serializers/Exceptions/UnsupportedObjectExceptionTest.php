@@ -19,7 +19,7 @@ use Ask\Serializers\Exceptions\UnsupportedObjectException;
 class UnsupportedObjectExceptionTest extends \PHPUnit_Framework_TestCase {
 
 	public function testConstructorWithOnlyRequiredArguments() {
-		$object = (object)array( 'the' => 'game' );
+		$object = array( 'the' => 'game' );
 
 		$exception = new UnsupportedObjectException( $object );
 
@@ -27,7 +27,7 @@ class UnsupportedObjectExceptionTest extends \PHPUnit_Framework_TestCase {
 	}
 
 	public function testConstructorWithAllArguments() {
-		$object = (object)array( 'the' => 'game' );
+		$object = array( 'the' => 'game' );
 		$message = 'NyanData all the way across the sky!';
 		$previous = new \Exception( 'Onoez!' );
 

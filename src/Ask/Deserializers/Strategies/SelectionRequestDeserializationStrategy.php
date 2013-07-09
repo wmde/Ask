@@ -32,14 +32,14 @@ class SelectionRequestDeserializationStrategy extends TypedDeserializationStrate
 	 *
 	 * @since 0.1
 	 *
-	 * @param string $sortExpressionType
+	 * @param string $selectionRequestType
 	 * @param array $valueSerialization
 	 *
 	 * @return object
 	 * @throws DeserializationException
 	 */
-	public function getDeserializedValue( $sortExpressionType, array $valueSerialization ) {
-		switch ( $sortExpressionType ) {
+	public function getDeserializedValue( $selectionRequestType, array $valueSerialization ) {
+		switch ( $selectionRequestType ) {
 			case 'property':
 				return $this->newPropertySelectionRequest( $valueSerialization );
 				break;
@@ -48,7 +48,7 @@ class SelectionRequestDeserializationStrategy extends TypedDeserializationStrate
 				break;
 		}
 
-		throw new InvalidAttributeException( 'selectionRequestType', $sortExpressionType );
+		throw new InvalidAttributeException( 'selectionRequestType', $selectionRequestType );
 	}
 
 	protected function newPropertySelectionRequest( array $value ) {
