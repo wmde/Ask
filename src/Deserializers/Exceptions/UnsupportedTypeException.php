@@ -1,6 +1,6 @@
 <?php
 
-namespace Ask\Deserializers\Exceptions;
+namespace Deserializers\Exceptions;
 
 /**
  * Indicates the objectType specified in the serialization is not supported by a deserializer.

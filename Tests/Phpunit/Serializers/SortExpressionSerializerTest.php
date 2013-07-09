@@ -4,10 +4,6 @@ namespace Ask\Tests\Phpunit\Serializers;
 
 use Ask\Language\Option\PropertyValueSortExpression;
 use Ask\Language\Option\SortExpression;
-use Ask\Language\Selection\PropertySelection;
-use Ask\Language\Selection\SelectionRequest;
-use Ask\Language\Selection\SubjectSelection;
-use Ask\Serializers\SelectionRequestSerializer;
 use Ask\Serializers\SortExpressionSerializer;
 use DataValues\StringValue;
 
@@ -31,7 +27,7 @@ class SortExpressionSerializerTest extends \PHPUnit_Framework_TestCase {
 		$this->assertFalse( $serializer->canSerialize( 'foo' ) );
 		$this->assertFalse( $serializer->canSerialize( null ) );
 
-		$this->setExpectedException( 'Ask\Serializers\Exceptions\UnsupportedObjectException' );
+		$this->setExpectedException( 'Serializers\Exceptions\UnsupportedObjectException' );
 
 		$serializer->serialize( 'foo' );
 	}

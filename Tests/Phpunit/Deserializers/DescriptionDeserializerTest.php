@@ -2,10 +2,10 @@
 
 namespace Ask\Tests\Phpunit\Deserializers;
 
+use Ask\Deserializers\DescriptionDeserializer;
 use Ask\Language\Description\AnyValue;
 use Ask\Language\Description\Description;
 use Ask\Language\Description\SomeProperty;
-use Ask\Deserializers\DescriptionDeserializer;
 use Ask\Language\Description\ValueDescription;
 use DataTypes\DataTypeFactory;
 use DataValues\DataValueFactory;
@@ -40,7 +40,7 @@ class DescriptionDeserializerTest extends \PHPUnit_Framework_TestCase {
 
 		$this->assertFalse( $serializer->canDeserialize( $notADescription ) );
 
-		$this->setExpectedException( 'Ask\Deserializers\Exceptions\UnsupportedTypeException' );
+		$this->setExpectedException( 'Deserializers\Exceptions\UnsupportedTypeException' );
 		$serializer->deserialize( $notADescription );
 	}
 
@@ -88,7 +88,7 @@ class DescriptionDeserializerTest extends \PHPUnit_Framework_TestCase {
 
 		$this->assertFalse( $serializer->canDeserialize( $notADescription ) );
 
-		$this->setExpectedException( 'Ask\Deserializers\Exceptions\MissingTypeException' );
+		$this->setExpectedException( 'Deserializers\Exceptions\MissingTypeException' );
 		$serializer->deserialize( $notADescription );
 	}
 
@@ -126,7 +126,7 @@ class DescriptionDeserializerTest extends \PHPUnit_Framework_TestCase {
 			'value' => array()
 		);
 
-		$this->setExpectedException( 'Ask\Deserializers\Exceptions\InvalidAttributeException' );
+		$this->setExpectedException( 'Deserializers\Exceptions\InvalidAttributeException' );
 		$this->newDescriptionDeserializer()->deserialize( $notADescription );
 	}
 
@@ -136,7 +136,7 @@ class DescriptionDeserializerTest extends \PHPUnit_Framework_TestCase {
 			'value' => array()
 		);
 
-		$this->setExpectedException( 'Ask\Deserializers\Exceptions\MissingAttributeException' );
+		$this->setExpectedException( 'Deserializers\Exceptions\MissingAttributeException' );
 		$this->newDescriptionDeserializer()->deserialize( $notADescription );
 	}
 
@@ -150,7 +150,7 @@ class DescriptionDeserializerTest extends \PHPUnit_Framework_TestCase {
 			'value' => $invalidValue,
 		);
 
-		$this->setExpectedException( 'Ask\Deserializers\Exceptions\MissingAttributeException' );
+		$this->setExpectedException( 'Deserializers\Exceptions\MissingAttributeException' );
 		$this->newDescriptionDeserializer()->deserialize( $invalidDescription );
 	}
 
@@ -188,7 +188,7 @@ class DescriptionDeserializerTest extends \PHPUnit_Framework_TestCase {
 			'value' => $invalidValue,
 		);
 
-		$this->setExpectedException( 'Ask\Deserializers\Exceptions\DeserializationException' );
+		$this->setExpectedException( 'Deserializers\Exceptions\DeserializationException' );
 		$this->newDescriptionDeserializer()->deserialize( $invalidDescription );
 	}
 
@@ -247,7 +247,7 @@ class DescriptionDeserializerTest extends \PHPUnit_Framework_TestCase {
 			'value' => $invalidValue,
 		);
 
-		$this->setExpectedException( 'Ask\Deserializers\Exceptions\MissingAttributeException' );
+		$this->setExpectedException( 'Deserializers\Exceptions\MissingAttributeException' );
 		$this->newDescriptionDeserializer()->deserialize( $invalidDescription );
 	}
 
@@ -280,7 +280,7 @@ class DescriptionDeserializerTest extends \PHPUnit_Framework_TestCase {
 			'value' => $invalidValue,
 		);
 
-		$this->setExpectedException( 'Ask\Deserializers\Exceptions\DeserializationException' );
+		$this->setExpectedException( 'Deserializers\Exceptions\DeserializationException' );
 		$this->newDescriptionDeserializer()->deserialize( $invalidDescription );
 	}
 
@@ -312,7 +312,7 @@ class DescriptionDeserializerTest extends \PHPUnit_Framework_TestCase {
 			'value' => $invalidValue,
 		);
 
-		$this->setExpectedException( 'Ask\Deserializers\Exceptions\MissingAttributeException' );
+		$this->setExpectedException( 'Deserializers\Exceptions\MissingAttributeException' );
 		$this->newDescriptionDeserializer()->deserialize( $invalidDescription );
 	}
 
@@ -335,7 +335,7 @@ class DescriptionDeserializerTest extends \PHPUnit_Framework_TestCase {
 			'value' => $invalidValue,
 		);
 
-		$this->setExpectedException( 'Ask\Deserializers\Exceptions\DeserializationException' );
+		$this->setExpectedException( 'Deserializers\Exceptions\DeserializationException' );
 		$this->newDescriptionDeserializer()->deserialize( $invalidDescription );
 	}
 

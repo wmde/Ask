@@ -13,13 +13,13 @@ use Ask\Language\Option\SortOptions;
 use Ask\Language\Query;
 use Ask\Language\Selection\PropertySelection;
 use Ask\Language\Selection\SubjectSelection;
-use Ask\Serializers\DispatchingSerializer;
 use Ask\Serializers\DescriptionSerializer;
 use Ask\Serializers\QueryOptionsSerializer;
 use Ask\Serializers\QuerySerializer;
 use Ask\Serializers\SelectionRequestSerializer;
 use Ask\Serializers\SortExpressionSerializer;
 use DataValues\StringValue;
+use Serializers\DispatchingSerializer;
 
 /**
  * @file

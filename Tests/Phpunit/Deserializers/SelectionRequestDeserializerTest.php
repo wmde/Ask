@@ -34,7 +34,7 @@ class SelectionRequestDeserializerTest extends \PHPUnit_Framework_TestCase {
 
 		$this->assertFalse( $serializer->canDeserialize( $notASelectionRequest ) );
 
-		$this->setExpectedException( 'Ask\Deserializers\Exceptions\UnsupportedTypeException' );
+		$this->setExpectedException( 'Deserializers\Exceptions\UnsupportedTypeException' );
 		$serializer->deserialize( $notASelectionRequest );
 	}
 
@@ -82,7 +82,7 @@ class SelectionRequestDeserializerTest extends \PHPUnit_Framework_TestCase {
 
 		$this->assertFalse( $serializer->canDeserialize( $notASelectionRequest ) );
 
-		$this->setExpectedException( 'Ask\Deserializers\Exceptions\MissingTypeException' );
+		$this->setExpectedException( 'Deserializers\Exceptions\MissingTypeException' );
 		$serializer->deserialize( $notASelectionRequest );
 	}
 
@@ -120,7 +120,7 @@ class SelectionRequestDeserializerTest extends \PHPUnit_Framework_TestCase {
 			'value' => array()
 		);
 
-		$this->setExpectedException( 'Ask\Deserializers\Exceptions\InvalidAttributeException' );
+		$this->setExpectedException( 'Deserializers\Exceptions\InvalidAttributeException' );
 		$this->newSelectionRequestDeserializer()->deserialize( $notASelectionRequest );
 	}
 
@@ -130,7 +130,7 @@ class SelectionRequestDeserializerTest extends \PHPUnit_Framework_TestCase {
 			'value' => array()
 		);
 
-		$this->setExpectedException( 'Ask\Deserializers\Exceptions\MissingAttributeException' );
+		$this->setExpectedException( 'Deserializers\Exceptions\MissingAttributeException' );
 		$this->newSelectionRequestDeserializer()->deserialize( $notASortExpression );
 	}
 
@@ -139,7 +139,7 @@ class SelectionRequestDeserializerTest extends \PHPUnit_Framework_TestCase {
 	 */
 	public function testPropertySelectionRequiresAllAttributes( array $invalidValue ) {
 		$invalidSelectionRequest = $this->newPropertySelectionSerializationFromValue( $invalidValue );
-		$this->setExpectedException( 'Ask\Deserializers\Exceptions\MissingAttributeException' );
+		$this->setExpectedException( 'Deserializers\Exceptions\MissingAttributeException' );
 		$this->newSelectionRequestDeserializer()->deserialize( $invalidSelectionRequest );
 	}
 
@@ -165,7 +165,7 @@ class SelectionRequestDeserializerTest extends \PHPUnit_Framework_TestCase {
 	 */
 	public function testPropertySelectionRequiresValidAttributes( array $invalidValue ) {
 		$invalidSelectionRequest = $this->newPropertySelectionSerializationFromValue( $invalidValue );
-		$this->setExpectedException( 'Ask\Deserializers\Exceptions\DeserializationException' );
+		$this->setExpectedException( 'Deserializers\Exceptions\DeserializationException' );
 		$this->newSelectionRequestDeserializer()->deserialize( $invalidSelectionRequest );
 	}
 

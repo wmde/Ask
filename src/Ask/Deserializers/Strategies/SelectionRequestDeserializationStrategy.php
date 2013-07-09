@@ -2,12 +2,13 @@
 
 namespace Ask\Deserializers\Strategies;
 
-use Ask\Deserializers\Exceptions\DeserializationException;
-use Ask\Deserializers\Exceptions\InvalidAttributeException;
 use Ask\Language\Description\ValueDescription;
 use Ask\Language\Selection\PropertySelection;
 use Ask\Language\Selection\SubjectSelection;
 use DataValues\DataValueFactory;
+use Deserializers\Exceptions\DeserializationException;
+use Deserializers\Exceptions\InvalidAttributeException;
+use Deserializers\TypedDeserializationStrategy;
 use InvalidArgumentException;
 
 /**

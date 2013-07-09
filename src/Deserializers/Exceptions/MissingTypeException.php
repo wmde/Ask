@@ -1,6 +1,6 @@
 <?php
 
-namespace Ask\Deserializers\Exceptions;
+namespace Deserializers\Exceptions;
 
 /**
  * Indicates the objectType key is missing in the serialization.

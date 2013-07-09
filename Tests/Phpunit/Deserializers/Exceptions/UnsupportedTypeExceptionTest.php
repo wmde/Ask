@@ -1,11 +1,11 @@
 <?php
 
-namespace Ask\Tests\Phpunit\Deserializers\Exceptions;
+namespace Deserializers\Tests\Phpunit\Exceptions;
 
-use Ask\Deserializers\Exceptions\UnsupportedTypeException;
+use Deserializers\Exceptions\UnsupportedTypeException;
 
 /**
- * @covers Ask\Deserializers\Exceptions\UnsupportedTypeException
+ * @covers Deserializers\Exceptions\UnsupportedTypeException
  *
  * @file
  * @since 0.1

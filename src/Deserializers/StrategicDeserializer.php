@@ -1,8 +1,8 @@
 <?php
 
-namespace Ask\Deserializers;
+namespace Deserializers;
 
-use Ask\Deserializers\Strategies\TypedDeserializationStrategy;
+use Deserializers\TypedDeserializationStrategy;
 
 /**
  * @since 0.1

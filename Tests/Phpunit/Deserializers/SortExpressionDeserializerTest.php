@@ -3,9 +3,6 @@
 namespace Ask\Tests\Phpunit\Deserializers;
 
 use Ask\Deserializers\SortExpressionDeserializer;
-use Ask\Language\Description\AnyValue;
-use Ask\Language\Description\Description;
-use Ask\Language\Description\SomeProperty;
 use Ask\Language\Description\ValueDescription;
 use Ask\Language\Option\SortExpression;
 use DataTypes\DataTypeFactory;
@@ -41,7 +38,7 @@ class SortExpressionDeserializerTest extends \PHPUnit_Framework_TestCase {
 
 		$this->assertFalse( $serializer->canDeserialize( $notADescription ) );
 
-		$this->setExpectedException( 'Ask\Deserializers\Exceptions\UnsupportedTypeException' );
+		$this->setExpectedException( 'Deserializers\Exceptions\UnsupportedTypeException' );
 		$serializer->deserialize( $notADescription );
 	}
 
@@ -89,7 +86,7 @@ class SortExpressionDeserializerTest extends \PHPUnit_Framework_TestCase {
 
 		$this->assertFalse( $serializer->canDeserialize( $notASortExpression ) );
 
-		$this->setExpectedException( 'Ask\Deserializers\Exceptions\MissingTypeException' );
+		$this->setExpectedException( 'Deserializers\Exceptions\MissingTypeException' );
 		$serializer->deserialize( $notASortExpression );
 	}
 
@@ -127,7 +124,7 @@ class SortExpressionDeserializerTest extends \PHPUnit_Framework_TestCase {
 			'value' => array()
 		);
 
-		$this->setExpectedException( 'Ask\Deserializers\Exceptions\InvalidAttributeException' );
+		$this->setExpectedException( 'Deserializers\Exceptions\InvalidAttributeException' );
 		$this->newSortExpressionDeserializer()->deserialize( $notASortExpression );
 	}
 
@@ -137,7 +134,7 @@ class SortExpressionDeserializerTest extends \PHPUnit_Framework_TestCase {
 			'value' => array()
 		);
 
-		$this->setExpectedException( 'Ask\Deserializers\Exceptions\MissingAttributeException' );
+		$this->setExpectedException( 'Deserializers\Exceptions\MissingAttributeException' );
 		$this->newSortExpressionDeserializer()->deserialize( $notASortExpression );
 	}
 
@@ -151,7 +148,7 @@ class SortExpressionDeserializerTest extends \PHPUnit_Framework_TestCase {
 			'value' => $invalidValue,
 		);
 
-		$this->setExpectedException( 'Ask\Deserializers\Exceptions\MissingAttributeException' );
+		$this->setExpectedException( 'Deserializers\Exceptions\MissingAttributeException' );
 		$this->newSortExpressionDeserializer()->deserialize( $invalidExpression );
 	}
 
@@ -184,7 +181,7 @@ class SortExpressionDeserializerTest extends \PHPUnit_Framework_TestCase {
 			'value' => $invalidValue,
 		);
 
-		$this->setExpectedException( 'Ask\Deserializers\Exceptions\DeserializationException' );
+		$this->setExpectedException( 'Deserializers\Exceptions\DeserializationException' );
 		$this->newSortExpressionDeserializer()->deserialize( $invalidDescription );
 	}
 

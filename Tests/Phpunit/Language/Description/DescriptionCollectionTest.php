@@ -6,7 +6,6 @@ use Ask\Language\Description\AnyValue;
 use Ask\Language\Description\Conjunction;
 use Ask\Language\Description\Description;
 use Ask\Language\Description\DescriptionCollection;
-use Ask\Language\Description\SomeProperty;
 use Ask\Language\Description\ValueDescription;
 use DataValues\NumberValue;
 use DataValues\StringValue;

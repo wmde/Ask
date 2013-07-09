@@ -3,7 +3,6 @@
 namespace Ask\Tests\Integration\Serialization;
 
 use Ask\Deserializers\DescriptionDeserializer;
-use Ask\Deserializers\DispatchingDeserializer;
 use Ask\Deserializers\QueryDeserializer;
 use Ask\Deserializers\QueryOptionsDeserializer;
 use Ask\Deserializers\SelectionRequestDeserializer;
@@ -20,13 +19,14 @@ use Ask\Language\Query;
 use Ask\Language\Selection\PropertySelection;
 use Ask\Language\Selection\SubjectSelection;
 use Ask\Serializers\DescriptionSerializer;
-use Ask\Serializers\DispatchingSerializer;
 use Ask\Serializers\QueryOptionsSerializer;
 use Ask\Serializers\QuerySerializer;
 use Ask\Serializers\SelectionRequestSerializer;
 use Ask\Serializers\SortExpressionSerializer;
 use DataValues\DataValueFactory;
 use DataValues\StringValue;
+use Deserializers\DispatchingDeserializer;
+use Serializers\DispatchingSerializer;
 
 /**
  * @file

@@ -3,6 +3,8 @@
 namespace Ask\Deserializers;
 
 use Ask\Language\Query;
+use Deserializers\Deserializer;
+use Deserializers\TypedObjectDeserializer;
 
 /**
  * @since 0.1

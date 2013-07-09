@@ -7,7 +7,8 @@ use Ask\Language\Description\Description;
 use Ask\Language\Description\DescriptionCollection;
 use Ask\Language\Description\SomeProperty;
 use Ask\Language\Description\ValueDescription;
-use Ask\Serializers\Exceptions\UnsupportedObjectException;
+use Serializers\Exceptions\UnsupportedObjectException;
+use Serializers\Serializer;
 
 /**
  * @since 0.1

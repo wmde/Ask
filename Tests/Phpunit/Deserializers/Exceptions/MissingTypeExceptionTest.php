@@ -1,11 +1,11 @@
 <?php
 
-namespace Ask\Tests\Phpunit\Deserializers\Exceptions;
+namespace Deserializers\Tests\Phpunit\Exceptions;
 
-use Ask\Deserializers\Exceptions\MissingTypeException;
+use Deserializers\Exceptions\MissingTypeException;
 
 /**
- * @covers Ask\Deserializers\Exceptions\MissingTypeException
+ * @covers Deserializers\Exceptions\MissingTypeException
  *
  * @file
  * @since 0.1

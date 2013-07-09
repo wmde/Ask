@@ -5,7 +5,8 @@ namespace Ask\Serializers;
 use Ask\Language\Selection\PropertySelection;
 use Ask\Language\Selection\SelectionRequest;
 use Ask\Language\Selection\SubjectSelection;
-use Ask\Serializers\Exceptions\UnsupportedObjectException;
+use Serializers\Exceptions\UnsupportedObjectException;
+use Serializers\Serializer;
 
 /**
  * @since 0.1

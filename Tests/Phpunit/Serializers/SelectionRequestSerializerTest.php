@@ -28,7 +28,7 @@ class SelectionRequestSerializerTest extends \PHPUnit_Framework_TestCase {
 		$this->assertFalse( $serializer->canSerialize( 'foo' ) );
 		$this->assertFalse( $serializer->canSerialize( null ) );
 
-		$this->setExpectedException( 'Ask\Serializers\Exceptions\UnsupportedObjectException' );
+		$this->setExpectedException( 'Serializers\Exceptions\UnsupportedObjectException' );
 
 		$serializer->serialize( 'foo' );
 	}

@@ -37,7 +37,7 @@ class QuerySerializerTest extends \PHPUnit_Framework_TestCase {
 			->method( 'getOptions' )
 			->will( $this->returnValue( new QueryOptions( 100, 0 ) ) );
 
-		$dispatchingSerializer = $this->getMock( 'Ask\Serializers\Serializer' );
+		$dispatchingSerializer = $this->getMock( 'Serializers\Serializer' );
 
 		$dispatchingSerializer->expects( $this->any() )
 			->method( 'serialize' )
@@ -60,12 +60,12 @@ class QuerySerializerTest extends \PHPUnit_Framework_TestCase {
 	 * @dataProvider nonQueryProvider
 	 */
 	public function testCannotSerializeNonQueries( $notAQuery ) {
-		$dispatchingSerializer = $this->getMock( 'Ask\Serializers\Serializer' );
+		$dispatchingSerializer = $this->getMock( 'Serializers\Serializer' );
 		$serializer = new QuerySerializer( $dispatchingSerializer );
 
 		$this->assertFalse( $serializer->canSerialize( $notAQuery ) );
 
-		$this->setExpectedException( 'Ask\Serializers\Exceptions\UnsupportedObjectException' );
+		$this->setExpectedException( 'Serializers\Exceptions\UnsupportedObjectException' );
 		$serializer->serialize( $notAQuery );
 	}
 

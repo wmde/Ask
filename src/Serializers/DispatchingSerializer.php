@@ -1,9 +1,9 @@
 <?php
 
-namespace Ask\Serializers;
+namespace Serializers;
 
-use Ask\Serializers\Exceptions\UnsupportedObjectException;
 use InvalidArgumentException;
+use Serializers\Exceptions\UnsupportedObjectException;
 
 /**
  * @since 0.1

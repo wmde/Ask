@@ -4,7 +4,8 @@ namespace Ask\Serializers;
 
 use Ask\Language\Option\QueryOptions;
 use Ask\Language\Option\SortExpression;
-use Ask\Serializers\Exceptions\UnsupportedObjectException;
+use Serializers\Exceptions\UnsupportedObjectException;
+use Serializers\Serializer;
 
 /**
  * @since 0.1

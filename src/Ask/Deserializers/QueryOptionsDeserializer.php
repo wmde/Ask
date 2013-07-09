@@ -4,6 +4,8 @@ namespace Ask\Deserializers;
 
 use Ask\Language\Option\QueryOptions;
 use Ask\Language\Option\SortOptions;
+use Deserializers\Deserializer;
+use Deserializers\TypedObjectDeserializer;
 
 /**
  * @since 0.1

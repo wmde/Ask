@@ -1,10 +1,10 @@
 <?php
 
-namespace Ask\Deserializers\Strategies;
+namespace Deserializers;
 
-use Ask\Deserializers\Exceptions\DeserializationException;
-use Ask\Deserializers\Exceptions\InvalidAttributeException;
-use Ask\Deserializers\Exceptions\MissingAttributeException;
+use Deserializers\Exceptions\DeserializationException;
+use Deserializers\Exceptions\InvalidAttributeException;
+use Deserializers\Exceptions\MissingAttributeException;
 
 /**
  * @since 0.1

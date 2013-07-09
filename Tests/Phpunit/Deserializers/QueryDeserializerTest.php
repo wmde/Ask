@@ -3,11 +3,11 @@
 namespace Ask\Tests\Phpunit\Serialization;
 
 use Ask\Deserializers\DescriptionDeserializer;
-use Ask\Deserializers\DispatchingDeserializer;
 use Ask\Deserializers\QueryDeserializer;
 use Ask\Deserializers\QueryOptionsDeserializer;
 use Ask\Deserializers\SortExpressionDeserializer;
 use DataValues\DataValueFactory;
+use Deserializers\DispatchingDeserializer;
 
 /**
  * @covers Ask\Deserializers\QueryDeserializer
@@ -45,7 +45,7 @@ class QueryDeserializerTest extends \PHPUnit_Framework_TestCase {
 
 		$this->assertFalse( $serializer->canDeserialize( $notAQuery ) );
 
-		$this->setExpectedException( 'Ask\Deserializers\Exceptions\UnsupportedTypeException' );
+		$this->setExpectedException( 'Deserializers\Exceptions\UnsupportedTypeException' );
 		$serializer->deserialize( $notAQuery );
 	}
 
@@ -83,7 +83,7 @@ class QueryDeserializerTest extends \PHPUnit_Framework_TestCase {
 
 		$this->assertFalse( $serializer->canDeserialize( $notAQuery ) );
 
-		$this->setExpectedException( 'Ask\Deserializers\Exceptions\MissingTypeException' );
+		$this->setExpectedException( 'Deserializers\Exceptions\MissingTypeException' );
 		$serializer->deserialize( $notAQuery );
 	}
 
@@ -109,7 +109,7 @@ class QueryDeserializerTest extends \PHPUnit_Framework_TestCase {
 	 * @dataProvider optionsWithMissingAttributeProvider
 	 */
 	public function testPropertySelectionRequiresAllAttributes( array $incompleteSerialization ) {
-		$this->setExpectedException( 'Ask\Deserializers\Exceptions\MissingAttributeException' );
+		$this->setExpectedException( 'Deserializers\Exceptions\MissingAttributeException' );
 		$this->newQueryDeserializer()->deserialize( $incompleteSerialization );
 	}
 
@@ -161,7 +161,7 @@ class QueryDeserializerTest extends \PHPUnit_Framework_TestCase {
 	 * @dataProvider optionsWithInvalidAttributeProvider
 	 */
 	public function testPropertySelectionRequiresValidAttributes( array $invalidSerialization ) {
-		$this->setExpectedException( 'Ask\Deserializers\Exceptions\DeserializationException' );
+		$this->setExpectedException( 'Deserializers\Exceptions\DeserializationException' );
 		$this->newQueryDeserializer()->deserialize( $invalidSerialization );
 	}
 

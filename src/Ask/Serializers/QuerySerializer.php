@@ -3,7 +3,8 @@
 namespace Ask\Serializers;
 
 use Ask\Language\Query;
-use Ask\Serializers\Exceptions\UnsupportedObjectException;
+use Serializers\Exceptions\UnsupportedObjectException;
+use Serializers\Serializer;
 
 /**
  * @since 0.1

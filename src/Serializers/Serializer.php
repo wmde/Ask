@@ -1,6 +1,6 @@
 <?php
 
-namespace Ask\Serializers;
+namespace Serializers;
 
 /**
  * @since 0.1

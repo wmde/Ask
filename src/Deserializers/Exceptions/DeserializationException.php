@@ -1,6 +1,6 @@
 <?php
 
-namespace Ask\Serializers\Exceptions;
+namespace Deserializers\Exceptions;
 
 /**
  * @since 0.1
@@ -11,7 +11,7 @@ namespace Ask\Serializers\Exceptions;
  * @licence GNU GPL v2+
  * @author Jeroen De Dauw < jeroendedauw@gmail.com >
  */
-abstract class SerializationException extends \RuntimeException {
+class DeserializationException extends \RuntimeException {
 
 	public function __construct( $message = '', \Exception $previous = null ) {
 		parent::__construct( $message, 0, $previous );

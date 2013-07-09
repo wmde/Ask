@@ -2,9 +2,6 @@
 
 namespace Ask\Deserializers\Strategies;
 
-use Ask\Deserializers\Deserializer;
-use Ask\Deserializers\Exceptions\DeserializationException;
-use Ask\Deserializers\Exceptions\InvalidAttributeException;
 use Ask\Language\Description\AnyValue;
 use Ask\Language\Description\Conjunction;
 use Ask\Language\Description\Description;
@@ -12,6 +9,10 @@ use Ask\Language\Description\Disjunction;
 use Ask\Language\Description\SomeProperty;
 use Ask\Language\Description\ValueDescription;
 use DataValues\DataValueFactory;
+use Deserializers\Deserializer;
+use Deserializers\Exceptions\DeserializationException;
+use Deserializers\Exceptions\InvalidAttributeException;
+use Deserializers\TypedDeserializationStrategy;
 
 /**
  * TODO: split individual description handling to own classes to we can use

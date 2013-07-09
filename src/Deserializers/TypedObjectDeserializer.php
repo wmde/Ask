@@ -1,11 +1,11 @@
 <?php
 
-namespace Ask\Deserializers;
+namespace Deserializers;
 
-use Ask\Deserializers\Exceptions\InvalidAttributeException;
-use Ask\Deserializers\Exceptions\MissingAttributeException;
-use Ask\Deserializers\Exceptions\MissingTypeException;
-use Ask\Deserializers\Exceptions\UnsupportedTypeException;
+use Deserializers\Exceptions\InvalidAttributeException;
+use Deserializers\Exceptions\MissingAttributeException;
+use Deserializers\Exceptions\MissingTypeException;
+use Deserializers\Exceptions\UnsupportedTypeException;
 
 /**
  * @since 0.1

@@ -1,11 +1,11 @@
 <?php
 
-namespace Ask\Tests\Phpunit\Serializers\Exceptions;
+namespace Serializers\Tests\Phpunit\Exceptions;
 
-use Ask\Serializers\Exceptions\UnsupportedObjectException;
+use Serializers\Exceptions\UnsupportedObjectException;
 
 /**
- * @covers Ask\Serializers\Exceptions\UnsupportedObjectException
+ * @covers Serializers\Exceptions\UnsupportedObjectException
  *
  * @file
  * @since 0.1

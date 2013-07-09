@@ -2,9 +2,11 @@
 
 namespace Ask\Deserializers;
 
-use Ask\Deserializers\Exceptions\DeserializationException;
 use Ask\Deserializers\Strategies\SortExpressionDeserializationStrategy;
 use DataValues\DataValueFactory;
+use Deserializers\Deserializer;
+use Deserializers\Exceptions\DeserializationException;
+use Deserializers\StrategicDeserializer;
 
 /**
  * @since 0.1

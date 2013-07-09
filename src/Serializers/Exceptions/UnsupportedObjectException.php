@@ -1,6 +1,6 @@
 <?php
 
-namespace Ask\Serializers\Exceptions;
+namespace Serializers\Exceptions;
 
 /**
  * @since 0.1

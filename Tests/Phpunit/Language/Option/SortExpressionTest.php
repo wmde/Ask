@@ -53,7 +53,7 @@ abstract class SortExpressionTest extends \Ask\Tests\Phpunit\AskTestCase {
 	 *
 	 * @since 0.1
 	 *
-	 * @param SortExpression $object
+	 * @param SortExpression $expression
 	 */
 	public function testReturnValueOfGetDirection( SortExpression $expression ) {
 		$direction = $expression->getDirection();

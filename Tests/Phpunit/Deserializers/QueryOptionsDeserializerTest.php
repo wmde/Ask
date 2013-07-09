@@ -37,7 +37,7 @@ class QueryOptionsDeserializerTest extends \PHPUnit_Framework_TestCase {
 
 		$this->assertFalse( $serializer->canDeserialize( $notQueryOptions ) );
 
-		$this->setExpectedException( 'Ask\Deserializers\Exceptions\UnsupportedTypeException' );
+		$this->setExpectedException( 'Deserializers\Exceptions\UnsupportedTypeException' );
 		$serializer->deserialize( $notQueryOptions );
 	}
 
@@ -80,7 +80,7 @@ class QueryOptionsDeserializerTest extends \PHPUnit_Framework_TestCase {
 
 		$this->assertFalse( $serializer->canDeserialize( $notQueryOptions ) );
 
-		$this->setExpectedException( 'Ask\Deserializers\Exceptions\MissingTypeException' );
+		$this->setExpectedException( 'Deserializers\Exceptions\MissingTypeException' );
 		$serializer->deserialize( $notQueryOptions );
 	}
 
@@ -114,7 +114,7 @@ class QueryOptionsDeserializerTest extends \PHPUnit_Framework_TestCase {
 	 * @dataProvider optionsWithMissingAttributeProvider
 	 */
 	public function testPropertySelectionRequiresAllAttributes( array $incompleteSerialization ) {
-		$this->setExpectedException( 'Ask\Deserializers\Exceptions\MissingAttributeException' );
+		$this->setExpectedException( 'Deserializers\Exceptions\MissingAttributeException' );
 		$this->newQueryOptionsDeserializer()->deserialize( $incompleteSerialization );
 	}
 
@@ -152,7 +152,7 @@ class QueryOptionsDeserializerTest extends \PHPUnit_Framework_TestCase {
 	 * @dataProvider optionsWithInvalidAttributeProvider
 	 */
 	public function testPropertySelectionRequiresValidAttributes( array $invalidSerialization ) {
-		$this->setExpectedException( 'Ask\Deserializers\Exceptions\DeserializationException' );
+		$this->setExpectedException( 'Deserializers\Exceptions\DeserializationException' );
 		$this->newQueryOptionsDeserializer()->deserialize( $invalidSerialization );
 	}
 

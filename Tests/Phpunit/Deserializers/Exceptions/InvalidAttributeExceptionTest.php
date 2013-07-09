@@ -1,11 +1,11 @@
 <?php
 
-namespace Ask\Tests\Phpunit\Deserializers\Exceptions;
+namespace Deserializers\Tests\Phpunit\Exceptions;
 
-use Ask\Deserializers\Exceptions\InvalidAttributeException;
+use Deserializers\Exceptions\InvalidAttributeException;
 
 /**
- * @covers Ask\Deserializers\Exceptions\InvalidAttributeException
+ * @covers Deserializers\Exceptions\InvalidAttributeException
  *
  * @file
  * @since 0.1

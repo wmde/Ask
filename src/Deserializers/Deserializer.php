@@ -1,8 +1,8 @@
 <?php
 
-namespace Ask\Deserializers;
+namespace Deserializers;
 
-use Ask\Deserializers\Exceptions\DeserializationException;
+use Deserializers\Exceptions\DeserializationException;
 
 /**
  * @since 0.1
