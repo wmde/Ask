@@ -20,29 +20,26 @@ class UnsupportedTypeExceptionTest extends \PHPUnit_Framework_TestCase {
 
 	public function testConstructorWithOnlyRequiredArguments() {
 		$unsupportedType = 'fooBarBaz';
-		$deserializer = $this->getMock( 'Ask\Deserializers\Deserializer' );
 
-		$exception = new UnsupportedTypeException( $unsupportedType, $deserializer );
+		$exception = new UnsupportedTypeException( $unsupportedType );
 
-		$this->assertRequiredFieldsAreSet( $exception, $unsupportedType, $deserializer );
+		$this->assertRequiredFieldsAreSet( $exception, $unsupportedType );
 	}
 
 	public function testConstructorWithAllArguments() {
 		$unsupportedType = 'fooBarBaz';
-		$deserializer = $this->getMock( 'Ask\Deserializers\Deserializer' );
 		$message = 'NyanData all the way across the sky!';
 		$previous = new \Exception( 'Onoez!' );
 
-		$exception = new UnsupportedTypeException( $unsupportedType, $deserializer, $message, $previous );
+		$exception = new UnsupportedTypeException( $unsupportedType, $message, $previous );
 
-		$this->assertRequiredFieldsAreSet( $exception, $unsupportedType, $deserializer );
+		$this->assertRequiredFieldsAreSet( $exception, $unsupportedType );
 		$this->assertEquals( $message, $exception->getMessage() );
 		$this->assertEquals( $previous, $exception->getPrevious() );
 	}
 
-	protected function assertRequiredFieldsAreSet( UnsupportedTypeException $exception, $unsupportedType, $deserializer ) {
+	protected function assertRequiredFieldsAreSet( UnsupportedTypeException $exception, $unsupportedType ) {
 		$this->assertEquals( $unsupportedType, $exception->getUnsupportedType() );
-		$this->assertEquals( $deserializer, $exception->getDeserializer() );
 	}
 
 }

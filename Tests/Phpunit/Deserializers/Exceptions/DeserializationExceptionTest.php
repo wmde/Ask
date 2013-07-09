@@ -19,27 +19,18 @@ use Ask\Deserializers\Exceptions\DeserializationException;
 class DeserializationExceptionTest extends \PHPUnit_Framework_TestCase {
 
 	public function testConstructorWithOnlyRequiredArguments() {
-		$deserializer = $this->getMock( 'Ask\Deserializers\Deserializer' );
-
-		$exception = new DeserializationException( $deserializer );
-
-		$this->assertRequiredFieldsAreSet( $exception, $deserializer );
+		new DeserializationException();
+		$this->assertTrue( true );
 	}
 
 	public function testConstructorWithAllArguments() {
-		$deserializer = $this->getMock( 'Ask\Deserializers\Deserializer' );
 		$message = 'NyanData all the way across the sky!';
 		$previous = new \Exception( 'Onoez!' );
 
-		$exception = new DeserializationException( $deserializer, $message, $previous );
+		$exception = new DeserializationException( $message, $previous );
 
-		$this->assertRequiredFieldsAreSet( $exception, $deserializer );
 		$this->assertEquals( $message, $exception->getMessage() );
 		$this->assertEquals( $previous, $exception->getPrevious() );
-	}
-
-	protected function assertRequiredFieldsAreSet( DeserializationException $exception, $deserializer ) {
-		$this->assertEquals( $deserializer, $exception->getDeserializer() );
 	}
 
 }

@@ -2,8 +2,6 @@
 
 namespace Ask\Deserializers\Exceptions;
 
-use Ask\Deserializers\Deserializer;
-
 /**
  * Indicates the objectType key is missing in the serialization.
  *
@@ -20,12 +18,11 @@ class MissingTypeException extends DeserializationException {
 	protected $unsupportedType;
 
 	/**
-	 * @param Deserializer $deserializer
 	 * @param string $message
 	 * @param \Exception $previous
 	 */
-	public function __construct( Deserializer $deserializer, $message = '', \Exception $previous = null ) {
-		parent::__construct( $deserializer, $message, $previous );
+	public function __construct( $message = '', \Exception $previous = null ) {
+		parent::__construct( $message, $previous );
 	}
 
 }
