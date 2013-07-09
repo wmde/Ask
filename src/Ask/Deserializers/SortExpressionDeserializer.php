@@ -26,7 +26,7 @@ class SortExpressionDeserializer implements Deserializer {
 	}
 
 	protected function newDeserializer() {
-		return new TypedObjectDeserializer(
+		return new StrategicDeserializer(
 			new SortExpressionDeserializationStrategy( $this->dataValueFactory ),
 			'sortExpression',
 			'sortExpressionType'
