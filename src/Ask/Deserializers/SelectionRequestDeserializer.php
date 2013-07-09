@@ -26,7 +26,7 @@ class SelectionRequestDeserializer extends TypedObjectDeserializer {
 	}
 
 	protected function newDeserializer() {
-		return new TypedObjectDeserializer(
+		return new StrategicDeserializer(
 			new SelectionRequestDeserializationStrategy(
 				$this->dataValueFactory,
 				$this

@@ -17,26 +17,12 @@ use Ask\Deserializers\Strategies\TypedDeserializationStrategy;
  * @licence GNU GPL v2+
  * @author Jeroen De Dauw < jeroendedauw@gmail.com >
  */
-class TypedObjectDeserializer implements Deserializer {
+abstract class TypedObjectDeserializer implements Deserializer {
 
-	protected $deserializationStrategy;
 	protected $objectType;
-	protected $subTypeKey;
 
-	/**
-	 * @param TypedDeserializationStrategy $deserializationStrategy
-	 * @param string $objectType The objectType that is supported. For instance "description" or "selectionRequest".
-	 * @param string $subTypeKey The name of the key used for the specific type of object. For instance "descriptionType" or "sortExpressionType".
-	 */
-	public function __construct( TypedDeserializationStrategy $deserializationStrategy, $objectType, $subTypeKey ) {
-		$this->deserializationStrategy = $deserializationStrategy;
+	public function __construct( $objectType ) {
 		$this->objectType = $objectType;
-		$this->subTypeKey = $subTypeKey;
-	}
-
-	public function deserialize( $serialization ) {
-		$this->assertCanDeserialize( $serialization );
-		return $this->getDeserialization( $serialization );
 	}
 
 	protected function assertCanDeserialize( $serialization ) {
@@ -53,24 +39,13 @@ class TypedObjectDeserializer implements Deserializer {
 		return $this->hasObjectType( $serialization ) && $this->hasCorrectObjectType( $serialization );
 	}
 
-	protected function hasCorrectObjectType( $serialization ) {
+	private function hasCorrectObjectType( $serialization ) {
 		return $serialization['objectType'] === $this->objectType;
 	}
 
-	protected function hasObjectType( $serialization ) {
+	private function hasObjectType( $serialization ) {
 		return is_array( $serialization )
 			&& array_key_exists( 'objectType', $serialization );
-	}
-
-	protected function getDeserialization( array $serialization ) {
-		$this->requireAttribute( $serialization, $this->subTypeKey );
-		$this->requireAttributes( $serialization, 'value' );
-		$this->assertAttributeIsArray( $serialization, 'value' );
-
-		$specificType = $serialization[$this->subTypeKey];
-		$valueSerialization = $serialization['value'];
-
-		return $this->deserializationStrategy->getDeserializedValue( $specificType, $valueSerialization );
 	}
 
 	protected function requireAttributes( array $array ) {
@@ -91,10 +66,15 @@ class TypedObjectDeserializer implements Deserializer {
 	}
 
 	protected function assertAttributeIsArray( array $array, $attributeName ) {
-		if ( !is_array( $array[$attributeName] ) ) {
+		$this->assertAttributeInternalType( $array, $attributeName, 'array' );
+	}
+
+	protected function assertAttributeInternalType( array $array, $attributeName, $internalType ) {
+		if ( gettype( $array[$attributeName] ) !== $internalType ) {
 			throw new InvalidAttributeException(
 				$attributeName,
-				$array[$attributeName]
+				$array[$attributeName],
+				"The internal type of this attribute needs to be '$internalType'"
 			);
 		}
 	}

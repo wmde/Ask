@@ -34,7 +34,7 @@ class DescriptionDeserializer implements Deserializer {
 	}
 
 	protected function newDeserializer() {
-		return new TypedObjectDeserializer(
+		return new StrategicDeserializer(
 			new DescriptionDeserializationStrategy(
 				$this->dataValueFactory,
 				$this
