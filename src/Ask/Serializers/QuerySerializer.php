@@ -3,7 +3,6 @@
 namespace Ask\Serializers;
 
 use Ask\Language\Query;
-use Ask\Language\Selection\SelectionRequest;
 use Ask\Serializers\Exceptions\UnsupportedObjectException;
 
 /**

@@ -81,7 +81,7 @@ abstract class TypedObjectDeserializer implements Deserializer {
 
 	protected function getDeserialization( array $serialization ) {
 		$this->requireAttribute( $serialization, $this->getSubTypeKey() );
-		$this->requireAttribute( $serialization, 'value' );
+		$this->requireAttributes( $serialization, 'value' );
 		$this->assertAttributeIsArray( $serialization, 'value' );
 
 		$specificType = $serialization[$this->getSubTypeKey()];

@@ -4,9 +4,6 @@ namespace Ask\Deserializers;
 
 use Ask\Deserializers\Exceptions\DeserializationException;
 use Ask\Deserializers\Exceptions\InvalidAttributeException;
-use Ask\Deserializers\Exceptions\MissingAttributeException;
-use Ask\Deserializers\Exceptions\MissingTypeException;
-use Ask\Deserializers\Exceptions\UnsupportedTypeException;
 use Ask\Language\Option\PropertyValueSortExpression;
 use DataValues\DataValueFactory;
 use InvalidArgumentException;
