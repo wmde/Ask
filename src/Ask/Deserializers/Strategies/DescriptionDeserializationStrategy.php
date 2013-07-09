@@ -69,6 +69,7 @@ class DescriptionDeserializationStrategy extends TypedDeserializationStrategy {
 
 		throw new InvalidAttributeException(
 			'descriptionType',
+			$descriptionType,
 			'The provided descriptionType is not supported by this deserializer'
 		);
 	}

@@ -39,7 +39,7 @@ class SortExpressionDeserializationStrategy extends TypedDeserializationStrategy
 	 */
 	public function getDeserializedValue( $sortExpressionType, array $valueSerialization ) {
 		if ( $sortExpressionType !== 'propertyValue' ) {
-			throw new InvalidAttributeException( 'sortExpressionType' );
+			throw new InvalidAttributeException( 'sortExpressionType', $sortExpressionType );
 		}
 
 		$this->requireAttribute( $valueSerialization, 'direction' );

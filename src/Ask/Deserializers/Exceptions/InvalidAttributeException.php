@@ -14,14 +14,17 @@ namespace Ask\Deserializers\Exceptions;
 class InvalidAttributeException extends DeserializationException {
 
 	protected $attributeName;
+	protected $attributeValue;
 
 	/**
 	 * @param string $attributeName
+	 * @param mixed $attributeValue
 	 * @param string $message
 	 * @param \Exception $previous
 	 */
-	public function __construct( $attributeName, $message = '', \Exception $previous = null ) {
+	public function __construct( $attributeName, $attributeValue, $message = '', \Exception $previous = null ) {
 		$this->attributeName = $attributeName;
+		$this->attributeValue = $attributeValue;
 
 		parent::__construct( $message, $previous );
 	}
@@ -31,6 +34,13 @@ class InvalidAttributeException extends DeserializationException {
 	 */
 	public function getAttributeName() {
 		return $this->attributeName;
+	}
+
+	/**
+	 * @return string
+	 */
+	public function getAttributeValue() {
+		return $this->attributeValue;
 	}
 
 }
