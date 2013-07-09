@@ -21,9 +21,9 @@ use Serializers\Serializer;
  */
 class DescriptionSerializer implements Serializer {
 
-	public function serialize( $askObject ) {
-		$this->assertCanSerialize( $askObject );
-		return $this->getSerializedDescription( $askObject );
+	public function serialize( $object ) {
+		$this->assertCanSerialize( $object );
+		return $this->getSerializedDescription( $object );
 	}
 
 	protected function getSerializedDescription( Description $description ) {

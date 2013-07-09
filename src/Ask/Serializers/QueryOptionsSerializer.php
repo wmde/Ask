@@ -28,9 +28,9 @@ class QueryOptionsSerializer implements Serializer {
 		$this->componentSerializer = $componentSerializer;
 	}
 
-	public function serialize( $askObject ) {
-		$this->assertCanSerialize( $askObject );
-		return $this->getSerializedOptions( $askObject );
+	public function serialize( $object ) {
+		$this->assertCanSerialize( $object );
+		return $this->getSerializedOptions( $object );
 	}
 
 	protected function assertCanSerialize( $askObject ) {

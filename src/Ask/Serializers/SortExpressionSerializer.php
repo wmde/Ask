@@ -18,9 +18,9 @@ use Serializers\Serializer;
  */
 class SortExpressionSerializer implements Serializer {
 
-	public function serialize( $askObject ) {
-		$this->assertCanSerialize( $askObject );
-		return $this->getSerializedSortExpression( $askObject );
+	public function serialize( $object ) {
+		$this->assertCanSerialize( $object );
+		return $this->getSerializedSortExpression( $object );
 	}
 
 	protected function assertCanSerialize( $askObject ) {

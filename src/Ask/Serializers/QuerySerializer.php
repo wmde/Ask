@@ -27,10 +27,10 @@ class QuerySerializer implements Serializer {
 		$this->componentSerializer = $componentSerializer;
 	}
 
-	public function serialize( $askObject ) {
-		$this->assertCanSerialize( $askObject );
+	public function serialize( $object ) {
+		$this->assertCanSerialize( $object );
 
-		return $this->getSerializedQuery( $askObject );
+		return $this->getSerializedQuery( $object );
 	}
 
 	protected function assertCanSerialize( $askObject ) {

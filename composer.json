@@ -26,9 +26,9 @@
 	},
 	"require": {
 		"php": ">=5.3.0",
-		"data-values/data-values": "dev-master"
+		"data-values/data-values": "@dev",
+		"serialization/serialization": ">=1.0@dev"
 	},
-	"minimum-stability" : "dev",
 	"autoload": {
 		"files" : [
 			"Ask.php"

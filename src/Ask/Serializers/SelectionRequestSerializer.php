@@ -19,9 +19,9 @@ use Serializers\Serializer;
  */
 class SelectionRequestSerializer implements Serializer {
 
-	public function serialize( $askObject ) {
-		$this->assertCanSerialize( $askObject );
-		return $this->getSerializedSelectionRequest( $askObject );
+	public function serialize( $object ) {
+		$this->assertCanSerialize( $object );
+		return $this->getSerializedSelectionRequest( $object );
 	}
 
 	protected function assertCanSerialize( $askObject ) {
