@@ -2,8 +2,6 @@
 
 namespace Ask\Serializers\Exceptions;
 
-use Ask\Serializers\Serializer;
-
 /**
  * @since 0.1
  *
@@ -19,14 +17,13 @@ class UnsupportedObjectException extends SerializationException {
 
 	/**
 	 * @param mixed $unsupportedObject
-	 * @param Serializer $deserializer
 	 * @param string $message
 	 * @param \Exception $previous
 	 */
-	public function __construct( $unsupportedObject, Serializer $deserializer, $message = '', \Exception $previous = null ) {
+	public function __construct( $unsupportedObject, $message = '', \Exception $previous = null ) {
 		$this->unsupportedObject = $unsupportedObject;
 
-		parent::__construct( $deserializer, $message, $previous );
+		parent::__construct( $message, $previous );
 	}
 
 	/**

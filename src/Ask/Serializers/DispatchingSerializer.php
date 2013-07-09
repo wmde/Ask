@@ -44,7 +44,7 @@ class DispatchingSerializer implements Serializer {
 			}
 		}
 
-		throw new UnsupportedObjectException( $askObject, $this );
+		throw new UnsupportedObjectException( $askObject );
 	}
 
 	public function canSerialize( $askObject ) {
