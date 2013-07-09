@@ -32,7 +32,7 @@ class SelectionRequestSerializer implements Serializer {
 	protected function getSerializedSelectionRequest( SelectionRequest $request ) {
 		return array(
 			'objectType' => 'selectionRequest',
-			'selectionType' => $request->getType(),
+			'selectionRequestType' => $request->getType(),
 			'value' => $this->getValueSerialization( $request ),
 		);
 	}
@@ -45,7 +45,7 @@ class SelectionRequestSerializer implements Serializer {
 		}
 
 		if ( $request instanceof SubjectSelection ) {
-			return null;
+			return array();
 		}
 
 		throw new UnsupportedObjectException( $request );

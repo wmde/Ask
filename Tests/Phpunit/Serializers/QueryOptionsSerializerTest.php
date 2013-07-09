@@ -34,7 +34,7 @@ class QueryOptionsSerializerTest extends \PHPUnit_Framework_TestCase {
 			'limit' => $options->getLimit(),
 			'offset' => $options->getOffset(),
 			'sort' => array(
-				'expressions' => (object)array_map(
+				'expressions' => array_map(
 					function( SortExpression $expression ) use ( $sortExpressionSerializer ) {
 						return $sortExpressionSerializer->serialize( $expression );
 					},

@@ -1,6 +1,6 @@
 <?php
 
-namespace Ask\Tests\Integration\Serializers;
+namespace Ask\Tests\Integration\Serialization;
 
 use Ask\Language\Description\AnyValue;
 use Ask\Language\Description\Conjunction;
@@ -117,7 +117,7 @@ class QuerySerializationTest extends \PHPUnit_Framework_TestCase {
 				'limit' => 100,
 				'offset' => 42,
 				'sort' => array(
-					'expressions' => (object)array(
+					'expressions' => array(
 						array(
 							'objectType' => 'sortExpression',
 							'sortExpressionType' => 'propertyValue',
@@ -129,22 +129,22 @@ class QuerySerializationTest extends \PHPUnit_Framework_TestCase {
 					),
 				),
 			),
-			'selectionRequests' => (object)array(
+			'selectionRequests' => array(
 				array(
 					'objectType' => 'selectionRequest',
-					'selectionType' => 'subject',
-					'value' => null,
+					'selectionRequestType' => 'subject',
+					'value' => array(),
 				),
 				array(
 					'objectType' => 'selectionRequest',
-					'selectionType' => 'property',
+					'selectionRequestType' => 'property',
 					'value' => array(
 						'property' => $p42->toArray(),
 					),
 				),
 				array(
 					'objectType' => 'selectionRequest',
-					'selectionType' => 'property',
+					'selectionRequestType' => 'property',
 					'value' => array(
 						'property' => $p9001->toArray(),
 					),

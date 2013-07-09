@@ -1,6 +1,6 @@
 <?php
 
-namespace Ask\Tests\Integration\Serializers;
+namespace Ask\Tests\Integration\Serialization;
 
 use Ask\Deserializers\DescriptionDeserializer;
 use Ask\Language\Description\AnyValue;

@@ -6,7 +6,6 @@ use Ask\Deserializers\Exceptions\InvalidAttributeException;
 use Ask\Deserializers\Exceptions\MissingAttributeException;
 use Ask\Deserializers\Exceptions\MissingTypeException;
 use Ask\Deserializers\Exceptions\UnsupportedTypeException;
-use Ask\Deserializers\Strategies\TypedDeserializationStrategy;
 
 /**
  * @since 0.1
@@ -74,7 +73,7 @@ abstract class TypedObjectDeserializer implements Deserializer {
 			throw new InvalidAttributeException(
 				$attributeName,
 				$array[$attributeName],
-				"The internal type of this attribute needs to be '$internalType'"
+				"The internal type of attribute '$attributeName'  needs to be '$internalType'"
 			);
 		}
 	}

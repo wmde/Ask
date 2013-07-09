@@ -24,7 +24,7 @@ class DispatchingDeserializer implements Deserializer {
 	/**
 	 * @param Deserializer[] $deserializers
 	 */
-	public function __construct( array $deserializers ) {
+	public function __construct( array $deserializers = array() ) {
 		$this->assertAreDeserializers( $deserializers );
 		$this->deserializers = $deserializers;
 	}
