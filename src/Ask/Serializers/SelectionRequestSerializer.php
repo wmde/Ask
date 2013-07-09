@@ -2,7 +2,6 @@
 
 namespace Ask\Serializers;
 
-use Ask\Language\Option\QueryOptions;
 use Ask\Language\Selection\PropertySelection;
 use Ask\Language\Selection\SelectionRequest;
 use Ask\Language\Selection\SubjectSelection;
