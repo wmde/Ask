@@ -55,7 +55,7 @@ if ( defined( 'MW_PHPUNIT_TEST' ) ) {
  * @return boolean
  */
 $wgHooks['UnitTestsList'][]	= function( array &$files ) {
-	$directoryIterator = new RecursiveDirectoryIterator( __DIR__ . '/Tests/Phpunit/' );
+	$directoryIterator = new RecursiveDirectoryIterator( __DIR__ . '/Tests/' );
 
 	/**
 	 * @var SplFileInfo $fileInfo
