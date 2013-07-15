@@ -2,6 +2,7 @@
 
 namespace Ask\Tests\Integration\Serialization;
 
+use Ask\AskFactory;
 use Ask\Language\Description\AnyValue;
 use Ask\Language\Description\Conjunction;
 use Ask\Language\Description\SomeProperty;
@@ -154,14 +155,8 @@ class QuerySerializationTest extends \PHPUnit_Framework_TestCase {
 	}
 
 	protected function getQuerySerializer() {
-		$dispatchingSerializer = new DispatchingSerializer();
-
-		$dispatchingSerializer->addSerializer( new DescriptionSerializer() );
-		$dispatchingSerializer->addSerializer( new SelectionRequestSerializer() );
-		$dispatchingSerializer->addSerializer( new QueryOptionsSerializer( $dispatchingSerializer ) );
-		$dispatchingSerializer->addSerializer( new SortExpressionSerializer() );
-
-		return new QuerySerializer( $dispatchingSerializer );
+		$askFactory = new AskFactory();
+		return $askFactory->newQuerySerializer();
 	}
 
 }
