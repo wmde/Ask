@@ -183,6 +183,22 @@ $myAwesomeQuery = new Query(
 );
 ```
 
+### Serialization and deserialization
+
+The Ask language objects can all be serialized to a generic format from which the objects can later
+be reconstructed. This is done via a set of Serializers/Serializer implementing objects. These
+objects turn for instance a Query object into a data structure containing only primitive types and
+arrays. This data structure can thus be readily fed to json_enoce, serialize, or the like. The
+process of reconstructing the objects from such a serialization is provided by objects implementing
+the Deserializers/Deserializer interface.
+
+Serializers can be obtained via an instance of SerializerFactory and deserializers can be obtained
+via an instance of DeserializerFactory. You are not allowed to construct these serializers and
+deserializers directly yourself or to have any kind of knowledge of them (ie type hinting). These
+objects are internal to the Ask library and might change name or structure at any time. All you
+are allowed to know when calling $serializerFactory->newQuerySerializer() is that you get back
+an instance of Serializers\Serializer.
+
 ## Tests
 
 This library comes with a set up PHPUnit tests that cover all non-trivial code. You can run these
