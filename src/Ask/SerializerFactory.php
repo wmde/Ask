@@ -18,8 +18,9 @@ use Serializers\Serializer;
  *
  * @licence GNU GPL v2+
  * @author Jeroen De Dauw < jeroendedauw@gmail.com >
+ * @author Adam Shorland < adamshorland@gmail.com >
  */
-class AskFactory {
+class SerializerFactory {
 
 	/**
 	 * Returns a Serializer that can serialize Query objects.
