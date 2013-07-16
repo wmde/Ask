@@ -12,14 +12,17 @@ use Deserializers\Deserializer;
 use Deserializers\DispatchingDeserializer;
 
 /**
+ * Factory for constructing Deserializer objects that can deserialize Ask language objects.
+ * All external access to the deserializers should happen through this factory! (See README)
+ *
  * @since 0.1
  *
  * @file
  * @ingroup Ask
  *
  * @licence GNU GPL v2+
- * @author Jeroen De Dauw < jeroendedauw@gmail.com >
  * @author Adam Shorland < adamshorland@gmail.com >
+ * @author Jeroen De Dauw < jeroendedauw@gmail.com >
  */
 class DeserializerFactory {
 
@@ -37,8 +40,6 @@ class DeserializerFactory {
 	 * @return Deserializer
 	 */
 	public function newQueryDeserializer() {
-
-
 		$dispatchingDeserializer = new DispatchingDeserializer();
 
 		$dispatchingDeserializer->addDeserializer( $this->newDescriptionDeserializer() );
@@ -90,7 +91,7 @@ class DeserializerFactory {
 	 * @return Deserializer
 	 */
 	public function newQueryOptionsDeserializer() {
-		return new QueryOptionsDeserializer( $this->newSortExpressionDeserializer( $this->dataValueFactory ) );
+		return new QueryOptionsDeserializer( $this->newSortExpressionDeserializer() );
 	}
 
 }

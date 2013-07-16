@@ -11,6 +11,9 @@ use Serializers\DispatchingSerializer;
 use Serializers\Serializer;
 
 /**
+ * Factory for constructing Serializer objects that can serialize Ask language objects.
+ * All external access to the serializers should happen through this factory! (See README)
+ *
  * @since 0.1
  *
  * @file
