@@ -114,12 +114,12 @@ class DescriptionDeserializationStrategy extends TypedDeserializationStrategy {
 		$comparatorStrings = array(
 			ValueDescription::COMP_EQUAL => 'equal',
 			ValueDescription::COMP_LEQ => 'leq',
-			ValueDescription::COMP_MEQ => 'meq',
+			ValueDescription::COMP_GEQ => 'geq',
 			ValueDescription::COMP_NEQ => 'neq',
 			ValueDescription::COMP_LIKE => 'like',
 			ValueDescription::COMP_NLIKE => 'nlike',
 			ValueDescription::COMP_LESS => 'less',
-			ValueDescription::COMP_MORE => 'more'
+			ValueDescription::COMP_GREATER => 'greater'
 		);
 
 		$comparator = array_search( $comparatorSerialization, $comparatorStrings );

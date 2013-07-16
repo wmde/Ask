@@ -45,12 +45,12 @@ final class ValueDescription extends Description implements \Ask\Immutable {
 	// This list has values backwards compatible with SMW_CMP_.
 	const COMP_EQUAL = 1;
 	const COMP_LEQ = 2; // Less than or equal
-	const COMP_MEQ = 3; // Greater than or equal
+	const COMP_GEQ = 3; // Greater than or equal
 	const COMP_NEQ = 4; // Not equal
 	const COMP_LIKE = 5;
 	const COMP_NLIKE = 6; // Not like
 	const COMP_LESS = 7; // Strictly less than
-	const COMP_MORE = 8; // Strictly more than
+	const COMP_GREATER = 8; // Strictly greater than
 
 	/**
 	 * The value to compare to.
@@ -79,7 +79,7 @@ final class ValueDescription extends Description implements \Ask\Immutable {
 	 * @throws InvalidArgumentException
 	 */
 	public function __construct( DataValue $value, $comparator = self::COMP_EQUAL ) {
-		if ( $comparator < self::COMP_EQUAL || $comparator > self::COMP_MORE ) {
+		if ( $comparator < self::COMP_EQUAL || $comparator > self::COMP_GREATER ) {
 			throw new InvalidArgumentException( 'Invalid comparator specified' );
 		}
 
