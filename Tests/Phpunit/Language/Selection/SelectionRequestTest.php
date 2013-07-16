@@ -22,7 +22,7 @@ use Ask\Language\Selection\SelectionRequest;
  * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
  * http://www.gnu.org/copyleft/gpl.html
  *
- * @since 0.1
+ * @since 1.0
  *
  * @file
  * @ingroup AskTests
@@ -33,14 +33,14 @@ use Ask\Language\Selection\SelectionRequest;
 abstract class SelectionRequestTest extends \Ask\Tests\Phpunit\AskTestCase {
 
 	/**
-	 * @since 0.1
+	 * @since 1.0
 	 *
 	 * @return SelectionRequest[]
 	 */
 	protected abstract function getInstances();
 
 	/**
-	 * @since 0.1
+	 * @since 1.0
 	 *
 	 * @return SelectionRequest[][]
 	 */
@@ -51,7 +51,7 @@ abstract class SelectionRequestTest extends \Ask\Tests\Phpunit\AskTestCase {
 	/**
 	 * @dataProvider instanceProvider
 	 *
-	 * @since 0.1
+	 * @since 1.0
 	 *
 	 * @param SelectionRequest $request
 	 */
@@ -62,7 +62,7 @@ abstract class SelectionRequestTest extends \Ask\Tests\Phpunit\AskTestCase {
 	/**
 	 * @dataProvider instanceProvider
 	 *
-	 * @since 0.1
+	 * @since 1.0
 	 *
 	 * @param SelectionRequest $object
 	 */
@@ -73,7 +73,7 @@ abstract class SelectionRequestTest extends \Ask\Tests\Phpunit\AskTestCase {
 	/**
 	 * @dataProvider instanceProvider
 	 *
-	 * @since 0.1
+	 * @since 1.0
 	 *
 	 * @param SelectionRequest $object
 	 */
@@ -85,7 +85,7 @@ abstract class SelectionRequestTest extends \Ask\Tests\Phpunit\AskTestCase {
 	/**
 	 * @dataProvider instanceProvider
 	 *
-	 * @since 0.1
+	 * @since 1.0
 	 *
 	 * @param SelectionRequest $object
 	 */
@@ -96,7 +96,7 @@ abstract class SelectionRequestTest extends \Ask\Tests\Phpunit\AskTestCase {
 	/**
 	 * @dataProvider instanceProvider
 	 *
-	 * @since 0.1
+	 * @since 1.0
 	 *
 	 * @param SelectionRequest $object
 	 */

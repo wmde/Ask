@@ -15,7 +15,7 @@ use Deserializers\DispatchingDeserializer;
  * Factory for constructing Deserializer objects that can deserialize Ask language objects.
  * All external access to the deserializers should happen through this factory! (See README)
  *
- * @since 0.1
+ * @since 1.0
  *
  * @file
  * @ingroup Ask
@@ -35,7 +35,7 @@ class DeserializerFactory {
 	/**
 	 * Returns a Deserializer that can serialize Query objects.
 	 *
-	 * @since 0.1
+	 * @since 1.0
 	 *
 	 * @return Deserializer
 	 */
@@ -53,7 +53,7 @@ class DeserializerFactory {
 	/**
 	 * Returns a Deserializer that can serialize Description objects.
 	 *
-	 * @since 0.1
+	 * @since 1.0
 	 *
 	 * @return Deserializer
 	 */
@@ -64,7 +64,7 @@ class DeserializerFactory {
 	/**
 	 * Returns a Deserializer that can serialize SelectionRequest objects.
 	 *
-	 * @since 0.1
+	 * @since 1.0
 	 *
 	 * @return Deserializer
 	 */
@@ -75,7 +75,7 @@ class DeserializerFactory {
 	/**
 	 * Returns a Deserializer that can serialize SortExpression objects.
 	 *
-	 * @since 0.1
+	 * @since 1.0
 	 *
 	 * @return Deserializer
 	 */
@@ -86,7 +86,7 @@ class DeserializerFactory {
 	/**
 	 * Returns a Deserializer that can serialize QueryOptions objects.
 	 *
-	 * @since 0.1
+	 * @since 1.0
 	 *
 	 * @return Deserializer
 	 */

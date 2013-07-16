@@ -10,7 +10,7 @@ use Deserializers\Deserializer;
  * @covers Ask\DeserializerFactory
  *
  * @file
- * @since 0.1
+ * @since 1.0
  *
  * @ingroup Ask
  * @group Ask

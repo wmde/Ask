@@ -20,7 +20,7 @@ namespace Ask\Tests\Phpunit;
  * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
  * http://www.gnu.org/copyleft/gpl.html
  *
- * @since 0.1
+ * @since 1.0
  *
  * @file
  * @ingroup AskTests
@@ -35,7 +35,7 @@ abstract class AskTestCase extends \PHPUnit_Framework_TestCase {
 	 * each element in it's own array. Useful for data providers
 	 * that only return a single argument.
 	 *
-	 * @since 0.1
+	 * @since 1.0
 	 *
 	 * @param array $elements
 	 *

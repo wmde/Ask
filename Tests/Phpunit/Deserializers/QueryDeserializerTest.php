@@ -13,7 +13,7 @@ use Deserializers\DispatchingDeserializer;
  * @covers Ask\Deserializers\QueryDeserializer
  *
  * @file
- * @since 0.1
+ * @since 1.0
  *
  * @ingroup Ask
  * @group Ask

@@ -25,7 +25,7 @@ namespace Ask\Language\Description;
  * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
  * http://www.gnu.org/copyleft/gpl.html
  *
- * @since 0.1
+ * @since 1.0
  *
  * @file
  * @ingroup Ask
@@ -38,7 +38,7 @@ final class Disjunction extends DescriptionCollection {
 	/**
 	 * {@inheritdoc}
 	 *
-	 * @since 0.1
+	 * @since 1.0
 	 *
 	 * @return string
 	 */

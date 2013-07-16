@@ -22,7 +22,7 @@ use Ask\Language\Option\SortExpression;
  * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
  * http://www.gnu.org/copyleft/gpl.html
  *
- * @since 0.1
+ * @since 1.0
  *
  * @file
  * @ingroup AskTests
@@ -33,14 +33,14 @@ use Ask\Language\Option\SortExpression;
 abstract class SortExpressionTest extends \Ask\Tests\Phpunit\AskTestCase {
 
 	/**
-	 * @since 0.1
+	 * @since 1.0
 	 *
 	 * @return SortExpression[]
 	 */
 	protected abstract function getInstances();
 
 	/**
-	 * @since 0.1
+	 * @since 1.0
 	 *
 	 * @return SortExpression[][]
 	 */
@@ -51,7 +51,7 @@ abstract class SortExpressionTest extends \Ask\Tests\Phpunit\AskTestCase {
 	/**
 	 * @dataProvider instanceProvider
 	 *
-	 * @since 0.1
+	 * @since 1.0
 	 *
 	 * @param SortExpression $expression
 	 */

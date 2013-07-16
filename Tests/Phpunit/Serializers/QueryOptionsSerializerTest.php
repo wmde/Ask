@@ -11,7 +11,7 @@ use Ask\Serializers\SortExpressionSerializer;
  * @covers Ask\Serializers\QueryOptionsSerializer
  *
  * @file
- * @since 0.1
+ * @since 1.0
  *
  * @ingroup Ask
  * @group Ask

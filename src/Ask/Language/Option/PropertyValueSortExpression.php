@@ -23,7 +23,7 @@ use InvalidArgumentException;
  * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
  * http://www.gnu.org/copyleft/gpl.html
  *
- * @since 0.1
+ * @since 1.0
  *
  * @file
  * @ingroup Ask
@@ -36,14 +36,14 @@ class PropertyValueSortExpression extends SortExpression {
 	/**
 	 * The property value to sort by.
 	 *
-	 * @since 0.1
+	 * @since 1.0
 	 *
 	 * @var DataValue
 	 */
 	protected $property;
 
 	/**
-	 * @since 0.1
+	 * @since 1.0
 	 *
 	 * @param DataValue $propertyId
 	 * @param string $direction One of the SortExpression::DIRECTION_ constants
@@ -61,7 +61,7 @@ class PropertyValueSortExpression extends SortExpression {
 	/**
 	 * Returns the property value to sort by.
 	 *
-	 * @since 0.1
+	 * @since 1.0
 	 *
 	 * @return DataValue
 	 */
@@ -72,7 +72,7 @@ class PropertyValueSortExpression extends SortExpression {
 	/**
 	 * {@inheritdoc}
 	 *
-	 * @since 0.1
+	 * @since 1.0
 	 *
 	 * @return string
 	 */

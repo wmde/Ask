@@ -9,7 +9,7 @@ use Deserializers\Exceptions\DeserializationException;
 use Deserializers\StrategicDeserializer;
 
 /**
- * @since 0.1
+ * @since 1.0
  *
  * @file
  * @ingroup Ask
@@ -38,7 +38,7 @@ class SortExpressionDeserializer implements Deserializer {
 	/**
 	 * @see Deserializer::deserialize
 	 *
-	 * @since 0.1
+	 * @since 1.0
 	 *
 	 * @param mixed $serialization
 	 *
@@ -52,7 +52,7 @@ class SortExpressionDeserializer implements Deserializer {
 	/**
 	 * @see Deserializer::canDeserialize
 	 *
-	 * @since 0.1
+	 * @since 1.0
 	 *
 	 * @param mixed $serialization
 	 *

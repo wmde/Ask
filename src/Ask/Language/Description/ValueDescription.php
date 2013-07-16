@@ -32,7 +32,7 @@ use InvalidArgumentException;
  * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
  * http://www.gnu.org/copyleft/gpl.html
  *
- * @since 0.1
+ * @since 1.0
  *
  * @file
  * @ingroup Ask
@@ -55,7 +55,7 @@ final class ValueDescription extends Description implements \Ask\Immutable {
 	/**
 	 * The value to compare to.
 	 *
-	 * @since 0.1
+	 * @since 1.0
 	 *
 	 * @var DataValue
 	 */
@@ -64,14 +64,14 @@ final class ValueDescription extends Description implements \Ask\Immutable {
 	/**
 	 * The comparator to use to determine if the value matches.
 	 *
-	 * @since 0.1
+	 * @since 1.0
 	 *
 	 * @var int
 	 */
 	protected $comparator;
 
 	/**
-	 * @since 0.1
+	 * @since 1.0
 	 *
 	 * @param DataValue $value
 	 * @param int $comparator
@@ -90,7 +90,7 @@ final class ValueDescription extends Description implements \Ask\Immutable {
 	/**
 	 * Returns the value to compare against.
 	 *
-	 * @since 0.1
+	 * @since 1.0
 	 *
 	 * @return DataValue
 	 */
@@ -101,7 +101,7 @@ final class ValueDescription extends Description implements \Ask\Immutable {
 	/**
 	 * Returns the comparator to use when comparing against the value.
 	 *
-	 * @since 0.1
+	 * @since 1.0
 	 *
 	 * @return int
 	 */
@@ -112,7 +112,7 @@ final class ValueDescription extends Description implements \Ask\Immutable {
 	/**
 	 * {@inheritdoc}
 	 *
-	 * @since 0.1
+	 * @since 1.0
 	 *
 	 * @return integer
 	 */
@@ -123,7 +123,7 @@ final class ValueDescription extends Description implements \Ask\Immutable {
 	/**
 	 * {@inheritdoc}
 	 *
-	 * @since 0.1
+	 * @since 1.0
 	 *
 	 * @return integer
 	 */
@@ -134,7 +134,7 @@ final class ValueDescription extends Description implements \Ask\Immutable {
 	/**
 	 * {@inheritdoc}
 	 *
-	 * @since 0.1
+	 * @since 1.0
 	 *
 	 * @return string
 	 */
@@ -145,7 +145,7 @@ final class ValueDescription extends Description implements \Ask\Immutable {
 	/**
 	 * @see Comparable::equals
 	 *
-	 * @since 0.1
+	 * @since 1.0
 	 *
 	 * @param mixed $mixed
 	 *
@@ -160,7 +160,7 @@ final class ValueDescription extends Description implements \Ask\Immutable {
 	/**
 	 * @see Hashable::getHash
 	 *
-	 * @since 0.1
+	 * @since 1.0
 	 *
 	 * @return string
 	 */

@@ -14,7 +14,7 @@ use Serializers\Serializer;
  * Factory for constructing Serializer objects that can serialize Ask language objects.
  * All external access to the serializers should happen through this factory! (See README)
  *
- * @since 0.1
+ * @since 1.0
  *
  * @file
  * @ingroup Ask
@@ -28,7 +28,7 @@ class SerializerFactory {
 	/**
 	 * Returns a Serializer that can serialize Query objects.
 	 *
-	 * @since 0.1
+	 * @since 1.0
 	 *
 	 * @return Serializer
 	 */
@@ -45,7 +45,7 @@ class SerializerFactory {
 	/**
 	 * Returns a Serializer that can serialize Description objects.
 	 *
-	 * @since 0.1
+	 * @since 1.0
 	 *
 	 * @return Serializer
 	 */
@@ -56,7 +56,7 @@ class SerializerFactory {
 	/**
 	 * Returns a Serializer that can serialize SelectionRequest objects.
 	 *
-	 * @since 0.1
+	 * @since 1.0
 	 *
 	 * @return Serializer
 	 */
@@ -67,7 +67,7 @@ class SerializerFactory {
 	/**
 	 * Returns a Serializer that can serialize SortExpression objects.
 	 *
-	 * @since 0.1
+	 * @since 1.0
 	 *
 	 * @return Serializer
 	 */
@@ -78,7 +78,7 @@ class SerializerFactory {
 	/**
 	 * Returns a Serializer that can serialize QueryOptions objects.
 	 *
-	 * @since 0.1
+	 * @since 1.0
 	 *
 	 * @return Serializer
 	 */

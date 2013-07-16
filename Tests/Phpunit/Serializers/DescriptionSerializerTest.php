@@ -12,7 +12,7 @@ use DataValues\StringValue;
  * @covers Ask\Serializers\DescriptionSerializer
  *
  * @file
- * @since 0.1
+ * @since 1.0
  *
  * @ingroup Ask
  * @group Ask

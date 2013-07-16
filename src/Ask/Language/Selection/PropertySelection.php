@@ -22,7 +22,7 @@ use DataValues\DataValue;
  * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
  * http://www.gnu.org/copyleft/gpl.html
  *
- * @since 0.1
+ * @since 1.0
  *
  * @file
  * @ingroup Ask
@@ -35,14 +35,14 @@ final class PropertySelection extends SelectionRequest implements \Ask\Immutable
 	/**
 	 * The property for which to select values.
 	 *
-	 * @since 0.1
+	 * @since 1.0
 	 *
 	 * @var DataValue
 	 */
 	protected $propertyId;
 
 	/**
-	 * @since 0.1
+	 * @since 1.0
 	 *
 	 * @param DataValue $propertyId
 	 */
@@ -53,7 +53,7 @@ final class PropertySelection extends SelectionRequest implements \Ask\Immutable
 	/**
 	 * @see Typeable::getType
 	 *
-	 * @since 0.1
+	 * @since 1.0
 	 *
 	 * @return string
 	 */
@@ -64,7 +64,7 @@ final class PropertySelection extends SelectionRequest implements \Ask\Immutable
 	/**
 	 * Returns the print request's property.
 	 *
-	 * @since 0.1
+	 * @since 1.0
 	 *
 	 * @return DataValue
 	 */
@@ -75,7 +75,7 @@ final class PropertySelection extends SelectionRequest implements \Ask\Immutable
 	/**
 	 * @see Comparable::equals
 	 *
-	 * @since 0.1
+	 * @since 1.0
 	 *
 	 * @param mixed $mixed
 	 *
@@ -89,7 +89,7 @@ final class PropertySelection extends SelectionRequest implements \Ask\Immutable
 	/**
 	 * @see Hashable::getHash
 	 *
-	 * @since 0.1
+	 * @since 1.0
 	 *
 	 * @return string
 	 */

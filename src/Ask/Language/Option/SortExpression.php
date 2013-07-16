@@ -22,7 +22,7 @@ use InvalidArgumentException;
  * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
  * http://www.gnu.org/copyleft/gpl.html
  *
- * @since 0.1
+ * @since 1.0
  *
  * @file
  * @ingroup Ask
@@ -49,7 +49,7 @@ abstract class SortExpression implements \Ask\Immutable, \Ask\Typeable {
 	 * Returns the sort direction.
 	 * This is one of the SortExpression::DIRECTION_ constants.
 	 *
-	 * @since 0.1
+	 * @since 1.0
 	 *
 	 * @return string
 	 */

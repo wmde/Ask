@@ -20,7 +20,7 @@ namespace Ask\Language\Option;
  * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
  * http://www.gnu.org/copyleft/gpl.html
  *
- * @since 0.1
+ * @since 1.0
  *
  * @file
  * @ingroup Ask
@@ -33,14 +33,14 @@ class SortOptions implements \Ask\Immutable {
 	/**
 	 * The sort expressions that make up these sort options.
 	 *
-	 * @since 0.1
+	 * @since 1.0
 	 *
 	 * @var SortExpression[]
 	 */
 	protected $expressions;
 
 	/**
-	 * @since 0.1
+	 * @since 1.0
 	 *
 	 * @param SortExpression[] $expressions
 	 */
@@ -51,7 +51,7 @@ class SortOptions implements \Ask\Immutable {
 	/**
 	 * Returns the sort expressions that make up these sort options.
 	 *
-	 * @since 0.1
+	 * @since 1.0
 	 *
 	 * @return SortExpression[]
 	 */

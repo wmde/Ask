@@ -22,7 +22,7 @@ use Ask\Hashable;
  * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
  * http://www.gnu.org/copyleft/gpl.html
  *
- * @since 0.1
+ * @since 1.0
  *
  * @file
  * @ingroup Ask
@@ -35,7 +35,7 @@ abstract class DescriptionCollection extends Description implements \Ask\Immutab
 	/**
 	 * The descriptions that make up this collection of descriptions.
 	 *
-	 * @since 0.1
+	 * @since 1.0
 	 *
 	 * @var Description[]
 	 */
@@ -44,14 +44,14 @@ abstract class DescriptionCollection extends Description implements \Ask\Immutab
 	/**
 	 * Cache for the hash.
 	 *
-	 * @since 0.1
+	 * @since 1.0
 	 *
 	 * @var string|null
 	 */
 	private $hash;
 
 	/**
-	 * @since 0.1
+	 * @since 1.0
 	 *
 	 * @param Description[] $descriptions
 	 */
@@ -62,7 +62,7 @@ abstract class DescriptionCollection extends Description implements \Ask\Immutab
 	/**
 	 * {@inheritdoc}
 	 *
-	 * @since 0.1
+	 * @since 1.0
 	 *
 	 * @return integer
 	 */
@@ -81,7 +81,7 @@ abstract class DescriptionCollection extends Description implements \Ask\Immutab
 	/**
 	 * {@inheritdoc}
 	 *
-	 * @since 0.1
+	 * @since 1.0
 	 *
 	 * @return integer
 	 */
@@ -100,7 +100,7 @@ abstract class DescriptionCollection extends Description implements \Ask\Immutab
 	/**
 	 * Returns the descriptions that make up this collection of descriptions.
 	 *
-	 * @since 0.1
+	 * @since 1.0
 	 *
 	 * @return Description[]
 	 */
@@ -115,7 +115,7 @@ abstract class DescriptionCollection extends Description implements \Ask\Immutab
 	 * equivalent expressions being expressed in different structures.
 	 * This is however likely not important.
 	 *
-	 * @since 0.1
+	 * @since 1.0
 	 *
 	 * @param mixed $mixed
 	 *
@@ -152,7 +152,7 @@ abstract class DescriptionCollection extends Description implements \Ask\Immutab
 	/**
 	 * @see Hashable::getHash
 	 *
-	 * @since 0.1
+	 * @since 1.0
 	 *
 	 * @return string
 	 */
@@ -180,7 +180,7 @@ abstract class DescriptionCollection extends Description implements \Ask\Immutab
 	/**
 	 * Does an associative sort that works for Hashable objects.
 	 *
-	 * @since 0.1
+	 * @since 1.0
 	 *
 	 * @param Hashable[] $array
 	 */

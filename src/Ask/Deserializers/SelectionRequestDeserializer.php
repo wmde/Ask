@@ -9,7 +9,7 @@ use Deserializers\StrategicDeserializer;
 use Deserializers\TypedObjectDeserializer;
 
 /**
- * @since 0.1
+ * @since 1.0
  *
  * @file
  * @ingroup Ask
@@ -41,7 +41,7 @@ class SelectionRequestDeserializer extends TypedObjectDeserializer {
 	/**
 	 * @see Deserializer::deserialize
 	 *
-	 * @since 0.1
+	 * @since 1.0
 	 *
 	 * @param mixed $serialization
 	 *
@@ -55,7 +55,7 @@ class SelectionRequestDeserializer extends TypedObjectDeserializer {
 	/**
 	 * @see Deserializer::canDeserialize
 	 *
-	 * @since 0.1
+	 * @since 1.0
 	 *
 	 * @param mixed $serialization
 	 *

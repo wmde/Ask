@@ -24,7 +24,7 @@ namespace Ask\Language\Description;
  * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
  * http://www.gnu.org/copyleft/gpl.html
  *
- * @since 0.1
+ * @since 1.0
  *
  * @file
  * @ingroup Ask
@@ -37,7 +37,7 @@ final class AnyValue extends Description implements \Ask\Immutable {
 	/**
 	 * {@inheritdoc}
 	 *
-	 * @since 0.1
+	 * @since 1.0
 	 *
 	 * @return integer
 	 */
@@ -48,7 +48,7 @@ final class AnyValue extends Description implements \Ask\Immutable {
 	/**
 	 * {@inheritdoc}
 	 *
-	 * @since 0.1
+	 * @since 1.0
 	 *
 	 * @return integer
 	 */
@@ -59,7 +59,7 @@ final class AnyValue extends Description implements \Ask\Immutable {
 	/**
 	 * {@inheritdoc}
 	 *
-	 * @since 0.1
+	 * @since 1.0
 	 *
 	 * @return string
 	 */
@@ -70,7 +70,7 @@ final class AnyValue extends Description implements \Ask\Immutable {
 	/**
 	 * @see Comparable::equals
 	 *
-	 * @since 0.1
+	 * @since 1.0
 	 *
 	 * @param mixed $mixed
 	 *
@@ -83,7 +83,7 @@ final class AnyValue extends Description implements \Ask\Immutable {
 	/**
 	 * @see Hashable::getHash
 	 *
-	 * @since 0.1
+	 * @since 1.0
 	 *
 	 * @return string
 	 */

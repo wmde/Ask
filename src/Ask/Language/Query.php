@@ -24,7 +24,7 @@ use Ask\Language\Selection\SelectionRequest;
  * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
  * http://www.gnu.org/copyleft/gpl.html
  *
- * @since 0.1
+ * @since 1.0
  *
  * @file
  * @ingroup Ask
@@ -43,7 +43,7 @@ class Query implements \Ask\Immutable {
 	 * This is the selection criterion of the query that determines which entities match.
 	 * It is conceptually similar to the WHERE clause in an SQL query.
 	 *
-	 * @since 0.1
+	 * @since 1.0
 	 *
 	 * @var Description
 	 */
@@ -54,7 +54,7 @@ class Query implements \Ask\Immutable {
 	 * These determine which information should be selected from the matching entities.
 	 * It is conceptually similar to the SELECT clause in an SQL query.
 	 *
-	 * @since 0.1
+	 * @since 1.0
 	 *
 	 * @var SelectionRequest[]
 	 */
@@ -63,14 +63,14 @@ class Query implements \Ask\Immutable {
 	/**
 	 * The query's options.
 	 *
-	 * @since 0.1
+	 * @since 1.0
 	 *
 	 * @var QueryOptions
 	 */
 	protected $options;
 
 	/**
-	 * @since 0.1
+	 * @since 1.0
 	 *
 	 * @param Description $description
 	 * @param SelectionRequest[] $selectionRequests
@@ -85,7 +85,7 @@ class Query implements \Ask\Immutable {
 	/**
 	 * Returns the query description.
 	 *
-	 * @since 0.1
+	 * @since 1.0
 	 *
 	 * @return Description
 	 */
@@ -96,7 +96,7 @@ class Query implements \Ask\Immutable {
 	/**
 	 * Returns the query's selection requests.
 	 *
-	 * @since 0.1
+	 * @since 1.0
 	 *
 	 * @return SelectionRequest[]
 	 */
@@ -107,7 +107,7 @@ class Query implements \Ask\Immutable {
 	/**
 	 * Returns the query's options.
 	 *
-	 * @since 0.1
+	 * @since 1.0
 	 *
 	 * @return QueryOptions
 	 */

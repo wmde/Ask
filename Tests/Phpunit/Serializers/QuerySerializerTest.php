@@ -9,7 +9,7 @@ use Ask\Serializers\QuerySerializer;
  * @covers Ask\Serializers\QuerySerializer
  *
  * @file
- * @since 0.1
+ * @since 1.0
  *
  * @ingroup Ask
  * @group Ask

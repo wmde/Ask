@@ -8,7 +8,7 @@ use Serializers\Exceptions\UnsupportedObjectException;
 use Serializers\Serializer;
 
 /**
- * @since 0.1
+ * @since 1.0
  *
  * @file
  * @ingroup Ask

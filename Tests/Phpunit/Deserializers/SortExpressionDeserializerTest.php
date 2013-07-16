@@ -13,7 +13,7 @@ use DataValues\StringValue;
  * @covers Ask\Deserializers\SortExpressionDeserializer
  *
  * @file
- * @since 0.1
+ * @since 1.0
  *
  * @ingroup Ask
  * @group Ask

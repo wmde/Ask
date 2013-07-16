@@ -30,7 +30,7 @@ use InvalidArgumentException;
  * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
  * http://www.gnu.org/copyleft/gpl.html
  *
- * @since 0.1
+ * @since 1.0
  *
  * @file
  * @ingroup Ask
@@ -43,7 +43,7 @@ final class SomeProperty extends Description implements \Ask\Immutable {
 	/**
 	 * The property that should be present.
 	 *
-	 * @since 0.1
+	 * @since 1.0
 	 *
 	 * @var DataValue
 	 */
@@ -52,7 +52,7 @@ final class SomeProperty extends Description implements \Ask\Immutable {
 	/**
 	 * The description the properties value should match.
 	 *
-	 * @since 0.1
+	 * @since 1.0
 	 *
 	 * @var Description
 	 */
@@ -66,7 +66,7 @@ final class SomeProperty extends Description implements \Ask\Immutable {
 	 * of the main snak, while a sub property would
 	 * point to a qualifier.
 	 *
-	 * @since 0.1
+	 * @since 1.0
 	 *
 	 * @var boolean
 	 */
@@ -75,14 +75,14 @@ final class SomeProperty extends Description implements \Ask\Immutable {
 	/**
 	 * Cache for the hash.
 	 *
-	 * @since 0.1
+	 * @since 1.0
 	 *
 	 * @var string|null
 	 */
 	private $hash;
 
 	/**
-	 * @since 0.1
+	 * @since 1.0
 	 *
 	 * @param DataValue $propertyId
 	 * @param Description $subDescription
@@ -104,7 +104,7 @@ final class SomeProperty extends Description implements \Ask\Immutable {
 	/**
 	 * Returns the description.
 	 *
-	 * @since 0.1
+	 * @since 1.0
 	 *
 	 * @return Description
 	 */
@@ -115,7 +115,7 @@ final class SomeProperty extends Description implements \Ask\Immutable {
 	/**
 	 * Returns the property.
 	 *
-	 * @since 0.1
+	 * @since 1.0
 	 *
 	 * @return DataValue
 	 */
@@ -126,7 +126,7 @@ final class SomeProperty extends Description implements \Ask\Immutable {
 	/**
 	 * Returns if the property is a sub property.
 	 *
-	 * @since 0.1
+	 * @since 1.0
 	 *
 	 * @return boolean
 	 */
@@ -137,7 +137,7 @@ final class SomeProperty extends Description implements \Ask\Immutable {
 	/**
 	 * {@inheritdoc}
 	 *
-	 * @since 0.1
+	 * @since 1.0
 	 *
 	 * @return integer
 	 */
@@ -148,7 +148,7 @@ final class SomeProperty extends Description implements \Ask\Immutable {
 	/**
 	 * {@inheritdoc}
 	 *
-	 * @since 0.1
+	 * @since 1.0
 	 *
 	 * @return integer
 	 */
@@ -159,7 +159,7 @@ final class SomeProperty extends Description implements \Ask\Immutable {
 	/**
 	 * {@inheritdoc}
 	 *
-	 * @since 0.1
+	 * @since 1.0
 	 *
 	 * @return string
 	 */
@@ -170,7 +170,7 @@ final class SomeProperty extends Description implements \Ask\Immutable {
 	/**
 	 * @see Comparable::equals
 	 *
-	 * @since 0.1
+	 * @since 1.0
 	 *
 	 * @param mixed $mixed
 	 *
@@ -186,7 +186,7 @@ final class SomeProperty extends Description implements \Ask\Immutable {
 	/**
 	 * @see Hashable::getHash
 	 *
-	 * @since 0.1
+	 * @since 1.0
 	 *
 	 * @return string
 	 */

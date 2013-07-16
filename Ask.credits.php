@@ -3,7 +3,7 @@
 /**
  * Credits file for the Ask library.
  *
- * @since 0.1
+ * @since 1.0
  *
  * @file
  * @ingroup Ask

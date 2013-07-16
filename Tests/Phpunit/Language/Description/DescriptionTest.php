@@ -22,7 +22,7 @@ use Ask\Language\Description\Description;
  * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
  * http://www.gnu.org/copyleft/gpl.html
  *
- * @since 0.1
+ * @since 1.0
  *
  * @file
  * @ingroup AskTests
@@ -33,14 +33,14 @@ use Ask\Language\Description\Description;
 abstract class DescriptionTest extends \Ask\Tests\Phpunit\AskTestCase {
 
 	/**
-	 * @since 0.1
+	 * @since 1.0
 	 *
 	 * @return Description[]
 	 */
 	protected abstract function getInstances();
 
 	/**
-	 * @since 0.1
+	 * @since 1.0
 	 *
 	 * @return Description[][]
 	 */
@@ -51,7 +51,7 @@ abstract class DescriptionTest extends \Ask\Tests\Phpunit\AskTestCase {
 	/**
 	 * @dataProvider instanceProvider
 	 *
-	 * @since 0.1
+	 * @since 1.0
 	 *
 	 * @param Description $description
 	 */
@@ -66,7 +66,7 @@ abstract class DescriptionTest extends \Ask\Tests\Phpunit\AskTestCase {
 	/**
 	 * @dataProvider instanceProvider
 	 *
-	 * @since 0.1
+	 * @since 1.0
 	 *
 	 * @param Description $description
 	 */
@@ -81,7 +81,7 @@ abstract class DescriptionTest extends \Ask\Tests\Phpunit\AskTestCase {
 	/**
 	 * @dataProvider instanceProvider
 	 *
-	 * @since 0.1
+	 * @since 1.0
 	 *
 	 * @param Description $description
 	 */
@@ -92,7 +92,7 @@ abstract class DescriptionTest extends \Ask\Tests\Phpunit\AskTestCase {
 	/**
 	 * @dataProvider instanceProvider
 	 *
-	 * @since 0.1
+	 * @since 1.0
 	 *
 	 * @param Description $description
 	 */
@@ -105,7 +105,7 @@ abstract class DescriptionTest extends \Ask\Tests\Phpunit\AskTestCase {
 	/**
 	 * @dataProvider instanceProvider
 	 *
-	 * @since 0.1
+	 * @since 1.0
 	 *
 	 * @param Description $description
 	 */
@@ -116,7 +116,7 @@ abstract class DescriptionTest extends \Ask\Tests\Phpunit\AskTestCase {
 	/**
 	 * @dataProvider instanceProvider
 	 *
-	 * @since 0.1
+	 * @since 1.0
 	 *
 	 * @param Description $description
 	 */

@@ -20,7 +20,7 @@ namespace Ask\Language\Option;
  * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
  * http://www.gnu.org/copyleft/gpl.html
  *
- * @since 0.1
+ * @since 1.0
  *
  * @file
  * @ingroup Ask
@@ -33,7 +33,7 @@ class QueryOptions implements \Ask\Immutable {
 	/**
 	 * The query limit. At most this many results will be selected.
 	 *
-	 * @since 0.1
+	 * @since 1.0
 	 *
 	 * @var int
 	 */
@@ -42,7 +42,7 @@ class QueryOptions implements \Ask\Immutable {
 	/**
 	 * The query offset. The first this many matching results will be skipped.
 	 *
-	 * @since 0.1
+	 * @since 1.0
 	 *
 	 * @var int
 	 */
@@ -51,14 +51,14 @@ class QueryOptions implements \Ask\Immutable {
 	/**
 	 * The query sort.
 	 *
-	 * @since 0.1
+	 * @since 1.0
 	 *
 	 * @var SortOptions
 	 */
 	protected $sort;
 
 	/**
-	 * @since 0.1
+	 * @since 1.0
 	 *
 	 * @param int $limit
 	 * @param int $offset
@@ -73,7 +73,7 @@ class QueryOptions implements \Ask\Immutable {
 	/**
 	 * Returns the query limit.
 	 *
-	 * @since 0.1
+	 * @since 1.0
 	 *
 	 * @return int
 	 */
@@ -84,7 +84,7 @@ class QueryOptions implements \Ask\Immutable {
 	/**
 	 * Returns the query offset.
 	 *
-	 * @since 0.1
+	 * @since 1.0
 	 *
 	 * @return int
 	 */
@@ -95,7 +95,7 @@ class QueryOptions implements \Ask\Immutable {
 	/**
 	 * Returns the query sort options.
 	 *
-	 * @since 0.1
+	 * @since 1.0
 	 *
 	 * @return SortOptions
 	 */

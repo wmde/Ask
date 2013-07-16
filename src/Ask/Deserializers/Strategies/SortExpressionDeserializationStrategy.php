@@ -11,7 +11,7 @@ use Deserializers\TypedDeserializationStrategy;
 use InvalidArgumentException;
 
 /**
- * @since 0.1
+ * @since 1.0
  *
  * @file
  * @ingroup Ask
@@ -30,7 +30,7 @@ class SortExpressionDeserializationStrategy extends TypedDeserializationStrategy
 	/**
 	 * @see TypedDeserializationStrategy::getDeserializedValue
 	 *
-	 * @since 0.1
+	 * @since 1.0
 	 *
 	 * @param string $selectionRequestType
 	 * @param array $valueSerialization

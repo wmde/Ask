@@ -13,7 +13,7 @@ use Deserializers\StrategicDeserializer;
  * TODO: split individual description handling to own classes to we can use
  * polymorphic dispatch and not have this big OCP violation.
  *
- * @since 0.1
+ * @since 1.0
  *
  * @file
  * @ingroup Ask
@@ -49,7 +49,7 @@ class DescriptionDeserializer implements Deserializer {
 	/**
 	 * @see Deserializer::deserialize
 	 *
-	 * @since 0.1
+	 * @since 1.0
 	 *
 	 * @param mixed $serialization
 	 *
@@ -63,7 +63,7 @@ class DescriptionDeserializer implements Deserializer {
 	/**
 	 * @see Deserializer::canDeserialize
 	 *
-	 * @since 0.1
+	 * @since 1.0
 	 *
 	 * @param mixed $serialization
 	 *

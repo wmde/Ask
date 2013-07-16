@@ -11,7 +11,7 @@ use DataValues\StringValue;
  * @covers Ask\Serializers\SortExpressionSerializer
  *
  * @file
- * @since 0.1
+ * @since 1.0
  *
  * @ingroup Ask
  * @group Ask
