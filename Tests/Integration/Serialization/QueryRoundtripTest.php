@@ -2,11 +2,7 @@
 
 namespace Ask\Tests\Integration\Serialization;
 
-use Ask\Deserializers\DescriptionDeserializer;
-use Ask\Deserializers\QueryDeserializer;
-use Ask\Deserializers\QueryOptionsDeserializer;
-use Ask\Deserializers\SelectionRequestDeserializer;
-use Ask\Deserializers\SortExpressionDeserializer;
+use Ask\DeserializerFactory;
 use Ask\Language\Description\AnyValue;
 use Ask\Language\Description\Conjunction;
 use Ask\Language\Description\SomeProperty;
@@ -18,15 +14,9 @@ use Ask\Language\Option\SortOptions;
 use Ask\Language\Query;
 use Ask\Language\Selection\PropertySelection;
 use Ask\Language\Selection\SubjectSelection;
-use Ask\Serializers\DescriptionSerializer;
-use Ask\Serializers\QueryOptionsSerializer;
-use Ask\Serializers\QuerySerializer;
-use Ask\Serializers\SelectionRequestSerializer;
-use Ask\Serializers\SortExpressionSerializer;
+use Ask\SerializerFactory;
 use DataValues\DataValueFactory;
 use DataValues\StringValue;
-use Deserializers\DispatchingDeserializer;
-use Serializers\DispatchingSerializer;
 
 /**
  * @file
@@ -41,29 +31,17 @@ use Serializers\DispatchingSerializer;
 class QueryRoundtripTest extends \PHPUnit_Framework_TestCase {
 
 	protected function newQueryDeserializer() {
-		$componentDeserializer = new DispatchingDeserializer();
-
-		$componentDeserializer->addDeserializer( new QueryOptionsDeserializer( $componentDeserializer ) );
-
 		$dvFactory = new DataValueFactory();
 		$dvFactory->registerDataValue( 'string', 'DataValues\StringValue' );
 
-		$componentDeserializer->addDeserializer( new DescriptionDeserializer( $dvFactory ) );
-		$componentDeserializer->addDeserializer( new SortExpressionDeserializer( $dvFactory ) );
-		$componentDeserializer->addDeserializer( new SelectionRequestDeserializer( $dvFactory ) );
+		$deserializerFactory = new DeserializerFactory( $dvFactory );
 
-		return new QueryDeserializer( $componentDeserializer );
+		return $deserializerFactory->newQueryDeserializer();
 	}
 
 	protected function newQuerySerializer() {
-		$dispatchingSerializer = new DispatchingSerializer();
-
-		$dispatchingSerializer->addSerializer( new DescriptionSerializer() );
-		$dispatchingSerializer->addSerializer( new SelectionRequestSerializer() );
-		$dispatchingSerializer->addSerializer( new QueryOptionsSerializer( $dispatchingSerializer ) );
-		$dispatchingSerializer->addSerializer( new SortExpressionSerializer() );
-
-		return new QuerySerializer( $dispatchingSerializer );
+		$serializerFactory = new SerializerFactory();
+		return $serializerFactory->newQuerySerializer();
 	}
 
 	/**
