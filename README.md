@@ -210,6 +210,17 @@ via TravisCI, as a TravisCI configuration file is also provided in the root dire
 Ask has been written by [Jeroen De Dauw](https://www.mediawiki.org/wiki/User:Jeroen_De_Dauw)
 as [Wikimedia Germany](https://wikimedia.de) employee for the [Wikidata project](https://wikidata.org/).
 
+## Release notes
+
+### 1.0 (under development)
+
+Initial release with these features:
+
+* PHP implementation of the Ask language core
+* Implementation of descriptions, selection requests and sort options initially needed for Wikidata
+* Serializers for all implemented Ask language objects
+* Deserializers for all implemented Ask language objects
+
 ## Links
 
 * [Ask on Packagist](https://packagist.org/packages/ask/ask)
