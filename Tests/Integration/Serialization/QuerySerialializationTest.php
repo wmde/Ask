@@ -2,7 +2,7 @@
 
 namespace Ask\Tests\Integration\Serialization;
 
-use Ask\AskFactory;
+use Ask\SerializerFactory;
 use Ask\Language\Description\AnyValue;
 use Ask\Language\Description\Conjunction;
 use Ask\Language\Description\SomeProperty;
@@ -155,7 +155,7 @@ class QuerySerializationTest extends \PHPUnit_Framework_TestCase {
 	}
 
 	protected function getQuerySerializer() {
-		$askFactory = new AskFactory();
+		$askFactory = new SerializerFactory();
 		return $askFactory->newQuerySerializer();
 	}
 

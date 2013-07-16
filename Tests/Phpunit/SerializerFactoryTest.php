@@ -2,7 +2,7 @@
 
 namespace Ask\Tests\Phpunit;
 
-use Ask\AskFactory;
+use Ask\SerializerFactory;
 use Serializers\Serializer;
 
 /**
@@ -16,18 +16,19 @@ use Serializers\Serializer;
  *
  * @licence GNU GPL v2+
  * @author Jeroen De Dauw < jeroendedauw@gmail.com >
+ * @author Adam Shorland < adamshorland@gmail.com >
  */
-class AskFactoryTest extends \PHPUnit_Framework_TestCase {
+class SerializerFactoryTest extends \PHPUnit_Framework_TestCase {
 
 	public function testCanGetQuerySerializer() {
-		$askFactory = new AskFactory();
+		$askFactory = new SerializerFactory();
 
-		$querySerializer = $askFactory->newQuerySerializer();
+		$serializer = $askFactory->newQuerySerializer();
 
-		$query = $this->getMockBuilder( 'Ask\Language\Query' )
+		$object = $this->getMockBuilder( 'Ask\Language\Query' )
 			->disableOriginalConstructor()->getMock();
 
-		$this->assertSerializerThatCanSerializeObject( $querySerializer, $query );
+		$this->assertSerializerThatCanSerializeObject( $serializer, $object );
 	}
 
 	protected function assertSerializerThatCanSerializeObject( Serializer $serializer, $object ) {
@@ -35,7 +36,7 @@ class AskFactoryTest extends \PHPUnit_Framework_TestCase {
 	}
 
 	public function testCanGetDescriptionSerializer() {
-		$askFactory = new AskFactory();
+		$askFactory = new SerializerFactory();
 
 		$serializer = $askFactory->newDescriptionSerializer();
 
@@ -45,7 +46,7 @@ class AskFactoryTest extends \PHPUnit_Framework_TestCase {
 	}
 
 	public function testCanGetSelectionRequestSerializer() {
-		$askFactory = new AskFactory();
+		$askFactory = new SerializerFactory();
 
 		$serializer = $askFactory->newSelectionRequestSerializer();
 
@@ -55,7 +56,7 @@ class AskFactoryTest extends \PHPUnit_Framework_TestCase {
 	}
 
 	public function testCanGetSortExpressionSerializer() {
-		$askFactory = new AskFactory();
+		$askFactory = new SerializerFactory();
 
 		$serializer = $askFactory->newSortExpressionSerializer();
 
@@ -65,7 +66,7 @@ class AskFactoryTest extends \PHPUnit_Framework_TestCase {
 	}
 
 	public function testCanGetQueryOptionsSerializer() {
-		$askFactory = new AskFactory();
+		$askFactory = new SerializerFactory();
 
 		$serializer = $askFactory->newQueryOptionsSerializer();
 
@@ -74,5 +75,6 @@ class AskFactoryTest extends \PHPUnit_Framework_TestCase {
 
 		$this->assertSerializerThatCanSerializeObject( $serializer, $object );
 	}
+
 
 }
