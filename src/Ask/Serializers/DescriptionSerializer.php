@@ -50,7 +50,7 @@ class DescriptionSerializer implements Serializer {
 		if ( $description instanceof ValueDescription ) {
 			return array(
 				'value' => $description->getValue()->toArray(),
-				'comparator' => $description->getComparator(),
+				'comparator' => $this->getStringForComparator( $description->getComparator() ),
 			);
 		}
 
@@ -68,6 +68,21 @@ class DescriptionSerializer implements Serializer {
 		}
 
 		throw new UnsupportedObjectException( $description );
+	}
+
+	protected function getStringForComparator( $comparator ) {
+		$comparatorStrings = array(
+			ValueDescription::COMP_EQUAL => 'equal',
+			ValueDescription::COMP_LEQ => 'leq',
+			ValueDescription::COMP_MEQ => 'meq',
+			ValueDescription::COMP_NEQ => 'neq',
+			ValueDescription::COMP_LIKE => 'like',
+			ValueDescription::COMP_NLIKE => 'nlike',
+			ValueDescription::COMP_LESS => 'less',
+			ValueDescription::COMP_MORE => 'more'
+		);
+
+		return $comparatorStrings[$comparator];
 	}
 
 	protected function assertCanSerialize( $askObject ) {

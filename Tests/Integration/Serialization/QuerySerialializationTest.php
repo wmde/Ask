@@ -98,7 +98,7 @@ class QuerySerializationTest extends \PHPUnit_Framework_TestCase {
 									'descriptionType' => 'valueDescription',
 									'value' => array(
 										'value' => $foo->toArray(),
-										'comparator' => 1 // TODO: this should be a string
+										'comparator' => 'equal'
 									)
 								),
 								'isSubProperty' => false

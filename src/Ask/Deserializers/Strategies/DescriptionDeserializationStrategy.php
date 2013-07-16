@@ -100,7 +100,7 @@ class DescriptionDeserializationStrategy extends TypedDeserializationStrategy {
 		try {
 			$valueDescription = new ValueDescription(
 				$this->dataValueFactory->newFromArray( $descriptionValue['value'] ),
-				$descriptionValue['comparator']
+				$this->deserialzeComparator( $descriptionValue['comparator'] )
 			);
 		}
 		catch ( \InvalidArgumentException $ex ) {
@@ -108,6 +108,27 @@ class DescriptionDeserializationStrategy extends TypedDeserializationStrategy {
 		}
 
 		return $valueDescription;
+	}
+
+	protected function deserialzeComparator( $comparatorSerialization ) {
+		$comparatorStrings = array(
+			ValueDescription::COMP_EQUAL => 'equal',
+			ValueDescription::COMP_LEQ => 'leq',
+			ValueDescription::COMP_MEQ => 'meq',
+			ValueDescription::COMP_NEQ => 'neq',
+			ValueDescription::COMP_LIKE => 'like',
+			ValueDescription::COMP_NLIKE => 'nlike',
+			ValueDescription::COMP_LESS => 'less',
+			ValueDescription::COMP_MORE => 'more'
+		);
+
+		$comparator = array_search( $comparatorSerialization, $comparatorStrings );
+
+		if ( $comparator === false ) {
+			throw new InvalidAttributeException( 'comparator', $comparatorSerialization );
+		}
+
+		return $comparator;
 	}
 
 	protected function newConjunction( array $descriptionValue ) {

@@ -50,12 +50,12 @@ class ValueDescriptionTest extends DescriptionTest {
 		$comparators = array(
 			ValueDescription::COMP_EQUAL,
 			ValueDescription::COMP_LEQ,
-			ValueDescription::COMP_GEQ,
+			ValueDescription::COMP_MEQ,
 			ValueDescription::COMP_NEQ,
 			ValueDescription::COMP_LIKE,
 			ValueDescription::COMP_NLIKE,
 			ValueDescription::COMP_LESS,
-			ValueDescription::COMP_GRTR,
+			ValueDescription::COMP_MORE,
 		);
 
 		foreach ( $values as $value ) {
