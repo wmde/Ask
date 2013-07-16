@@ -264,7 +264,7 @@ class DescriptionDeserializerTest extends \PHPUnit_Framework_TestCase {
 		) );
 
 		$argLists[] = array( array(
-			'comparator' => ValueDescription::COMP_EQUAL, // TODO: use string
+			'comparator' => ValueDescription::COMP_EQUAL,
 		) );
 
 		return $argLists;
@@ -296,7 +296,7 @@ class DescriptionDeserializerTest extends \PHPUnit_Framework_TestCase {
 
 		$argLists[] = array( array(
 			'value' => null,
-			'comparator' => ValueDescription::COMP_EQUAL, // TODO: use string
+			'comparator' => ValueDescription::COMP_EQUAL,
 		) );
 
 		return $argLists;
