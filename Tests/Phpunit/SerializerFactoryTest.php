@@ -6,7 +6,7 @@ use Ask\SerializerFactory;
 use Serializers\Serializer;
 
 /**
- * @covers Ask\AskFactory
+ * @covers Ask\SerializerFactory
  *
  * @file
  * @since 0.1

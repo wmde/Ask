@@ -7,7 +7,7 @@ use Ask\Language\Option\SortExpression;
 use Deserializers\Deserializer;
 
 /**
- * @covers Ask\AskFactory
+ * @covers Ask\DeserializerFactory
  *
  * @file
  * @since 0.1
