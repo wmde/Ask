@@ -3,7 +3,7 @@
 [![Latest Stable Version](https://poser.pugx.org/ask/ask/version.png)](https://packagist.org/packages/ask/ask)
 [![Latest Stable Version](https://poser.pugx.org/ask/ask/d/total.png)](https://packagist.org/packages/ask/ask)
 [![Build Status](https://secure.travis-ci.org/wikimedia/mediawiki-extensions-Ask.png?branch=master)](http://travis-ci.org/wikimedia/mediawiki-extensions-Ask)
-[![Coverage Status](https://coveralls.io/repos/ask/ask/badge.png?branch=master)](https://coveralls.io/r/ask/ask?branch=master)
+[![Coverage Status](https://coveralls.io/repos/wikimedia/mediawiki-extensions-Ask/badge.png?branch=master)](https://coveralls.io/r/wikimedia/mediawiki-extensions-Ask?branch=master)
 
 Library containing a PHP implementation of the Ask query language
 
