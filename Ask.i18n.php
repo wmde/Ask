@@ -220,6 +220,13 @@ $messages['vi'] = array(
 	'ask-desc' => 'Thư viện PHP cho ngôn ngữ truy vấn Ask',
 );
 
+/** Simplified Chinese (中文（简体）‎)
+ * @author Qiyue2001
+ */
+$messages['zh-hans'] = array(
+	'ask-desc' => '包含以PHP实现的ASK查询语言的库',
+);
+
 /** Traditional Chinese (中文（繁體）‎)
  * @author Justincheng12345
  */
