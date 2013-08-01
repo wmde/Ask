@@ -40,7 +40,7 @@ use InvalidArgumentException;
  * @licence GNU GPL v2+
  * @author Jeroen De Dauw < jeroendedauw@gmail.com >
  */
-final class ValueDescription extends Description implements \Ask\Immutable {
+class ValueDescription extends Description implements \Ask\Immutable {
 
 	// This list has values backwards compatible with SMW_CMP_.
 	const COMP_EQUAL = 1;
