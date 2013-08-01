@@ -7,6 +7,7 @@ use DataValues\DataValueFactory;
 
 /**
  * @covers Ask\Deserializers\SelectionRequestDeserializer
+ * @covers Ask\Deserializers\Strategies\SelectionRequestDeserializationStrategy
  *
  * @file
  * @since 1.0
@@ -113,7 +114,7 @@ class SelectionRequestDeserializerTest extends \PHPUnit_Framework_TestCase {
 		return $argLists;
 	}
 
-	public function testCannotDeserilaizeWithUnknownDescriptionType() {
+	public function testCannotDeserilaizeWithUnknownSelectionRequestType() {
 		$notASelectionRequest = array(
 			'objectType' => 'selectionRequest',
 			'selectionRequestType' => 'fooBar',
@@ -124,7 +125,7 @@ class SelectionRequestDeserializerTest extends \PHPUnit_Framework_TestCase {
 		$this->newSelectionRequestDeserializer()->deserialize( $notASelectionRequest );
 	}
 
-	public function testCannotDeserilaizeWithoutDescriptionType() {
+	public function testCannotDeserilaizeWithoutSelectionRequestType() {
 		$notASortExpression = array(
 			'objectType' => 'selectionRequest',
 			'value' => array()
