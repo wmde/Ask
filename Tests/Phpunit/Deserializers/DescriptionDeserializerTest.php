@@ -13,6 +13,7 @@ use DataValues\StringValue;
 
 /**
  * @covers Ask\Deserializers\DescriptionDeserializer
+ * @covers Ask\Deserializers\Strategies\DescriptionDeserializationStrategy
  *
  * @file
  * @since 1.0

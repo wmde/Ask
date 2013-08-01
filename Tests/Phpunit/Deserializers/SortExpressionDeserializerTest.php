@@ -11,6 +11,7 @@ use DataValues\StringValue;
 
 /**
  * @covers Ask\Deserializers\SortExpressionDeserializer
+ * @covers Ask\Deserializers\Strategies\SortExpressionDeserializationStrategy
  *
  * @file
  * @since 1.0
@@ -117,7 +118,7 @@ class SortExpressionDeserializerTest extends \PHPUnit_Framework_TestCase {
 		return $argLists;
 	}
 
-	public function testCannotDeserilaizeWithUnknownDescriptionType() {
+	public function testCannotDeserilaizeWithUnknownSortExpressionType() {
 		$notASortExpression = array(
 			'objectType' => 'sortExpression',
 			'sortExpressionType' => 'fooBar',
@@ -128,7 +129,7 @@ class SortExpressionDeserializerTest extends \PHPUnit_Framework_TestCase {
 		$this->newSortExpressionDeserializer()->deserialize( $notASortExpression );
 	}
 
-	public function testCannotDeserilaizeWithoutDescriptionType() {
+	public function testCannotDeserilaizeWithoutSortExpressionType() {
 		$notASortExpression = array(
 			'objectType' => 'sortExpression',
 			'value' => array()
