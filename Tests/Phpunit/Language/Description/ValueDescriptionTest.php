@@ -3,6 +3,9 @@
 namespace Ask\Tests\Phpunit\Language\Description;
 
 use Ask\Language\Description\ValueDescription;
+use DataValues\MonolingualTextValue;
+use DataValues\NumberValue;
+use DataValues\StringValue;
 
 /**
  * @covers Ask\Language\Description\ValueDescription
@@ -42,9 +45,9 @@ class ValueDescriptionTest extends DescriptionTest {
 		$instances = array();
 
 		$values = array(
-			new \DataValues\StringValue( 'ohi there' ),
-			new \DataValues\NumberValue( 4.2 ),
-			new \DataValues\MonolingualTextValue( 'en', 'ohi there' ),
+			new StringValue( 'ohi there' ),
+			new NumberValue( 4.2 ),
+			new MonolingualTextValue( 'en', 'ohi there' ),
 		);
 
 		$comparators = array(
@@ -99,6 +102,25 @@ class ValueDescriptionTest extends DescriptionTest {
 		$newInstance = new ValueDescription( $description->getValue(), $comparator );
 
 		$this->assertEquals( $comparator, $newInstance->getComparator(), 'Comparator is returned as it was passed to the constructor' );
+	}
+
+	/**
+	 * @dataProvider invalidComparatorProvider
+	 */
+	public function testCannotConstructWithInvalidComparator( $invalidComparator ) {
+		$this->setExpectedException( 'InvalidArgumentException' );
+		new ValueDescription( new StringValue( 'foo' ), $invalidComparator );
+	}
+
+	public function invalidComparatorProvider() {
+		return array(
+			array( null ),
+			array( array() ),
+			array( 4.2 ),
+			array( true ),
+			array( 'foo' ),
+			array( '' ),
+		);
 	}
 
 }
