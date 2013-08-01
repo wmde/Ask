@@ -79,12 +79,16 @@ final class ValueDescription extends Description implements \Ask\Immutable {
 	 * @throws InvalidArgumentException
 	 */
 	public function __construct( DataValue $value, $comparator = self::COMP_EQUAL ) {
-		if ( $comparator < self::COMP_EQUAL || $comparator > self::COMP_GREATER ) {
-			throw new InvalidArgumentException( 'Invalid comparator specified' );
-		}
+		$this->assertComparatorValidity( $comparator );
 
 		$this->value = $value;
 		$this->comparator = $comparator;
+	}
+
+	protected function assertComparatorValidity( $comparator ) {
+		if ( !is_int( $comparator ) || $comparator < self::COMP_EQUAL || $comparator > self::COMP_GREATER ) {
+			throw new InvalidArgumentException( 'Invalid comparator specified' );
+		}
 	}
 
 	/**
