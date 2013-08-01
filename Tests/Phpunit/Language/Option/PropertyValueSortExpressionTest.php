@@ -8,6 +8,7 @@ use DataValues\StringValue;
 
 /**
  * @covers Ask\Language\Option\PropertyValueSortExpression
+ * @covers Ask\Language\Option\SortExpression
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -78,6 +79,28 @@ class PropertyValueSortExpressionTest extends SortExpressionTest {
 		);
 
 		return $instances;
+	}
+
+	/**
+	 * @dataProvider invalidSortDirectionProvider
+	 */
+	public function testCannotConstructWithInvalidSortDirection( $invalidSortDirection ) {
+		$this->setExpectedException( 'InvalidArgumentException' );
+
+		new PropertyValueSortExpression(
+			new StringValue( 'foo' ),
+			$invalidSortDirection
+		);
+	}
+
+	public function invalidSortDirectionProvider() {
+		return array(
+			array( null ),
+			array( array() ),
+			array( true ),
+			array( 4.2 ),
+			array( 'foo' ),
+		);
 	}
 
 }
