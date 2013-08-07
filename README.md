@@ -1,11 +1,13 @@
 # Ask
 
-[![Latest Stable Version](https://poser.pugx.org/ask/ask/version.png)](https://packagist.org/packages/ask/ask)
-[![Download count](https://poser.pugx.org/ask/ask/d/total.png)](https://packagist.org/packages/ask/ask)
+Library containing a PHP implementation of the Ask query language.
+
 [![Build Status](https://secure.travis-ci.org/wikimedia/mediawiki-extensions-Ask.png?branch=master)](http://travis-ci.org/wikimedia/mediawiki-extensions-Ask)
 [![Coverage Status](https://coveralls.io/repos/wikimedia/mediawiki-extensions-Ask/badge.png?branch=master)](https://coveralls.io/r/wikimedia/mediawiki-extensions-Ask?branch=master)
+[![Dependency Status](https://www.versioneye.com/package/php--ask--ask/badge.png)](https://www.versioneye.com/package/php--ask--ask)
 
-Library containing a PHP implementation of the Ask query language
+[![Latest Stable Version](https://poser.pugx.org/ask/ask/version.png)](https://packagist.org/packages/ask/ask)
+[![Download count](https://poser.pugx.org/ask/ask/d/total.png)](https://packagist.org/packages/ask/ask)
 
 ## Requirements
 
