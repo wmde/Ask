@@ -230,4 +230,5 @@ Initial release with these features:
 * [Ask on Ohloh](https://www.ohloh.net/p/ask)
 * [Ask on MediaWiki.org](https://www.mediawiki.org/wiki/Extension:Ask)
 * [TravisCI build status](https://travis-ci.org/wikimedia/mediawiki-extensions-Ask)
+* [NodeJS implementation of Ask](https://github.com/JeroenDeDauw/AskJS)
 * [Latest version of the readme file](https://github.com/wikimedia/mediawiki-extensions-Ask/blob/master/README.md)
