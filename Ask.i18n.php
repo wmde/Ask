@@ -35,6 +35,13 @@ $messages['ast'] = array(
 	'ask-desc' => 'Biblioteca que contien un encadarmáu en PHP del llinguaxe de consulta Ask',
 );
 
+/** Bikol Central (Bikol Central)
+ * @author Geopoet
+ */
+$messages['bcl'] = array(
+	'ask-desc' => 'An Librari na igwang laog na implementasyon kan PHP kan lengguwahe nin Hapot sa kahaputan',
+);
+
 /** Belarusian (Taraškievica orthography) (беларуская (тарашкевіца)‎)
  * @author Wizardist
  */
@@ -175,6 +182,13 @@ $messages['nb'] = array(
  */
 $messages['nl'] = array(
 	'ask-desc' => 'Bibliotheek die een PHP-implementatie bevat van de querytaal Ask',
+);
+
+/** Occitan (occitan)
+ * @author Cedric31
+ */
+$messages['oc'] = array(
+	'ask-desc' => 'Bibliotèca que conten una implementacion PHP del lengatge de requèsta Ask',
 );
 
 /** tarandíne (tarandíne)
