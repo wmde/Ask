@@ -43,7 +43,7 @@ class QueryDeserializerTest extends \PHPUnit_Framework_TestCase {
 	public function testCannotDeserializeWithInvalidObjectType( $notAQuery ) {
 		$serializer = $this->newQueryDeserializer();
 
-		$this->assertFalse( $serializer->canDeserialize( $notAQuery ) );
+		$this->assertFalse( $serializer->isDeserializerFor( $notAQuery ) );
 
 		$this->setExpectedException( 'Deserializers\Exceptions\UnsupportedTypeException' );
 		$serializer->deserialize( $notAQuery );
@@ -81,7 +81,7 @@ class QueryDeserializerTest extends \PHPUnit_Framework_TestCase {
 	public function testCannotDeserilaizeWithoutObjectType( $notAQuery ) {
 		$serializer = $this->newQueryDeserializer();
 
-		$this->assertFalse( $serializer->canDeserialize( $notAQuery ) );
+		$this->assertFalse( $serializer->isDeserializerFor( $notAQuery ) );
 
 		$this->setExpectedException( 'Deserializers\Exceptions\MissingTypeException' );
 		$serializer->deserialize( $notAQuery );

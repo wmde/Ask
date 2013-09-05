@@ -21,8 +21,8 @@ class DispatchingSerializerTest extends \PHPUnit_Framework_TestCase {
 	public function testConstructWithNoSerializers() {
 		$serializer = new DispatchingSerializer( array() );
 
-		$this->assertFalse( $serializer->canSerialize( 'foo' ) );
-		$this->assertFalse( $serializer->canSerialize( null ) );
+		$this->assertFalse( $serializer->isSerializerFor( 'foo' ) );
+		$this->assertFalse( $serializer->isSerializerFor( null ) );
 
 		$this->setExpectedException( 'Serializers\Exceptions\UnsupportedObjectException' );
 
@@ -38,24 +38,24 @@ class DispatchingSerializerTest extends \PHPUnit_Framework_TestCase {
 		$subSerializer = $this->getMock( 'Serializers\Serializer' );
 
 		$subSerializer->expects( $this->exactly( 4 ) )
-			->method( 'canSerialize' )
+			->method( 'isSerializerFor' )
 			->will( $this->returnCallback( function( $value ) {
 				return $value > 9000;
 			} ) );
 
 		$serializer = new DispatchingSerializer( array( $subSerializer ) );
 
-		$this->assertFalse( $serializer->canSerialize( 0 ) );
-		$this->assertFalse( $serializer->canSerialize( 42 ) );
-		$this->assertTrue( $serializer->canSerialize( 9001 ) );
-		$this->assertTrue( $serializer->canSerialize( 31337 ) );
+		$this->assertFalse( $serializer->isSerializerFor( 0 ) );
+		$this->assertFalse( $serializer->isSerializerFor( 42 ) );
+		$this->assertTrue( $serializer->isSerializerFor( 9001 ) );
+		$this->assertTrue( $serializer->isSerializerFor( 31337 ) );
 	}
 
 	public function testSerializeWithSerializableValues() {
 		$subSerializer = $this->getMock( 'Serializers\Serializer' );
 
 		$subSerializer->expects( $this->any() )
-			->method( 'canSerialize' )
+			->method( 'isSerializerFor' )
 			->will( $this->returnValue( true ) );
 
 		$subSerializer->expects( $this->any() )
@@ -72,7 +72,7 @@ class DispatchingSerializerTest extends \PHPUnit_Framework_TestCase {
 		$subSerializer = $this->getMock( 'Serializers\Serializer' );
 
 		$subSerializer->expects( $this->once() )
-			->method( 'canSerialize' )
+			->method( 'isSerializerFor' )
 			->will( $this->returnValue( false ) );
 
 		$serializer = new DispatchingSerializer( array( $subSerializer ) );
@@ -85,7 +85,7 @@ class DispatchingSerializerTest extends \PHPUnit_Framework_TestCase {
 		$subSerializer0 = $this->getMock( 'Serializers\Serializer' );
 
 		$subSerializer0->expects( $this->any() )
-			->method( 'canSerialize' )
+			->method( 'isSerializerFor' )
 			->will( $this->returnValue( true ) );
 
 		$subSerializer0->expects( $this->any() )
@@ -95,7 +95,7 @@ class DispatchingSerializerTest extends \PHPUnit_Framework_TestCase {
 		$subSerializer1 = $this->getMock( 'Serializers\Serializer' );
 
 		$subSerializer1->expects( $this->any() )
-			->method( 'canSerialize' )
+			->method( 'isSerializerFor' )
 			->will( $this->returnValue( false ) );
 
 		$subSerializer2 = clone $subSerializer1;
@@ -111,7 +111,7 @@ class DispatchingSerializerTest extends \PHPUnit_Framework_TestCase {
 		$subSerializer = $this->getMock( 'Serializers\Serializer' );
 
 		$subSerializer->expects( $this->any() )
-			->method( 'canSerialize' )
+			->method( 'isSerializerFor' )
 			->will( $this->returnValue( true ) );
 
 		$subSerializer->expects( $this->any() )

@@ -37,7 +37,7 @@ class SortExpressionDeserializerTest extends \PHPUnit_Framework_TestCase {
 	public function testCannotDeserializeWithInvalidObjectType( $notADescription ) {
 		$serializer = $this->newSortExpressionDeserializer();
 
-		$this->assertFalse( $serializer->canDeserialize( $notADescription ) );
+		$this->assertFalse( $serializer->isDeserializerFor( $notADescription ) );
 
 		$this->setExpectedException( 'Deserializers\Exceptions\UnsupportedTypeException' );
 		$serializer->deserialize( $notADescription );
@@ -85,7 +85,7 @@ class SortExpressionDeserializerTest extends \PHPUnit_Framework_TestCase {
 	public function testCannotDeserilaizeWithoutObjectType( $notASortExpression ) {
 		$serializer = $this->newSortExpressionDeserializer();
 
-		$this->assertFalse( $serializer->canDeserialize( $notASortExpression ) );
+		$this->assertFalse( $serializer->isDeserializerFor( $notASortExpression ) );
 
 		$this->setExpectedException( 'Deserializers\Exceptions\MissingTypeException' );
 		$serializer->deserialize( $notASortExpression );

@@ -53,7 +53,7 @@ class SelectionRequestDeserializer extends TypedObjectDeserializer {
 	}
 
 	/**
-	 * @see Deserializer::canDeserialize
+	 * @see Deserializer::isDeserializerFor
 	 *
 	 * @since 1.0
 	 *
@@ -61,8 +61,8 @@ class SelectionRequestDeserializer extends TypedObjectDeserializer {
 	 *
 	 * @return boolean
 	 */
-	public function canDeserialize( $serialization ) {
-		return $this->deserializer->canDeserialize( $serialization );
+	public function isDeserializerFor( $serialization ) {
+		return $this->deserializer->isDeserializerFor( $serialization );
 	}
 
 }

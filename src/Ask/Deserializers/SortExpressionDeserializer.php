@@ -50,7 +50,7 @@ class SortExpressionDeserializer implements Deserializer {
 	}
 
 	/**
-	 * @see Deserializer::canDeserialize
+	 * @see Deserializer::isDeserializerFor
 	 *
 	 * @since 1.0
 	 *
@@ -58,8 +58,8 @@ class SortExpressionDeserializer implements Deserializer {
 	 *
 	 * @return boolean
 	 */
-	public function canDeserialize( $serialization ) {
-		return $this->deserializer->canDeserialize( $serialization );
+	public function isDeserializerFor( $serialization ) {
+		return $this->deserializer->isDeserializerFor( $serialization );
 	}
 
 }

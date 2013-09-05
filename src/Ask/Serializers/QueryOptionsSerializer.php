@@ -34,7 +34,7 @@ class QueryOptionsSerializer implements Serializer {
 	}
 
 	protected function assertCanSerialize( $askObject ) {
-		if ( !$this->canSerialize( $askObject ) ) {
+		if ( !$this->isSerializerFor( $askObject ) ) {
 			throw new UnsupportedObjectException( $askObject );
 		}
 	}
@@ -59,7 +59,7 @@ class QueryOptionsSerializer implements Serializer {
 		);
 	}
 
-	public function canSerialize( $askObject ) {
+	public function isSerializerFor( $askObject ) {
 		return $askObject instanceof QueryOptions;
 	}
 

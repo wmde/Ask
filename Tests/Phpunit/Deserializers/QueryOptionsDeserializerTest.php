@@ -35,7 +35,7 @@ class QueryOptionsDeserializerTest extends \PHPUnit_Framework_TestCase {
 	public function testCannotDeserializeWithInvalidObjectType( $notQueryOptions ) {
 		$serializer = $this->newQueryOptionsDeserializer();
 
-		$this->assertFalse( $serializer->canDeserialize( $notQueryOptions ) );
+		$this->assertFalse( $serializer->isDeserializerFor( $notQueryOptions ) );
 
 		$this->setExpectedException( 'Deserializers\Exceptions\UnsupportedTypeException' );
 		$serializer->deserialize( $notQueryOptions );
@@ -78,7 +78,7 @@ class QueryOptionsDeserializerTest extends \PHPUnit_Framework_TestCase {
 	public function testCannotDeserilaizeWithoutObjectType( $notQueryOptions ) {
 		$serializer = $this->newQueryOptionsDeserializer();
 
-		$this->assertFalse( $serializer->canDeserialize( $notQueryOptions ) );
+		$this->assertFalse( $serializer->isDeserializerFor( $notQueryOptions ) );
 
 		$this->setExpectedException( 'Deserializers\Exceptions\MissingTypeException' );
 		$serializer->deserialize( $notQueryOptions );

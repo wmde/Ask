@@ -28,7 +28,7 @@ class DescriptionSerializerTest extends \PHPUnit_Framework_TestCase {
 	public function testCannotSerializeNonDescriptions( $notADescription ) {
 		$serializer = new DescriptionSerializer();
 
-		$this->assertFalse( $serializer->canSerialize( $notADescription ) );
+		$this->assertFalse( $serializer->isSerializerFor( $notADescription ) );
 
 		$this->setExpectedException( 'Serializers\Exceptions\UnsupportedObjectException' );
 		$serializer->serialize( $notADescription );

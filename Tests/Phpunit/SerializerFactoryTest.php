@@ -32,7 +32,7 @@ class SerializerFactoryTest extends \PHPUnit_Framework_TestCase {
 	}
 
 	protected function assertSerializerThatCanSerializeObject( Serializer $serializer, $object ) {
-		$this->assertTrue( $serializer->canSerialize( $object ) );
+		$this->assertTrue( $serializer->isSerializerFor( $object ) );
 	}
 
 	public function testCanGetDescriptionSerializer() {

@@ -24,8 +24,8 @@ class SortExpressionSerializerTest extends \PHPUnit_Framework_TestCase {
 	public function testConstructWithNoSerializers() {
 		$serializer = new SortExpressionSerializer();
 
-		$this->assertFalse( $serializer->canSerialize( 'foo' ) );
-		$this->assertFalse( $serializer->canSerialize( null ) );
+		$this->assertFalse( $serializer->isSerializerFor( 'foo' ) );
+		$this->assertFalse( $serializer->isSerializerFor( null ) );
 
 		$this->setExpectedException( 'Serializers\Exceptions\UnsupportedObjectException' );
 

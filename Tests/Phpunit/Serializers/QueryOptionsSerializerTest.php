@@ -62,7 +62,7 @@ class QueryOptionsSerializerTest extends \PHPUnit_Framework_TestCase {
 	public function testCannotSerializeNonDescriptions( $notSerializable ) {
 		$serializer = $this->newQueryOptionsSerializer();
 
-		$this->assertFalse( $serializer->canSerialize( $notSerializable ) );
+		$this->assertFalse( $serializer->isSerializerFor( $notSerializable ) );
 
 		$this->setExpectedException( 'Serializers\Exceptions\UnsupportedObjectException' );
 		$serializer->serialize( $notSerializable );

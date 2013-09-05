@@ -44,7 +44,7 @@ class DeserializerFactoryTest extends \PHPUnit_Framework_TestCase {
 	}
 
 	protected function assertDeserializerThatCanDeserializeObject( Deserializer $deserializer, $object ) {
-		$this->assertTrue( $deserializer->canDeserialize( $object ) );
+		$this->assertTrue( $deserializer->isDeserializerFor( $object ) );
 	}
 
 	public function testCanGetDescriptionDeserializer() {

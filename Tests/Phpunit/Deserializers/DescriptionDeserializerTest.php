@@ -39,7 +39,7 @@ class DescriptionDeserializerTest extends \PHPUnit_Framework_TestCase {
 	public function testCannotDeserializeWithInvalidObjectType( $notADescription ) {
 		$serializer = $this->newDescriptionDeserializer();
 
-		$this->assertFalse( $serializer->canDeserialize( $notADescription ) );
+		$this->assertFalse( $serializer->isDeserializerFor( $notADescription ) );
 
 		$this->setExpectedException( 'Deserializers\Exceptions\UnsupportedTypeException' );
 		$serializer->deserialize( $notADescription );
@@ -87,7 +87,7 @@ class DescriptionDeserializerTest extends \PHPUnit_Framework_TestCase {
 	public function testCannotDeserilaizeWithoutObjectType( $notADescription ) {
 		$serializer = $this->newDescriptionDeserializer();
 
-		$this->assertFalse( $serializer->canDeserialize( $notADescription ) );
+		$this->assertFalse( $serializer->isDeserializerFor( $notADescription ) );
 
 		$this->setExpectedException( 'Deserializers\Exceptions\MissingTypeException' );
 		$serializer->deserialize( $notADescription );

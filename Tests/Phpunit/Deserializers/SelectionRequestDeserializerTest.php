@@ -33,7 +33,7 @@ class SelectionRequestDeserializerTest extends \PHPUnit_Framework_TestCase {
 	public function testCannotDeserializeWithInvalidObjectType( $notASelectionRequest ) {
 		$serializer = $this->newSelectionRequestDeserializer();
 
-		$this->assertFalse( $serializer->canDeserialize( $notASelectionRequest ) );
+		$this->assertFalse( $serializer->isDeserializerFor( $notASelectionRequest ) );
 
 		$this->setExpectedException( 'Deserializers\Exceptions\UnsupportedTypeException' );
 		$serializer->deserialize( $notASelectionRequest );
@@ -81,7 +81,7 @@ class SelectionRequestDeserializerTest extends \PHPUnit_Framework_TestCase {
 	public function testCannotDeserilaizeWithoutObjectType( $notASelectionRequest ) {
 		$serializer = $this->newSelectionRequestDeserializer();
 
-		$this->assertFalse( $serializer->canDeserialize( $notASelectionRequest ) );
+		$this->assertFalse( $serializer->isDeserializerFor( $notASelectionRequest ) );
 
 		$this->setExpectedException( 'Deserializers\Exceptions\MissingTypeException' );
 		$serializer->deserialize( $notASelectionRequest );

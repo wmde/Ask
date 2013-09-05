@@ -63,7 +63,7 @@ class QuerySerializerTest extends \PHPUnit_Framework_TestCase {
 		$dispatchingSerializer = $this->getMock( 'Serializers\Serializer' );
 		$serializer = new QuerySerializer( $dispatchingSerializer );
 
-		$this->assertFalse( $serializer->canSerialize( $notAQuery ) );
+		$this->assertFalse( $serializer->isSerializerFor( $notAQuery ) );
 
 		$this->setExpectedException( 'Serializers\Exceptions\UnsupportedObjectException' );
 		$serializer->serialize( $notAQuery );
