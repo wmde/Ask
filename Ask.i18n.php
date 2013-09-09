@@ -191,6 +191,20 @@ $messages['oc'] = array(
 	'ask-desc' => 'Bibliotèca que conten una implementacion PHP del lengatge de requèsta Ask',
 );
 
+/** Portuguese (português)
+ * @author Cainamarques
+ */
+$messages['pt'] = array(
+	'ask-desc' => 'Biblioteca contendo uma implementação PHP da linguagem Ask',
+);
+
+/** Brazilian Portuguese (português do Brasil)
+ * @author Cainamarques
+ */
+$messages['pt-br'] = array(
+	'ask-desc' => 'Biblioteca contendo uma implementação PHP da linguagem Ask',
+);
+
 /** tarandíne (tarandíne)
  * @author Joetaras
  */
