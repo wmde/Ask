@@ -5,7 +5,7 @@
 !.gitignore
 !.gitreview
 
-!.travis.yml
+!*.yml
 
 vendor/
 composer.phar
