@@ -300,6 +300,11 @@ class DescriptionDeserializerTest extends \PHPUnit_Framework_TestCase {
 			'comparator' => ValueDescription::COMP_EQUAL,
 		) );
 
+		$argLists[] = array( array(
+			'value' => array(),
+			'comparator' => ValueDescription::COMP_EQUAL,
+		) );
+
 		return $argLists;
 	}
 
