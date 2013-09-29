@@ -209,6 +209,13 @@ $messages['roa-tara'] = array(
 	'ask-desc' => "Libbrerie ca tène 'n'imblemendazione PHP d'a lènghe pe le 'nderrogaziune Ask",
 );
 
+/** Russian (русский)
+ * @author Okras
+ */
+$messages['ru'] = array(
+	'ask-desc' => 'Библиотека, содержащая PHP-реализацию язык запросов Ask',
+);
+
 /** Tagalog (Tagalog)
  * @author AnakngAraw
  */
