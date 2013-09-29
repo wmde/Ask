@@ -2,6 +2,9 @@
 
 Library containing a PHP implementation of the Ask query language.
 
+The implementation includes the domain objects that represent various parts of Ask queries,
+as well as serializers and deserializers for these objects.
+
 [![Build Status](https://secure.travis-ci.org/wikimedia/mediawiki-extensions-Ask.png?branch=master)](http://travis-ci.org/wikimedia/mediawiki-extensions-Ask)
 [![Coverage Status](https://coveralls.io/repos/wikimedia/mediawiki-extensions-Ask/badge.png?branch=master)](https://coveralls.io/r/wikimedia/mediawiki-extensions-Ask?branch=master)
 [![Dependency Status](https://www.versioneye.com/package/php--ask--ask/badge.png)](https://www.versioneye.com/package/php--ask--ask)
