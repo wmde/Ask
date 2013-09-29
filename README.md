@@ -17,7 +17,7 @@ On Packagist:
 
 * PHP 5.3 or later
 * [DataValues](https://www.mediawiki.org/wiki/Extension:DataValues) 0.1 or later
-* [Serialization](https://github.com/wikimedia/mediawiki-extensions-Serialization/blob/master/README.md) 1.0 or later
+* [Serialization](https://github.com/wikimedia/mediawiki-extensions-Serialization/blob/master/README.md) 2.x
 
 ## Installation
 
