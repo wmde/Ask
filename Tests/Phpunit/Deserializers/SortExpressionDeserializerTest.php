@@ -3,9 +3,7 @@
 namespace Ask\Tests\Phpunit\Deserializers;
 
 use Ask\Deserializers\SortExpressionDeserializer;
-use Ask\Language\Description\ValueDescription;
 use Ask\Language\Option\SortExpression;
-use DataTypes\DataTypeFactory;
 use DataValues\DataValueFactory;
 use DataValues\StringValue;
 

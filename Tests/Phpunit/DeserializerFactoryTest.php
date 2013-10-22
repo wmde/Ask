@@ -3,7 +3,6 @@
 namespace Ask\Tests\Phpunit;
 
 use Ask\DeserializerFactory;
-use Ask\Language\Option\SortExpression;
 use Deserializers\Deserializer;
 
 /**

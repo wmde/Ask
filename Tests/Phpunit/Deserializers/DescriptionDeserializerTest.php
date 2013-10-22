@@ -7,7 +7,6 @@ use Ask\Language\Description\AnyValue;
 use Ask\Language\Description\Description;
 use Ask\Language\Description\SomeProperty;
 use Ask\Language\Description\ValueDescription;
-use DataTypes\DataTypeFactory;
 use DataValues\DataValueFactory;
 use DataValues\StringValue;
 

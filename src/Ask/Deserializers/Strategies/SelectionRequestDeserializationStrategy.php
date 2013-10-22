@@ -2,7 +2,6 @@
 
 namespace Ask\Deserializers\Strategies;
 
-use Ask\Language\Description\ValueDescription;
 use Ask\Language\Selection\PropertySelection;
 use Ask\Language\Selection\SubjectSelection;
 use DataValues\DataValueFactory;

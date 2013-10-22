@@ -2,7 +2,6 @@
 
 namespace Ask\Deserializers\Strategies;
 
-use Ask\Language\Description\ValueDescription;
 use Ask\Language\Option\PropertyValueSortExpression;
 use DataValues\DataValueFactory;
 use Deserializers\Exceptions\DeserializationException;

@@ -3,7 +3,6 @@
 namespace Ask\Deserializers;
 
 use Ask\Deserializers\Strategies\DescriptionDeserializationStrategy;
-use Ask\Language\Description\ValueDescription;
 use DataValues\DataValueFactory;
 use Deserializers\Deserializer;
 use Deserializers\Exceptions\DeserializationException;
