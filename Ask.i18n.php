@@ -216,6 +216,13 @@ $messages['ru'] = array(
 	'ask-desc' => 'Библиотека, содержащая PHP-реализацию язык запросов Ask',
 );
 
+/** Swedish (svenska)
+ * @author LittleGun
+ */
+$messages['sv'] = array(
+	'ask-desc' => 'Bibliotek med en PHP implementering av Ask frågespråk',
+);
+
 /** Tagalog (Tagalog)
  * @author AnakngAraw
  */
