@@ -1,6 +1,6 @@
 # Installation of Ask
 
-These is the install file for the [Ask library](https://www.mediawiki.org/wiki/Extension:Ask).
+These is the install file for the [Ask library](../README.md).
 
 ## Requirements
 
