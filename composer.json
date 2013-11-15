@@ -25,7 +25,7 @@
 	],
 	"support": {
 		"issues": "https://bugzilla.wikimedia.org/",
-		"irc": "irc://irc.freenode.net/wikimedia-wikidata"
+		"irc": "irc://irc.freenode.net/wikidata"
 	},
 	"require": {
 		"php": ">=5.3.0",

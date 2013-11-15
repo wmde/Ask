@@ -51,7 +51,9 @@ spl_autoload_register( function ( $className ) {
 
 	if ( $namespaceSegments[0] === 'Ask' ) {
 		if ( count( $namespaceSegments ) === 1 || $namespaceSegments[1] !== 'Tests' ) {
-			require_once __DIR__ . '/src/' . $fileName;
+			if ( file_exists( __DIR__ . '/src/' . $fileName ) ) {
+				require_once __DIR__ . '/src/' . $fileName;
+			}
 		}
 	}
 } );
