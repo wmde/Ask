@@ -6,7 +6,7 @@ The implementation includes the domain objects that represent various parts of A
 as well as serializers and deserializers for these objects.
 
 [![Build Status](https://secure.travis-ci.org/wmde/Ask.png?branch=master)](http://travis-ci.org/wmde/Ask)
-[![Coverage Status](https://coveralls.io/repos/wikimedia/mediawiki-extensions-Ask/badge.png?branch=master)](https://coveralls.io/r/wikimedia/mediawiki-extensions-Ask?branch=master)
+[![Coverage Status](https://coveralls.io/repos/wmde/Ask/badge.png?branch=master)](https://coveralls.io/r/wmde/Ask?branch=master)
 [![Dependency Status](https://www.versioneye.com/user/projects/5281036c632bacd30e000112/badge.png)](https://www.versioneye.com/user/projects/5281036c632bacd30e000112)
 
 On Packagist:
@@ -232,6 +232,5 @@ Initial release with these features:
 
 * [Ask on Packagist](https://packagist.org/packages/ask/ask)
 * [Ask on Ohloh](https://www.ohloh.net/p/ask)
-* [Ask on MediaWiki.org](https://www.mediawiki.org/wiki/Extension:Ask)
-* [TravisCI build status](https://travis-ci.org/wikimedia/mediawiki-extensions-Ask)
+* [TravisCI build status](https://travis-ci.org/wmde/Ask)
 * [NodeJS implementation of Ask](https://github.com/JeroenDeDauw/AskJS)
