@@ -8,7 +8,7 @@
 		"SMW",
 		"Semantic MediaWiki"
 	],
-	"homepage": "https://www.mediawiki.org/wiki/Extension:Ask",
+	"homepage": "https://github.com/wmde/Ask",
 	"license": "GPL-2.0+",
 	"authors": [
 		{
@@ -25,9 +25,7 @@
 	],
 	"support": {
 		"issues": "https://bugzilla.wikimedia.org/",
-		"irc": "irc://irc.freenode.net/wikimedia-wikidata",
-		"forum": "https://www.mediawiki.org/wiki/Extension_talk:Ask",
-		"wiki": "https://www.mediawiki.org/wiki/Extension:Ask"
+		"irc": "irc://irc.freenode.net/wikimedia-wikidata"
 	},
 	"require": {
 		"php": ">=5.3.0",
