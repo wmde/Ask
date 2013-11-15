@@ -18,6 +18,6 @@ return array(
 		// A big part of this library is conceptually based on code from Semantic MediaWiki 1.9 written by Markus
 		'Markus Krötzsch',
 	),
-	'url' => 'https://www.mediawiki.org/wiki/Extension:Ask',
+	'url' => 'https://github.com/wmde/Ask',
 	'descriptionmsg' => 'ask-desc'
 );
