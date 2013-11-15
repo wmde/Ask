@@ -2,8 +2,7 @@
 
 Library containing a PHP implementation of the Ask query language.
 
-The implementation includes the domain objects that represent various parts of Ask queries,
-as well as serializers and deserializers for these objects.
+The implementation consists out of domain objects that represent various parts of Ask queries.
 
 [![Build Status](https://secure.travis-ci.org/wmde/Ask.png?branch=master)](http://travis-ci.org/wmde/Ask)
 [![Coverage Status](https://coveralls.io/repos/wmde/Ask/badge.png?branch=master)](https://coveralls.io/r/wmde/Ask?branch=master)
@@ -17,7 +16,6 @@ On Packagist:
 
 * PHP 5.3 or later
 * [DataValues](https://www.mediawiki.org/wiki/Extension:DataValues) 0.1 or later
-* [Serialization](https://github.com/wmde/Serialization/blob/master/README.md) 2.x
 
 ## Installation
 
@@ -93,7 +91,7 @@ namespace.
 
 ## Usage
 
-#### A query for the first hunded entities that are compared
+#### A query for the first hundred entities that are compared
 
 ```php
 use Ask\Language\Query;
@@ -117,7 +115,7 @@ $myAwesomeQuery = new Query(
 );
 ```
 
-#### A query to get the ''cost'' of the first hundered entities that have a ''cost'' property
+#### A query to get the ''cost'' of the first hundred entities that have a ''cost'' property
 
 This is assuming 'p42' is an identifier for a ''cost'' property.
 
@@ -189,22 +187,6 @@ $myAwesomeQuery = new Query(
     new QueryOptions( 100, 0 )
 );
 ```
-
-### Serialization and deserialization
-
-The Ask language objects can all be serialized to a generic format from which the objects can later
-be reconstructed. This is done via a set of Serializers/Serializer implementing objects. These
-objects turn for instance a Query object into a data structure containing only primitive types and
-arrays. This data structure can thus be readily fed to json_enoce, serialize, or the like. The
-process of reconstructing the objects from such a serialization is provided by objects implementing
-the Deserializers/Deserializer interface.
-
-Serializers can be obtained via an instance of SerializerFactory and deserializers can be obtained
-via an instance of DeserializerFactory. You are not allowed to construct these serializers and
-deserializers directly yourself or to have any kind of knowledge of them (ie type hinting). These
-objects are internal to the Ask library and might change name or structure at any time. All you
-are allowed to know when calling $serializerFactory->newQuerySerializer() is that you get back
-an instance of Serializers\Serializer.
 
 ## Tests
 

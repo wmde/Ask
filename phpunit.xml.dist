@@ -16,9 +16,6 @@
         <testsuite name="AskUnitTests">
             <directory>Tests/Phpunit</directory>
         </testsuite>
-        <testsuite name="AskIntegrationTests">
-            <directory>Tests/Integration</directory>
-        </testsuite>
     </testsuites>
     <filter>
         <whitelist addUncoveredFilesFromWhitelist="true">
