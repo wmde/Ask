@@ -3,7 +3,6 @@
 namespace Ask\Tests\Phpunit\Language\Description;
 
 use Ask\Language\Description\ValueDescription;
-use DataValues\MonolingualTextValue;
 use DataValues\NumberValue;
 use DataValues\StringValue;
 
@@ -32,7 +31,6 @@ class ValueDescriptionTest extends DescriptionTest {
 		$values = array(
 			new StringValue( 'ohi there' ),
 			new NumberValue( 4.2 ),
-			new MonolingualTextValue( 'en', 'ohi there' ),
 		);
 
 		$comparators = array(
