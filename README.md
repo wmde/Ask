@@ -6,6 +6,7 @@ The implementation consists out of domain objects that represent various parts o
 
 [![Build Status](https://secure.travis-ci.org/wmde/Ask.png?branch=master)](http://travis-ci.org/wmde/Ask)
 [![Coverage Status](https://coveralls.io/repos/wmde/Ask/badge.png?branch=master)](https://coveralls.io/r/wmde/Ask?branch=master)
+[![Scrutinizer Quality Score](https://scrutinizer-ci.com/g/wmde/Ask/badges/quality-score.png?s=ea4d657f3222ea00305d57bea0339a489882ee95)](https://scrutinizer-ci.com/g/wmde/Ask/)
 [![Dependency Status](https://www.versioneye.com/user/projects/5281036c632bacd30e000112/badge.png)](https://www.versioneye.com/user/projects/5281036c632bacd30e000112)
 
 On Packagist:
@@ -15,7 +16,7 @@ On Packagist:
 ## Requirements
 
 * PHP 5.3 or later
-* [DataValues](https://www.mediawiki.org/wiki/Extension:DataValues) 0.1 or later
+* [DataValues](https://github.com/DataValues/DataValues) 0.1 or later
 
 ## Installation
 
@@ -201,19 +202,18 @@ as [Wikimedia Germany](https://wikimedia.de) employee for the [Wikidata project]
 
 ## Release notes
 
-### 1.0 (under development)
+### 1.0 (2013-11-17)
 
 Initial release with these features:
 
 * PHP implementation of the Ask language core
 * Implementation of descriptions, selection requests and sort options initially needed for Wikidata
-* Serializers for all implemented Ask language objects
-* Deserializers for all implemented Ask language objects
 
 ## Links
 
 * [Ask on Packagist](https://packagist.org/packages/ask/ask)
 * [Ask on Ohloh](https://www.ohloh.net/p/ask)
 * [Ask on coveralls.io](https://coveralls.io/r/wmde/Ask?branch=master)
-* [TravisCI build status](https://travis-ci.org/wmde/Ask)
+* [Ask on ScrutinizerCI](https://scrutinizer-ci.com/g/wmde/Ask/)
+* [Ask on TravisCI](https://travis-ci.org/wmde/Ask)
 * [NodeJS implementation of Ask](https://github.com/JeroenDeDauw/AskJS)
