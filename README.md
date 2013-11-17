@@ -214,5 +214,6 @@ Initial release with these features:
 
 * [Ask on Packagist](https://packagist.org/packages/ask/ask)
 * [Ask on Ohloh](https://www.ohloh.net/p/ask)
+* [Ask on coveralls.io](https://coveralls.io/r/wmde/Ask?branch=master)
 * [TravisCI build status](https://travis-ci.org/wmde/Ask)
 * [NodeJS implementation of Ask](https://github.com/JeroenDeDauw/AskJS)

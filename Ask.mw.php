@@ -14,39 +14,18 @@ if ( !defined( 'MEDIAWIKI' ) ) {
 	die( 'Not an entry point.' );
 }
 
-global $wgExtensionCredits, $wgExtensionMessagesFiles, $wgAutoloadClasses, $wgHooks;
+$GLOBALS['wgExtensionCredits']['other'][] = array(
+	'path' => __FILE__,
+	'name' => 'Ask',
+	'version' => Ask_VERSION,
+	'author' => array(
+		'[https://www.mediawiki.org/wiki/User:Jeroen_De_Dauw Jeroen De Dauw]',
 
-$wgExtensionCredits['other'][] = include( __DIR__ . '/Ask.credits.php' );
+		// A big part of this library is conceptually based on code from Semantic MediaWiki 1.9 written by Markus
+		'Markus Krötzsch',
+	),
+	'url' => 'https://github.com/wmde/Ask',
+	'descriptionmsg' => 'ask-desc'
+);
 
-$wgExtensionMessagesFiles['AskExtension'] = __DIR__ . '/Ask.i18n.php';
-
-if ( defined( 'MW_PHPUNIT_TEST' ) ) {
-	require_once __DIR__ . '/Tests/testLoader.php';
-}
-
-/**
- * Hook to add PHPUnit test cases.
- * @see https://www.mediawiki.org/wiki/Manual:Hooks/UnitTestsList
- *
- * @codeCoverageIgnore
- *
- * @since 1.0
- *
- * @param array $files
- *
- * @return boolean
- */
-$wgHooks['UnitTestsList'][]	= function( array &$files ) {
-	$directoryIterator = new RecursiveDirectoryIterator( __DIR__ . '/Tests/' );
-
-	/**
-	 * @var SplFileInfo $fileInfo
-	 */
-	foreach ( new RecursiveIteratorIterator( $directoryIterator ) as $fileInfo ) {
-		if ( substr( $fileInfo->getFilename(), -8 ) === 'Test.php' ) {
-			$files[] = $fileInfo->getPathname();
-		}
-	}
-
-	return true;
-};
+$GLOBALS['wgExtensionMessagesFiles']['AskExtension'] = __DIR__ . '/Ask.i18n.php';
