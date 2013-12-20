@@ -200,6 +200,11 @@ via TravisCI, as a TravisCI configuration file is also provided in the root dire
 Ask has been written by [Jeroen De Dauw](https://www.mediawiki.org/wiki/User:Jeroen_De_Dauw)
 as [Wikimedia Germany](https://wikimedia.de) employee for the [Wikidata project](https://wikidata.org/).
 
+This library is a reimplementation of the Ask language domain objects in
+[Semantic MediaWiki](https://semantic-mediawiki.org/), which have been written by
+[Markus Krötzsch](http://korrekt.org/). This reimplementation is conceptually almost
+entirely based on the original code and contains small portions of it.
+
 ## Release notes
 
 ### 1.0 (2013-11-17)
