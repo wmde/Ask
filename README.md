@@ -7,7 +7,6 @@ The implementation consists out of domain objects that represent various parts o
 [![Build Status](https://secure.travis-ci.org/wmde/Ask.png?branch=master)](http://travis-ci.org/wmde/Ask)
 [![Coverage Status](https://coveralls.io/repos/wmde/Ask/badge.png?branch=master)](https://coveralls.io/r/wmde/Ask?branch=master)
 [![Scrutinizer Quality Score](https://scrutinizer-ci.com/g/wmde/Ask/badges/quality-score.png?s=ea4d657f3222ea00305d57bea0339a489882ee95)](https://scrutinizer-ci.com/g/wmde/Ask/)
-[![Dependency Status](https://www.versioneye.com/user/projects/5281036c632bacd30e000112/badge.png)](https://www.versioneye.com/user/projects/5281036c632bacd30e000112)
 
 On Packagist:
 [![Latest Stable Version](https://poser.pugx.org/ask/ask/version.png)](https://packagist.org/packages/ask/ask)
