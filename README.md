@@ -206,6 +206,11 @@ entirely based on the original code and contains small portions of it.
 
 ## Release notes
 
+### 1.0.1 (2014-01-21)
+
+* Removed custom autoloader. The Composer support for PSR-4 is now used.
+* The PHPUnit bootstrap file now automatically runs "composer update".
+
 ### 1.0 (2013-11-17)
 
 Initial release with these features:
