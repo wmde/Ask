@@ -1,0 +1,8 @@
+{
+    "@metadata": {
+        "authors": [
+            "LittleGun"
+        ]
+    },
+    "ask-desc": "Bibliotek med en PHP implementering av Ask frågespråk"
+}

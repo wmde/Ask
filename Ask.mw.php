@@ -28,4 +28,5 @@ $GLOBALS['wgExtensionCredits']['other'][] = array(
 	'descriptionmsg' => 'ask-desc'
 );
 
+$GLOBALS['wgMessagesDirs']['AskExtension'] = __DIR__ . '/i18n';
 $GLOBALS['wgExtensionMessagesFiles']['AskExtension'] = __DIR__ . '/Ask.i18n.php';

@@ -1,0 +1,8 @@
+{
+    "@metadata": {
+        "authors": [
+            "McDutchie"
+        ]
+    },
+    "ask-desc": "Bibliotheca que contine un implementation in PHP del linguage de consulta ASK"
+}

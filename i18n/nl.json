@@ -1,0 +1,8 @@
+{
+    "@metadata": {
+        "authors": [
+            "Siebrand"
+        ]
+    },
+    "ask-desc": "Bibliotheek die een PHP-implementatie bevat van de querytaal Ask"
+}
