@@ -1,0 +1,9 @@
+{
+    "@metadata": {
+        "authors": [
+            "Gomoko",
+            "Tpt"
+        ]
+    },
+    "ask-desc": "Bibliothèque contenant une implémentation PHP du langage de requête Ask"
+}
