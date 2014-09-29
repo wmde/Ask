@@ -25,7 +25,8 @@ $GLOBALS['wgExtensionCredits']['other'][] = array(
 		'Markus Krötzsch',
 	),
 	'url' => 'https://github.com/wmde/Ask',
-	'descriptionmsg' => 'ask-desc'
+	'descriptionmsg' => 'ask-desc',
+	'license-name' => 'GPL-2.0+'
 );
 
 $GLOBALS['wgMessagesDirs']['AskExtension'] = __DIR__ . '/i18n';
