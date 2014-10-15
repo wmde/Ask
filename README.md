@@ -206,6 +206,10 @@ entirely based on the original code and contains small portions of it.
 
 ## Release notes
 
+### 1.0.2 (2014-10-16)
+
+* Installation together with DataValues 1.x is now supported.
+
 ### 1.0.1 (2014-01-21)
 
 * Removed custom autoloader. The Composer support for PSR-4 is now used.
