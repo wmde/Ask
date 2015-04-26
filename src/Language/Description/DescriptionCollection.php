@@ -17,8 +17,6 @@ abstract class DescriptionCollection extends Description implements \Ask\Immutab
 	/**
 	 * The descriptions that make up this collection of descriptions.
 	 *
-	 * @since 1.0
-	 *
 	 * @var Description[]
 	 */
 	private $descriptions;
@@ -26,11 +24,9 @@ abstract class DescriptionCollection extends Description implements \Ask\Immutab
 	/**
 	 * Cache for the hash.
 	 *
-	 * @since 1.0
-	 *
 	 * @var string|null
 	 */
-	private $hash;
+	private $hash = null;
 
 	/**
 	 * @since 1.0

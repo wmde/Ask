@@ -25,16 +25,12 @@ final class SomeProperty extends Description implements \Ask\Immutable {
 	/**
 	 * The property that should be present.
 	 *
-	 * @since 1.0
-	 *
 	 * @var DataValue
 	 */
 	private $propertyId;
 
 	/**
 	 * The description the properties value should match.
-	 *
-	 * @since 1.0
 	 *
 	 * @var Description
 	 */
@@ -48,8 +44,6 @@ final class SomeProperty extends Description implements \Ask\Immutable {
 	 * of the main snak, while a sub property would
 	 * point to a qualifier.
 	 *
-	 * @since 1.0
-	 *
 	 * @var boolean
 	 */
 	private $isSubProperty;
@@ -57,11 +51,9 @@ final class SomeProperty extends Description implements \Ask\Immutable {
 	/**
 	 * Cache for the hash.
 	 *
-	 * @since 1.0
-	 *
 	 * @var string|null
 	 */
-	private $hash;
+	private $hash = null;
 
 	/**
 	 * @since 1.0

@@ -206,6 +206,10 @@ entirely based on the original code and contains small portions of it.
 
 ## Release notes
 
+### 1.0.3 (alpha)
+
+* Installation together with DataValues 2.x is now supported.
+
 ### 1.0.2 (2014-10-16)
 
 * Installation together with DataValues 1.x is now supported.
