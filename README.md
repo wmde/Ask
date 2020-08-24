@@ -1,3 +1,5 @@
+This library is no longer under development and is no longer maintained.
+
 # Ask
 
 Library containing a PHP implementation of the Ask query language.
